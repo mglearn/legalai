@@ -26,6 +26,9 @@
   .tl b{display:block;font-family:'Playfair Display',serif;color:var(--gold-dk);font-size:1.05rem;}
   .tl small{font-size:0.6rem;color:var(--slate);letter-spacing:0.02em;}
   .statute{background:#0E1B33;color:#E6ECF7;border-radius:8px;padding:0.9rem 1rem;font-family:'Source Code Pro',monospace;font-size:0.8rem;line-height:1.55;white-space:pre-wrap;position:relative;margin-bottom:0.4rem;}
+  .cite-note{font-size:0.9rem;color:var(--slate);margin:0.5rem 0 1.3rem;}
+  .cite-note a{font-weight:700;color:var(--navy);text-decoration:none;border-bottom:2px solid var(--gold-lt);padding-bottom:1px;}
+  .cite-note a:hover{border-color:var(--navy);}
 </style>
 </head>
 <body>
@@ -84,6 +87,7 @@ const SCEN = {
     tags:['DWI','Fourth Amendment','Suppression'],
     facts:'Your fictional client, "R.," was stopped near midnight for a wide turn. The officer reported the smell of alcohol, slurred speech, and "glassy eyes." R. declined field sobriety tests and refused a breath sample. There was no warrant. The officer\'s report is thin on the specific driving behavior that justified the stop, and the dashcam covers only part of the encounter.',
     statute:'SIMPLIFIED PARAPHRASE - verify against Tex. Penal Code Sec. 49.04 and Transportation Code Sec. 724.\nDWI: a person commits an offense if intoxicated while operating a motor vehicle in a public place.\nImplied consent and refusal rules govern breath and blood specimens; a warrantless blood draw generally requires consent or an exception.',
+    cites:[{t:'Tex. Penal Code § 49.04',u:'https://statutes.capitol.texas.gov/Docs/PE/htm/PE.49.htm#49.04'},{t:'Transportation Code ch. 724',u:'https://statutes.capitol.texas.gov/Docs/TN/htm/TN.724.htm'}],
     good:'What are some defenses to a DWI?',
     better:'Act as a Texas criminal defense attorney. For a first DWI stop where the driver refused field sobriety tests and a breath sample and there was no warrant, list five defense angles. For each, give the legal basis in one line. Texas law only.',
     best:'Act as a Texas criminal defense attorney preparing a motion to suppress.\nFACTS: [paste the fictional facts above].\nSOURCES: [paste the simplified statute excerpt above].\nUsing ONLY the facts and sources I provided, list five defense angles. For each: (1) the angle, (2) the single fact that supports it, (3) the legal basis. Flag any angle the provided sources do not support, and do not cite outside authority. End with the two weakest points in my case.',
@@ -97,6 +101,7 @@ const SCEN = {
     tags:['Possession','Search and seizure','Standing'],
     facts:'Your fictional client, "M.," was a passenger in a car stopped for an expired registration. The officer said M. seemed nervous and asked to search. Accounts differ on whether the driver consented. A small quantity of a controlled substance was found in the center console, within reach of both occupants. M. denies knowledge. There is no body-camera audio of the consent exchange.',
     statute:'SIMPLIFIED PARAPHRASE - verify against Tex. Health and Safety Code Sec. 481.115 and Fourth Amendment doctrine.\nPossession of a controlled substance requires knowing or intentional possession; possession means actual care, custody, control, or management.\nConsent and the scope of a search, and the passenger\'s ability to challenge it, are governed by search-and-seizure law.',
+    cites:[{t:'Tex. Health and Safety Code § 481.115',u:'https://statutes.capitol.texas.gov/Docs/HS/htm/HS.481.htm#481.115'}],
     good:'How do you beat a drug possession charge?',
     better:'Act as a Texas criminal defense attorney. For a passenger charged after a substance was found in a shared center console during a consent search with no recording, list five defense angles, each with a one-line legal basis. Texas law only.',
     best:'Act as a Texas criminal defense attorney evaluating suppression and sufficiency.\nFACTS: [paste the fictional facts above].\nSOURCES: [paste the simplified excerpt above].\nUsing ONLY what I provided, list five defense angles focused on affirmative links to possession and the validity and scope of the search. For each: (1) the angle, (2) the supporting fact, (3) the legal basis. Flag any angle the sources do not support, and do not invent case law. End with the prosecution\'s strongest response to each.',
@@ -110,6 +115,7 @@ const SCEN = {
     tags:['Assault','Self-defense','Witnesses'],
     facts:'Your fictional client, "D.," was charged after a late-night altercation outside a bar. Two witnesses give conflicting accounts of who swung first. D. says the other person advanced and D. pushed to create space. There are minor injuries on both sides. Phone video exists but is dark and partial. The complainant and D. had argued earlier inside.',
     statute:'SIMPLIFIED PARAPHRASE - verify against Tex. Penal Code Sec. 22.01 (assault) and Sec. 9.31 (self-defense).\nAssault includes intentionally, knowingly, or recklessly causing bodily injury to another.\nSelf-defense justifies force when a person reasonably believes it immediately necessary to protect against another\'s use or attempted use of unlawful force.',
+    cites:[{t:'Tex. Penal Code § 22.01 (assault)',u:'https://statutes.capitol.texas.gov/Docs/PE/htm/PE.22.htm#22.01'},{t:'Tex. Penal Code § 9.31 (self-defense)',u:'https://statutes.capitol.texas.gov/Docs/PE/htm/PE.9.htm#9.31'}],
     good:'What are the defenses to an assault charge?',
     better:'Act as a Texas criminal defense attorney. For a mutual bar-fight scenario with conflicting witnesses, minor injuries on both sides, and a partial dark video, list five defense angles including self-defense, each with a one-line basis. Texas law only.',
     best:'Act as a Texas criminal defense attorney assessing self-defense and reasonable doubt.\nFACTS: [paste the fictional facts above].\nSOURCES: [paste the simplified excerpt above].\nUsing ONLY what I provided, list five defense angles. For each: (1) the angle, (2) the supporting fact, (3) the legal basis. Give special attention to how the conflicting witness accounts and partial video create reasonable doubt. Flag any angle the sources do not support, and invent no authority. End with the three questions I should ask each witness.',
@@ -128,6 +134,11 @@ function tierBlock(cls,lbl,badge,desc,id,text){
     '<div class="desc">'+desc+'</div><div class="body"><div class="promptbox" id="'+id+'"><button class="copy-btn" data-target="'+id+'" onclick="copyText(this,event)">Copy</button>'+esc(text)+'</div></div></div>';
 }
 function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function citeNote(s){
+  if(!s.cites||!s.cites.length) return '';
+  var links=s.cites.map(function(c){return '<a href="'+c.u+'" target="_blank" rel="noopener">'+c.t+'</a>';}).join(' &nbsp;·&nbsp; ');
+  return '<p class="cite-note">Read the actual statute on the Texas Legislature site: '+links+'</p>';
+}
 
 function show(key,elm){
   document.querySelectorAll('.pickcard').forEach(c=>c.classList.remove('active'));
@@ -140,6 +151,7 @@ function show(key,elm){
     '<div class="section-label">Move through the framework</div>'+ tmap()+
     '<div class="section-label">Provided source to ground your prompt · the D in TCDLAi</div>'+
       '<div class="statute"><button class="copy-btn" data-target="stat-'+key+'" onclick="copyText(this,event)">Copy</button><span id="stat-'+key+'">'+esc(s.statute)+'</span></div>'+
+      citeNote(s)+
     '<div class="section-label">Climb the tiers</div>'+
       '<div class="tiers">'+
         tierBlock('good','Good · fast draft','Vague','No role, no facts, no sources. Watch it guess.','p-'+key+'-g',s.good)+

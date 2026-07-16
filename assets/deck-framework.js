@@ -265,10 +265,14 @@
 function copyText(btn, ev) {
   if (ev) ev.stopPropagation();
   var target = btn.getAttribute('data-target');
-  var text = target ? (document.getElementById(target) || {}).innerText
-                    : (btn.parentElement.querySelector('.prompt, .copytext') || {}).innerText;
+  var node = target ? document.getElementById(target)
+                    : btn.parentElement.querySelector('.prompt, .copytext');
+  if (!node) return;
+  var clone = node.cloneNode(true);                 // strip the Copy button from the copied text
+  var b = clone.querySelector('.copy-btn'); if (b) b.parentNode.removeChild(b);
+  var text = (clone.innerText || clone.textContent || '').trim();
   if (!text) return;
-  navigator.clipboard.writeText(text.trim()).then(function () {
+  navigator.clipboard.writeText(text).then(function () {
     var old = btn.textContent;
     btn.textContent = 'Copied';
     btn.classList.add('copied');

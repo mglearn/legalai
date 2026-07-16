@@ -10,20 +10,20 @@ Everything you need to build a defense-focused AI bot that carries the TCDLAi fr
 
 | File | What it is | Where it goes |
 |---|---|---|
-| `00-custom-instructions.md` | The bot's persona and rules | Paste into the custom-instructions / system-prompt field |
-| `01-tcdlai-prompt-design-guide.md` | The six-move prompting framework | Upload as knowledge |
-| `02-ethics-guardrail-checklist.md` | Duties, do-and-do-not, checklist | Upload as knowledge |
-| `03-verification-workflow.md` | How to confirm output and cite-check | Upload as knowledge |
-| `04-fact-patterns.md` | Three fictional practice scenarios | Upload as knowledge |
-| `05-prompt-library.md` | Copy-ready starter prompts | Upload as knowledge |
+| `00-custom-instructions.txt` | The bot's persona and rules | Paste into the custom-instructions / system-prompt field |
+| `01-tcdlai-prompt-design-guide.txt` | The six-move prompting framework | Upload as knowledge |
+| `02-ethics-guardrail-checklist.txt` | Duties, do-and-do-not, checklist | Upload as knowledge |
+| `03-verification-workflow.txt` | How to confirm output and cite-check | Upload as knowledge |
+| `04-fact-patterns.txt` | Three fictional practice scenarios | Upload as knowledge |
+| `05-prompt-library.txt` | Copy-ready starter prompts | Upload as knowledge |
 
 ## Build it in BoodleBox
 
 1. Sign in to BoodleBox. If you have a license code from the session, redeem it first.
 2. Create a new bot. Name it **LegalAI** and give it a short description, for example: *Drafting and analysis assistant for Texas criminal defense. Every output is a draft for attorney review.*
-3. Open the custom-instructions field. Copy the full contents of `00-custom-instructions.md` and paste it in.
+3. Open the custom-instructions field. Copy the full contents of `00-custom-instructions.txt` and paste it in.
 4. Add knowledge files. Upload the five numbered knowledge files (`01` through `05`).
-5. Save, then test with a fictional fact pattern from `04-fact-patterns.md`.
+5. Save, then test with a fictional fact pattern from `04-fact-patterns.txt`.
 
 ## Build it somewhere else
 

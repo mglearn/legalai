@@ -15,7 +15,7 @@ Run this before you rely on any AI-assisted work. If any box is unchecked, the w
 
 ## The duties behind the checklist
 
-These map to the Texas Disciplinary Rules of Professional Conduct. Rule numbers are illustrative; confirm the current text before relying on them.
+These map to the [Texas Disciplinary Rules of Professional Conduct](https://www.legalethicstexas.com/resources/rules/texas-disciplinary-rules-of-professional-conduct/). Rule numbers are illustrative; confirm the current text before relying on them.
 
 | Duty | Rule (Texas) | What it means for AI use |
 |---|---|---|
