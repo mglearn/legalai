@@ -1,0 +1,62 @@
+<svg viewBox="0 0 600 600" width="600" height="600" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <radialGradient id="bg" cx="50%" cy="36%" r="78%">
+      <stop offset="0%" stop-color="#1C4176"/>
+      <stop offset="58%" stop-color="#102A54"/>
+      <stop offset="100%" stop-color="#0A1A30"/>
+    </radialGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#F7FAFF"/>
+      <stop offset="100%" stop-color="#DFE8F4"/>
+    </linearGradient>
+    <linearGradient id="cardBack" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#D6E1F0"/>
+      <stop offset="100%" stop-color="#B9C8DE"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EEF3F9"/>
+      <stop offset="50%" stop-color="#C8D2DC"/>
+      <stop offset="100%" stop-color="#93AFCE"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#EBD27A"/>
+      <stop offset="55%" stop-color="#D4AF37"/>
+      <stop offset="100%" stop-color="#B4901F"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="7" stdDeviation="11" flood-color="#02060C" flood-opacity="0.42"/>
+    </filter>
+  </defs>
+
+  <!-- badge -->
+  <circle cx="300" cy="300" r="298" fill="url(#bg)"/>
+  <circle cx="300" cy="300" r="285" fill="none" stroke="url(#gold)" stroke-width="4" opacity="0.92"/>
+  <circle cx="300" cy="300" r="272" fill="none" stroke="url(#metal)" stroke-width="2.5" opacity="0.6"/>
+
+  <!-- back card (stack = library) -->
+  <g filter="url(#soft)">
+    <rect x="232" y="150" width="196" height="268" rx="18" fill="url(#cardBack)" stroke="#0B1D33" stroke-width="4" transform="rotate(6 330 284)"/>
+  </g>
+  <!-- front card -->
+  <g filter="url(#soft)">
+    <rect x="172" y="176" width="212" height="278" rx="20" fill="url(#card)" stroke="#0B1D33" stroke-width="4"/>
+  </g>
+
+  <!-- prompt marker: gold chevron + caret (a "prompt") -->
+  <path d="M204 214 L224 230 L204 246" fill="none" stroke="url(#gold)" stroke-width="9" stroke-linecap="round" stroke-linejoin="round"/>
+  <line x1="236" y1="246" x2="266" y2="246" stroke="url(#gold)" stroke-width="9" stroke-linecap="round"/>
+
+  <!-- prompt lines -->
+  <g stroke="#6F8FAF" stroke-width="12" stroke-linecap="round">
+    <line x1="204" y1="286" x2="352" y2="286"/>
+    <line x1="204" y1="320" x2="352" y2="320"/>
+    <line x1="204" y1="354" x2="330" y2="354"/>
+    <line x1="204" y1="388" x2="352" y2="388"/>
+    <line x1="204" y1="422" x2="300" y2="422"/>
+  </g>
+
+  <!-- gold spark -->
+  <g fill="url(#gold)">
+    <path d="M436 150 L444 178 L472 186 L444 194 L436 222 L428 194 L400 186 L428 178 Z"/>
+  </g>
+</svg>
