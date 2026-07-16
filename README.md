@@ -16,6 +16,8 @@ Self-contained HTML slide decks. Arrow keys to navigate, **S** for speaker notes
 - `2-risk-reducing-tcdlai.html` — structured prompting, the TCDLAi framework, grounding, verification
 - `3-guardrails-takeaways.html` — ethics checklist, do-and-do-not, documentation
 
+Editable **PowerPoint** versions of all four decks (with the same speaker notes on every slide) are in `pptx/`. They are generated from `build-pptx/` with PptxGenJS (`cd build-pptx && npm install && node gen.js`).
+
 ### Activities (`activities/`)
 - `fluency-self-assessment.html` — a five-question AI fluency self-check for legal practice
 - `pbl-scenario-lab.html` — three fictional fact patterns worked through TCDLAi, good to best
