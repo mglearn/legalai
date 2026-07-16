@@ -186,3 +186,7 @@ footer.page .cc{font-size:0.72rem;color:#5A6B8C;margin-top:0.5rem;}
 .tile-ico{float:right;width:64px;height:64px;object-fit:contain;margin:0 0 0.4rem 0.7rem;border-radius:10px;}
 .hdr-ico{float:right;width:110px;height:110px;object-fit:contain;border-radius:14px;background:#fff;padding:5px;margin:0 0 0.5rem 1.1rem;box-shadow:0 6px 18px rgba(0,0,0,.25);}
 [dir="rtl"] .hdr-ico{float:left;margin:0 1.1rem 0.5rem 0;}
+
+.qr-link{display:inline-flex;flex-direction:column;align-items:center;gap:0.35rem;margin-top:1rem;text-decoration:none;}
+.qr-link img{width:118px;height:118px;border-radius:8px;background:#fff;padding:6px;}
+.qr-link span{font-size:0.82rem;color:var(--gold);font-weight:700;letter-spacing:0.02em;}
