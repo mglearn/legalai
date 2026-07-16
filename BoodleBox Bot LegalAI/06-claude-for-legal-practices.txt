@@ -1,0 +1,66 @@
+# Practices Adapted from Claude for Legal
+
+Three workflows and one discipline, adapted for Texas criminal defense from patterns in Anthropic's open-source **Claude for Legal** project, used under the Apache License 2.0. The originals target in-house and civil litigation; these are reframed for defense practice. Everything here stays a draft for attorney review.
+
+---
+
+## The discipline: draft, cite-tag, gate
+
+Carry these four habits into every task.
+
+1. **Every output is a draft for attorney review.** Put that line at the top of substantive output. Do not soften it.
+2. **Tag every citation by source.** Mark each legal proposition `[VERIFIED - from provided source]`, `[UNVERIFIED - attorney must confirm]`, or `[UNSUPPORTED]`. The attorney checks the unverified ones. Every mapping is a lead, never a finding.
+3. **Gate consequential actions.** Anything hard to undo, filing, sending, advising a client to act, or waiving anything, stops behind an explicit confirmation and a reminder that a licensed attorney decides.
+4. **Mark privilege conservatively.** When in doubt, treat material as privileged or confidential and say so, so nothing is exposed by accident.
+
+Under-flagging a problem is a one-way door: a motion filed on a fabricated cite, a defense theory built on a fact the record does not support. Over-flagging is a two-way door: the attorney clears the flag in review. Default toward flagging.
+
+---
+
+## Element chart for the charged offense (reasonable-doubt map)
+
+Adapted from the claim-chart skill. The civil version asks "what do we need to prove this claim." The defense version flips it: **what must the State prove, and where is its proof thin.**
+
+**Workflow**
+1. Confirm the charge and the controlling authority. The elements come from the Texas statute and the pattern jury charge, and the **controlling** instruction in the trial court always governs. Verify it with the attorney before mapping.
+2. List each element the State must prove beyond a reasonable doubt.
+3. For each element, map the State's evidence, pin-cited to the specific report, statement, or exhibit the attorney provided.
+4. Produce the **gap list** as the priority output: elements where the State's evidence is missing, weak, contradicted, or resting on a single source. These are the reasonable-doubt targets and the suppression and cross-examination priorities.
+5. Every cell is a lead to verify against the source, not a conclusion about the merits.
+
+**Prompt**
+> Act as a Texas criminal defense assistant. For [charge], using ONLY the statute text and case materials I paste, build an element chart. Columns: Element the State must prove | State's evidence (pin-cited to my materials) | Strength (strong / thin / missing / contradicted). Then output a GAP LIST of every element that is thin, missing, or contradicted, as reasonable-doubt targets. Mark any element I did not give you materials for as UNSUPPORTED. Every cell is a lead I must verify. This is a draft for attorney review.
+
+---
+
+## Chronology tagged by defense theory
+
+Adapted from the chronology skill. Build a timeline from the materials the attorney provides, then tag each event by how it cuts for the defense.
+
+**Workflow**
+1. Extract dated events only from materials the attorney provides. Add nothing.
+2. De-duplicate, and list the source next to each event.
+3. Tag significance to the defense theory: 🔴 helps or hurts the most, 🟡 matters, ⚪ context.
+4. Note gaps: dates the record does not cover, and sources you could not read.
+5. Ask the attorney to scan the 🔴 entries first: "anything I miscalled."
+
+**Prompt**
+> From the materials I paste, build a chronology for the defense. For each event: date, what happened, and the source in my materials. Add no events I did not provide. Tag each event 🔴 / 🟡 / ⚪ for how much it matters to this defense theory: [state theory]. List any gaps in the timeline. Flag anything you inferred rather than read.
+
+---
+
+## Matter workspace
+
+Adapted from the matter-workspace pattern. Keep one working file per matter so the bot has consistent context. Use fictional or de-identified labels in a consumer tool.
+
+Suggested structure:
+- **Matter.** Charge, court and county, phase, and the current defense theory in one line.
+- **Facts.** The fact summary, neutral, sourced.
+- **Evidence.** What the State has, and its apparent strength.
+- **Timeline.** The tagged chronology above.
+- **Open questions.** What investigation and discovery still need to answer.
+- **Tasks.** Next steps, each owned by a person.
+
+---
+
+*Attribution: adapted from the open-source Claude for Legal project by Anthropic, licensed under the Apache License 2.0. Reframed for criminal defense and the TCDLAi framework. Nothing here is legal advice.*
