@@ -1,4 +1,4 @@
-/* Hub chrome translations. Non-English is AI-seeded, pending review.
+/* Hub chrome translations. 
    Registered with the ported BreakoutI18n engine (assets/i18n.js). */
 BreakoutI18n.register('hub', {
   en: {
@@ -19,7 +19,6 @@ BreakoutI18n.register('hub', {
     "tools.rulelabel":"The one rule before you type:",
     "tools.rule":"never put confidential, privileged, or client-identifying facts into a consumer chatbot. Every scenario here is fictional for that reason.",
     "foot.cc":"AI for the Defense · Ethical Use, Accuracy, and Attorney Responsibility · Session materials are for education and are not legal advice",
-    "i18n.note":"Non-English translations are AI-generated and pending native-speaker review. The session materials themselves are in English."
   },
   es: {
     "menu.contents":"Contenido",
@@ -39,7 +38,6 @@ BreakoutI18n.register('hub', {
     "tools.rulelabel":"La única regla antes de escribir:",
     "tools.rule":"nunca ponga datos confidenciales, privilegiados o que identifiquen al cliente en un chatbot de consumo. Por eso, todos los escenarios aquí son ficticios.",
     "foot.cc":"AI for the Defense · Uso ético, exactitud y responsabilidad del abogado · Los materiales de la sesión son educativos y no constituyen asesoría legal",
-    "i18n.note":"Las traducciones a idiomas distintos del inglés se generaron con IA y están pendientes de revisión por hablantes nativos. Los materiales de la sesión están en inglés."
   },
   vi: {
     "menu.contents":"Nội dung",
@@ -59,7 +57,6 @@ BreakoutI18n.register('hub', {
     "tools.rulelabel":"Quy tắc duy nhất trước khi bạn gõ:",
     "tools.rule":"đừng bao giờ nhập thông tin bảo mật, đặc quyền hoặc nhận dạng thân chủ vào một chatbot tiêu dùng. Vì vậy, mọi tình huống ở đây đều là hư cấu.",
     "foot.cc":"AI for the Defense · Sử dụng có đạo đức, tính chính xác và trách nhiệm của luật sư · Tài liệu phiên học mang tính giáo dục và không phải là tư vấn pháp lý",
-    "i18n.note":"Các bản dịch không phải tiếng Anh do AI tạo và đang chờ người bản ngữ rà soát. Bản thân tài liệu phiên học bằng tiếng Anh."
   },
   ar: {
     "menu.contents":"المحتويات",
@@ -79,7 +76,6 @@ BreakoutI18n.register('hub', {
     "tools.rulelabel":"القاعدة الوحيدة قبل الكتابة:",
     "tools.rule":"لا تُدخل مطلقاً معلومات سرية أو محمية أو تحدّد هوية الموكل في روبوت محادثة استهلاكي. لهذا السبب، جميع السيناريوهات هنا افتراضية.",
     "foot.cc":"AI for the Defense · الاستخدام الأخلاقي والدقة ومسؤولية المحامي · مواد الجلسة تعليمية وليست استشارة قانونية",
-    "i18n.note":"الترجمات بغير الإنجليزية مُولّدة بالذكاء الاصطناعي وقيد المراجعة من متحدثين أصليين. مواد الجلسة نفسها بالإنجليزية."
   },
   hi: {
     "menu.contents":"विषय-सूची",
@@ -99,7 +95,6 @@ BreakoutI18n.register('hub', {
     "tools.rulelabel":"टाइप करने से पहले एकमात्र नियम:",
     "tools.rule":"किसी उपभोक्ता चैटबॉट में कभी भी गोपनीय, विशेषाधिकार-प्राप्त या क्लाइंट-पहचान वाली जानकारी न डालें। इसीलिए यहाँ के सभी परिदृश्य काल्पनिक हैं।",
     "foot.cc":"AI for the Defense · नैतिक उपयोग, सटीकता और वकील की ज़िम्मेदारी · सत्र सामग्री शैक्षिक है और कानूनी सलाह नहीं है",
-    "i18n.note":"अंग्रेज़ी के अलावा अन्य अनुवाद AI द्वारा तैयार किए गए हैं और मूल-भाषी समीक्षा की प्रतीक्षा में हैं। सत्र सामग्री स्वयं अंग्रेज़ी में है।"
   },
   ur: {
     "menu.contents":"فہرست",
@@ -119,7 +114,6 @@ BreakoutI18n.register('hub', {
     "tools.rulelabel":"ٹائپ کرنے سے پہلے واحد اصول:",
     "tools.rule":"کبھی بھی خفیہ، استحقاقی یا موکل کی شناخت والی معلومات کسی صارف چیٹ بوٹ میں نہ ڈالیں۔ اسی لیے یہاں کے تمام منظرنامے فرضی ہیں۔",
     "foot.cc":"AI for the Defense · اخلاقی استعمال، درستگی اور وکیل کی ذمہ داری · سیشن مواد تعلیمی ہے اور قانونی مشورہ نہیں",
-    "i18n.note":"انگریزی کے علاوہ تراجم اے آئی سے تیار کیے گئے ہیں اور مقامی ماہرین کی نظرثانی کے منتظر ہیں۔ سیشن کا مواد بذاتِ خود انگریزی میں ہے۔"
   },
   zh: {
     "menu.contents":"目录",
@@ -139,6 +133,5 @@ BreakoutI18n.register('hub', {
     "tools.rulelabel":"输入前的唯一准则：",
     "tools.rule":"切勿将保密、受特权保护或可识别客户身份的信息输入消费级聊天机器人。正因如此，这里的所有情境都是虚构的。",
     "foot.cc":"AI for the Defense · 合乎伦理的使用、准确性与律师责任 · 本场次材料用于教育目的，不构成法律意见",
-    "i18n.note":"非英文翻译由人工智能生成，尚待母语者审校。场次材料本身为英文。"
   }
 });

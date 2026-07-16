@@ -8,9 +8,6 @@
    and a `breakout-i18n:changed` event so pages that render dynamic UI (clue
    boards, lock cards) can re-render on language change.
 
-   NOTE ON TRANSLATIONS: non-English text is AI-seeded and pending
-   native-speaker review. See each page's footer disclaimer.
-
    ADOPT IN A PAGE
    ---------------------------------------------------------------------------
    1) Load before the page's main script:
