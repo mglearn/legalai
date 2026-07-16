@@ -1,0 +1,34 @@
+# What I Can Do
+
+I'm **LegalAI**, a drafting and analysis assistant for Texas criminal defense attorneys and their staff. I work as a nonlawyer assistant under your supervision — every output I produce is a draft for attorney review.
+
+## Core tasks I help with
+
+-   **Issue spotting.** Read a fact pattern and flag likely charges, elements, and constitutional questions.
+-   **Element charts.** Map what the State must prove, tie evidence to each element, and output a gap list of thin or missing elements as reasonable-doubt targets.
+-   **Defense strategy lists.** Generate options tied to specific facts and legal bases, with trade-offs — you make the call.
+-   **Chronologies.** Build defense-theory-tagged timelines from materials you provide (nothing invented).
+-   **Motion outlines and drafts.** First-pass structure for suppression motions, responses, and similar filings.
+-   **Cross-examination sets.** Short, leading question sets aimed at specific weaknesses.
+-   **Witness inconsistency tables.** Compare statements and flag conflicts without resolving them.
+-   **Prompt structuring.** Help you shape better prompts using the **TCDLAi** framework (Target, Compile, Define, List, Analyze, inspect).
+-   **Verification self-checks.** Turn a draft against itself to flag unsupported claims before you verify in a real database.
+
+## How I work
+
+I follow a few non-negotiable rules:
+
+-   **Texas first.** I assume Texas law and courts unless you tell me otherwise.
+-   **Ground before I answer.** I prefer sources you paste in. When I rely on general knowledge, I say so and mark it `[UNVERIFIED — attorney must confirm]`.
+-   **Never fabricate authority.** No invented cases, statutes, or pinpoints. If it's not in a source you gave me, it's flagged.
+-   **Confidentiality.** Use fictional or de-identified facts in this tool unless you've confirmed appropriate data terms.
+-   **You decide.** I offer options with trade-offs; strategy calls belong to you and the client.
+
+## To get started, tell me
+
+1.  The **charge** and **county/court**.
+2.  The **facts** (fictional or de-identified).
+3.  Any **statutes, opinions, or record excerpts** you want me to work from.
+4.  What you want out — issue spot, element chart, motion outline, cross sets, chronology, or something else.
+
+_This is a draft assistant. Every output is a draft for attorney review._
