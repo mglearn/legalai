@@ -3,28 +3,28 @@
    Shared by every deck in this repository.
    ============================================================ */
 
-/* ── Palette (TCEA brand) ─────────────────────────────────── */
+/* ── Palette (blue and silver) ─────────────────────────────────── */
 :root {
-  --navy:    #0A3476;
-  --navy-dk: #071F4A;
-  --navy-md: #14428C;
-  --gold:    #FCB040;
-  --gold-lt: #FDD17A;
-  --gold-dk: #E09A25;
+  --navy:    #102A54;
+  --navy-dk: #0B1D33;
+  --navy-md: #2F5F8F;
+  --gold:    #6F8FAF;   /* steel blue — primary accent (formerly gold) */
+  --gold-lt: #C8D2DC;   /* silver — light accent */
+  --gold-dk: #2F5F8F;   /* deep steel — emphasis text */
   --white:   #FFFFFF;
-  --lgray:   #F4F6FA;
-  --mgray:   #E2E8F0;
-  --slate:   #475569;
-  --text:    #1E293B;
-  --good:    #64748B;
-  --better:  #14428C;
-  --best:    #0A3476;
-  --red:     #991B1B;
-  --red-bg:  #FEF2F2;
-  --red-bd:  #FCA5A5;
-  --green:   #166534;
-  --green-bg:#F0FDF4;
-  --green-bd:#86EFAC;
+  --lgray:   #F7F9FC;
+  --mgray:   #D8DEE6;
+  --slate:   #4F6072;
+  --text:    #22303C;
+  --good:    #6B7A8C;
+  --better:  #2F5F8F;
+  --best:    #102A54;
+  --red:     #102A54;   /* "do not" column — navy (heavier, authoritative) */
+  --red-bg:  #EFF2F6;
+  --red-bd:  #C8D2DC;
+  --green:   #2F5F8F;   /* "do" column — steel blue */
+  --green-bg:#EAEFF5;
+  --green-bd:#9DB4CE;
 
   --slide-w: 1280px;
   --slide-h: 720px;
@@ -227,8 +227,8 @@ html, body {
 .guardrail-col.willnot h4 { color: var(--red); }
 .guardrail-col ul { list-style: none; display: flex; flex-direction: column; gap: 8px; }
 .guardrail-col li { font-size: 15px; line-height: 1.4; padding-left: 22px; position: relative; }
-.guardrail-col.will li { color: #14532D; }
-.guardrail-col.willnot li { color: #7F1D1D; }
+.guardrail-col.will li { color: #2A4A6E; }
+.guardrail-col.willnot li { color: #1B2E48; }
 .guardrail-col.will li::before { content:'✓'; position:absolute; left:0; color:var(--green); font-weight:700; }
 .guardrail-col.willnot li::before { content:'✗'; position:absolute; left:0; color:var(--red); font-weight:700; }
 
@@ -273,7 +273,7 @@ html, body {
 
 /* Activity scenario card */
 .scenario {
-  margin-top: 16px; background: #FFFBEF; border: 2px solid var(--gold); border-radius: 10px; padding: 18px 20px;
+  margin-top: 16px; background: #EEF2F7; border: 2px solid var(--gold); border-radius: 10px; padding: 18px 20px;
 }
 .scenario .scenario-label { font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--gold-dk); margin-bottom: 6px; }
 .scenario p { font-size: 16.5px; color: var(--text); line-height: 1.5; }
@@ -325,7 +325,7 @@ a.inline { color: var(--navy); font-weight: 700; text-decoration: underline; tex
 }
 #controls:hover { opacity: 1; }
 #controls button {
-  background: rgba(10, 52, 118, 0.85); color: #EAF0FB; border: 1px solid rgba(252,176,64,0.4);
+  background: rgba(16,42,84,0.85); color: #EAF0FB; border: 1px solid rgba(159,180,206,0.55);
   border-radius: 6px; width: 34px; height: 34px; cursor: pointer; font-size: 15px;
   display: flex; align-items: center; justify-content: center; transition: background 0.15s;
 }
@@ -337,7 +337,7 @@ a.inline { color: var(--navy); font-weight: 700; text-decoration: underline; tex
 
 /* Help overlay */
 #help {
-  position: fixed; inset: 0; background: rgba(7,31,74,0.92); z-index: 100;
+  position: fixed; inset: 0; background: rgba(11,29,51,0.92); z-index: 100;
   display: none; align-items: center; justify-content: center;
 }
 #help.open { display: flex; }
