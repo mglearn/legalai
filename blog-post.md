@@ -35,7 +35,7 @@ Any of these free chatbots will carry you through everything on the site: [Claud
 
 ## A note for your colleagues
 
-The resources page reads in several languages, so it is easy to share across your office. The non-English translations are AI-assisted and pending review, and the underlying materials are in English. If a paralegal, an investigator, or a newer attorney wants a low-stakes way to try structured, verifiable AI, the Scenario Bank and the fluency self-check are a friendly place to begin.
+The resources page reads in several languages, so it is easy to share across your office. If a paralegal, an investigator, or a newer attorney wants a low-stakes way to try structured, verifiable AI, the Scenario Bank and the fluency self-check are a friendly place to begin.
 
 ## Take it with you
 
