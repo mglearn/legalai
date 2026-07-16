@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Prompt Library | AI for the Defense | TCDLA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/pages.css">
+<style>
+  .toolbar{position:sticky;top:34px;z-index:150;background:var(--lgray);padding:0.8rem 0;margin-bottom:0.4rem;border-bottom:1px solid var(--mgray);}
+  .toolbar .row{display:flex;gap:0.5rem;flex-wrap:wrap;align-items:center;}
+  .toolbar .lbl{font-size:0.72rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);margin-right:0.3rem;}
+  .catnav{display:flex;gap:0.4rem;flex-wrap:wrap;margin-top:0.5rem;}
+  .catnav a{font-size:0.78rem;text-decoration:none;color:var(--navy);background:#fff;border:1px solid var(--mgray);padding:0.28rem 0.7rem;border-radius:999px;font-weight:600;}
+  .catnav a:hover{background:var(--navy);color:#fff;border-color:var(--navy);}
+  .plist{display:grid;grid-template-columns:1fr 1fr;gap:1rem;margin-bottom:1.6rem;}
+  .pcard{background:#fff;border:1px solid var(--mgray);border-radius:8px;padding:1rem 1.1rem;display:flex;flex-direction:column;}
+  .pcard.hide{display:none;}
+  .pcard .top{display:flex;justify-content:space-between;align-items:flex-start;gap:0.6rem;margin-bottom:0.3rem;}
+  .pcard h3{font-size:1rem;color:var(--navy);line-height:1.2;}
+  .ptype{font-size:0.6rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:0.16rem 0.5rem;border-radius:3px;white-space:nowrap;}
+  .ptype.short{background:#E7EEFB;color:var(--navy);}
+  .ptype.long{background:var(--gold-lt);color:var(--navy-dk);}
+  .ptype.system{background:var(--navy);color:var(--gold);}
+  .pcard .pd{font-size:0.85rem;color:var(--slate);margin-bottom:0.6rem;line-height:1.45;}
+  .cat-head{scroll-margin-top:120px;}
+  @media (max-width:760px){.plist{grid-template-columns:1fr;} .toolbar{top:34px;}}
+</style>
+</head>
+<body>
+<div class="back-bar"><a href="../index.html"><span>←</span> AI for the Defense <span class="sep">/</span> Resources</a></div>
+
+<header class="page">
+  <div class="header-inner">
+    <span class="eyebrow">Takeaway · copy and reuse</span>
+    <h1>Legal Prompt Library</h1>
+    <div class="header-sub">Defense-oriented prompts, organized by type and task</div>
+    <div class="header-meta">Works with Claude, ChatGPT, Z.ai, Mistral, and BoodleBox · Every output is a draft for attorney review</div>
+  </div>
+</header>
+
+<main>
+  <p class="lead-p">Each prompt is built to keep the model grounded and to push you toward verification. Replace bracketed fields, and paste your <strong>fictional or de-identified</strong> facts. Filter by length, or jump to a category. Select <strong>Copy</strong> on any card.</p>
+
+  <div class="toolbar">
+    <div class="row">
+      <span class="lbl">Type</span>
+      <button class="btn ghost active" data-t="all" onclick="setType('all',this)">All</button>
+      <button class="btn ghost" data-t="short" onclick="setType('short',this)">Short</button>
+      <button class="btn ghost" data-t="long" onclick="setType('long',this)">Long</button>
+      <button class="btn ghost" data-t="system" onclick="setType('system',this)">System</button>
+    </div>
+    <div class="catnav" id="catnav"></div>
+  </div>
+
+  <div id="lib"></div>
+
+  <div class="note"><strong>Reuse freely.</strong> These prompts are shared for the TCDLA community under a CC0 dedication. Adapt them to your practice. Nothing here is legal advice, and every citation the model gives you is a lead to verify, not an authority to cite.</div>
+</main>
+
+<footer class="page">
+  <div class="fin">
+    <div class="brand">Texas Criminal Defense Lawyers Association</div>
+    <p><a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · <a href="https://mglearn.github.io/legalai">mglearn.github.io/legalai</a></p>
+    <p class="cc">AI for the Defense · Legal Prompt Library</p>
+  </div>
+</footer>
+
+<script src="../assets/deck-framework.js"></script>
+<script>
+const CATS = [
+  ['eng','⚙️ Prompt Engineering'],
+  ['analysis','⚖️ Case Analysis and Strategy'],
+  ['writing','✍️ Legal Writing and Drafting'],
+  ['client','💬 Client Communication'],
+  ['verify','🔎 Verification and Cite-Checking'],
+  ['invest','🔍 Investigation and Preparation'],
+  ['assist','🤖 Custom Assistants']
+];
+const P = [
+  // Prompt Engineering
+  {c:'eng',t:'short',title:'Role, Context, Task, Format',desc:'The foundational four-part prompt. Persona, facts, ask, and output shape, plus a grounding rule.',
+   x:'Act as [role, e.g., a Texas criminal defense attorney]. Context: [facts and jurisdiction]. Task: [what you want produced]. Format: [shape and length]. Rules: cite only sources I provide, and flag anything you are unsure of.'},
+  {c:'eng',t:'short',title:'Add a few-shot example',desc:'Examples steer the model harder than instructions. Show one, then ask for more of the same.',
+   x:'Here is one example of the output I want:\n[example]\nNow produce the same for this input, matching the structure exactly:\n[new input]'},
+  {c:'eng',t:'long',title:'The TCDLAi walk-through',desc:'Move a defense task through all six framework letters in one structured prompt.',
+   x:'Act as a Texas criminal defense assistant. Work in these steps and label each.\nT - Target: restate the precise legal issue, charge, and jurisdiction from: [facts].\nC - Compile: organize the key facts and evidence. Add nothing.\nD - Define: using ONLY this source, state the governing law: [statute/opinion text].\nL - List: five defense strategies, each tied to a fact and a basis.\nA - Analyze: the strongest prosecution response to each.\ni - Inspect: quote the exact support for each claim, or mark it UNSUPPORTED.\nThis is a draft for attorney review.'},
+  {c:'eng',t:'short',title:'Iterative prompt refiner',desc:'Have the model help you build a better prompt before you run it.',
+   x:'I want to accomplish [goal] with an AI tool. Ask me up to five questions that would help you write a precise, grounded prompt for this. After I answer, produce the improved prompt and explain each choice.'},
+  {c:'eng',t:'short',title:'Grounding guardrail add-on',desc:'A single line you can append to any prompt to cut invention.',
+   x:'Answer using ONLY the sources I paste in this chat. If the sources do not address something, say the sources are silent and do not fill the gap. Mark any statement drawn from general knowledge as [UNVERIFIED].'},
+
+  // Case Analysis
+  {c:'analysis',t:'short',title:'Issue spot',desc:'Surface the legal issues and constitutional questions in a fact pattern.',
+   x:'Act as a Texas criminal defense assistant. Facts: [paste fictional facts]. Identify the top legal issues, the likely charges, and any constitutional questions raised. Do not add facts. Mark anything you are unsure about.'},
+  {c:'analysis',t:'long',title:'Grounded defense strategies',desc:'List strategies tied to facts and a provided source, with gaps flagged.',
+   x:'Using ONLY the statute text I paste below, list five defense strategies for these facts. For each: (1) the strategy, (2) the single supporting fact, (3) the legal basis. Flag any strategy the source does not support, and invent no case law.\nFACTS: [paste]\nSOURCE: [paste statute or opinion text]'},
+  {c:'analysis',t:'short',title:'Elements checklist',desc:'Break a charge into what the State must prove, from a provided source.',
+   x:'From the statute text I paste, list each element the State must prove for [charge], as a checklist. For each element, note what evidence in my facts supports or undercuts it. Source: [paste]. Facts: [paste].'},
+  {c:'analysis',t:'short',title:'Stress-test a theory',desc:'Pressure a defense theory by anticipating the prosecution.',
+   x:'Here is my defense theory: [theory]. Anticipate the three strongest prosecution responses. For each, suggest how I might answer, and name any weakness that could sink the theory.'},
+  {c:'analysis',t:'short',title:'Compare two defenses',desc:'Weigh trade-offs between competing approaches.',
+   x:'Compare the pros and cons of [defense A] versus [defense B] for these facts: [paste]. Consider consistency with the facts, jury appeal, and risk. Do not recommend one; lay out the trade-offs for my decision.'},
+
+  // Legal Writing
+  {c:'writing',t:'long',title:'Motion outline (draft for review)',desc:'A structured outline with citations left blank for you to verify and insert.',
+   x:'Draft an outline for a [motion type] based ONLY on these facts and this excerpt. Structure: introduction, statement of facts, legal standard, argument, conclusion. Leave every citation as [UNVERIFIED - insert]. Add nothing not supported by my materials. This is a draft for attorney review.\nFACTS: [paste]\nEXCERPT: [paste]'},
+  {c:'writing',t:'short',title:'Tighten and clarify',desc:'Improve a passage without changing meaning or facts.',
+   x:'Revise this passage for clarity and concision. Keep every factual and legal detail unchanged. Do not add citations. Flag any sentence that reads as overstated. [paste passage]'},
+  {c:'writing',t:'short',title:'Plain-language rewrite',desc:'Turn dense legal text into something a client can read.',
+   x:'Rewrite this at an eighth-grade reading level, warm and clear, no legalese, under 200 words. Keep every factual detail unchanged and add no promises about outcomes. [paste draft]'},
+  {c:'writing',t:'short',title:'Counter-argument draft',desc:'Draft the response to an opposing argument.',
+   x:'The State argues: [paste argument]. Draft a concise counter-argument outline grounded only in these facts and this source. Mark citations [UNVERIFIED - insert]. Facts: [paste]. Source: [paste].'},
+
+  // Client Communication
+  {c:'client',t:'short',title:'Explain a charge simply',desc:'A calm, plain explanation for a nervous client.',
+   x:'Explain what [charge] means under Texas law in plain language for a nervous client. Cover, at a high level, what the State must prove and what happens next. Note that specifics depend on the facts and on the attorney\'s advice.'},
+  {c:'client',t:'short',title:'Status update letter',desc:'A warm, honest update that avoids promising outcomes.',
+   x:'Draft a short client status-update letter based on these notes: [paste]. Tone: warm, honest, and reassuring without promising any outcome. Under 180 words. Keep all facts unchanged.'},
+  {c:'client',t:'short',title:'Answer an anxious question',desc:'Respond to a worried client message with care and accuracy.',
+   x:'A client wrote: [paste message]. Draft a compassionate reply that answers what I can answer, avoids legal promises, and invites them to a call for specifics. Keep it under 150 words.'},
+
+  // Verification
+  {c:'verify',t:'short',title:'Self-check the last answer',desc:'Force the model to show its support or retract the claim.',
+   x:'Review your last answer. For each citation and legal proposition, quote the exact sentence in my provided sources that supports it, or mark it [UNVERIFIED] or [UNSUPPORTED]. Remove anything you cannot support.'},
+  {c:'verify',t:'short',title:'Compare summary to source',desc:'Catch where a summary drifts from the source text.',
+   x:'I am pasting a source excerpt and a summary. Identify every place the summary states something the excerpt does not support, quoting both. [EXCERPT] / [SUMMARY]'},
+  {c:'verify',t:'short',title:'Citation reality check',desc:'Make the model separate what it knows from what it is guessing.',
+   x:'For each case or statute you cited, tell me: did it come from a source I pasted, or from your general training. Mark the second group [UNVERIFIED - attorney must confirm]. Do not add new citations.'},
+
+  // Investigation
+  {c:'invest',t:'long',title:'Witness inconsistency table',desc:'Map factual claims across statements and flag conflicts.',
+   x:'From these witness statements, build a table of factual claims. Columns: claim, which witness asserts it, and any conflicting account. Flag every inconsistency and every point only one witness makes. Do not resolve them. [paste statements]'},
+  {c:'invest',t:'short',title:'Cross-examination sets',desc:'Short leading questions aimed at specific weaknesses.',
+   x:'Based ONLY on these facts, draft three cross-examination question sets for [witness], each aimed at a specific weakness. Keep questions short and leading. [paste facts]'},
+  {c:'invest',t:'short',title:'Timeline builder',desc:'Turn scattered facts into an ordered timeline with gaps flagged.',
+   x:'Build a chronological timeline from these facts. Note the source of each entry, and flag any gaps or ambiguous timing. Add no events I did not provide. [paste facts]'},
+  {c:'invest',t:'short',title:'Discovery question list',desc:'Generate questions to guide your own review, not to file.',
+   x:'Given these facts, list the factual questions I should answer through investigation and discovery before building a defense. Group them by topic. This is a checklist for my own use. [paste facts]'},
+
+  // Custom Assistants
+  {c:'assist',t:'system',title:'LegalAI defense assistant',desc:'A system prompt for a grounded, verification-first defense bot. Full version in the BoodleBox folder.',
+   x:'You are LegalAI, a drafting and analysis assistant for Texas criminal defense. You are a nonlawyer assistant supervised by a licensed attorney. Rules: every output is a draft for attorney review; never fabricate authority and mark uncertain citations [UNVERIFIED]; ground answers in sources the user provides; remind the user to use fictional or de-identified facts; assume Texas law; ask for missing facts rather than inventing them; never choose strategy for the attorney. Structure substantive work with the TCDLAi framework and end with a verification list.'},
+  {c:'assist',t:'system',title:'Cite-check reviewer bot',desc:'A narrow assistant whose only job is to check claims against sources.',
+   x:'You are a citation and accuracy reviewer for legal drafts. Given a draft and its source materials, your only job is to flag: (1) citations not present in the provided sources, (2) claims the sources do not support, and (3) quotations that do not match. Output a table with claim, status (VERIFIED / UNVERIFIED / UNSUPPORTED), and the supporting source sentence if any. Never add new legal content.'},
+  {c:'assist',t:'system',title:'Intake summarizer bot',desc:'Turns rough intake notes into a structured, fact-only summary.',
+   x:'You are an intake summarizer for a criminal defense office. Given rough notes, produce: a neutral fact summary, a list of charges mentioned, open questions, and next steps. Add no facts and no legal conclusions. Use fictional stand-ins if the user includes identifying details, and remind them once to de-identify.'}
+];
+
+let curType='all';
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function render(){
+  document.getElementById('catnav').innerHTML = CATS.map(c=>'<a href="#cat-'+c[0]+'">'+c[1]+'</a>').join('');
+  let html='';
+  let idc=0;
+  CATS.forEach(cat=>{
+    const items=P.filter(p=>p.c===cat[0]);
+    html+='<h2 class="section-label cat-head" id="cat-'+cat[0]+'">'+cat[1]+'</h2><div class="plist">';
+    items.forEach(p=>{
+      const id='pl'+(idc++);
+      html+='<div class="pcard" data-type="'+p.t+'">'+
+        '<div class="top"><h3>'+p.title+'</h3><span class="ptype '+p.t+'">'+p.t+'</span></div>'+
+        '<div class="pd">'+p.desc+'</div>'+
+        '<div class="promptbox" id="'+id+'"><button class="copy-btn" data-target="'+id+'" onclick="copyText(this,event)">Copy</button>'+esc(p.x)+'</div>'+
+      '</div>';
+    });
+    html+='</div>';
+  });
+  document.getElementById('lib').innerHTML=html;
+  applyFilter();
+}
+function setType(t,btn){
+  curType=t;
+  document.querySelectorAll('.toolbar .btn').forEach(b=>b.classList.remove('active'));
+  btn.classList.add('active');
+  applyFilter();
+}
+function applyFilter(){
+  document.querySelectorAll('.pcard').forEach(c=>{
+    c.classList.toggle('hide', curType!=='all' && c.getAttribute('data-type')!==curType);
+  });
+  // hide empty category sections
+  document.querySelectorAll('.plist').forEach(list=>{
+    const anyVisible=[...list.querySelectorAll('.pcard')].some(c=>!c.classList.contains('hide'));
+    list.style.display=anyVisible?'grid':'none';
+    const head=list.previousElementSibling;
+    if(head&&head.classList.contains('cat-head')) head.style.display=anyVisible?'flex':'none';
+  });
+}
+render();
+</script>
+</body>
+</html>

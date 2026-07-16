@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Risk-Reducing Practices and TCDLAi | AI for the Defense | TCDLA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/deck-framework.css">
+<style>
+  .tcdlai-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:14px; margin-top:16px; }
+  .letter { background:var(--lgray); border:1px solid var(--mgray); border-radius:8px; padding:14px 16px; position:relative; }
+  .letter .lt { position:absolute; top:12px; right:14px; font-family:'Playfair Display',serif; font-weight:900; font-size:30px; color:var(--gold); line-height:1; }
+  .letter h4 { font-family:'Playfair Display',serif; color:var(--navy); font-size:15.5px; margin-bottom:5px; padding-right:34px; }
+  .letter p { font-size:13px; color:var(--slate); line-height:1.4; }
+  .figure { margin:14px auto 0; text-align:center; }
+  .figure img { max-height:430px; max-width:96%; border:1px solid var(--mgray); border-radius:10px; box-shadow:0 8px 24px rgba(10,52,118,0.12); }
+  .figure figcaption { font-size:13px; color:var(--slate); margin-top:8px; font-style:italic; }
+  .tier3 { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px; }
+  .tcard { border:1.5px solid; border-radius:8px; overflow:hidden; display:flex; flex-direction:column; }
+  .tcard .th { padding:8px 12px; color:#fff; font-weight:700; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; }
+  .tcard.good { border-color:var(--good); } .tcard.good .th { background:var(--good); }
+  .tcard.better { border-color:var(--better); } .tcard.better .th { background:var(--better); }
+  .tcard.best { border-color:var(--best); } .tcard.best .th { background:var(--best); }
+  .tcard .tb { padding:10px 12px; font-family:'Source Code Pro',monospace; font-size:12.5px; line-height:1.5; color:var(--text); background:#fff; flex:1; }
+  .tcard.best .tb { background:#F5F8FD; }
+</style>
+</head>
+<body>
+<div class="deck">
+
+  <!-- 1 · DIVIDER -->
+  <section class="slide divider current">
+    <div class="slide-body">
+      <div class="seg-num">2</div>
+      <div class="divider-eyebrow">Segment Two · about 25 minutes</div>
+      <h1>Risk-Reducing AI Practices</h1>
+      <div class="subtitle">Structure, grounding, and verification. The techniques that turn a risky tool into a checkable one.</div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>We just spent twenty minutes on why AI is risky. Now we spend twenty-five on how to make it far less so. This is the working heart of the session, and it is where you will do the most typing.</p>
+      <p>Three moves do most of the work. Give the model structure so it cannot wander. Ground it in sources you trust instead of its own memory. And verify what comes back before you rely on it.</p>
+      <p>We will build all three around a framework made for this audience, called TCDLAi. Let us start with why the way most people prompt makes things worse.</p>
+    </div>
+  </section>
+
+  <!-- 2 · UNSTRUCTURED PROMPTS -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">The root problem</div>
+      <h2 class="slide-title">Vague prompts raise ethical risk, not just poor quality</h2>
+      <div class="compare">
+        <div class="compare-col alt">
+          <h3>Unstructured prompt</h3>
+          <ul>
+            <li>"Write me a motion to suppress"</li>
+            <li>No issue, no facts, no jurisdiction, no sources</li>
+            <li>Model fills the gaps by inventing</li>
+            <li>Confident, generic, and often wrong</li>
+          </ul>
+        </div>
+        <div class="compare-col">
+          <h3>Structured prompt</h3>
+          <ul>
+            <li>Names the issue, facts, court, and required sources</li>
+            <li>Tells the model what it may not assume</li>
+            <li>Asks for gaps and uncertainty to be flagged</li>
+            <li>Produces a checkable draft, not a guess</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reflect"><span>💡</span><p><strong>The link to ethics.</strong> The less you specify, the more the model invents. Structure is not about polish. It is about shrinking the room for fabrication.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Start with the root problem. Most people type something like write me a motion to suppress and hit enter. That single line has no issue, no facts, no court, and no sources. So the model does what it always does with a gap. It fills it, by inventing.</p>
+      <p>Here is the connection I want you to hold. The less you specify, the more the model has to make up. Vague prompting is not just a quality problem, it is an ethics problem, because invention is exactly the failure we are trying to avoid.</p>
+      <p>The fix on the right is not fancy. Name the issue, the facts, the jurisdiction, and the sources it must use. Tell it what it may not assume. Structure shrinks the room for fabrication, and that is why we lead with it.</p>
+    </div>
+  </section>
+
+  <!-- 3 · STRUCTURED PROMPTING BASICS -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">The foundation</div>
+      <h2 class="slide-title">Four parts every serious prompt should carry</h2>
+      <div class="grid cols-2">
+        <div class="card"><h3>Role</h3><p>Tell the model who to be. "Act as a Texas criminal defense attorney preparing for a suppression hearing."</p></div>
+        <div class="card"><h3>Context</h3><p>Give the facts, the jurisdiction, and the constraints. The fictional stand-in facts go here.</p></div>
+        <div class="card gold"><h3>Task</h3><p>State exactly what you want produced, and how long or detailed it should be.</p></div>
+        <div class="card gold"><h3>Format and limits</h3><p>Set the output shape, and add the guardrail. "Cite only sources I provide. Flag anything you are unsure of."</p></div>
+      </div>
+      <div class="reflect"><span>➕</span><p><strong>Few-shot boost.</strong> Add one or two short examples of the output you want. Examples steer the model harder than instructions alone.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Here is the foundation you can teach anyone in your office in five minutes. Four parts. Role, context, task, and format with limits.</p>
+      <p>Role tells the model who to be, which shapes its tone and focus. Context is where the facts, the jurisdiction, and the constraints live, and where your fictional stand-in facts go. Task states exactly what you want and how much of it. Format and limits set the shape and, most importantly, add the guardrail sentence. Cite only what I give you, and flag anything you are unsure about.</p>
+      <p>One more lever. Add a short example or two of the output you want. We call that few-shot prompting, and examples steer the model harder than instructions alone. Now let me show you how the same task improves across three tiers.</p>
+    </div>
+  </section>
+
+  <!-- 4 · GOOD BETTER BEST -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Good, better, best</div>
+      <h2 class="slide-title">Watch one task climb three tiers</h2>
+      <p class="muted" style="font-size:15px">Task: identify defenses for a fictional driving-while-intoxicated stop.</p>
+      <div class="tier3">
+        <div class="tcard good">
+          <div class="th">Good · fast draft</div>
+          <div class="tb">"What are some defenses to a DWI?"</div>
+        </div>
+        <div class="tcard better">
+          <div class="th">Better · structured</div>
+          <div class="tb">"Act as a Texas criminal defense attorney. For a first DWI stop with a refused breath test, list five defense angles with the legal basis for each. Texas law only."</div>
+        </div>
+        <div class="tcard best">
+          <div class="th">Best · structured, grounded, checked</div>
+          <div class="tb">"Act as a Texas criminal defense attorney. Facts: [fictional stop]. Using only the statutes and cases I paste below, list five defense angles, each with its basis and the single fact that supports it. Flag any angle the pasted sources do not support. Do not cite outside sources."</div>
+        </div>
+      </div>
+      <div class="reflect"><span>📈</span><p><strong>The climb.</strong> Each tier adds role, then structure, then grounding and a verification flag. Risk falls at every step.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Let us make this concrete with one task climbing three tiers. The task is finding defenses for a fictional driving-while-intoxicated stop.</p>
+      <p>The good version is what most people type. What are some defenses to a DWI. You will get a generic list that may or may not fit Texas. The better version adds a role, the specific facts, a number, and a jurisdiction limit. Already much stronger. The best version adds the two moves that matter most for us. It grounds the model in sources you paste, and it tells the model to flag any angle those sources do not support.</p>
+      <p>Notice the climb. Role, then structure, then grounding plus a verification flag. Risk drops at every step. This progression is the spine of the framework we turn to now.</p>
+    </div>
+  </section>
+
+  <!-- 5 · TCDLAi OVERVIEW IMAGE -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">A framework for this room</div>
+      <h2 class="slide-title">The TCDLAi Prompt Design Guide</h2>
+      <figure class="figure">
+        <img src="../assets/tcdlai-framework.webp" alt="TCDLAi Prompt Design Guide: Target, Compile, Define, List, Analyze, inspect">
+        <figcaption>Six moves that walk a defense task from the legal issue to a checked result.</figcaption>
+      </figure>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>This is the TCDLAi Prompt Design Guide, and the name is the method. Six moves, one per letter, that walk a defense task from the raw legal issue all the way to a result you have checked.</p>
+      <p>Target the legal issue. Compile the relevant facts and evidence. Define the applicable laws and precedents. List potential defense strategies. Analyze and articulate the arguments. And the small i, which is the one people skip and the one that saves you, inspect and improve the AI's results.</p>
+      <p>You do not have to use all six every time. But when a task matters, running the letters in order keeps the model focused and keeps you in the driver's seat. Let us break the letters down.</p>
+    </div>
+  </section>
+
+  <!-- 6 · TCDLAi BREAKDOWN -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Six moves, in order</div>
+      <h2 class="slide-title">TCDLAi, letter by letter</h2>
+      <div class="tcdlai-grid">
+        <div class="letter"><span class="lt">T</span><h4>Target the issue</h4><p>Frame the precise legal question, charge, and jurisdiction for the model.</p></div>
+        <div class="letter"><span class="lt">C</span><h4>Compile facts</h4><p>Give the model the facts and evidence to organize and prioritize.</p></div>
+        <div class="letter"><span class="lt">D</span><h4>Define the law</h4><p>Point it to the statutes and precedents it must work from, not its memory.</p></div>
+        <div class="letter"><span class="lt">L</span><h4>List strategies</h4><p>Ask for defense approaches, each tied to a fact and a basis.</p></div>
+        <div class="letter"><span class="lt">A</span><h4>Analyze arguments</h4><p>Have it stress-test strategies and anticipate the prosecution.</p></div>
+        <div class="letter"><span class="lt">i</span><h4>Inspect results</h4><p>Critically review, hunt bias and gaps, and refine. This step is yours.</p></div>
+      </div>
+      <div class="callout light"><span class="label">The small i is the point</span><p>Uppercase letters make the draft. The lowercase i is where the lawyer stays a lawyer.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Here are the six moves in order. Target the issue, so the model knows the exact question, charge, and court. Compile the facts, so it has your material to organize instead of guessing. Define the law, by pointing it at the statutes and cases it must use. List strategies, each tied to a fact and a basis. Analyze the arguments, stress-testing them and anticipating the other side.</p>
+      <p>Then the lowercase i, and I made it lowercase on purpose. Inspect and improve the results. Hunt for bias, for gaps, for anything that does not fit Texas law. The five uppercase letters make the draft. The lowercase i is where you stay a lawyer. Skip it and you are just forwarding a machine's guess. Run it and the tool becomes an assistant you supervise.</p>
+    </div>
+  </section>
+
+  <!-- 7 · RAG / GROUNDING -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Grounding · the D in practice</div>
+      <h2 class="slide-title">Hold the AI to sources you trust</h2>
+      <p class="lead">Retrieval-augmented generation, or grounding, means the model answers from documents you provide instead of its training memory. For defense work, that is the difference between a guess and a citation.</p>
+      <div class="grid cols-2 mt-m">
+        <div class="card"><h3>Without grounding</h3><p>The model recalls a blurry average of everything it read. Citations may be invented, and Texas specifics blur into general law.</p></div>
+        <div class="card gold"><h3>With grounding</h3><p>You paste or upload the statute, the opinion, or your own brief bank. The model quotes and cites from that, and you can check every line against the source.</p></div>
+      </div>
+      <div class="reflect"><span>🔒</span><p><strong>Do it safely.</strong> Ground with public authorities and fictional or de-identified facts in consumer tools. Save real client files for tools with enterprise terms.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Now the technique that does the most to fight hallucination. It has a clumsy name, retrieval-augmented generation, so I just call it grounding. The idea is simple. Instead of letting the model answer from its blurry memory of everything it ever read, you give it the actual documents and tell it to answer from those.</p>
+      <p>Without grounding, the model recalls an average of the whole internet, and Texas specifics blur into general law. With grounding, you paste the statute, the opinion, or your own brief bank, and it quotes and cites from that. Now you can check every line against a source that is sitting right there.</p>
+      <p>Do it safely. In a consumer tool, ground with public authorities and fictional facts. Save real client material for tools with enterprise terms. This is the D in TCDLAi doing real work.</p>
+    </div>
+  </section>
+
+  <!-- 8 · VERIFICATION DEMO -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Demonstration · the i in practice</div>
+      <h2 class="slide-title">Verify the output against the authority</h2>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h4>Get the draft</h4><p>Run a grounded prompt and read the answer with its citations.</p></div>
+        <div class="step"><div class="n">2</div><h4>Pull the source</h4><p>Open each cited authority yourself from a real database.</p></div>
+        <div class="step"><div class="n">3</div><h4>Match the claim</h4><p>Confirm the quote, the holding, and the pinpoint actually appear.</p></div>
+        <div class="step"><div class="n">4</div><h4>Correct and note</h4><p>Fix what fails, and record what you verified and how.</p></div>
+      </div>
+      <div class="prompt mt-m" style="font-size:14px">Inspect prompt: "Review your last answer. For each citation, state the exact
+sentence in the source I pasted that supports it. If you cannot find one,
+say so and remove the claim."</div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Let me show you the inspect step as a habit you can run every time. Four steps. Get the draft and read it. Pull each cited source yourself from a real database. Match the claim, confirming the quote and the holding and the pinpoint actually appear. Then correct what fails and note what you verified.</p>
+      <p>There is a nice trick on the screen. You can turn the model against its own work. Ask it to point to the exact sentence in your pasted source that supports each citation, and to remove any claim it cannot support. It will often catch its own inventions when you make it show its evidence.</p>
+      <p>That is not a substitute for your check. It is a first pass that makes your check faster. You still open the source. Now it is your turn to work.</p>
+    </div>
+  </section>
+
+  <!-- 9 · ACTIVITY MAIN -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Activity · core · about 12 minutes</div>
+      <h2 class="slide-title">Run a fact pattern through TCDLAi</h2>
+      <div class="scenario">
+        <div class="scenario-label">On the resources page · PBL Scenario Lab</div>
+        <p>Choose one of three fictional fact patterns, a DWI stop, a drug-possession search, or a disputed assault. Work it through the framework, moving from the good prompt to the best. Copy the ready-made prompts, run them in your chatbot, and inspect what comes back.</p>
+      </div>
+      <div class="grid cols-3 mt-m">
+        <div class="card"><h3><span class="ico">1</span>Target and Compile</h3><p>Name the issue and paste the fictional facts. No real client details.</p></div>
+        <div class="card gold"><h3><span class="ico">2</span>Define and List</h3><p>Paste the provided statute excerpt. Ask for grounded strategies.</p></div>
+        <div class="card"><h3><span class="ico">3</span>Analyze and inspect</h3><p>Stress-test one strategy, then run the inspect prompt to check it.</p></div>
+      </div>
+      <div class="reflect"><span>💬</span><p><strong>Rate it zero to ten.</strong> How usable was the best-tier output. What did the inspect step catch that you would have missed.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>This is the main hands-on block, so let us give it room. Go to the resources page and open the PBL Scenario Lab. Pick one of three fictional fact patterns, a DWI stop, a drug-possession search, or a disputed assault. Choose the one closest to your practice.</p>
+      <p>Work it through the framework. Start with the good prompt, then climb to the best. The prompts are ready to copy, so you spend your time reading output, not typing. Paste the provided statute excerpt when you reach the define step, and finish by running the inspect prompt on one strategy.</p>
+      <p>Take about twelve minutes. When we regroup, rate the best-tier output zero to ten, and tell me what the inspect step caught that you would have missed. That last part is usually the moment it clicks. Go ahead.</p>
+    </div>
+  </section>
+
+  <!-- 10 · OPTIONAL ACTIVITY -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Activity · optional · add for ninety minutes</div>
+      <h2 class="slide-title">Break a grounded answer on purpose</h2>
+      <div class="scenario">
+        <div class="scenario-label">Stress test</div>
+        <p>Take your best grounded answer and try to make it fail. Ask a question the pasted statute does not cover, and watch whether the model admits the gap or invents a bridge. Then tighten your prompt until it stops guessing.</p>
+      </div>
+      <div class="guardrail mt-m">
+        <div class="guardrail-col will"><h4>You will see</h4><ul><li>Good prompts make the model say the source is silent</li><li>Naming a source limit stops most invented answers</li><li>The inspect prompt exposes the weak link fast</li></ul></div>
+        <div class="guardrail-col willnot"><h4>You will avoid</h4><ul><li>Trusting fluent answers to out-of-scope questions</li><li>Assuming grounding alone removes all risk</li><li>Skipping the check because the format looked clean</li></ul></div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>If we have the full ninety minutes, this optional round is worth it, because it teaches the limit of grounding. Take your best grounded answer and try to break it. Ask something the pasted statute does not actually cover, and watch closely. Does the model admit the source is silent, or does it quietly build a bridge and invent.</p>
+      <p>Then tighten your prompt until it stops guessing. A single line, only answer from the source and say if it is silent, changes the behavior dramatically.</p>
+      <p>The lesson is on the right. Grounding cuts risk sharply, but it does not remove it. A clean format is not proof. The inspect step is still yours to run. If we are tight on time, we skip this and go straight to takeaways.</p>
+    </div>
+  </section>
+
+  <!-- 11 · RECAP -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Segment two recap</div>
+      <h2 class="slide-title">Three habits that shrink AI risk</h2>
+      <div class="stat-row">
+        <div class="stat"><div class="num">Structure</div><div class="lbl">Role, context, task, limits. Less room to invent.</div></div>
+        <div class="stat"><div class="num">Grounding</div><div class="lbl">Answers from sources you trust, not memory.</div></div>
+        <div class="stat"><div class="num">Inspect</div><div class="lbl">You verify every claim against a real authority.</div></div>
+      </div>
+      <div class="callout mt-m"><span class="label">Bridge</span><p>You now have the moves. Segment three turns them into a checklist and a set of clear rules you can post by your desk.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Let us lock in the segment. Three habits shrink AI risk, and you just practiced all three. Structure, so the model has less room to invent. Grounding, so it answers from sources you trust instead of memory. And inspect, so every claim is checked against a real authority before you rely on it.</p>
+      <p>Those three, run together through TCDLAi, are most of what responsible AI use looks like day to day.</p>
+      <p>In the last segment we turn these habits into something you can actually keep. A short checklist, clear do-and-don't rules, and guidance on what to document. That is what makes this stick after you leave the room.</p>
+    </div>
+  </section>
+
+</div>
+<script src="../assets/deck-framework.js"></script>
+</body>
+</html>
