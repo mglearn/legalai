@@ -1,15 +1,15 @@
 /* ============================================================
-   TCDLAi resource pages  —  shared styling (TCEA navy and gold)
+   TCDLAi resource pages  —  shared styling (blue and silver)
    Used by the hub, activities, handouts, and prompt library.
    ============================================================ */
 :root {
-  --navy:#0A3476; --navy-dk:#071F4A; --navy-md:#14428C;
-  --gold:#FCB040; --gold-lt:#FDD17A; --gold-dk:#E09A25;
-  --white:#FFFFFF; --lgray:#F4F6FA; --mgray:#E2E8F0;
-  --slate:#475569; --text:#1E293B;
-  --good:#64748B; --better:#14428C; --best:#0A3476;
-  --red:#991B1B; --red-bg:#FEF2F2; --red-bd:#FCA5A5;
-  --green:#166534; --green-bg:#F0FDF4; --green-bd:#86EFAC;
+  --navy:#102A54; --navy-dk:#0B1D33; --navy-md:#2F5F8F;
+  --gold:#6F8FAF; --gold-lt:#C8D2DC; --gold-dk:#2F5F8F;
+  --white:#FFFFFF; --lgray:#F7F9FC; --mgray:#D8DEE6;
+  --slate:#4F6072; --text:#22303C;
+  --good:#6B7A8C; --better:#2F5F8F; --best:#102A54;
+  --red:#102A54; --red-bg:#EFF2F6; --red-bd:#C8D2DC;
+  --green:#2F5F8F; --green-bg:#EAEFF5; --green-bd:#9DB4CE;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Source Sans 3',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--lgray);line-height:1.6;-webkit-font-smoothing:antialiased;}
@@ -21,7 +21,7 @@ a{color:var(--navy);}
   display:flex;align-items:center;padding:0 18px;font-size:12.5px;}
 .back-bar a{color:#C6D4EC;text-decoration:none;font-weight:500;display:inline-flex;gap:7px;align-items:center;}
 .back-bar a:hover{color:#fff;}
-.back-bar .sep{color:rgba(252,176,64,0.45);margin:0 6px;}
+.back-bar .sep{color:rgba(200,210,220,0.5);margin:0 6px;}
 
 /* ── Header ───────────────────────────────────────────────── */
 header.page{background:var(--navy);color:#fff;position:relative;overflow:hidden;}
@@ -30,7 +30,7 @@ header.page::before{content:'';position:absolute;left:0;top:0;width:10px;height:
 .eyebrow{display:inline-block;background:var(--gold);color:var(--navy-dk);font-size:0.68rem;font-weight:800;letter-spacing:0.14em;
   text-transform:uppercase;padding:0.28rem 0.8rem;border-radius:3px;margin-bottom:0.9rem;}
 header.page h1{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:900;line-height:1.1;margin-bottom:0.5rem;}
-.header-sub{display:inline-block;background:rgba(255,255,255,0.1);border:1px solid rgba(252,176,64,0.5);color:var(--gold-lt);
+.header-sub{display:inline-block;background:rgba(255,255,255,0.1);border:1px solid rgba(200,210,220,0.55);color:var(--gold-lt);
   font-weight:600;font-size:0.95rem;padding:0.35rem 0.9rem;border-radius:4px;margin-top:0.4rem;}
 .header-meta{font-size:0.82rem;color:#9DB4DA;margin-top:0.9rem;}
 .header-meta a{color:var(--gold);text-decoration:none;font-weight:600;}
@@ -70,7 +70,7 @@ a.tile:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(10,52,118,0.1
 .tile p{font-size:0.9rem;color:var(--slate);line-height:1.45;}
 
 /* ── Scenario / activity ──────────────────────────────────── */
-.scenario-box{background:#FFFBEF;border:2px solid var(--gold);border-radius:10px;padding:1.2rem 1.4rem;margin-bottom:1.2rem;}
+.scenario-box{background:#EEF2F7;border:2px solid var(--gold);border-radius:10px;padding:1.2rem 1.4rem;margin-bottom:1.2rem;}
 .scenario-box .lbl{font-size:0.66rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:0.4rem;}
 .scenario-box p{font-size:1rem;color:var(--text);line-height:1.6;}
 .chips{display:flex;gap:0.4rem;flex-wrap:wrap;margin:0.5rem 0 0.2rem;}
@@ -106,7 +106,7 @@ a.tile:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(10,52,118,0.1
 .gcol.will h4{color:var(--green);} .gcol.wont h4{color:var(--red);}
 .gcol ul{list-style:none;display:flex;flex-direction:column;gap:0.4rem;}
 .gcol li{font-size:0.88rem;line-height:1.45;padding-left:1.2rem;position:relative;}
-.gcol.will li{color:#14532D;} .gcol.wont li{color:#7F1D1D;}
+.gcol.will li{color:#2A4A6E;} .gcol.wont li{color:#1B2E48;}
 .gcol.will li::before{content:'✓';position:absolute;left:0;color:var(--green);font-weight:700;}
 .gcol.wont li::before{content:'✗';position:absolute;left:0;color:var(--red);font-weight:700;}
 
@@ -118,7 +118,7 @@ a.tile:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(10,52,118,0.1
 
 /* ── Callouts ─────────────────────────────────────────────── */
 .note{background:#EFF4FC;border:1px solid #B9CCEC;border-radius:8px;padding:0.8rem 1.1rem;margin-bottom:1.2rem;font-size:0.9rem;color:var(--navy);}
-.warn{background:var(--red-bg);border:1px solid var(--red-bd);border-radius:8px;padding:0.8rem 1.1rem;margin-bottom:1.2rem;font-size:0.9rem;color:#7F1D1D;}
+.warn{background:var(--red-bg);border:1px solid var(--red-bd);border-left:5px solid var(--navy-md);border-radius:8px;padding:0.8rem 1.1rem;margin-bottom:1.2rem;font-size:0.9rem;color:#22303C;}
 .warn strong,.note strong{font-weight:700;}
 
 /* ── Tables ───────────────────────────────────────────────── */
