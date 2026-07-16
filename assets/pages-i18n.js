@@ -3,7 +3,7 @@
 BreakoutI18n.register('pages', {
   en: {
     "pg.resources":"Resources",
-    "pres.h1":"Presentations", "about.h":"About this session", "news.h1":"AI in the Courts", "news.sub":"Real cases, rulings, and coverage on AI in legal practice", "pres.sub":"Four self-contained decks, each with speaker notes.",
+    "pres.h1":"Presentations", "about.h":"About this session", "news.h1":"AI in the Courts", "tut.h1":"Build a LegalAI Project in Claude", "tut.sub":"A step-by-step way to give Claude a persistent, grounded defense workspace", "news.sub":"Real cases, rulings, and coverage on AI in legal practice", "pres.sub":"Four self-contained decks, each with speaker notes.",
     "warn.safe":"Practice safely. These materials are fictional and simplified for practice. Verify all law against the current Texas statutes, and never paste real client-identifying facts into a consumer chatbot.",
     "fl.h1":"AI Fluency Self-Assessment", "fl.sub":"Where does your practice stand with generative AI today",
     "pbl.h1":"PBL Scenario Lab", "pbl.sub":"Work a fictional defense problem through the TCDLAi framework",
@@ -14,7 +14,7 @@ BreakoutI18n.register('pages', {
   },
   es: {
     "pg.resources":"Recursos",
-    "pres.h1":"Presentaciones", "about.h":"Acerca de esta sesión", "news.h1":"La IA en los tribunales", "news.sub":"Casos, fallos y cobertura reales sobre la IA en la práctica jurídica", "pres.sub":"Cuatro presentaciones independientes, cada una con notas del orador.",
+    "pres.h1":"Presentaciones", "about.h":"Acerca de esta sesión", "news.h1":"La IA en los tribunales", "tut.h1":"Cree un proyecto LegalAI en Claude", "tut.sub":"Una guía paso a paso para darle a Claude un espacio de trabajo de defensa persistente y fundamentado", "news.sub":"Casos, fallos y cobertura reales sobre la IA en la práctica jurídica", "pres.sub":"Cuatro presentaciones independientes, cada una con notas del orador.",
     "warn.safe":"Practique con seguridad. Estos materiales son ficticios y simplificados para la práctica. Verifique toda la ley con los estatutos vigentes de Texas y nunca ponga datos reales que identifiquen al cliente en un chatbot de consumo.",
     "fl.h1":"Autoevaluación de fluidez con IA", "fl.sub":"¿Dónde está su práctica con la IA generativa hoy?",
     "pbl.h1":"Laboratorio de casos (ABP)", "pbl.sub":"Trabaje un problema de defensa ficticio con el marco TCDLAi",
@@ -25,7 +25,7 @@ BreakoutI18n.register('pages', {
   },
   vi: {
     "pg.resources":"Tài nguyên",
-    "pres.h1":"Bài trình chiếu", "about.h":"Về phiên này", "news.h1":"AI tại tòa án", "news.sub":"Các vụ việc, phán quyết và tin tức thực tế về AI trong hành nghề luật", "pres.sub":"Bốn bộ trình chiếu độc lập, mỗi bộ có ghi chú cho người trình bày.",
+    "pres.h1":"Bài trình chiếu", "about.h":"Về phiên này", "news.h1":"AI tại tòa án", "tut.h1":"Tạo một Dự án LegalAI trong Claude", "tut.sub":"Cách từng bước để tạo cho Claude một không gian làm việc bào chữa bền vững và có căn cứ", "news.sub":"Các vụ việc, phán quyết và tin tức thực tế về AI trong hành nghề luật", "pres.sub":"Bốn bộ trình chiếu độc lập, mỗi bộ có ghi chú cho người trình bày.",
     "warn.safe":"Thực hành an toàn. Các tài liệu này là hư cấu và được đơn giản hóa để thực hành. Hãy kiểm chứng mọi quy định với các đạo luật Texas hiện hành, và đừng bao giờ nhập thông tin nhận dạng thân chủ thật vào một chatbot tiêu dùng.",
     "fl.h1":"Tự đánh giá mức độ thành thạo AI", "fl.sub":"Hôm nay việc hành nghề của bạn ở đâu với AI tạo sinh?",
     "pbl.h1":"Phòng thực hành tình huống (PBL)", "pbl.sub":"Xử lý một vấn đề bào chữa hư cấu bằng khung TCDLAi",
@@ -36,7 +36,7 @@ BreakoutI18n.register('pages', {
   },
   ar: {
     "pg.resources":"الموارد",
-    "pres.h1":"العروض التقديمية", "about.h":"عن هذه الجلسة", "news.h1":"الذكاء الاصطناعي في المحاكم", "news.sub":"قضايا وأحكام وتغطية حقيقية حول الذكاء الاصطناعي في الممارسة القانونية", "pres.sub":"أربع عروض مستقلة، لكل منها ملاحظات للمتحدث.",
+    "pres.h1":"العروض التقديمية", "about.h":"عن هذه الجلسة", "news.h1":"الذكاء الاصطناعي في المحاكم", "tut.h1":"أنشئ مشروع LegalAI في Claude", "tut.sub":"طريقة خطوة بخطوة لمنح Claude مساحة عمل دفاعية دائمة ومستندة إلى المصادر", "news.sub":"قضايا وأحكام وتغطية حقيقية حول الذكاء الاصطناعي في الممارسة القانونية", "pres.sub":"أربع عروض مستقلة، لكل منها ملاحظات للمتحدث.",
     "warn.safe":"مارِس بأمان. هذه المواد افتراضية ومبسّطة للتدريب. تحقّق من كل القوانين وفق نصوص تكساس الحالية، ولا تُدخل أبداً معلومات حقيقية تحدّد هوية الموكل في روبوت محادثة استهلاكي.",
     "fl.h1":"تقييم ذاتي للكفاءة في الذكاء الاصطناعي", "fl.sub":"أين تقف ممارستك اليوم من الذكاء الاصطناعي التوليدي؟",
     "pbl.h1":"مختبر الحالات (التعلّم القائم على المشكلات)", "pbl.sub":"عالِج مشكلة دفاع افتراضية باستخدام إطار TCDLAi",
@@ -47,7 +47,7 @@ BreakoutI18n.register('pages', {
   },
   hi: {
     "pg.resources":"संसाधन",
-    "pres.h1":"प्रस्तुतियाँ", "about.h":"इस सत्र के बारे में", "news.h1":"अदालतों में AI", "news.sub":"कानूनी अभ्यास में AI पर वास्तविक मामले, फैसले और कवरेज", "pres.sub":"चार स्वतंत्र प्रस्तुतियाँ, प्रत्येक में वक्ता नोट्स।",
+    "pres.h1":"प्रस्तुतियाँ", "about.h":"इस सत्र के बारे में", "news.h1":"अदालतों में AI", "tut.h1":"Claude में एक LegalAI प्रोजेक्ट बनाएं", "tut.sub":"Claude को एक स्थायी, स्रोत-आधारित बचाव कार्यक्षेत्र देने का चरण-दर-चरण तरीका", "news.sub":"कानूनी अभ्यास में AI पर वास्तविक मामले, फैसले और कवरेज", "pres.sub":"चार स्वतंत्र प्रस्तुतियाँ, प्रत्येक में वक्ता नोट्स।",
     "warn.safe":"सुरक्षित रूप से अभ्यास करें। ये सामग्री काल्पनिक और अभ्यास के लिए सरलीकृत है। सभी कानून को वर्तमान टेक्सास संविधियों से सत्यापित करें, और किसी उपभोक्ता चैटबॉट में कभी भी वास्तविक क्लाइंट-पहचान वाली जानकारी न डालें।",
     "fl.h1":"AI फ़्लुएंसी स्व-मूल्यांकन", "fl.sub":"जनरेटिव AI के साथ आज आपकी प्रैक्टिस कहाँ खड़ी है?",
     "pbl.h1":"परिदृश्य लैब (PBL)", "pbl.sub":"TCDLAi ढाँचे से एक काल्पनिक बचाव समस्या पर काम करें",
@@ -58,7 +58,7 @@ BreakoutI18n.register('pages', {
   },
   ur: {
     "pg.resources":"وسائل",
-    "pres.h1":"پریزنٹیشنز", "about.h":"اس سیشن کے بارے میں", "news.h1":"عدالتوں میں اے آئی", "news.sub":"قانونی پریکٹس میں اے آئی پر حقیقی مقدمات، فیصلے اور کوریج", "pres.sub":"چار خودمختار پریزنٹیشنز، ہر ایک میں مقرر نوٹس۔",
+    "pres.h1":"پریزنٹیشنز", "about.h":"اس سیشن کے بارے میں", "news.h1":"عدالتوں میں اے آئی", "tut.h1":"Claude میں ایک LegalAI پروجیکٹ بنائیں", "tut.sub":"Claude کو ایک مستقل، ماخذ پر مبنی دفاعی ورک اسپیس دینے کا مرحلہ وار طریقہ", "news.sub":"قانونی پریکٹس میں اے آئی پر حقیقی مقدمات، فیصلے اور کوریج", "pres.sub":"چار خودمختار پریزنٹیشنز، ہر ایک میں مقرر نوٹس۔",
     "warn.safe":"محفوظ طریقے سے مشق کریں۔ یہ مواد فرضی اور مشق کے لیے سادہ بنایا گیا ہے۔ تمام قانون کو ٹیکساس کی موجودہ دفعات سے تصدیق کریں، اور کسی صارف چیٹ بوٹ میں کبھی بھی موکل کی حقیقی شناخت والی معلومات نہ ڈالیں۔",
     "fl.h1":"اے آئی مہارت خود جانچ", "fl.sub":"جنریٹو اے آئی کے ساتھ آج آپ کی پریکٹس کہاں کھڑی ہے؟",
     "pbl.h1":"منظرنامہ لیب (PBL)", "pbl.sub":"TCDLAi فریم ورک سے ایک فرضی دفاعی مسئلے پر کام کریں",
@@ -69,7 +69,7 @@ BreakoutI18n.register('pages', {
   },
   zh: {
     "pg.resources":"资源",
-    "pres.h1":"演示", "about.h":"关于本场次", "news.h1":"法庭上的 AI", "news.sub":"关于法律实务中 AI 的真实案例、裁决与报道", "pres.sub":"四套独立的演示，每套都附有演讲者备注。",
+    "pres.h1":"演示", "about.h":"关于本场次", "news.h1":"法庭上的 AI", "tut.h1":"在 Claude 中创建 LegalAI 项目", "tut.sub":"分步骤为 Claude 打造持久、有依据的辩护工作区", "news.sub":"关于法律实务中 AI 的真实案例、裁决与报道", "pres.sub":"四套独立的演示，每套都附有演讲者备注。",
     "warn.safe":"安全地练习。这些材料为虚构并作了简化，仅供练习。请对照德州现行法规核实所有法律，切勿将真实的、可识别客户身份的信息输入消费级聊天机器人。",
     "fl.h1":"AI 能力自评", "fl.sub":"今天，您的执业在生成式 AI 方面处于什么水平？",
     "pbl.h1":"情境实验室（PBL）", "pbl.sub":"用 TCDLAi 框架处理一个虚构的辩护问题",

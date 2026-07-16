@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Build a LegalAI Project in Claude | AI for the Defense | TCDLA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/pages.css">
+<style>
+  .tut{list-style:none;display:flex;flex-direction:column;gap:1rem;margin-bottom:1.6rem;}
+  .tut>li{display:grid;grid-template-columns:44px 1fr;gap:1rem;background:#fff;border:1px solid var(--mgray);border-left:5px solid var(--gold);border-radius:8px;padding:1.05rem 1.3rem;}
+  .tut-n{width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-family:'Playfair Display',serif;font-weight:700;font-size:18px;display:flex;align-items:center;justify-content:center;}
+  .tut-body h3{color:var(--navy);font-size:1.12rem;margin-bottom:0.3rem;}
+  .tut-body p{color:var(--slate);font-size:0.95rem;line-height:1.55;margin-bottom:0.5rem;}
+  .tut-body p:last-child{margin-bottom:0;}
+  .tut-body strong{color:var(--navy);}
+  .tut-body a{color:var(--navy);font-weight:600;text-decoration:none;border-bottom:2px solid var(--gold-lt);}
+  .tut-body a:hover{border-color:var(--navy);}
+</style>
+</head>
+<body>
+<div class="back-bar">
+  <a href="../index.html"><span>←</span> AI for the Defense <span class="sep">/</span> <span data-i18n="pg.resources">Resources</span></a>
+  <div class="bb-right"><span class="bb-lang" data-i18n-picker></span></div>
+</div>
+
+<header class="page">
+  <div class="header-inner">
+    <span class="eyebrow">Bonus tutorial</span>
+    <h1 data-i18n="tut.h1">Build a LegalAI Project in Claude</h1>
+    <div class="header-sub" data-i18n="tut.sub">A step-by-step way to give Claude a persistent, grounded defense workspace</div>
+    <div class="header-meta">The same files that build the BoodleBox bot build this Project. Works the same idea in a ChatGPT Custom GPT.</div>
+  </div>
+</header>
+
+<main>
+  <div class="warn"><strong>Practice safely.</strong> Use fictional or de-identified facts unless you have confirmed the tool has appropriate data terms. Every output is a draft for attorney review, and every citation is a lead to verify in a real database.</div>
+
+  <p class="lead-p">A Claude <strong>Project</strong> is a persistent workspace. You set the instructions once and add reference files once, and then every chat inside that Project starts already grounded. For defense work that means the TCDLAi framework, your ethical guardrails, and your fact patterns are always in context, so you spend your time on the matter instead of re-explaining the rules.</p>
+
+  <div class="note"><strong>Before you start.</strong> Sign in at <a class="inline" href="https://claude.ai" target="_blank">claude.ai</a>. Projects are available on Claude's paid plans. On the free plan the same files still work if you paste them into a single chat, or use the ready-made <a class="inline" href="https://chatgpt.com/g/g-6a594b38484c8191bdea73bca6a584e2-legalai" target="_blank">ChatGPT Custom GPT</a> or the <a class="inline" href="https://box.boodle.ai/a/@TCDLALegalAI" target="_blank">BoodleBox bot</a>.</p></div>
+
+  <div class="section-label">The steps</div>
+  <ol class="tut">
+    <li>
+      <div class="tut-n">1</div>
+      <div class="tut-body">
+        <h3>Get the files</h3>
+        <p>Download the <a href="../BoodleBox%20Bot%20LegalAI/LegalAI-BoodleBox-Bot.zip">LegalAI files as a zip</a> and unzip it. You will use <strong>00-custom-instructions.txt</strong> as the Project instructions, and the numbered <strong>.txt</strong> files as Project knowledge. (They are markdown with a .txt extension so they upload cleanly.)</p>
+      </div>
+    </li>
+    <li>
+      <div class="tut-n">2</div>
+      <div class="tut-body">
+        <h3>Create a new Project</h3>
+        <p>In claude.ai, open <strong>Projects</strong> from the left sidebar and select <strong>New Project</strong>. Name it something like <strong>LegalAI — Defense</strong>, and add a one-line description: <em>Drafting and analysis assistant for Texas criminal defense. Every output is a draft for attorney review.</em></p>
+      </div>
+    </li>
+    <li>
+      <div class="tut-n">3</div>
+      <div class="tut-body">
+        <h3>Set the Project instructions</h3>
+        <p>Open the Project's <strong>instructions</strong> (also called custom instructions) and paste the full contents of <strong>00-custom-instructions.txt</strong>. This is what makes every chat in the Project draft-for-review, grounded in sources you provide, Texas-first, and careful with confidentiality.</p>
+      </div>
+    </li>
+    <li>
+      <div class="tut-n">4</div>
+      <div class="tut-body">
+        <h3>Add Project knowledge</h3>
+        <p>Upload the numbered files as Project knowledge: the <strong>TCDLAi guide</strong> (01), the <strong>ethics checklist</strong> (02), the <strong>verification workflow</strong> (03), the <strong>fact patterns</strong> (04), the <strong>prompt library</strong> (05), the <strong>Claude-for-Legal practices</strong> (06), and the <strong>scenario bank</strong> (08). Claude reads these as reference, so it answers from your materials rather than its memory. Claude does not keep uploaded files after your session ends.</p>
+      </div>
+    </li>
+    <li>
+      <div class="tut-n">5</div>
+      <div class="tut-body">
+        <h3>Test it with a fictional fact pattern</h3>
+        <p>Start a chat inside the Project and try one of the built-in scenarios:</p>
+        <div class="promptbox" id="p1"><button class="copy-btn" data-target="p1" onclick="copyText(this,event)">Copy</button>Use fact pattern one from the scenario bank. Build an element chart for the charge, grounded only in the statute text I paste below, and flag any element the sources do not support. End with the three things I must verify. [paste statute text]</div>
+      </div>
+    </li>
+    <li>
+      <div class="tut-n">6</div>
+      <div class="tut-body">
+        <h3>Inspect before you rely on it</h3>
+        <p>Run the verification self-check on anything you might use, then open the real source yourself:</p>
+        <div class="promptbox" id="p2"><button class="copy-btn" data-target="p2" onclick="copyText(this,event)">Copy</button>Review your last answer. For each citation and legal proposition, quote the exact sentence in my provided sources that supports it, or mark it [UNVERIFIED] or [UNSUPPORTED]. Remove anything you cannot support.</div>
+      </div>
+    </li>
+    <li>
+      <div class="tut-n">7</div>
+      <div class="tut-body">
+        <h3>Reuse it every matter</h3>
+        <p>The Project keeps your instructions and knowledge in place, so each new chat starts ready. For a real matter, paste the statute, opinion, or record excerpt you want it to work from, keep client-identifying details out unless the tool has proper data terms, and verify every authority in a real database before it leaves your desk.</p>
+      </div>
+    </li>
+  </ol>
+
+  <div class="reflect-strip">
+    <div class="i">🔎</div>
+    <p><strong>Same standard, new workspace.</strong> A Project makes the good habits automatic, but it does not change the rule. It drafts, you verify, you decide, you sign.</p>
+  </div>
+
+  <div class="cards c2">
+    <a class="tile gold" href="https://box.boodle.ai/a/@TCDLALegalAI" target="_blank"><div class="tag">Prefer no setup</div><h3>TCDLALegalAI Bot</h3><p>The ready-made version on BoodleBox, already built from these same files.</p></a>
+    <a class="tile" href="https://chatgpt.com/g/g-6a594b38484c8191bdea73bca6a584e2-legalai" target="_blank"><div class="tag">On ChatGPT</div><h3>LegalAI Custom GPT</h3><p>The same assistant as a ChatGPT Custom GPT. Open it and start working.</p></a>
+  </div>
+</main>
+
+<footer class="page">
+  <div class="fin">
+    <div class="brand">Texas Criminal Defense Lawyers Association</div>
+    <p><a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · <a href="https://go.mgpd.org/tcdla26">go.mgpd.org/tcdla26</a></p>
+    <p class="cc">AI for the Defense · Bonus · Build a LegalAI Project in Claude</p>
+  </div>
+</footer>
+
+<script src="../assets/deck-framework.js"></script>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/pages-i18n.js"></script>
+</body>
+</html>
