@@ -8,8 +8,8 @@
   --white:#FFFFFF; --lgray:#F7F9FC; --mgray:#D8DEE6;
   --slate:#4F6072; --text:#22303C;
   --good:#6B7A8C; --better:#2F5F8F; --best:#102A54;
-  --red:#102A54; --red-bg:#EFF2F6; --red-bd:#C8D2DC;
-  --green:#2F5F8F; --green-bg:#EAEFF5; --green-bd:#9DB4CE;
+  --red:#102A54; --red-bg:#F1F3F6; --red-bd:#CBD4DE;
+  --green:#2F5F8F; --green-bg:#E4EDF7; --green-bd:#93AFCE;
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 body{font-family:'Source Sans 3',system-ui,-apple-system,sans-serif;color:var(--text);background:var(--lgray);line-height:1.6;-webkit-font-smoothing:antialiased;}
