@@ -16,13 +16,16 @@ Everything you need to build a defense-focused AI bot that carries the TCDLAi fr
 | `03-verification-workflow.txt` | How to confirm output and cite-check | Upload as knowledge |
 | `04-fact-patterns.txt` | Three fictional practice scenarios | Upload as knowledge |
 | `05-prompt-library.txt` | Copy-ready starter prompts | Upload as knowledge |
+| `06-claude-for-legal-practices.txt` | Element chart, chronology, and matter workspace (adapted from Claude for Legal) | Upload as knowledge |
+
+**Prefer one download?** Grab `LegalAI-BoodleBox-Bot.zip` (all files, contents are markdown with a `.txt` extension), unzip it, and upload the pieces.
 
 ## Build it in BoodleBox
 
 1. Sign in to BoodleBox. If you have a license code from the session, redeem it first.
-2. Create a new bot. Name it **LegalAI** and give it a short description, for example: *Drafting and analysis assistant for Texas criminal defense. Every output is a draft for attorney review.*
+2. Create a new bot. Name it **LegalAI** and give it a short description, for example: *Drafting and analysis assistant for Texas criminal defense. Every output is a draft for attorney review.* Set its picture using `bot_icon.png` (an example avatar is included in this folder).
 3. Open the custom-instructions field. Copy the full contents of `00-custom-instructions.txt` and paste it in.
-4. Add knowledge files. Upload the five numbered knowledge files (`01` through `05`).
+4. Add knowledge files. Upload the six numbered knowledge files (`01` through `06`).
 5. Save, then test with a fictional fact pattern from `04-fact-patterns.txt`.
 
 ## Build it somewhere else
