@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PBL Scenario Lab | AI for the Defense | TCDLA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/pages.css">
+<style>
+  .pick{display:grid;grid-template-columns:repeat(3,1fr);gap:0.8rem;margin-bottom:1.4rem;}
+  .pickcard{border:2px solid transparent;border-radius:8px;padding:0.9rem 1rem;cursor:pointer;color:#fff;transition:transform .12s,box-shadow .12s;}
+  .pickcard:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(10,52,118,0.18);}
+  .pickcard.active{border-color:var(--gold);}
+  .pickcard[data-c="dwi"]{background:var(--navy);}
+  .pickcard[data-c="poss"]{background:var(--navy-md);}
+  .pickcard[data-c="asslt"]{background:#3B2A6B;}
+  .pickcard .n{width:1.6rem;height:1.6rem;background:var(--gold);color:var(--navy-dk);border-radius:50%;font-family:'Playfair Display',serif;font-weight:700;display:flex;align-items:center;justify-content:center;margin-bottom:0.4rem;font-size:0.85rem;}
+  .pickcard h3{font-size:0.98rem;color:#fff;margin-bottom:0.2rem;}
+  .pickcard small{color:rgba(255,255,255,0.75);font-size:0.75rem;}
+  #display{display:none;} #display.show{display:block;animation:fade .3s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
+  .tcdlai-map{display:grid;grid-template-columns:repeat(6,1fr);gap:0.4rem;margin:0.6rem 0 1rem;}
+  .tl{background:var(--lgray);border:1px solid var(--mgray);border-radius:6px;padding:0.4rem;text-align:center;}
+  .tl b{display:block;font-family:'Playfair Display',serif;color:var(--gold-dk);font-size:1.05rem;}
+  .tl small{font-size:0.6rem;color:var(--slate);letter-spacing:0.02em;}
+  .statute{background:#0E1B33;color:#E6ECF7;border-radius:8px;padding:0.9rem 1rem;font-family:'Source Code Pro',monospace;font-size:0.8rem;line-height:1.55;white-space:pre-wrap;position:relative;margin-bottom:0.4rem;}
+</style>
+</head>
+<body>
+<div class="back-bar"><a href="../index.html"><span>←</span> AI for the Defense <span class="sep">/</span> Resources</a></div>
+
+<header class="page">
+  <div class="header-inner">
+    <span class="eyebrow">Hands-on activity · about 12 minutes</span>
+    <h1>PBL Scenario Lab</h1>
+    <div class="header-sub">Work a fictional defense problem through the TCDLAi framework</div>
+    <div class="header-meta">Texas Criminal Defense Lawyers Association · Facilitator <a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · Works with Claude, ChatGPT, Z.ai, Mistral, or BoodleBox</div>
+  </div>
+</header>
+
+<div class="how">
+  <div class="how-inner">
+    <div class="how-step"><div class="how-num">1</div><div class="how-label"><strong>Pick</strong>Choose one fictional fact pattern below.</div></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-label"><strong>Climb</strong>Run the good, better, and best prompts.</div></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-label"><strong>Inspect</strong>Verify the output and flag what fails.</div></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-label"><strong>Debrief</strong>Rate it zero to ten. What did inspect catch.</div></div>
+  </div>
+</div>
+
+<main>
+  <div class="warn"><strong>Practice safely.</strong> These fact patterns are fictional and the statute excerpts are simplified paraphrases for practice only. Verify all law against the actual Texas codes. Never paste real client-identifying facts into a consumer chatbot.</div>
+
+  <div class="section-label">Choose a fact pattern</div>
+  <div class="pick">
+    <div class="pickcard active" data-c="dwi" onclick="show('dwi',this)"><div class="n">1</div><h3>The refused breath test</h3><small>Driving while intoxicated stop</small></div>
+    <div class="pickcard" data-c="poss" onclick="show('poss',this)"><div class="n">2</div><h3>The console search</h3><small>Drug possession and search</small></div>
+    <div class="pickcard" data-c="asslt" onclick="show('asslt',this)"><div class="n">3</div><h3>The bar parking lot</h3><small>Disputed assault</small></div>
+  </div>
+
+  <div id="display"></div>
+
+  <div class="reflect-strip">
+    <div class="i">💬</div>
+    <p><strong>Debrief questions.</strong> Which tier gave the most usable output. What did the inspect prompt catch that you would have missed. What is the one line you would add to make it safer.</p>
+  </div>
+</main>
+
+<footer class="page">
+  <div class="fin">
+    <div class="brand">Texas Criminal Defense Lawyers Association</div>
+    <p><a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · <a href="https://mglearn.github.io/legalai">mglearn.github.io/legalai</a></p>
+    <p class="cc">AI for the Defense · PBL Scenario Lab · Fictional practice materials</p>
+  </div>
+</footer>
+
+<script src="../assets/deck-framework.js"></script>
+<script>
+const SCEN = {
+  dwi:{
+    color:'#0A3476',
+    title:'The refused breath test',
+    tags:['DWI','Fourth Amendment','Suppression'],
+    facts:'Your fictional client, "R.," was stopped near midnight for a wide turn. The officer reported the smell of alcohol, slurred speech, and "glassy eyes." R. declined field sobriety tests and refused a breath sample. There was no warrant. The officer\'s report is thin on the specific driving behavior that justified the stop, and the dashcam covers only part of the encounter.',
+    statute:'SIMPLIFIED PARAPHRASE - verify against Tex. Penal Code Sec. 49.04 and Transportation Code Sec. 724.\nDWI: a person commits an offense if intoxicated while operating a motor vehicle in a public place.\nImplied consent and refusal rules govern breath and blood specimens; a warrantless blood draw generally requires consent or an exception.',
+    good:'What are some defenses to a DWI?',
+    better:'Act as a Texas criminal defense attorney. For a first DWI stop where the driver refused field sobriety tests and a breath sample and there was no warrant, list five defense angles. For each, give the legal basis in one line. Texas law only.',
+    best:'Act as a Texas criminal defense attorney preparing a motion to suppress.\nFACTS: [paste the fictional facts above].\nSOURCES: [paste the simplified statute excerpt above].\nUsing ONLY the facts and sources I provided, list five defense angles. For each: (1) the angle, (2) the single fact that supports it, (3) the legal basis. Flag any angle the provided sources do not support, and do not cite outside authority. End with the two weakest points in my case.',
+    inspect:'Review your last answer. For each defense angle, quote the exact fact or source sentence I provided that supports it. If you cannot point to one, mark that angle UNSUPPORTED and explain why. Then list any Texas-specific issue your answer may have gotten wrong.',
+    will:['Use the fictional facts and simplified excerpt only','Verify the real statutory elements before relying on any angle','Treat every suggested case as a lead to confirm','Keep the strategic choice of motion yours'],
+    wont:['Paste a real client\'s stop into a consumer tool','File any suggested citation you have not read','Assume the simplified excerpt is the operative law','Let the model pick which motion to file']
+  },
+  poss:{
+    color:'#14428C',
+    title:'The console search',
+    tags:['Possession','Search and seizure','Standing'],
+    facts:'Your fictional client, "M.," was a passenger in a car stopped for an expired registration. The officer said M. seemed nervous and asked to search. Accounts differ on whether the driver consented. A small quantity of a controlled substance was found in the center console, within reach of both occupants. M. denies knowledge. There is no body-camera audio of the consent exchange.',
+    statute:'SIMPLIFIED PARAPHRASE - verify against Tex. Health and Safety Code Sec. 481.115 and Fourth Amendment doctrine.\nPossession of a controlled substance requires knowing or intentional possession; possession means actual care, custody, control, or management.\nConsent and the scope of a search, and the passenger\'s ability to challenge it, are governed by search-and-seizure law.',
+    good:'How do you beat a drug possession charge?',
+    better:'Act as a Texas criminal defense attorney. For a passenger charged after a substance was found in a shared center console during a consent search with no recording, list five defense angles, each with a one-line legal basis. Texas law only.',
+    best:'Act as a Texas criminal defense attorney evaluating suppression and sufficiency.\nFACTS: [paste the fictional facts above].\nSOURCES: [paste the simplified excerpt above].\nUsing ONLY what I provided, list five defense angles focused on affirmative links to possession and the validity and scope of the search. For each: (1) the angle, (2) the supporting fact, (3) the legal basis. Flag any angle the sources do not support, and do not invent case law. End with the prosecution\'s strongest response to each.',
+    inspect:'Go back through your answer. For each angle, cite the exact fact or source language I gave that supports it, or mark it UNSUPPORTED. Separately, identify any place where you assumed a fact I did not provide, and any Texas possession or search rule you may have stated imprecisely.',
+    will:['Focus the model on the facts I actually provided','Confirm the affirmative-links standard in the real code and cases','Check whether a passenger can challenge this search','Verify each suggested authority independently'],
+    wont:['Add facts the record does not contain','Rely on the model\'s memory for the possession standard','Cite an unread case on standing','Send a suppression theory to court without your own review']
+  },
+  asslt:{
+    color:'#3B2A6B',
+    title:'The bar parking lot',
+    tags:['Assault','Self-defense','Witnesses'],
+    facts:'Your fictional client, "D.," was charged after a late-night altercation outside a bar. Two witnesses give conflicting accounts of who swung first. D. says the other person advanced and D. pushed to create space. There are minor injuries on both sides. Phone video exists but is dark and partial. The complainant and D. had argued earlier inside.',
+    statute:'SIMPLIFIED PARAPHRASE - verify against Tex. Penal Code Sec. 22.01 (assault) and Sec. 9.31 (self-defense).\nAssault includes intentionally, knowingly, or recklessly causing bodily injury to another.\nSelf-defense justifies force when a person reasonably believes it immediately necessary to protect against another\'s use or attempted use of unlawful force.',
+    good:'What are the defenses to an assault charge?',
+    better:'Act as a Texas criminal defense attorney. For a mutual bar-fight scenario with conflicting witnesses, minor injuries on both sides, and a partial dark video, list five defense angles including self-defense, each with a one-line basis. Texas law only.',
+    best:'Act as a Texas criminal defense attorney assessing self-defense and reasonable doubt.\nFACTS: [paste the fictional facts above].\nSOURCES: [paste the simplified excerpt above].\nUsing ONLY what I provided, list five defense angles. For each: (1) the angle, (2) the supporting fact, (3) the legal basis. Give special attention to how the conflicting witness accounts and partial video create reasonable doubt. Flag any angle the sources do not support, and invent no authority. End with the three questions I should ask each witness.',
+    inspect:'Review your answer. For each angle, quote the fact or source I provided that supports it, or mark it UNSUPPORTED. Then check the self-defense analysis against the exact language of the excerpt I gave, and note anything you added that was not in my materials.',
+    will:['Anchor the analysis in the provided facts and excerpt','Confirm the self-defense standard in the actual statute','Treat witness-credibility strategy as your call','Verify any case the model raises before using it'],
+    wont:['Let the model decide whether to raise self-defense','Assume the paraphrase captures every element','Use invented witness facts to fill gaps','Rely on a confident answer without checking the code']
+  }
+};
+
+function tmap(){
+  const L=[['T','Target'],['C','Compile'],['D','Define'],['L','List'],['A','Analyze'],['i','inspect']];
+  return '<div class="tcdlai-map">'+L.map(x=>'<div class="tl"><b>'+x[0]+'</b><small>'+x[1]+'</small></div>').join('')+'</div>';
+}
+function tierBlock(cls,lbl,badge,desc,id,text){
+  return '<div class="tier '+cls+'"><div class="head"><span class="lbl">'+lbl+'</span><span class="badge">'+badge+'</span></div>'+
+    '<div class="desc">'+desc+'</div><div class="body"><div class="promptbox" id="'+id+'"><button class="copy-btn" data-target="'+id+'" onclick="copyText(this,event)">Copy</button>'+esc(text)+'</div></div></div>';
+}
+function esc(s){return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+
+function show(key,elm){
+  document.querySelectorAll('.pickcard').forEach(c=>c.classList.remove('active'));
+  if(elm)elm.classList.add('active');
+  const s=SCEN[key];
+  const html=
+    '<div class="scenario-box"><div class="lbl">Fictional fact pattern</div>'+
+      '<div class="chips">'+s.tags.map(t=>'<span class="chip navy">'+t+'</span>').join('')+'<span class="chip time">about 12 min</span></div>'+
+      '<p>'+s.facts+'</p></div>'+
+    '<div class="section-label">Move through the framework</div>'+ tmap()+
+    '<div class="section-label">Provided source to ground your prompt · the D in TCDLAi</div>'+
+      '<div class="statute"><button class="copy-btn" data-target="stat-'+key+'" onclick="copyText(this,event)">Copy</button><span id="stat-'+key+'">'+esc(s.statute)+'</span></div>'+
+    '<div class="section-label">Climb the tiers</div>'+
+      '<div class="tiers">'+
+        tierBlock('good','Good · fast draft','Vague','No role, no facts, no sources. Watch it guess.','p-'+key+'-g',s.good)+
+        tierBlock('better','Better · structured','Role + limits','Adds role, facts, a number, and jurisdiction.','p-'+key+'-b',s.better)+
+        tierBlock('best','Best · grounded + checked','TCDLAi','Targets the issue, compiles facts, defines law from your source, lists and analyzes, and asks to flag gaps.','p-'+key+'-x',s.best)+
+      '</div>'+
+    '<div class="section-label">Inspect the result · the i in TCDLAi</div>'+
+      '<div class="promptbox" id="p-'+key+'-i" style="margin-bottom:1.2rem;"><button class="copy-btn" data-target="p-'+key+'-i" onclick="copyText(this,event)">Copy</button>'+esc(s.inspect)+'</div>'+
+    '<div class="section-label">Guardrails for this scenario</div>'+
+      '<div class="guard"><div class="gcol will"><h4>✓ You will</h4><ul>'+s.will.map(i=>'<li>'+i+'</li>').join('')+'</ul></div>'+
+        '<div class="gcol wont"><h4>✗ You will not</h4><ul>'+s.wont.map(i=>'<li>'+i+'</li>').join('')+'</ul></div></div>';
+  const d=document.getElementById('display');
+  d.innerHTML=html; d.classList.add('show');
+}
+document.addEventListener('DOMContentLoaded',()=>show('dwi',document.querySelector('.pickcard')));
+</script>
+</body>
+</html>

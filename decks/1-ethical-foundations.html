@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ethical Foundations | AI for the Defense | TCDLA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/deck-framework.css">
+</head>
+<body>
+<div class="deck">
+
+  <!-- 1 · DIVIDER -->
+  <section class="slide divider current">
+    <div class="slide-body">
+      <div class="seg-num">1</div>
+      <div class="divider-eyebrow">Segment One · about 20 minutes</div>
+      <h1>Ethical Foundations</h1>
+      <div class="subtitle">The duties that govern AI use, and the failures that put a license at risk.</div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>We start with ethics because everything else stands on it. Before a single prompt, the question is not what the tool can do. The question is what your duties require.</p>
+      <p>In the next twenty minutes we cover four things. The duties that already govern this, the way AI fabricates case law, the confidentiality trap in consumer tools, and why the output never replaces your judgment.</p>
+      <p>Keep your own hardest matter in the back of your mind as we go. You will see where each of these lands for real work.</p>
+    </div>
+  </section>
+
+  <!-- 2 · THE DUTIES DO NOT CHANGE -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Start here</div>
+      <h2 class="slide-title">Your existing duties already govern AI use</h2>
+      <p class="lead">No new rulebook is required. The Texas Disciplinary Rules of Professional Conduct reach AI-assisted work the same way they reach a junior associate's draft.</p>
+      <div class="grid cols-2">
+        <div class="card"><h3>Competence and diligence</h3><p>Rule 1.01. You must understand the tool well enough to use it responsibly, or not use it.</p></div>
+        <div class="card"><h3>Confidentiality</h3><p>Rule 1.05. Client information stays protected, including from the tools you type it into.</p></div>
+        <div class="card gold"><h3>Supervision</h3><p>Rules 5.01 and 5.03. AI is a nonlawyer assistant. You supervise its work and own the result.</p></div>
+        <div class="card gold"><h3>Candor to the tribunal</h3><p>Rule 3.03. What you file must be true, and you are the one who verified it.</p></div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Here is the reassuring part and the sobering part at once. You do not need a new rulebook. The duties you already carry reach this technology cleanly.</p>
+      <p>Competence and diligence under Rule 1.01 means you understand the tool well enough to use it, or you leave it alone. Confidentiality under Rule 1.05 follows the client information right into whatever box you type it into. Supervision under Rules 5.01 and 5.03 is the key mental model. Treat AI as a nonlawyer assistant whose work you must check. And candor under Rule 3.03 means what you file is true because you confirmed it, not because the machine sounded sure.</p>
+      <p>Rule numbers here are the Texas framework as of today. Always check the current text before you rely on it. Now let us look at the failure that has cost lawyers the most.</p>
+    </div>
+  </section>
+
+  <!-- 3 · TECH COMPETENCE -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Competence, expanded</div>
+      <h2 class="slide-title">Competence now includes the tools you choose to use</h2>
+      <div class="callout"><span class="label">The shift</span><p>Knowing the law is no longer enough on its own. Knowing the benefits and risks of the technology you use is now part of competent practice.</p></div>
+      <ul class="bullets mt-m">
+        <li>You do not need to be an engineer, you need to know the failure modes</li>
+        <li>Understand what the tool keeps, trains on, and exposes</li>
+        <li>Know when a task is a poor fit for a general chatbot</li>
+        <li>Ask for help or decline the tool when it exceeds your understanding</li>
+      </ul>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Competence has quietly grown. For years it meant knowing the law and the procedure. Guidance on technology competence now folds in a second duty. You are expected to understand the benefits and the risks of the tools you use.</p>
+      <p>That does not mean you need to build the model. It means you need to know how it fails, what it does with your input, and when a task simply does not belong in a general chatbot. Those three things are within reach for every person in this room.</p>
+      <p>And there is an honest exit. If a tool is beyond your understanding for a given task, competent practice can mean getting help or setting the tool down. Saying no is a professional answer. Next, the failure that makes headlines.</p>
+    </div>
+  </section>
+
+  <!-- 4 · HALLUCINATIONS -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Failure one</div>
+      <h2 class="slide-title">Hallucinated case law is a feature of how models work</h2>
+      <div class="compare">
+        <div class="compare-col">
+          <h3>What a chatbot does</h3>
+          <ul>
+            <li>Predicts the next likely words from patterns</li>
+            <li>Produces text that reads like real citations</li>
+            <li>Has no built-in check that a case exists</li>
+            <li>States confident answers either way</li>
+          </ul>
+        </div>
+        <div class="compare-col alt">
+          <h3>What that looks like</h3>
+          <ul>
+            <li>A plausible style, a fabricated reporter cite</li>
+            <li>Real parties attached to a holding they never made</li>
+            <li>Quotations that appear nowhere in the opinion</li>
+            <li>A brief that collapses under a judge's search</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reflect"><span>⚠️</span><p><strong>The pattern is documented.</strong> Courts across the country have sanctioned lawyers who filed briefs built on citations the AI invented.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Let us name the failure precisely. A hallucination is not a glitch that better software will soon remove. It is a direct result of how these models work. They predict the next likely words. They are built to produce fluent text, not to confirm that a case exists.</p>
+      <p>So you get output that reads exactly like a citation, with a real reporter format and confident language, attached to a holding no court ever issued. The style is perfect. The substance is invented.</p>
+      <p>This is not hypothetical. Courts around the country have sanctioned lawyers who filed briefs resting on cases the AI made up. The lesson is not to fear the tool. The lesson is that every citation it gives you is a lead to verify, never an authority to cite.</p>
+    </div>
+  </section>
+
+  <!-- 5 · ANATOMY OF A FABRICATION -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Look closely</div>
+      <h2 class="slide-title">Anatomy of a fabricated citation</h2>
+      <div class="prompt" style="font-size:15px">State v. Harrelson, 482 S.W.3d 917 (Tex. Crim. App. 2016)
+"A warrantless blood draw following a routine traffic stop
+ violates the Fourth Amendment absent exigent circumstances."</div>
+      <div class="grid cols-3 mt-m">
+        <div class="card"><h3>Looks right</h3><p>Correct reporter, plausible volume and page, a real-sounding court and year.</p></div>
+        <div class="card gold"><h3>Reads right</h3><p>The holding tracks doctrine you half-remember, so it feels familiar and safe.</p></div>
+        <div class="card"><h3>Is not real</h3><p>The case, the pinpoint, and the quotation can all be invented together, seamlessly.</p></div>
+      </div>
+      <div class="reflect"><span>🔎</span><p><strong>Verification rule.</strong> If you cannot pull the opinion yourself from a real database, you do not have a citation. You have a hypothesis.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Look at this example on the screen. It is invented, and I built it to be convincing. The reporter is right. The volume and page look normal. The court and year are plausible. The quoted holding tracks doctrine you half remember about warrantless blood draws, so it slips past your guard.</p>
+      <p>That is the danger. It looks right and it reads right, which is exactly why it is dangerous. The case, the pinpoint page, and the quotation can all be fabricated together, and they will match each other perfectly.</p>
+      <p>So here is the rule I want you to carry. If you cannot pull the opinion yourself from a real database, you do not have a citation. You have a hypothesis that still needs proof. Now the risk that shows up before you ever file anything.</p>
+    </div>
+  </section>
+
+  <!-- 6 · CONFIDENTIALITY -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Failure two</div>
+      <h2 class="slide-title">Client data can leak the moment you paste it</h2>
+      <div class="guardrail">
+        <div class="guardrail-col willnot">
+          <h4>Where the risk lives</h4>
+          <ul>
+            <li>Free and consumer tools may train on what you type</li>
+            <li>Inputs can be retained, logged, and reviewed by humans</li>
+            <li>Client names and facts can identify a matter instantly</li>
+            <li>A convenience login is not a client data agreement</li>
+          </ul>
+        </div>
+        <div class="guardrail-col will">
+          <h4>How to work safely</h4>
+          <ul>
+            <li>Strip identifying details, or use a fictional stand-in</li>
+            <li>Choose tools with enterprise terms and no training on your data</li>
+            <li>Keep privileged facts out of general chatbots entirely</li>
+            <li>Assume anything typed could be seen, then act accordingly</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>The second failure happens before anything reaches a court. It happens the moment you paste a client fact into the wrong tool.</p>
+      <p>Free and consumer tiers often reserve the right to train on your inputs. Those inputs can be stored, logged, and in some cases read by a human reviewer. A client name plus two facts can identify a matter to anyone who sees it. And clicking accept on a sign-up screen is not the same as a data protection agreement.</p>
+      <p>The safe habits are on the right, and they are simple. Strip the identifiers or use a fictional stand-in. Prefer tools with enterprise terms that promise not to train on your data. Keep truly privileged material out of general chatbots. And work as though anything you type could be seen, because sometimes it can.</p>
+    </div>
+  </section>
+
+  <!-- 7 · JUDGMENT -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">The bottom line</div>
+      <h2 class="slide-title">AI output is never a substitute for legal judgment</h2>
+      <div class="callout light"><span class="label">Hold this</span><p>The tool can draft, summarize, and suggest. It cannot be responsible. Responsibility has your name on it, every time.</p></div>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h4>It drafts</h4><p>You decide whether the draft is right, complete, and fit for this client.</p></div>
+        <div class="step"><div class="n">2</div><h4>It suggests</h4><p>You choose the strategy, weigh the risk, and answer to the client and court.</p></div>
+        <div class="step"><div class="n">3</div><h4>You sign</h4><p>Your signature certifies the work. The AI cannot stand behind it, so you must.</p></div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>This is the sentence I most want you to keep. AI output is never a substitute for legal judgment.</p>
+      <p>The tool can draft, it can summarize, it can suggest three defense angles in seconds. What it cannot do is be responsible. It has no license, no duty to the client, and no standing before the court.</p>
+      <p>So the division of labor is clear. It drafts, you decide. It suggests, you choose and weigh the risk. And when you sign, your signature certifies the work as yours. The machine cannot stand behind a filing, which is exactly why you have to. Let us put this to work with a short activity.</p>
+    </div>
+  </section>
+
+  <!-- 8 · ACTIVITY -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Activity · core · about 6 minutes</div>
+      <h2 class="slide-title">Find the fabrication</h2>
+      <div class="scenario">
+        <div class="scenario-label">Your task</div>
+        <p>Open a free chatbot. Ask it for three Texas cases on a suppression issue of your choice, with citations and one-line holdings. Then try to verify each one in a real source. Mark which you can confirm, which you cannot, and how confident the tool sounded either way.</p>
+      </div>
+      <div class="grid cols-3 mt-m">
+        <div class="card"><h3><span class="ico">💬</span>Prompt</h3><p>"Give me three Texas cases on [issue], with full citations and a one-sentence holding for each."</p></div>
+        <div class="card gold"><h3><span class="ico">🔎</span>Verify</h3><p>Search each citation. Can you open the actual opinion and find that language?</p></div>
+        <div class="card"><h3><span class="ico">📝</span>Record</h3><p>Confirmed, unconfirmed, or invented. Note the tool's confidence level.</p></div>
+      </div>
+      <div class="reflect"><span>💬</span><p><strong>Debrief.</strong> How many held up. Did the tool warn you about any of them. What would have happened if this went into a brief unread.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Time to see this yourself. Open whichever free chatbot you set up. Ask it for three Texas cases on any suppression issue you like, with full citations and a one-line holding for each. Then do the part most people skip. Try to verify each one in a real source.</p>
+      <p>Give it about five minutes. Mark each result as confirmed, unconfirmed, or clearly invented, and pay attention to how sure the tool sounded in every case. That confidence is the trap.</p>
+      <p>Watch for the person who finds a clean-looking cite that does not exist, because it happens fast in a room this size. When we come back, I will ask how many held up and what would have happened if this had gone into a filing unread. Go ahead and start.</p>
+    </div>
+  </section>
+
+  <!-- 9 · RECAP -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Segment one recap</div>
+      <h2 class="slide-title">What holds true before any prompt</h2>
+      <ul class="bullets">
+        <li>Your existing duties already reach AI-assisted work</li>
+        <li>Competence now includes the tools you choose to use</li>
+        <li>Every AI citation is a lead to verify, not an authority</li>
+        <li>Keep client data out of tools that may retain or train on it</li>
+        <li>Responsibility stays with you and only you</li>
+      </ul>
+      <div class="callout"><span class="label">Bridge</span><p>If AI is this prone to error, why use it at all. Because with structure and grounding, you can cut the risk sharply. That is segment two.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Let us gather the segment. Five things hold true before you type a single prompt. Your duties already reach this work. Competence now includes the tools. Every citation is a lead, not an authority. Client data stays out of tools that may keep it. And responsibility is yours alone.</p>
+      <p>That might sound like a case for avoiding AI entirely. It is not. Here is the honest bridge. If the tool is this prone to error when used carelessly, the answer is to stop using it carelessly. With structure and with grounding in real sources, you can cut the risk sharply and still get real value.</p>
+      <p>That is exactly what we build next, starting with a framework made for this audience.</p>
+    </div>
+  </section>
+
+</div>
+<script src="../assets/deck-framework.js"></script>
+</body>
+</html>

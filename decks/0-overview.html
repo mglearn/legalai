@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI for the Defense · Overview | TCDLA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/deck-framework.css">
+</head>
+<body>
+<div class="deck">
+
+  <!-- 1 · COVER -->
+  <section class="slide cover current">
+    <div class="slide-body">
+      <div class="cover-eyebrow">Texas Criminal Defense Lawyers Association · July 2026</div>
+      <h1>AI for the Defense</h1>
+      <div class="subtitle">Ethical Use, Accuracy, and Attorney Responsibility</div>
+      <div class="meta">
+        <strong>Facilitator:</strong> Miguel Guhlin, TCEA<br>
+        Session resources: <strong>mglearn.github.io/legalai</strong><br>
+        No AI subscription required to attend. A laptop or device with a keyboard is recommended.
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Welcome. My name is Miguel Guhlin, and over the next hour we are going to look closely at how generative AI fits into criminal defense work, where it helps, and where it puts your license at risk.</p>
+      <p>I want to set the tone right away. This is not a sales pitch for any tool, and it is not a warning to stay away. It is a working session. You will read short fact patterns, run real prompts in a free chatbot, and see for yourself where the output is useful and where it quietly goes wrong.</p>
+      <p>You do not need a paid account to take part. Everything is at the short address on the screen. Take a moment to open it now, and we will get started.</p>
+    </div>
+  </section>
+
+  <!-- 2 · WHAT THIS SESSION IS -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">The session in one breath</div>
+      <h2 class="slide-title">A working hour on responsible AI in defense practice</h2>
+      <p class="lead">You will learn where AI tools help legal work, where they create ethical risk, and how you stay fully accountable for every AI-assisted output.</p>
+      <div class="grid cols-3">
+        <div class="card"><h3><span class="ico">⚖️</span>Ethics first</h3><p>Competence, confidentiality, supervision, and candor to the court frame everything we do today.</p></div>
+        <div class="card gold"><h3><span class="ico">🛠️</span>Hands-on</h3><p>You work in a free AI chatbot on realistic, fictional defense scenarios. Most of our time is spent doing, not watching.</p></div>
+        <div class="card"><h3><span class="ico">✅</span>Verification</h3><p>You leave with structured prompting and source-grounded habits that reduce error before it reaches a filing.</p></div>
+      </div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Here is the shape of our time together. Three ideas hold the whole session up.</p>
+      <p>First, ethics leads. Every technique I show you sits on top of your existing duties, so we start there and keep coming back to it.</p>
+      <p>Second, this is hands-on. You will spend more time working in a chatbot than listening to me. The scenarios are fictional, but they are built to feel like Monday morning.</p>
+      <p>Third, verification is the throughline. The goal is not to prompt faster. The goal is to catch the error before it reaches a judge. If you leave with one habit, I want it to be that one.</p>
+    </div>
+  </section>
+
+  <!-- 3 · DESCRIPTION -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">What we will cover</div>
+      <h2 class="slide-title">Where AI helps, where it hurts, and who answers for it</h2>
+      <ul class="bullets">
+        <li>Common AI failures, including <strong>hallucinated case law</strong> and fabricated citations</li>
+        <li>Confidentiality and client data risk in consumer chatbots</li>
+        <li>Structured prompting and few-shot examples as safeguards</li>
+        <li>Retrieval-augmented generation to hold AI to <strong>trusted sources</strong></li>
+        <li>Human oversight, verification, and ethical decision-making throughout</li>
+      </ul>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>These are the threads we will pull on. You have all seen the headlines about lawyers sanctioned for citing cases that never existed, so we look hard at hallucinated case law and how it happens.</p>
+      <p>We look at confidentiality, because pasting a client fact into the wrong tool can be its own problem before a single word is filed.</p>
+      <p>Then we turn to the fixes. Structured prompting gives the model guardrails. Retrieval-augmented generation, which I will just call grounding, keeps the model tied to sources you trust instead of its own memory.</p>
+      <p>And underneath all of it sits your judgment. Keep that in mind as we go, and we will move to what you will actually be able to do by the end.</p>
+    </div>
+  </section>
+
+  <!-- 4 · LEARNING OBJECTIVES -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Learning objectives</div>
+      <h2 class="slide-title">By the end you will be able to</h2>
+      <ul class="bullets">
+        <li>Identify ethical risks tied to AI use in legal practice</li>
+        <li>Explain why you remain responsible for AI-assisted work product</li>
+        <li>Recognize when AI use implicates confidentiality or competence</li>
+        <li>Apply guardrails and verification to reduce AI-related errors</li>
+        <li>Use structured prompting and source-grounded workflows for accuracy</li>
+      </ul>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>These are our objectives, and they are ethics-focused on purpose. Notice that not one of them is about becoming a faster typist.</p>
+      <p>You will be able to spot where AI creates risk, explain to a colleague or a bar committee why the responsibility stays with you, and recognize the moments where confidentiality and competence are in play.</p>
+      <p>Then the practical half. You will apply concrete guardrails, and you will use structured, source-grounded prompting to raise the accuracy of what you get back.</p>
+      <p>If you can do these five things on Monday, this hour was worth your time. Let me show you how we are going to spend it.</p>
+    </div>
+  </section>
+
+  <!-- 5 · AGENDA -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Our plan for the hour</div>
+      <h2 class="slide-title">Three segments, built to flex from sixty to ninety minutes</h2>
+      <div class="steps">
+        <div class="step"><div class="n">1</div><h4>Ethical Foundations</h4><p>Competence and supervision, hallucinated citations, confidentiality, and why AI never replaces judgment.</p><span class="pill time">about 20 min</span></div>
+        <div class="step"><div class="n">2</div><h4>Risk-Reducing Practices</h4><p>Structured and few-shot prompting, the TCDLAi framework, grounding with your own sources, and a live verification.</p><span class="pill time">about 25 min</span></div>
+        <div class="step"><div class="n">3</div><h4>Guardrails and Takeaways</h4><p>An ethics checklist, clear do-and-don't guidance, and what to document, review, and verify.</p><span class="pill time">about 15 min</span></div>
+      </div>
+      <div class="callout light"><span class="label">Format</span><p>Short set-up, then you work. Hands-on activity blocks are marked, so we can add a second round when time allows or trim to the core sixty.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Here is the road map. We move in three segments. First, ethical foundations, where we name the duties and the failures. Second, the risk-reducing practices, which is where you do most of the hands-on work using a framework I call TCDLAi. Third, guardrails and takeaways, so you walk out with a checklist and clear rules.</p>
+      <p>The times on screen are targets, not promises. Each activity block is marked as core or optional. If we have the full ninety minutes, we run a second scenario. If we have sixty, we keep the core and still get you working. Either way, you leave having tried this yourself.</p>
+      <p>Next, the tools you will use, and the one rule that matters most before you type anything.</p>
+    </div>
+  </section>
+
+  <!-- 6 · TOOLS -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">What you will use today</div>
+      <h2 class="slide-title">Free chatbots, and a shared option if you have none</h2>
+      <div class="grid cols-3">
+        <div class="card"><h3>Bring your own</h3><p>Claude, ChatGPT, Z.ai, or Mistral. The free tier of any one of these works for every activity today.</p></div>
+        <div class="card gold"><h3>Shared option</h3><p>A BoodleBox license code is provided so you can take part even if you have nothing else set up.</p></div>
+        <div class="card"><h3>Claude for Legal</h3><p>We look at practice-area tooling built for lawyers as an example of purpose-built, review-gated AI.</p></div>
+      </div>
+      <div class="callout"><span class="label">The one rule before you type</span><p>Never put confidential, privileged, or client-identifying facts into a consumer chatbot. Today's scenarios are fictional for exactly this reason.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Let me get you set up. You do not need anything fancy. Pick one free chatbot. Claude, ChatGPT, Z.ai, and Mistral all have free tiers that will carry you through everything today.</p>
+      <p>If you did not set one up, do not worry. I am handing out a BoodleBox code so you can work alongside everyone else. And later we will glance at Claude for Legal as an example of tooling built specifically for our work, with attorney review built into it.</p>
+      <p>Now the rule in the box, and it is the most important sentence on this slide. Do not put confidential, privileged, or client-identifying information into a consumer chatbot. That is why every scenario I hand you today is invented. We practice safely first, then you carry the habit back to real matters.</p>
+    </div>
+  </section>
+
+  <!-- 7 · HOW WE WORK -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">How the hands-on work runs</div>
+      <h2 class="slide-title">We start from the problem, not the tool</h2>
+      <div class="compare">
+        <div class="compare-col">
+          <h3>Problem-based learning</h3>
+          <ul>
+            <li>Start with a real defense problem you recognize</li>
+            <li>Decide what a good outcome looks like first</li>
+            <li>Use AI as one tool toward that outcome</li>
+            <li>Judge the result against the problem, not the novelty</li>
+          </ul>
+        </div>
+        <div class="compare-col alt">
+          <h3>Tool-first browsing</h3>
+          <ul>
+            <li>Start with a feature and look for a use</li>
+            <li>Impressive demos, unclear payoff</li>
+            <li>Easy to adopt a tool that solves nothing</li>
+            <li>Hard to measure whether it helped</li>
+          </ul>
+        </div>
+      </div>
+      <div class="reflect"><span>💬</span><p><strong>Today's stance.</strong> Every activity begins with a problem worth solving and ends by asking whether the AI actually solved it.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>One word about method, because it shapes everything we do. We are working problem-first, not tool-first.</p>
+      <p>Tool-first is the trap. You see a slick demo, you get excited, and you go looking for a reason to use it. That is how firms end up paying for software that solves nothing.</p>
+      <p>Problem-first flips it. We start with a defense task you already know is hard. We decide what a good result would look like. Then we point AI at it and, at the end, we ask the honest question, did this actually help. That last question is the whole game, and you will hear me ask it after every activity.</p>
+    </div>
+  </section>
+
+  <!-- 8 · TAKEAWAYS -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">What you leave with</div>
+      <h2 class="slide-title">Three takeaways, all on the resources page</h2>
+      <div class="grid cols-3">
+        <div class="card gold"><h3>TCDLAi Prompt Design Guide</h3><p>A six-part framework for structuring defense prompts so the output is focused, grounded, and checkable.</p></div>
+        <div class="card"><h3>Ethical guardrail checklist</h3><p>A short, printable checklist you run before any AI-assisted work leaves your desk.</p></div>
+        <div class="card"><h3>Sample prompt library</h3><p>Legal prompts organized by type and task, each built to emphasize verification and accountability.</p></div>
+      </div>
+      <div class="callout light"><span class="label">Optional starter opener</span><p>Before we dig in, you can take a two-minute AI fluency self-check on the resources page to see where you stand today.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Before we start segment one, here is what you take home. Three things, all waiting on the resources page, so you do not have to write anything down.</p>
+      <p>The first is the TCDLAi Prompt Design Guide, a six-part structure built for defense work. The second is a one-page ethical guardrail checklist you run before anything leaves your desk. The third is a library of legal prompts, sorted by type and task, each one written to push you toward verification.</p>
+      <p>If you want a quick gut check on where you stand with AI right now, there is a two-minute self-assessment on that same page. It is optional, and it makes a nice warm-up. Now let us start where we should, with ethics.</p>
+    </div>
+  </section>
+
+</div>
+<script src="../assets/deck-framework.js"></script>
+</body>
+</html>

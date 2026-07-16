@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TCDLAi Prompt Design Guide | AI for the Defense | TCDLA</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/pages.css">
+<style>
+  .letter-row{display:grid;grid-template-columns:64px 1fr;gap:1rem;background:#fff;border:1px solid var(--mgray);border-left:6px solid var(--navy);border-radius:8px;padding:1.1rem 1.3rem;margin-bottom:0.9rem;}
+  .letter-row.gold{border-left-color:var(--gold);}
+  .big-l{font-family:'Playfair Display',serif;font-weight:900;font-size:2.6rem;color:var(--gold);line-height:1;text-align:center;}
+  .letter-row h3{font-size:1.15rem;color:var(--navy);margin-bottom:0.3rem;}
+  .letter-row p{font-size:0.92rem;color:var(--slate);margin-bottom:0.5rem;}
+  .ex{font-family:'Source Code Pro',monospace;font-size:0.8rem;color:var(--text);background:var(--lgray);border-radius:5px;padding:0.4rem 0.6rem;margin-bottom:0.3rem;}
+  @media print{.back-bar,.how,footer.page{display:none;} body{background:#fff;} header.page{background:var(--navy)!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;}}
+</style>
+</head>
+<body>
+<div class="back-bar"><a href="../index.html"><span>←</span> AI for the Defense <span class="sep">/</span> Resources</a></div>
+
+<header class="page">
+  <div class="header-inner">
+    <span class="eyebrow">Takeaway · print or bookmark</span>
+    <h1>TCDLAi Prompt Design Guide</h1>
+    <div class="header-sub">Six moves from the legal issue to a checked result</div>
+    <div class="header-meta">Texas Criminal Defense Lawyers Association · Facilitator <a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a></div>
+  </div>
+</header>
+
+<main>
+  <div class="panel navy"><h2>The idea</h2><p>The five uppercase letters build the draft. The lowercase <strong>i</strong> is where you stay a lawyer. Run the letters in order when a task matters, and the model stays focused while you stay in control.</p></div>
+
+  <div class="letter-row"><div class="big-l">T</div><div>
+    <h3>Target the legal issue</h3>
+    <p>Frame the precise legal question. Be exact about the charge and the jurisdiction.</p>
+    <div class="ex">"Analyze the elements of [charge] under Texas law."</div>
+    <div class="ex">"Summarize the key defenses to [charge] in [county] court."</div>
+  </div></div>
+
+  <div class="letter-row gold"><div class="big-l">C</div><div>
+    <h3>Compile relevant facts and evidence</h3>
+    <p>Give the model the facts to organize and prioritize. Never let it add facts you did not provide.</p>
+    <div class="ex">"List and rank the top five pieces of evidence by likely impact."</div>
+    <div class="ex">"Identify inconsistencies across the witness statements I paste."</div>
+  </div></div>
+
+  <div class="letter-row"><div class="big-l">D</div><div>
+    <h3>Define applicable laws and precedents</h3>
+    <p>Point the model to the statutes and precedents it must work from. This is where grounding happens.</p>
+    <div class="ex">"Using only the statute text I paste, summarize what the State must prove."</div>
+    <div class="ex">"From the opinion I provide, state the holding and the facts it turned on."</div>
+  </div></div>
+
+  <div class="letter-row gold"><div class="big-l">L</div><div>
+    <h3>List potential defense strategies</h3>
+    <p>Ask for approaches, each tied to a fact and a legal basis.</p>
+    <div class="ex">"Generate three defense strategies for [charge and key facts], each tied to a fact."</div>
+    <div class="ex">"Compare the pros and cons of an alibi defense versus self-defense here."</div>
+  </div></div>
+
+  <div class="letter-row"><div class="big-l">A</div><div>
+    <h3>Analyze and articulate arguments</h3>
+    <p>Guide the model to evaluate strategies and shape persuasive arguments.</p>
+    <div class="ex">"Draft an opening-statement outline from the strongest defense angle."</div>
+    <div class="ex">"Anticipate and counter the top three likely prosecution arguments."</div>
+  </div></div>
+
+  <div class="letter-row gold"><div class="big-l">i</div><div>
+    <h3>Inspect and improve the results</h3>
+    <p>Critically assess the output and refine. This step is yours, and it is the one that protects you.</p>
+    <div class="ex">"For each claim, quote the exact fact or source that supports it, or mark it UNSUPPORTED."</div>
+    <div class="ex">"Identify where your answer lacks specificity or may be wrong on Texas law."</div>
+  </div></div>
+
+  <div class="reflect-strip"><div class="i">🔎</div><p><strong>The verification rule.</strong> If you cannot pull the opinion or statute yourself from a real database, you do not have a citation. You have a hypothesis that still needs proof.</p></div>
+</main>
+
+<footer class="page">
+  <div class="fin">
+    <div class="brand">Texas Criminal Defense Lawyers Association</div>
+    <p><a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · <a href="https://mglearn.github.io/legalai">mglearn.github.io/legalai</a></p>
+    <p class="cc">AI for the Defense · TCDLAi Prompt Design Guide</p>
+  </div>
+</footer>
+</body>
+</html>
