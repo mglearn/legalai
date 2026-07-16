@@ -19,6 +19,7 @@ Everything you need to build a defense-focused AI bot that carries the TCDLAi fr
 | `04-fact-patterns.txt` | Three fictional practice scenarios | Upload as knowledge |
 | `05-prompt-library.txt` | Copy-ready starter prompts | Upload as knowledge |
 | `06-claude-for-legal-practices.txt` | Element chart, chronology, and matter workspace (adapted from Claude for Legal) | Upload as knowledge |
+| `07-what-i-can-do.txt` | The bot's welcome and capabilities message | Paste into the greeting / first message |
 
 **Prefer one download?** Grab **[LegalAI-BoodleBox-Bot.zip](https://mglearn.github.io/legalai/BoodleBox%20Bot%20LegalAI/LegalAI-BoodleBox-Bot.zip)** (all files, contents are markdown with a `.txt` extension), unzip it, and upload the pieces.
 
@@ -28,7 +29,8 @@ Everything you need to build a defense-focused AI bot that carries the TCDLAi fr
 2. Create a new bot. Name it **LegalAI** and give it a short description, for example: *Drafting and analysis assistant for Texas criminal defense. Every output is a draft for attorney review.* Set its picture using `bot-icon-tcdla.png`, a clean blue-and-silver robot-and-scales avatar with no text (`bot-icon-tcdla.svg` is the editable source).
 3. Open the custom-instructions field. Copy the full contents of `00-custom-instructions.txt` and paste it in.
 4. Add knowledge files. Upload the six numbered knowledge files (`01` through `06`).
-5. Save, then test with a fictional fact pattern from `04-fact-patterns.txt`.
+5. Set the welcome message. Paste `07-what-i-can-do.txt` into the bot's greeting or intro so users see what it does first.
+6. Save, then test with a fictional fact pattern from `04-fact-patterns.txt`.
 
 ## Build it somewhere else
 
