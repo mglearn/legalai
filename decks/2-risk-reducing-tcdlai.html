@@ -12,18 +12,18 @@
   .tcdlai-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:14px; margin-top:16px; }
   .letter { background:var(--lgray); border:1px solid var(--mgray); border-radius:8px; padding:14px 16px; position:relative; }
   .letter .lt { position:absolute; top:12px; right:14px; font-family:var(--font-display),serif; font-weight:900; font-size:30px; color:var(--gold); line-height:1; }
-  .letter h4 { font-family:var(--font-display),serif; color:var(--navy); font-size:15.5px; margin-bottom:5px; padding-right:34px; }
-  .letter p { font-size:13px; color:var(--slate); line-height:1.4; }
+  .letter h4 { font-family:var(--font-display),serif; color:var(--navy); font-size:18px; margin-bottom:5px; padding-right:34px; }
+  .letter p { font-size:16px; color:var(--slate); line-height:1.4; }
   .figure { margin:14px auto 0; text-align:center; }
   .figure img { max-height:430px; max-width:96%; border:1px solid var(--mgray); border-radius:10px; box-shadow:0 8px 24px rgba(10,52,118,0.12); }
-  .figure figcaption { font-size:13px; color:var(--slate); margin-top:8px; font-style:italic; }
+  .figure figcaption { font-size:15px; color:var(--slate); margin-top:8px; font-style:italic; }
   .tier3 { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px; }
   .tcard { border:1.5px solid; border-radius:8px; overflow:hidden; display:flex; flex-direction:column; }
-  .tcard .th { padding:8px 12px; color:#fff; font-weight:700; font-size:12px; letter-spacing:0.08em; text-transform:uppercase; }
+  .tcard .th { padding:8px 12px; color:#fff; font-weight:700; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; }
   .tcard.good { border-color:var(--good); } .tcard.good .th { background:var(--good); }
   .tcard.better { border-color:var(--better); } .tcard.better .th { background:var(--better); }
   .tcard.best { border-color:var(--best); } .tcard.best .th { background:var(--best); }
-  .tcard .tb { padding:10px 12px; font-family:var(--font-mono),monospace; font-size:12.5px; line-height:1.5; color:var(--text); background:#fff; flex:1; }
+  .tcard .tb { padding:10px 12px; font-family:var(--font-mono),monospace; font-size:15px; line-height:1.5; color:var(--text); background:#fff; flex:1; }
   .tcard.best .tb { background:#F5F8FD; }
   .approach { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:16px; }
   .appr { border:1px solid var(--mgray); border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(16,42,84,0.10); }
@@ -31,10 +31,10 @@
   .appr.pbl .bar { background:var(--navy); }
   .appr.uc .bar { background:var(--navy-md); }
   .appr .in { padding:15px 18px; }
-  .appr .start { font-weight:700; color:var(--navy); font-size:16px; margin-bottom:7px; }
+  .appr .start { font-weight:700; color:var(--navy); font-size:18px; margin-bottom:7px; }
   .appr .start .k { color:var(--gold-dk); text-transform:uppercase; letter-spacing:0.04em; }
-  .appr .focus { font-size:14.5px; color:var(--slate); line-height:1.45; margin-bottom:11px; }
-  .appr .ex { background:var(--lgray); border-left:4px solid var(--gold); border-radius:6px; padding:9px 12px; font-size:14px; color:var(--text); line-height:1.45; }
+  .appr .focus { font-size:17px; color:var(--slate); line-height:1.45; margin-bottom:11px; }
+  .appr .ex { background:var(--lgray); border-left:4px solid var(--gold); border-radius:6px; padding:9px 12px; font-size:16px; color:var(--text); line-height:1.45; }
   .appr .ex b { color:var(--navy); }
 </style>
 </head>
@@ -168,7 +168,7 @@
     <div class="slide-body">
       <div class="slide-kicker">Good, better, best</div>
       <h2 class="slide-title">Watch one task climb three tiers</h2>
-      <p class="muted" style="font-size:15px">Task: identify defenses for a fictional driving-while-intoxicated stop.</p>
+      <p class="muted" style="font-size:18px">Task: identify defenses for a fictional driving-while-intoxicated stop.</p>
       <div class="tier3">
         <div class="tcard good">
           <div class="th">Good · fast draft</div>
@@ -280,7 +280,7 @@
         <div class="step"><div class="n">3</div><h4>Match the claim</h4><p>Confirm the quote, the holding, and the pinpoint actually appear.</p></div>
         <div class="step"><div class="n">4</div><h4>Correct and note</h4><p>Fix what fails, and record what you verified and how.</p></div>
       </div>
-      <div class="prompt mt-m" style="font-size:14px">Inspect prompt: "Review your last answer. For each citation, state the exact
+      <div class="prompt mt-m" style="font-size:16px">Inspect prompt: "Review your last answer. For each citation, state the exact
 sentence in the source I pasted that supports it. If you cannot find one,
 say so and remove the claim."</div>
     </div>
