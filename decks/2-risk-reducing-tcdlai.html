@@ -6,13 +6,13 @@
 <title>Risk-Reducing Practices and TCDLAi | AI for the Defense | TCDLA</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Libre+Franklin:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="../assets/deck-framework.css">
 <style>
   .tcdlai-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:14px; margin-top:16px; }
   .letter { background:var(--lgray); border:1px solid var(--mgray); border-radius:8px; padding:14px 16px; position:relative; }
-  .letter .lt { position:absolute; top:12px; right:14px; font-family:'Playfair Display',serif; font-weight:900; font-size:30px; color:var(--gold); line-height:1; }
-  .letter h4 { font-family:'Playfair Display',serif; color:var(--navy); font-size:15.5px; margin-bottom:5px; padding-right:34px; }
+  .letter .lt { position:absolute; top:12px; right:14px; font-family:var(--font-display),serif; font-weight:900; font-size:30px; color:var(--gold); line-height:1; }
+  .letter h4 { font-family:var(--font-display),serif; color:var(--navy); font-size:15.5px; margin-bottom:5px; padding-right:34px; }
   .letter p { font-size:13px; color:var(--slate); line-height:1.4; }
   .figure { margin:14px auto 0; text-align:center; }
   .figure img { max-height:430px; max-width:96%; border:1px solid var(--mgray); border-radius:10px; box-shadow:0 8px 24px rgba(10,52,118,0.12); }
@@ -23,11 +23,11 @@
   .tcard.good { border-color:var(--good); } .tcard.good .th { background:var(--good); }
   .tcard.better { border-color:var(--better); } .tcard.better .th { background:var(--better); }
   .tcard.best { border-color:var(--best); } .tcard.best .th { background:var(--best); }
-  .tcard .tb { padding:10px 12px; font-family:'Source Code Pro',monospace; font-size:12.5px; line-height:1.5; color:var(--text); background:#fff; flex:1; }
+  .tcard .tb { padding:10px 12px; font-family:var(--font-mono),monospace; font-size:12.5px; line-height:1.5; color:var(--text); background:#fff; flex:1; }
   .tcard.best .tb { background:#F5F8FD; }
   .approach { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:16px; }
   .appr { border:1px solid var(--mgray); border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(16,42,84,0.10); }
-  .appr .bar { padding:11px 18px; color:#fff; font-family:'Playfair Display',serif; font-weight:800; font-size:19px; display:flex; align-items:center; gap:10px; }
+  .appr .bar { padding:11px 18px; color:#fff; font-family:var(--font-display),serif; font-weight:800; font-size:19px; display:flex; align-items:center; gap:10px; }
   .appr.pbl .bar { background:var(--navy); }
   .appr.uc .bar { background:var(--navy-md); }
   .appr .in { padding:15px 18px; }
