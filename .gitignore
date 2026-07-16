@@ -8,3 +8,7 @@ Thumbs.db
 *.swp
 .vscode/
 .idea/
+
+# PPTX build tooling and QA artifacts
+build-pptx/node_modules/
+pptx/*.pdf
