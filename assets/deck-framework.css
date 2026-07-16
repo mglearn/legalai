@@ -250,6 +250,20 @@ html, body {
 .spacer { flex: 1; } .muted { color: var(--slate); } .center { text-align: center; }
 .mt-s { margin-top: 10px; } .mt-m { margin-top: 18px; }
 a.inline { color: var(--navy); font-weight: 600; text-decoration: underline; text-decoration-color: var(--steel); text-underline-offset: 2px; }
+a.inline:hover { text-decoration-color: var(--navy); }
+
+/* Do-this-next reference to an activity or resource */
+.next-step { margin-top: 20px; align-self: flex-start; display: inline-flex; align-items: center; gap: 16px;
+  background: #EAF1FB; border: 1px solid var(--green-bd); border-left: 5px solid var(--steel);
+  border-radius: 7px; padding: 13px 20px; box-shadow: var(--sh-card); }
+.next-step .ns-label { font-family: var(--font-body); font-weight: 700; font-size: 12px; letter-spacing: .16em;
+  text-transform: uppercase; color: var(--steel); white-space: nowrap; }
+.next-step a { font-family: var(--font-body); font-weight: 600; font-size: 19px; color: var(--navy);
+  text-decoration: none; display: inline-flex; align-items: center; gap: 8px; }
+.next-step a .arrow { color: var(--steel); font-size: 16px; }
+.next-step a:hover { color: var(--steel); }
+.next-step a:hover .arrow { transform: translate(2px,-2px); }
+.next-step a .arrow { transition: transform .15s; }
 
 /* ── Presenter notes never render on the slide ──────────── */
 .slide .notes { display: none; }

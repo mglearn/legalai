@@ -93,8 +93,8 @@ a.tile:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(10,52,118,0.1
 /* ── Prompt block + copy ──────────────────────────────────── */
 .promptbox{position:relative;font-family:'Source Code Pro',monospace;font-size:0.8rem;line-height:1.55;color:var(--text);
   background:var(--lgray);border:1px solid var(--mgray);border-radius:6px;padding:0.75rem 0.85rem;white-space:pre-wrap;word-break:break-word;}
-.copy-btn{position:absolute;top:0.4rem;right:0.4rem;background:var(--navy);color:#fff;border:none;font-family:'Source Sans 3',sans-serif;
-  font-size:0.66rem;font-weight:700;padding:0.22rem 0.55rem;border-radius:4px;cursor:pointer;opacity:0.85;transition:all .15s;}
+.copy-btn{float:right;margin:0 0 0.35rem 0.6rem;background:var(--navy);color:#fff;border:none;font-family:'Source Sans 3',sans-serif;
+  font-size:0.66rem;font-weight:700;padding:0.22rem 0.6rem;border-radius:4px;cursor:pointer;opacity:0.92;transition:all .15s;}
 .copy-btn:hover{background:var(--gold);color:var(--navy-dk);opacity:1;}
 .copy-btn.copied{background:var(--green);color:#fff;}
 
