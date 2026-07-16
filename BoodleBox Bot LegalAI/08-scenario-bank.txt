@@ -1,0 +1,87 @@
+# Scenario Bank — 50 Fictional Texas Criminal Defense Fact Patterns
+
+Fifty short, fictional practice scenarios for the LegalAI bot, spanning common Texas criminal defense matters. Each names a charge with its Texas statute, a one or two sentence fact pattern, and a defense focus.
+
+**Use safely.** Every scenario is fictional and simplified for practice. Statute section numbers are provided for orientation only; confirm the current text and elements at statutes.capitol.texas.gov before relying on them. Never replace these with real client-identifying facts in a consumer tool. When a user picks one, apply the TCDLAi framework, ground only in sources the user pastes, and mark anything unsupported.
+
+Client names are single fictional initials. "SBI" means serious bodily injury. Weights, priors, and lab results are invented.
+
+---
+
+## A. DWI and intoxication offenses
+
+1. **No-refusal blood draw** — DWI (Tex. Penal Code § 49.04). Client "R." refused a breath test at a no-refusal weekend; blood was drawn on a warrant. Focus: warrant-affidavit sufficiency, blood-draw procedure, and chain of custody.
+2. **Rising alcohol** — DWI (§ 49.04). Breath test of 0.09 taken ninety minutes after driving, right after a meal. Focus: retrograde extrapolation and the rising-BAC defense.
+3. **Prescription-medication DWI** — DWI by drugs (§ 49.04). Client "M." took a prescribed medication, no alcohol; the officer alleges impairment. Focus: the statutory definition of intoxication and DRE reliability.
+4. **DWI with a child passenger** — (§ 49.045). A fictional eight-year-old was in the back seat. Focus: the state-jail-felony element, the child-passenger fact, and the validity of the stop.
+5. **Felony DWI, third** — (§ 49.09). Two fictional prior DWIs are alleged for enhancement. Focus: proving prior convictions and admonishment defects in the priors.
+6. **Intoxication assault** — (§ 49.07). A collision caused SBI; causation is disputed. Focus: causation, the SBI definition, and accident reconstruction.
+7. **Boating while intoxicated** — (§ 49.06). Client operated a boat on a lake. Focus: reasonable suspicion on the water and field-sobriety validity performed on a dock.
+8. **DWI with lost video** — (§ 49.04). The dashcam malfunctioned; only the officer's narrative remains. Focus: reasonable suspicion for the stop, credibility, and the missing recording.
+
+## B. Drug offenses
+
+9. **THC vape cartridge** — Possession, Penalty Group 2 (Tex. Health and Safety Code § 481.116). A cartridge tested positive for Delta-9 THC. Focus: the hemp defense, THC-concentration thresholds, and lab methodology.
+10. **THC edibles** — Possession PG2 (§ 481.116). Gummies whose total weight includes non-drug ingredients. Focus: aggregate weight, adulterants and dilutants, and penalty-group classification.
+11. **Shared-apartment possession** — Possession PG1 (§ 481.115). A substance was found in the common area of a shared apartment. Focus: affirmative links and joint possession.
+12. **Substance in a borrowed trunk** — Possession PG1 (§ 481.115). Drugs were in the trunk of a borrowed car. Focus: knowledge, affirmative links, and ownership.
+13. **Drug-free-zone enhancement** — (§ 481.134). Alleged possession within a school zone. Focus: how the distance was measured and proof of the zone element.
+14. **Possession with intent to deliver** — PWID PG1 (§ 481.112). Baggies and a scale are cited as intent. Focus: the intent inference, expert testimony, and the personal-use argument.
+15. **Paraphernalia with residue** — (§ 481.125). A pipe with residue only. Focus: usable-amount questions and the Class C posture.
+16. **Fraudulent prescription** — Fraud to obtain a controlled substance (§ 481.129). An altered prescription is alleged. Focus: knowledge and intent, and pharmacy records.
+
+## C. Search and seizure and procedure
+
+17. **Prolonged stop for a dog sniff** — Possession after a stop (§ 481.115; Fourth Amendment; Tex. Code Crim. Proc. art. 38.23). The stop continued after the warning was written. Focus: unlawful prolongation and suppression.
+18. **Search beyond consent** — Client consented to a search of "the car"; an officer opened a locked container. Focus: the scope of consent and suppression.
+19. **Warrantless home entry** — Officers entered a residence citing exigency. Focus: exigent circumstances and the limits of community caretaking.
+20. **Anonymous-tip stop** — A stop rested solely on an anonymous 911 tip. Focus: reliability, corroboration, and reasonable suspicion.
+21. **Inventory-search pretext** — A vehicle was impounded and searched; policy compliance is disputed. Focus: the inventory exception and the standardized-policy requirement.
+22. **Custodial statement** — Client was questioned at the station without warnings. Focus: the custody analysis, voluntariness, and article 38.22.
+23. **Warrant particularity** — A search warrant described the wrong unit number. Focus: particularity, good-faith limits under Texas law, and suppression.
+
+## D. Assaultive offenses and family violence
+
+24. **Assault, family violence** — (Tex. Penal Code § 22.01(b)). Mutual-combat facts; the complainant recants. Focus: self-defense, recantation, and the 911 call as an excited utterance.
+25. **Violation of a protective order** — (§ 25.07). Contact is alleged through a third party. Focus: knowledge of the order and the contact element.
+26. **Continuous family violence** — (§ 25.11). Two incidents within twelve months are alleged. Focus: the two-incident requirement and jury unanimity.
+27. **Aggravated assault, SBI** — (§ 22.02). SBI is disputed after a bar fight. Focus: the SBI definition, self-defense, and provocation.
+28. **Aggravated assault, deadly weapon** — (§ 22.02(a)(2)). A common object is alleged to be a deadly weapon. Focus: the deadly-weapon definition and manner of use.
+29. **Terroristic threat** — (§ 22.07). Text messages are alleged as threats. Focus: intent to place in fear, context, and speech limits.
+30. **Deadly conduct** — (§ 22.05). A firearm was discharged toward a habitation. Focus: recklessness, identity, and knowledge that someone was present.
+31. **Injury to a child** — (§ 22.04). A caregiver is accused after an accidental injury. Focus: the mental state, causation, and the reasonable-discipline question.
+
+## E. Property and theft
+
+32. **Aggregated shoplifting** — Theft (§ 31.03). Several small thefts are aggregated to a felony. Focus: the aggregation rules, value, and the one-scheme requirement.
+33. **Theft by check** — (§ 31.03 with § 31.06). A dishonored check; intent to deprive is disputed. Focus: rebutting the statutory presumption and notice.
+34. **Unauthorized use of a vehicle** — (§ 31.07). Client drove a relative's car; consent is disputed. Focus: effective consent and mistake of fact.
+35. **Burglary of a habitation** — (§ 30.02). Entry into a detached garage. Focus: habitation versus building and intent at entry.
+36. **Burglary of a vehicle** — (§ 30.04). Items were taken from an unlocked truck bed. Focus: the vehicle definition, the entry element, and identity.
+37. **Criminal mischief** — (§ 28.03). The damage valuation is disputed. Focus: pecuniary loss, intent, and identity.
+38. **Robbery** — (§ 29.02). A shoplifting turned into an alleged shove on the way out. Focus: the force element and whether it was in the course of theft.
+
+## F. Weapons
+
+39. **Unlawful carrying of a weapon** — (Tex. Penal Code § 46.02). A handgun in a vehicle, with post-HB 1927 carry nuances. Focus: lawful-carry exceptions and prohibited-person status.
+40. **Felon in possession of a firearm** — (§ 46.04). A firearm in a shared home; access is disputed. Focus: possession and affirmative links, and the statutory time window.
+41. **Places weapons prohibited** — (§ 46.03). A firearm is alleged at a prohibited location. Focus: notice, knowledge, and the location element.
+42. **Prohibited weapon** — (§ 46.05). An alleged short-barreled firearm. Focus: the definition, federal compliance, and knowledge.
+
+## G. Homicide and serious violence
+
+43. **Manslaughter, single-vehicle crash** — (§ 19.04). A passenger died; recklessness is disputed. Focus: recklessness versus criminal negligence and causation.
+44. **Murder and self-defense** — (§ 19.02; §§ 9.31, 9.32). A confrontation at the client's home. Focus: self-defense and defense of habitation, and reasonableness.
+45. **Criminally negligent homicide** — (§ 19.05). A firearm discharged while being cleaned. Focus: the negligence standard and accident.
+
+## H. Public order, evading, and obstruction
+
+46. **Evading arrest with a vehicle** — (§ 38.04). Client says he did not know it was police. Focus: knowledge and the lawfulness of the attempted detention.
+47. **Resisting arrest** — (§ 38.03). Alleged pulling away during handcuffing. Focus: the use-of-force element and the lawfulness of the arrest.
+48. **Failure to identify** — (§ 38.02). A false name given during a stop. Focus: arrest versus detention and the elements.
+49. **Tampering with evidence** — (§ 37.09). A baggie allegedly discarded during a stop. Focus: knowledge of an investigation and the concealment element.
+50. **Online solicitation of a minor** — (§ 33.021). A sting where the "minor" was an officer. Focus: intent, the belief element, and entrapment.
+
+---
+
+*These are practice materials, not legal advice. Elements and penalties change; verify against the current Texas statutes and the controlling pattern jury charge. Every output built from these is a draft for attorney review.*
