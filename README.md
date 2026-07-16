@@ -11,6 +11,8 @@ This is a modular, hands-on session on responsible generative AI use in criminal
 ### Presentations (`decks/`)
 Self-contained HTML slide decks. Arrow keys to navigate, **S** for speaker notes, **P** to print or export to PDF.
 
+**For the facilitator (not shown to participants):** in any deck, press **V** to open a presenter window on your laptop (current slide, next slide, notes, and a timer), move the deck window to the projector, and press **F** for fullscreen. Both windows stay in sync. Press **S** for notes on the current screen. The full shortcut list is on the **?** overlay in each deck.
+
 - `0-overview.html` — title, description, learning objectives, agenda
 - `1-ethical-foundations.html` — duties, hallucinated citations, confidentiality, judgment
 - `2-risk-reducing-tcdlai.html` — structured prompting, the TCDLAi framework, grounding, verification
