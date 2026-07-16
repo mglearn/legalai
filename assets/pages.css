@@ -146,6 +146,31 @@ footer.page p{font-size:0.85rem;color:#9DB4DA;line-height:1.7;}
 footer.page a{color:var(--gold);text-decoration:none;font-weight:600;}
 footer.page .cc{font-size:0.72rem;color:#5A6B8C;margin-top:0.5rem;}
 
+/* ── Top-bar tools: contents menu + language switcher ─────── */
+.bb-right{margin-left:auto;display:flex;align-items:center;gap:10px;}
+.bb-btn{background:rgba(255,255,255,0.09);border:1px solid rgba(200,210,220,.32);color:#C6D4EC;font-size:12px;font-weight:600;
+  padding:3px 10px;border-radius:5px;cursor:pointer;font-family:'Source Sans 3',sans-serif;display:inline-flex;align-items:center;gap:6px;transition:all .12s;}
+.bb-btn:hover{background:var(--gold-lt);color:var(--navy-dk);border-color:var(--gold-lt);}
+.menu-wrap{position:relative;}
+.menu-drop{position:absolute;right:0;top:calc(100% + 7px);background:#fff;border:1px solid var(--mgray);border-radius:9px;
+  box-shadow:0 16px 40px rgba(10,52,118,.22);min-width:250px;padding:7px;display:none;z-index:300;}
+.menu-drop.open{display:block;}
+.menu-drop a{display:block;padding:8px 12px;border-radius:6px;color:var(--navy);text-decoration:none;}
+.menu-drop a:hover{background:var(--lgray);}
+.menu-drop a .mi-t{font-size:0.9rem;font-weight:700;}
+.menu-drop a .mi-s{display:block;font-size:0.72rem;color:var(--slate);font-weight:400;}
+.menu-drop .mi-div{height:1px;background:var(--mgray);margin:5px 8px;}
+.bb-lang select{background:rgba(255,255,255,0.09);border:1px solid rgba(200,210,220,.32);color:#C6D4EC;font-size:12px;
+  padding:3px 6px;border-radius:5px;font-family:'Source Sans 3',sans-serif;cursor:pointer;}
+.bb-lang select option{color:#14213a;background:#fff;}
+[dir="rtl"] .menu-drop{right:auto;left:0;}
+[dir="rtl"] .bb-right{margin-left:0;margin-right:auto;}
+
+/* ── Hero banner image ────────────────────────────────────── */
+.hero{background:var(--navy-dk);line-height:0;text-align:center;}
+.hero img{display:block;width:100%;max-width:1120px;margin:0 auto;height:auto;}
+.i18n-note{font-size:0.72rem;color:#7E8BA8;margin-top:0.5rem;}
+
 /* ── Responsive ───────────────────────────────────────────── */
 @media (max-width:760px){
   .how-inner{grid-template-columns:1fr 1fr;}

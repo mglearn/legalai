@@ -10,64 +10,64 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/pages.css">
 <style>
-  .hero-obj{display:grid;grid-template-columns:repeat(5,1fr);gap:0.6rem;margin-top:1rem;}
-  .oj{background:rgba(255,255,255,0.08);border:1px solid rgba(200,210,220,0.4);border-radius:7px;padding:0.6rem 0.7rem;font-size:0.78rem;color:#E7EEFB;line-height:1.35;}
-  .oj b{color:var(--gold);display:block;font-size:0.68rem;letter-spacing:0.05em;text-transform:uppercase;margin-bottom:0.2rem;}
   .num-badge{display:inline-flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem;background:var(--navy);color:#fff;border-radius:50%;font-family:'Playfair Display',serif;font-weight:700;font-size:0.8rem;margin-right:0.4rem;}
-  @media (max-width:760px){.hero-obj{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
 <body>
-<div class="back-bar"><a href="https://mguhlin.org" target="_blank"><span>←</span> MGuhlin.org</a></div>
-
-<header class="page">
-  <div class="header-inner">
-    <span class="eyebrow">Texas Criminal Defense Lawyers Association · July 2026</span>
-    <h1>AI for the Defense</h1>
-    <div class="header-sub">Ethical Use, Accuracy, and Attorney Responsibility</div>
-    <div class="header-meta">Facilitator <a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a>, TCEA · Session resources at <a href="https://mglearn.github.io/legalai">mglearn.github.io/legalai</a></div>
-    <div class="hero-obj">
-      <div class="oj"><b>You will</b> Identify ethical risks in AI use</div>
-      <div class="oj"><b>You will</b> Explain why you stay responsible</div>
-      <div class="oj"><b>You will</b> Recognize confidentiality and competence limits</div>
-      <div class="oj"><b>You will</b> Apply guardrails and verification</div>
-      <div class="oj"><b>You will</b> Use structured, grounded prompting</div>
+<div class="back-bar">
+  <a href="https://mguhlin.org" target="_blank"><span>←</span> MGuhlin.org</a>
+  <div class="bb-right">
+    <div class="menu-wrap">
+      <button class="bb-btn" id="menuBtn" aria-haspopup="true" aria-expanded="false">&#9776; <span data-i18n="menu.contents">Contents</span></button>
+      <div class="menu-drop" id="menuDrop" role="menu">
+        <a href="#about" role="menuitem"><span class="mi-t" data-i18n="about.h">About this session</span></a>
+        <a href="#presentations" role="menuitem"><span class="mi-t" data-i18n="sec.present">Presentations</span><span class="mi-s" data-i18n="menu.presentSub">Four decks</span></a>
+        <a href="#activities" role="menuitem"><span class="mi-t" data-i18n="sec.act">Do the activities</span><span class="mi-s" data-i18n="menu.actSub">Fluency check, scenario lab, scenario bank</span></a>
+        <a href="#takeaways" role="menuitem"><span class="mi-t" data-i18n="sec.take">Take it with you</span><span class="mi-s" data-i18n="menu.takeSub">Guide, checklist, prompts, bot</span></a>
+        <a href="#tools" role="menuitem"><span class="mi-t" data-i18n="sec.tools">Tools and requirements</span></a>
+        <div class="mi-div"></div>
+        <a href="https://box.boodle.ai/a/@TCDLALegalAI" target="_blank" role="menuitem"><span class="mi-t">TCDLALegalAI Bot &#8599;</span></a>
+      </div>
     </div>
+    <span class="bb-lang" data-i18n-picker></span>
   </div>
-</header>
+</div>
+
+<div class="hero">
+  <img src="assets/hero.jpg" alt="AI for the Defense — Ethical Use, Accuracy, and Attorney Responsibility. Texas Criminal Defense Lawyers Association, July 2026. Facilitator Miguel Guhlin, TCEA.">
+</div>
 
 <div class="how">
   <div class="how-inner">
-    <div class="how-step"><div class="how-num">1</div><div class="how-label"><strong>Warm up</strong>Take the two-minute fluency self-check.</div></div>
-    <div class="how-step"><div class="how-num">2</div><div class="how-label"><strong>Follow along</strong>Open the presentations as we go.</div></div>
-    <div class="how-step"><div class="how-num">3</div><div class="how-label"><strong>Do the work</strong>Run the scenario lab in a free chatbot.</div></div>
-    <div class="how-step"><div class="how-num">4</div><div class="how-label"><strong>Take it home</strong>Grab the prompts, checklist, and bot.</div></div>
+    <div class="how-step"><div class="how-num">1</div><div class="how-label"><strong data-i18n="how.s1t">Warm up</strong><span data-i18n="how.s1">Take the two-minute fluency self-check.</span></div></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-label"><strong data-i18n="how.s2t">Follow along</strong><span data-i18n="how.s2">Open the presentations as we go.</span></div></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-label"><strong data-i18n="how.s3t">Do the work</strong><span data-i18n="how.s3">Run the scenario lab in a free chatbot.</span></div></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-label"><strong data-i18n="how.s4t">Take it home</strong><span data-i18n="how.s4">Grab the prompts, checklist, and bot.</span></div></div>
   </div>
 </div>
 
 <main>
-  <div class="panel">
-    <h2>About this session</h2>
-    <p>This session examines the ethical use of generative AI in criminal defense practice, with a focus on attorney responsibility, accuracy, confidentiality, and professional judgment. You will see where AI tools can assist legal work, where they present ethical risks, and how you remain fully accountable for all AI-assisted output. Through fictional scenarios and hands-on practice, we address common failures such as hallucinated case law and data-privacy concerns, and we build structured prompting and source-grounded habits that reduce risk. No AI subscription is required to attend. A laptop or device with a keyboard is recommended.</p>
+  <div class="panel" id="about">
+    <h2 data-i18n="about.h">About this session</h2>
+    <p data-i18n="about.p">This session examines the ethical use of generative AI in criminal defense practice, with a focus on attorney responsibility, accuracy, confidentiality, and professional judgment. You will see where AI tools can assist legal work, where they present ethical risks, and how you remain fully accountable for all AI-assisted output. Through fictional scenarios and hands-on practice, we address common failures such as hallucinated case law and data-privacy concerns, and we build structured prompting and source-grounded habits that reduce risk. No AI subscription is required to attend. A laptop or device with a keyboard is recommended.</p>
   </div>
 
-  <div class="section-label">Presentations</div>
+  <div class="section-label" id="presentations" data-i18n="sec.present">Presentations</div>
   <div class="cards c2">
     <a class="tile" href="decks/0-overview.html"><div class="tag">Deck · Start here</div><h3><span class="num-badge">0</span>Overview</h3><p>Title, description, learning objectives, agenda, tools, and how the hands-on work runs.</p></a>
     <a class="tile gold" href="decks/1-ethical-foundations.html"><div class="tag">Deck · Segment one</div><h3><span class="num-badge">1</span>Ethical Foundations</h3><p>Duties, hallucinated citations, confidentiality, and why AI never replaces judgment.</p></a>
     <a class="tile gold" href="decks/2-risk-reducing-tcdlai.html"><div class="tag">Deck · Segment two</div><h3><span class="num-badge">2</span>Risk-Reducing Practices</h3><p>Structured prompting, the TCDLAi framework, grounding, and live verification.</p></a>
     <a class="tile" href="decks/3-guardrails-takeaways.html"><div class="tag">Deck · Segment three</div><h3><span class="num-badge">3</span>Guardrails and Takeaways</h3><p>The ethics checklist, clear do-and-do-not rules, and what to document.</p></a>
   </div>
-  <p class="note">Tip: in any deck, use the arrow keys to move. For a two-monitor setup, press <strong>V</strong> to open a presenter window on your laptop, with the current slide, next slide, your notes, and a timer, then move the deck to the projector and press <strong>F</strong> for fullscreen. Both stay in sync. Press <strong>S</strong> for notes on the current screen, or <strong>P</strong> to export to PDF.</p>
 
-  <div class="section-label">Do the activities</div>
+  <div class="section-label" id="activities" data-i18n="sec.act">Do the activities</div>
   <div class="cards c2">
     <a class="tile" href="activities/fluency-self-assessment.html"><div class="tag">Activity · 2 min</div><h3>AI Fluency Self-Assessment</h3><p>A five-question self-check that places your practice on a four-level ladder. A good opener.</p></a>
     <a class="tile gold" href="activities/pbl-scenario-lab.html"><div class="tag">Activity · 12 min</div><h3>PBL Scenario Lab</h3><p>Three fictional fact patterns, worked through TCDLAi from the good prompt to the best.</p></a>
     <a class="tile" href="activities/scenario-bank.html"><div class="tag">Keep exploring · 50</div><h3>Scenario Bank</h3><p>Fifty more Texas fact patterns, each with a ready-to-run prompt and statute links. Practice after the session.</p></a>
   </div>
 
-  <div class="section-label">Take it with you</div>
+  <div class="section-label" id="takeaways" data-i18n="sec.take">Take it with you</div>
   <div class="cards c2">
     <a class="tile gold" href="handouts/tcdlai-guide.html"><div class="tag">Handout</div><h3>TCDLAi Prompt Design Guide</h3><p>The six-move framework with example defense prompts for each letter. Printable.</p></a>
     <a class="tile" href="handouts/guardrail-checklist.html"><div class="tag">Handout</div><h3>Ethical Guardrail Checklist</h3><p>The eight-point, one-page check you run before relying on any output. Printable.</p></a>
@@ -76,11 +76,11 @@
   </div>
   <p class="note">Want to build your own copy? <a class="inline" href="BoodleBox%20Bot%20LegalAI/LegalAI-BoodleBox-Bot.zip">Download the bot files as a zip</a> (markdown with a <strong>.txt</strong> extension so they upload cleanly), or <a class="inline" href="https://github.com/mglearn/legalai/tree/main/BoodleBox%20Bot%20LegalAI">browse them on GitHub</a>.</p>
 
-  <div class="section-label">Tools and requirements</div>
+  <div class="section-label" id="tools" data-i18n="sec.tools">Tools and requirements</div>
   <div class="panel navy">
-    <h2>Pick one free AI chatbot</h2>
-    <p><a class="inline" href="https://claude.ai" target="_blank"><strong>Claude</strong></a>, <a class="inline" href="https://chatgpt.com" target="_blank"><strong>ChatGPT</strong></a>, <a class="inline" href="https://chat.z.ai" target="_blank"><strong>Z.ai</strong></a>, or <a class="inline" href="https://chat.mistral.ai" target="_blank"><strong>Mistral</strong></a> all have free tiers that work for every activity today. If you have none set up, use the <strong>BoodleBox</strong> code from the session. We also look at <strong>Claude for Legal</strong> as an example of purpose-built, review-gated legal AI.</p>
-    <p style="margin-top:0.6rem;"><strong>The one rule before you type:</strong> never put confidential, privileged, or client-identifying facts into a consumer chatbot. Every scenario here is fictional for that reason.</p>
+    <h2 data-i18n="tools.h">Pick one free AI chatbot</h2>
+    <p><a class="inline" href="https://claude.ai" target="_blank"><strong>Claude</strong></a>, <a class="inline" href="https://chatgpt.com" target="_blank"><strong>ChatGPT</strong></a>, <a class="inline" href="https://chat.z.ai" target="_blank"><strong>Z.ai</strong></a>, or <a class="inline" href="https://chat.mistral.ai" target="_blank"><strong>Mistral</strong></a> <span data-i18n="tools.p1tail">all have free tiers that work for every activity today. If you have none set up, use the BoodleBox code from the session. We also look at Claude for Legal as an example of purpose-built, review-gated legal AI.</span></p>
+    <p style="margin-top:0.6rem;"><strong data-i18n="tools.rulelabel">The one rule before you type:</strong> <span data-i18n="tools.rule">never put confidential, privileged, or client-identifying facts into a consumer chatbot. Every scenario here is fictional for that reason.</span></p>
   </div>
 </main>
 
@@ -88,8 +88,22 @@
   <div class="fin">
     <div class="brand">Texas Criminal Defense Lawyers Association</div>
     <p><a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · TCEA · <a href="https://mglearn.github.io/legalai">mglearn.github.io/legalai</a></p>
-    <p class="cc">AI for the Defense · Ethical Use, Accuracy, and Attorney Responsibility · Session materials are for education and are not legal advice</p>
+    <p class="cc" data-i18n="foot.cc">AI for the Defense · Ethical Use, Accuracy, and Attorney Responsibility · Session materials are for education and are not legal advice</p>
+    <p class="i18n-note" data-i18n="i18n.note">Non-English translations are AI-generated and pending native-speaker review. The session materials themselves are in English.</p>
   </div>
 </footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/hub-i18n.js"></script>
+<script>
+  (function(){
+    var btn=document.getElementById('menuBtn'), drop=document.getElementById('menuDrop');
+    function close(){drop.classList.remove('open');btn.setAttribute('aria-expanded','false');}
+    btn.addEventListener('click',function(e){e.stopPropagation();var o=drop.classList.toggle('open');btn.setAttribute('aria-expanded',o?'true':'false');});
+    document.addEventListener('click',function(e){if(!drop.contains(e.target)&&e.target!==btn)close();});
+    drop.addEventListener('click',function(e){if(e.target.closest('a'))close();});
+    document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  })();
+</script>
 </body>
 </html>
