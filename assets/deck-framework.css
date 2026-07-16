@@ -20,11 +20,11 @@
   --better:  #2F5F8F;
   --best:    #102A54;
   --red:     #102A54;   /* "do not" column — navy (heavier, authoritative) */
-  --red-bg:  #EFF2F6;
-  --red-bd:  #C8D2DC;
+  --red-bg:  #F1F3F6;
+  --red-bd:  #CBD4DE;
   --green:   #2F5F8F;   /* "do" column — steel blue */
-  --green-bg:#EAEFF5;
-  --green-bd:#9DB4CE;
+  --green-bg:#E4EDF7;
+  --green-bd:#93AFCE;
 
   --slide-w: 1280px;
   --slide-h: 720px;
@@ -355,8 +355,10 @@ a.inline { color: var(--navy); font-weight: 700; text-decoration: underline; tex
 @media print {
   @page { size: 1280px 720px; margin: 0; }
   html, body { background: #fff; height: auto; }
+  * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; color-adjust: exact !important; }
   .deck { position: static; display: block; }
-  .slide { position: relative; display: flex !important; transform: none !important; page-break-after: always; box-shadow: none; margin: 0 auto; }
+  .slide { position: relative !important; left: auto !important; top: auto !important; display: flex !important; transform: none !important; page-break-after: always; break-after: page; box-shadow: none; margin: 0 auto; }
+  .slide:last-child { page-break-after: auto; break-after: auto; }
   #controls, #notesPanel, #progress, #help, .back-bar { display: none !important; }
 }
 

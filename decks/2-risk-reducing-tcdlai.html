@@ -25,6 +25,17 @@
   .tcard.best { border-color:var(--best); } .tcard.best .th { background:var(--best); }
   .tcard .tb { padding:10px 12px; font-family:'Source Code Pro',monospace; font-size:12.5px; line-height:1.5; color:var(--text); background:#fff; flex:1; }
   .tcard.best .tb { background:#F5F8FD; }
+  .approach { display:grid; grid-template-columns:1fr 1fr; gap:18px; margin-top:16px; }
+  .appr { border:1px solid var(--mgray); border-radius:10px; overflow:hidden; box-shadow:0 6px 18px rgba(16,42,84,0.10); }
+  .appr .bar { padding:11px 18px; color:#fff; font-family:'Playfair Display',serif; font-weight:800; font-size:19px; display:flex; align-items:center; gap:10px; }
+  .appr.pbl .bar { background:var(--navy); }
+  .appr.uc .bar { background:var(--navy-md); }
+  .appr .in { padding:15px 18px; }
+  .appr .start { font-weight:700; color:var(--navy); font-size:16px; margin-bottom:7px; }
+  .appr .start .k { color:var(--gold-dk); text-transform:uppercase; letter-spacing:0.04em; }
+  .appr .focus { font-size:14.5px; color:var(--slate); line-height:1.45; margin-bottom:11px; }
+  .appr .ex { background:var(--lgray); border-left:4px solid var(--gold); border-radius:6px; padding:9px 12px; font-size:14px; color:var(--text); line-height:1.45; }
+  .appr .ex b { color:var(--navy); }
 </style>
 </head>
 <body>
@@ -50,7 +61,45 @@
     </div>
   </section>
 
-  <!-- 2 · UNSTRUCTURED PROMPTS -->
+  <!-- 2 · PBL VS USE CASE -->
+  <section class="slide">
+    <div class="slide-body">
+      <div class="slide-kicker">Two ways to bring AI into your practice</div>
+      <h2 class="slide-title">Problem-based versus use-case AI</h2>
+      <div class="approach">
+        <div class="appr pbl">
+          <div class="bar">🎯 Problem-based model</div>
+          <div class="in">
+            <div class="start">Start with <span class="k">why</span>. Solve real pain points.</div>
+            <div class="focus">Deep practice challenges with real stakes, where getting it right matters and the payoff is measurable.</div>
+            <div class="ex"><b>Defense example.</b> Suppression motions eat hours each week, and a bad citation risks sanctions. Structure and grounding cut both the time and the error rate.</div>
+          </div>
+        </div>
+        <div class="appr uc">
+          <div class="bar">⚡ Use-case model</div>
+          <div class="in">
+            <div class="start">Start with <span class="k">what</span>. Bank quick wins.</div>
+            <div class="focus">Specific tasks that are repetitive, data-heavy, or generative, where a fast first draft saves minutes.</div>
+            <div class="ex"><b>Defense examples.</b> Summarize a transcript (repetitive), compare two plea offers (data-driven), draft a client update (generative).</div>
+          </div>
+        </div>
+      </div>
+      <div class="reflect"><span>🧭</span><p><strong>Today leans problem-based.</strong> We start from a defense problem worth solving, use AI toward it, and judge the result against the problem.</p></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">mglearn.github.io/legalai</span>
+    </div>
+    <div class="notes">
+      <p>Before we touch a prompt, one choice shapes everything. There are two ways to bring AI into a practice, and they lead to very different results.</p>
+      <p>The use-case model, on the right, starts with what. You look for specific tasks that are repetitive, data-heavy, or generative, and you bank quick wins. Summarize a transcript, compare two plea offers, draft a client update. Useful, and a fine place to start.</p>
+      <p>The problem-based model, on the left, starts with why. You name a real pain point with real stakes, like the hours suppression motions eat and the sanctions a bad citation invites, and you aim AI at that. Bigger payoff, and it forces you to measure whether the tool actually helped.</p>
+      <p>Today we lean problem-based. We start from a defense problem worth solving, then judge the AI against it. Which brings us to why vague prompting is the enemy.</p>
+    </div>
+  </section>
+
+  <!-- 3 · UNSTRUCTURED PROMPTS -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">The root problem</div>
