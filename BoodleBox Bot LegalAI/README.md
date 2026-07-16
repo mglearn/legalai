@@ -2,6 +2,8 @@
 
 Everything you need to build a defense-focused AI bot that carries the TCDLAi framework and the ethical guardrails by default. Built for the TCDLA session **AI for the Defense**.
 
+**See it live:** a finished version is already published as an example at **[TCDLALegalAI on BoodleBox](https://box.boodle.ai/a/@TCDLALegalAI)**. Open it to try the bot, or follow the steps below to build your own.
+
 > **Practice safely.** This bot is for drafting, analysis, and issue-spotting. Every output is a draft for attorney review. Use fictional or de-identified facts in consumer tools. Verify all authority in a real database.
 
 ---
