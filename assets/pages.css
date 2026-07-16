@@ -57,6 +57,8 @@ main{max-width:1000px;margin:0 auto;padding:2rem;}
 .panel.navy{background:var(--navy);border-left-color:var(--gold);color:#EAF0FB;}
 .panel.navy h2{color:#fff;}
 .panel.navy p{color:#C6D4EC;}
+.panel.navy a.inline{color:var(--gold-lt);text-decoration-color:var(--gold-lt);}
+.panel.navy a.inline strong{color:var(--gold-lt);}
 
 /* ── Cards ────────────────────────────────────────────────── */
 .cards{display:grid;gap:1rem;margin-bottom:1.4rem;}

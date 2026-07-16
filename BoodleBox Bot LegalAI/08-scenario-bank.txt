@@ -1,8 +1,8 @@
-# Scenario Bank — 50 Fictional Texas Criminal Defense Fact Patterns
+# Scenario Bank — 50 Fictional Texas Criminal Defense Fact Patterns and Prompts
 
-Fifty short, fictional practice scenarios for the LegalAI bot, spanning common Texas criminal defense matters. Each names a charge with its Texas statute, a one or two sentence fact pattern, and a defense focus.
+Fifty short, fictional practice scenarios for the LegalAI bot, spanning common Texas criminal defense matters. Each names a charge with its Texas statute, a one or two sentence fact pattern, a defense focus, and a ready-to-run prompt.
 
-**Use safely.** Every scenario is fictional and simplified for practice. Statute section numbers are provided for orientation only; confirm the current text and elements at statutes.capitol.texas.gov before relying on them. Never replace these with real client-identifying facts in a consumer tool. When a user picks one, apply the TCDLAi framework, ground only in sources the user pastes, and mark anything unsupported.
+**Use safely.** Every scenario is fictional and simplified for practice. Statute section numbers are for orientation only; confirm the current text and elements at statutes.capitol.texas.gov before relying on them. Never replace these with real client-identifying facts in a consumer tool. When a user picks one, apply the TCDLAi framework, ground only in sources the user pastes, and mark anything unsupported.
 
 Client names are single fictional initials. "SBI" means serious bodily injury. Weights, priors, and lab results are invented.
 
@@ -10,77 +10,276 @@ Client names are single fictional initials. "SBI" means serious bodily injury. W
 
 ## A. DWI and intoxication offenses
 
-1. **No-refusal blood draw** — DWI (Tex. Penal Code § 49.04). Client "R." refused a breath test at a no-refusal weekend; blood was drawn on a warrant. Focus: warrant-affidavit sufficiency, blood-draw procedure, and chain of custody.
-2. **Rising alcohol** — DWI (§ 49.04). Breath test of 0.09 taken ninety minutes after driving, right after a meal. Focus: retrograde extrapolation and the rising-BAC defense.
-3. **Prescription-medication DWI** — DWI by drugs (§ 49.04). Client "M." took a prescribed medication, no alcohol; the officer alleges impairment. Focus: the statutory definition of intoxication and DRE reliability.
-4. **DWI with a child passenger** — (§ 49.045). A fictional eight-year-old was in the back seat. Focus: the state-jail-felony element, the child-passenger fact, and the validity of the stop.
-5. **Felony DWI, third** — (§ 49.09). Two fictional prior DWIs are alleged for enhancement. Focus: proving prior convictions and admonishment defects in the priors.
-6. **Intoxication assault** — (§ 49.07). A collision caused SBI; causation is disputed. Focus: causation, the SBI definition, and accident reconstruction.
-7. **Boating while intoxicated** — (§ 49.06). Client operated a boat on a lake. Focus: reasonable suspicion on the water and field-sobriety validity performed on a dock.
-8. **DWI with lost video** — (§ 49.04). The dashcam malfunctioned; only the officer's narrative remains. Focus: reasonable suspicion for the stop, credibility, and the missing recording.
+**1. No-refusal blood draw** — DWI (Tex. Penal Code § 49.04)
+Facts: Client "R." refused a breath test at a no-refusal weekend; blood was drawn on a warrant.
+Focus: Warrant-affidavit sufficiency, blood-draw procedure, and chain of custody.
+Prompt: Act as a Texas criminal defense attorney preparing a motion to suppress a warrant blood draw. Facts (fictional): [paste]. Sources: [paste the warrant affidavit, Penal Code § 49.04, and any blood-draw records]. Using ONLY what I provide: (1) list what the affidavit had to establish for probable cause and test it line by line; (2) identify every gap in the blood-draw procedure and chain of custody; (3) draft the three strongest suppression arguments, each tied to a specific fact. Mark anything my sources do not support as [UNSUPPORTED], cite only my materials, and end with what I must verify. This is a draft for attorney review.
+
+**2. Rising alcohol** — DWI (Tex. Penal Code § 49.04)
+Facts: A breath test of 0.09 was taken ninety minutes after driving, right after a meal.
+Focus: Retrograde extrapolation and the rising-BAC defense.
+Prompt: Act as a Texas criminal defense attorney building a rising-alcohol defense to DWI. Facts (fictional): [paste]. Sources: [paste the breath-test data, timeline, and Penal Code § 49.04]. Using ONLY what I provide: (1) explain what the State must prove about intoxication at the time of driving, not at the test; (2) lay out how the ninety-minute gap and recent eating support a rising-BAC theory; (3) list the questions I should ask the State's expert on retrograde extrapolation. Flag assumptions, cite only my sources, and finish with what I must verify. Draft for attorney review.
+
+**3. Prescription-medication DWI** — DWI by drugs (Tex. Penal Code § 49.04)
+Facts: Client "M." took a prescribed medication, no alcohol; the officer alleges impairment.
+Focus: The statutory definition of intoxication and DRE reliability.
+Prompt: Act as a Texas criminal defense attorney defending a prescription-medication DWI. Facts (fictional): [paste]. Sources: [paste Penal Code § 49.04 and the officer/DRE report]. Using ONLY what I provide: (1) state how intoxication is defined and what the State must prove for a drug DWI; (2) identify the weak points in the DRE evaluation and the loss-of-faculties proof; (3) give three cross-examination themes for the DRE. Mark unsupported points, cite only my sources, and end with what I must verify. Draft for attorney review.
+
+**4. DWI with a child passenger** — DWI with child passenger (Tex. Penal Code § 49.045)
+Facts: A fictional eight-year-old was in the back seat.
+Focus: The state-jail-felony element, the child-passenger fact, and the validity of the stop.
+Prompt: Act as a Texas criminal defense attorney on a DWI-with-child-passenger charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 49.045 and § 49.04 and the stop report]. Using ONLY what I provide: (1) break the offense into elements, separating the DWI proof from the child-passenger enhancement; (2) evaluate reasonable suspicion for the stop; (3) list defense angles for each element and the single weakest link for the State. Flag gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**5. Felony DWI, third** — Felony DWI (Tex. Penal Code § 49.09)
+Facts: Two fictional prior DWIs are alleged for enhancement.
+Focus: Proving prior convictions and admonishment defects in the priors.
+Prompt: Act as a Texas criminal defense attorney attacking DWI-third enhancement. Facts (fictional): [paste]. Sources: [paste Penal Code § 49.09 and the prior judgments/plea papers]. Using ONLY what I provide: (1) state what the State must prove to use each prior; (2) examine each prior for admonishment defects, finality, and identity problems; (3) draft objections to the enhancement paragraphs. Mark anything unsupported, cite only my sources, and end with what I must verify in the prior records. Draft for attorney review.
+
+**6. Intoxication assault** — Intoxication assault (Tex. Penal Code § 49.07)
+Facts: A collision caused serious bodily injury; causation is disputed.
+Focus: Causation, the SBI definition, and accident reconstruction.
+Prompt: Act as a Texas criminal defense attorney on an intoxication-assault case. Facts (fictional): [paste]. Sources: [paste Penal Code § 49.07, the crash report, and medical records]. Using ONLY what I provide: (1) separate the intoxication element from the causation element and test each; (2) analyze whether the injury meets the serious-bodily-injury definition; (3) build a causation defense around the reconstruction. Flag unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**7. Boating while intoxicated** — BWI (Tex. Penal Code § 49.06)
+Facts: Client operated a boat on a lake.
+Focus: Reasonable suspicion on the water and field-sobriety validity on a dock.
+Prompt: Act as a Texas criminal defense attorney on a boating-while-intoxicated charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 49.06 and the stop/SFST report]. Using ONLY what I provide: (1) analyze the basis for stopping the vessel; (2) attack the reliability of field-sobriety tests administered on a dock or unstable surface; (3) list the strongest suppression and reasonable-doubt angles. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**8. DWI with lost video** — DWI (Tex. Penal Code § 49.04)
+Facts: The dashcam malfunctioned; only the officer's narrative remains.
+Focus: Reasonable suspicion for the stop, credibility, and the missing recording.
+Prompt: Act as a Texas criminal defense attorney where DWI dashcam video is missing. Facts (fictional): [paste]. Sources: [paste Penal Code § 49.04, the report, and any missing-evidence policy]. Using ONLY what I provide: (1) test reasonable suspicion for the stop from the narrative alone; (2) identify what the lost video would have shown and how to argue its absence; (3) list credibility and reasonable-doubt themes. Flag unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
 
 ## B. Drug offenses
 
-9. **THC vape cartridge** — Possession, Penalty Group 2 (Tex. Health and Safety Code § 481.116). A cartridge tested positive for Delta-9 THC. Focus: the hemp defense, THC-concentration thresholds, and lab methodology.
-10. **THC edibles** — Possession PG2 (§ 481.116). Gummies whose total weight includes non-drug ingredients. Focus: aggregate weight, adulterants and dilutants, and penalty-group classification.
-11. **Shared-apartment possession** — Possession PG1 (§ 481.115). A substance was found in the common area of a shared apartment. Focus: affirmative links and joint possession.
-12. **Substance in a borrowed trunk** — Possession PG1 (§ 481.115). Drugs were in the trunk of a borrowed car. Focus: knowledge, affirmative links, and ownership.
-13. **Drug-free-zone enhancement** — (§ 481.134). Alleged possession within a school zone. Focus: how the distance was measured and proof of the zone element.
-14. **Possession with intent to deliver** — PWID PG1 (§ 481.112). Baggies and a scale are cited as intent. Focus: the intent inference, expert testimony, and the personal-use argument.
-15. **Paraphernalia with residue** — (§ 481.125). A pipe with residue only. Focus: usable-amount questions and the Class C posture.
-16. **Fraudulent prescription** — Fraud to obtain a controlled substance (§ 481.129). An altered prescription is alleged. Focus: knowledge and intent, and pharmacy records.
+**9. THC vape cartridge** — Possession, Penalty Group 2 (Tex. Health and Safety Code § 481.116)
+Facts: A cartridge tested positive for Delta-9 THC.
+Focus: The hemp defense, THC-concentration thresholds, and lab methodology.
+Prompt: Act as a Texas criminal defense attorney on a THC-cartridge possession charge. Facts (fictional): [paste]. Sources: [paste Health and Safety Code § 481.116, the lab report, and any hemp definitions]. Using ONLY what I provide: (1) explain what the State must prove and where the legal-hemp line falls on Delta-9 concentration; (2) attack the lab methodology and whether it quantified concentration; (3) list the strongest reasonable-doubt angles. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
 
-## C. Search and seizure and procedure
+**10. THC edibles** — Possession, Penalty Group 2 (Tex. Health and Safety Code § 481.116)
+Facts: Gummies whose total weight includes non-drug ingredients.
+Focus: Aggregate weight, adulterants and dilutants, and penalty-group classification.
+Prompt: Act as a Texas criminal defense attorney on a THC-edibles possession charge. Facts (fictional): [paste]. Sources: [paste Health and Safety Code § 481.116 and the lab weight report]. Using ONLY what I provide: (1) explain how aggregate weight including adulterants and dilutants sets the penalty range; (2) test whether the lab established the controlled-substance weight versus total candy weight; (3) map the facts to the elements and flag the weakest. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
 
-17. **Prolonged stop for a dog sniff** — Possession after a stop (§ 481.115; Fourth Amendment; Tex. Code Crim. Proc. art. 38.23). The stop continued after the warning was written. Focus: unlawful prolongation and suppression.
-18. **Search beyond consent** — Client consented to a search of "the car"; an officer opened a locked container. Focus: the scope of consent and suppression.
-19. **Warrantless home entry** — Officers entered a residence citing exigency. Focus: exigent circumstances and the limits of community caretaking.
-20. **Anonymous-tip stop** — A stop rested solely on an anonymous 911 tip. Focus: reliability, corroboration, and reasonable suspicion.
-21. **Inventory-search pretext** — A vehicle was impounded and searched; policy compliance is disputed. Focus: the inventory exception and the standardized-policy requirement.
-22. **Custodial statement** — Client was questioned at the station without warnings. Focus: the custody analysis, voluntariness, and article 38.22.
-23. **Warrant particularity** — A search warrant described the wrong unit number. Focus: particularity, good-faith limits under Texas law, and suppression.
+**11. Shared-apartment possession** — Possession PG1 (Tex. Health and Safety Code § 481.115)
+Facts: A substance was found in the common area of a shared apartment.
+Focus: Affirmative links and joint possession.
+Prompt: Act as a Texas criminal defense attorney on a shared-space possession charge. Facts (fictional): [paste]. Sources: [paste Health and Safety Code § 481.115 and the search/report]. Using ONLY what I provide: (1) list the affirmative-links factors and mark which ones the State can and cannot show; (2) build the argument that mere presence and access are not possession; (3) give the prosecution's best response to each. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**12. Substance in a borrowed trunk** — Possession PG1 (Tex. Health and Safety Code § 481.115)
+Facts: Drugs were in the trunk of a borrowed car.
+Focus: Knowledge, affirmative links, and ownership.
+Prompt: Act as a Texas criminal defense attorney where drugs were found in a borrowed car. Facts (fictional): [paste]. Sources: [paste Health and Safety Code § 481.115, the report, and ownership records]. Using ONLY what I provide: (1) analyze the knowledge element given the borrowed vehicle; (2) run the affirmative-links analysis and flag the weakest links; (3) list the strongest lack-of-knowledge angles. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**13. Drug-free-zone enhancement** — Possession in a drug-free zone (Tex. Health and Safety Code § 481.134)
+Facts: Alleged possession within a school zone.
+Focus: How the distance was measured and proof of the zone element.
+Prompt: Act as a Texas criminal defense attorney attacking a drug-free-zone enhancement. Facts (fictional): [paste]. Sources: [paste Health and Safety Code § 481.134, the measurement records, and maps]. Using ONLY what I provide: (1) state what the State must prove for the zone and the distance; (2) test how the distance was measured and by whom; (3) draft objections to the enhancement. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**14. Possession with intent to deliver** — PWID PG1 (Tex. Health and Safety Code § 481.112)
+Facts: Baggies and a scale are cited as intent.
+Focus: The intent inference, expert testimony, and the personal-use argument.
+Prompt: Act as a Texas criminal defense attorney contesting intent to deliver. Facts (fictional): [paste]. Sources: [paste Health and Safety Code § 481.112 and the offense report]. Using ONLY what I provide: (1) list the factors the State uses to infer intent to deliver and weigh each; (2) build the personal-use counter-narrative; (3) give cross-examination themes for the State's expert. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**15. Paraphernalia with residue** — Possession of drug paraphernalia (Tex. Health and Safety Code § 481.125)
+Facts: A pipe with residue only.
+Focus: Usable-amount questions and the Class C posture.
+Prompt: Act as a Texas criminal defense attorney on a residue-only paraphernalia case. Facts (fictional): [paste]. Sources: [paste Health and Safety Code § 481.125 and the lab/report]. Using ONLY what I provide: (1) explain the paraphernalia elements and the usable-amount issue if a possession count is added; (2) identify the weakest proof points; (3) outline the best resolution and trial posture. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**16. Fraudulent prescription** — Fraud to obtain a controlled substance (Tex. Health and Safety Code § 481.129)
+Facts: An altered prescription is alleged.
+Focus: Knowledge and intent, and pharmacy records.
+Prompt: Act as a Texas criminal defense attorney on a fraudulent-prescription charge. Facts (fictional): [paste]. Sources: [paste Health and Safety Code § 481.129 and the pharmacy records]. Using ONLY what I provide: (1) isolate the knowledge and intent elements; (2) test whether the records prove the client altered or knew of the alteration; (3) list the strongest lack-of-intent angles. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+
+## C. Search, seizure, and procedure
+
+**17. Prolonged stop for a dog sniff** — Possession after a stop (Tex. Health and Safety Code § 481.115)
+Facts: The stop continued after the warning was written, for a dog sniff.
+Focus: Unlawful prolongation and suppression.
+Prompt: Act as a Texas criminal defense attorney moving to suppress after a prolonged stop. Facts (fictional): [paste]. Sources: [paste the timeline, the report, and Code of Criminal Procedure art. 38.23]. Using ONLY what I provide: (1) fix the moment the traffic mission was complete; (2) show how continuing for a dog sniff extended the stop without new reasonable suspicion; (3) draft the suppression argument and the fruits that fall with it. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**18. Search beyond consent** — Suppression, consent scope (Tex. Code Crim. Proc. art. 38.23)
+Facts: Client consented to a search of "the car"; an officer opened a locked container.
+Focus: The scope of consent and suppression.
+Prompt: Act as a Texas criminal defense attorney on a consent-scope suppression issue. Facts (fictional): [paste]. Sources: [paste the consent exchange, the report, and art. 38.23]. Using ONLY what I provide: (1) define the scope a reasonable officer would understand from the consent; (2) show how opening a locked container exceeded it; (3) draft the suppression argument. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**19. Warrantless home entry** — Suppression, exigency (Tex. Code Crim. Proc. art. 38.23)
+Facts: Officers entered a residence citing exigency.
+Focus: Exigent circumstances and the limits of community caretaking.
+Prompt: Act as a Texas criminal defense attorney challenging a warrantless home entry. Facts (fictional): [paste]. Sources: [paste the report and art. 38.23]. Using ONLY what I provide: (1) state the presumption against warrantless home entry and who bears the burden; (2) test each claimed exigency against the facts; (3) draft the suppression argument and identify the fruits. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**20. Anonymous-tip stop** — Suppression, reasonable suspicion (Tex. Code Crim. Proc. art. 38.23)
+Facts: A stop rested solely on an anonymous 911 tip.
+Focus: Reliability, corroboration, and reasonable suspicion.
+Prompt: Act as a Texas criminal defense attorney attacking a stop based on an anonymous tip. Facts (fictional): [paste]. Sources: [paste the CAD/911 records, the report, and art. 38.23]. Using ONLY what I provide: (1) assess the tip's reliability and predictive detail; (2) show what the officer did or did not corroborate before stopping; (3) draft the reasonable-suspicion suppression argument. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**21. Inventory-search pretext** — Suppression, inventory (Tex. Code Crim. Proc. art. 38.23)
+Facts: A vehicle was impounded and searched; policy compliance is disputed.
+Focus: The inventory exception and the standardized-policy requirement.
+Prompt: Act as a Texas criminal defense attorney on an inventory-search suppression issue. Facts (fictional): [paste]. Sources: [paste the impound/inventory policy, the report, and art. 38.23]. Using ONLY what I provide: (1) state the requirements for a valid inventory search; (2) compare the search to the written policy and flag deviations that suggest pretext; (3) draft the suppression argument. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**22. Custodial statement** — Suppression of statement (Tex. Code Crim. Proc. art. 38.22)
+Facts: Client was questioned at the station without warnings.
+Focus: The custody analysis, voluntariness, and article 38.22.
+Prompt: Act as a Texas criminal defense attorney moving to suppress a statement. Facts (fictional): [paste]. Sources: [paste the interview record, warnings if any, and art. 38.22]. Using ONLY what I provide: (1) apply the custody factors to the station interview; (2) test warnings and voluntariness under article 38.22; (3) draft the suppression argument. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**23. Warrant particularity** — Suppression, particularity (Tex. Code Crim. Proc. art. 38.23)
+Facts: A search warrant described the wrong unit number.
+Focus: Particularity, good-faith limits, and suppression.
+Prompt: Act as a Texas criminal defense attorney attacking a warrant's particularity. Facts (fictional): [paste]. Sources: [paste the warrant, the affidavit, and art. 38.23]. Using ONLY what I provide: (1) analyze whether the description particularly identified the place; (2) address the good-faith question under Texas law; (3) draft the suppression argument. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
 
 ## D. Assaultive offenses and family violence
 
-24. **Assault, family violence** — (Tex. Penal Code § 22.01(b)). Mutual-combat facts; the complainant recants. Focus: self-defense, recantation, and the 911 call as an excited utterance.
-25. **Violation of a protective order** — (§ 25.07). Contact is alleged through a third party. Focus: knowledge of the order and the contact element.
-26. **Continuous family violence** — (§ 25.11). Two incidents within twelve months are alleged. Focus: the two-incident requirement and jury unanimity.
-27. **Aggravated assault, SBI** — (§ 22.02). SBI is disputed after a bar fight. Focus: the SBI definition, self-defense, and provocation.
-28. **Aggravated assault, deadly weapon** — (§ 22.02(a)(2)). A common object is alleged to be a deadly weapon. Focus: the deadly-weapon definition and manner of use.
-29. **Terroristic threat** — (§ 22.07). Text messages are alleged as threats. Focus: intent to place in fear, context, and speech limits.
-30. **Deadly conduct** — (§ 22.05). A firearm was discharged toward a habitation. Focus: recklessness, identity, and knowledge that someone was present.
-31. **Injury to a child** — (§ 22.04). A caregiver is accused after an accidental injury. Focus: the mental state, causation, and the reasonable-discipline question.
+**24. Assault, family violence** — Assault FV (Tex. Penal Code § 22.01(b))
+Facts: Mutual-combat facts; the complainant recants.
+Focus: Self-defense, recantation, and the 911 call as an excited utterance.
+Prompt: Act as a Texas criminal defense attorney on an assault-family-violence case with a recanting complainant. Facts (fictional): [paste]. Sources: [paste Penal Code § 22.01, the 911 call summary, and statements]. Using ONLY what I provide: (1) map the elements and the self-defense justification; (2) analyze how the recantation and the excited-utterance 911 call cut both ways; (3) list the strongest reasonable-doubt themes. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**25. Violation of a protective order** — Violation of protective order (Tex. Penal Code § 25.07)
+Facts: Contact is alleged through a third party.
+Focus: Knowledge of the order and the contact element.
+Prompt: Act as a Texas criminal defense attorney on a protective-order-violation charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 25.07 and the order and contact records]. Using ONLY what I provide: (1) isolate the knowledge and prohibited-contact elements; (2) test whether third-party contact meets the statute as pleaded; (3) list the strongest defense angles. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**26. Continuous family violence** — Continuous violence against the family (Tex. Penal Code § 25.11)
+Facts: Two incidents within twelve months are alleged.
+Focus: The two-incident requirement and jury unanimity.
+Prompt: Act as a Texas criminal defense attorney on a continuous-family-violence charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 25.11 and the incident reports]. Using ONLY what I provide: (1) confirm the two-incident and twelve-month requirements and test each incident; (2) analyze the jury-unanimity issue; (3) attack the weaker incident. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**27. Aggravated assault, SBI** — Aggravated assault (Tex. Penal Code § 22.02)
+Facts: Serious bodily injury is disputed after a bar fight.
+Focus: The SBI definition, self-defense, and provocation.
+Prompt: Act as a Texas criminal defense attorney on an aggravated-assault-SBI case. Facts (fictional): [paste]. Sources: [paste Penal Code § 22.02, § 22.01, medical records, and § 9.31]. Using ONLY what I provide: (1) test whether the injury meets serious bodily injury versus bodily injury; (2) analyze self-defense and any provocation; (3) list the strongest reasonable-doubt themes. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**28. Aggravated assault, deadly weapon** — Aggravated assault (Tex. Penal Code § 22.02(a)(2))
+Facts: A common object is alleged to be a deadly weapon.
+Focus: The deadly-weapon definition and manner of use.
+Prompt: Act as a Texas criminal defense attorney contesting a deadly-weapon allegation. Facts (fictional): [paste]. Sources: [paste Penal Code § 22.02 and the deadly-weapon definition and report]. Using ONLY what I provide: (1) apply the deadly-weapon definition to the object and the manner of its use; (2) argue why the proof falls short; (3) give the State's best response. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**29. Terroristic threat** — Terroristic threat (Tex. Penal Code § 22.07)
+Facts: Text messages are alleged as threats.
+Focus: Intent to place in fear, context, and speech limits.
+Prompt: Act as a Texas criminal defense attorney on a terroristic-threat charge from text messages. Facts (fictional): [paste]. Sources: [paste Penal Code § 22.07 and the full message thread]. Using ONLY what I provide: (1) isolate the intent-to-place-in-fear element; (2) use the surrounding context to argue the messages were not a genuine threat; (3) note any protected-speech considerations. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**30. Deadly conduct** — Deadly conduct (Tex. Penal Code § 22.05)
+Facts: A firearm was discharged toward a habitation.
+Focus: Recklessness, identity, and knowledge that someone was present.
+Prompt: Act as a Texas criminal defense attorney on a deadly-conduct charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 22.05 and the offense report]. Using ONLY what I provide: (1) break out the recklessness and knowledge elements; (2) test the identity proof; (3) list the strongest reasonable-doubt angles. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**31. Injury to a child** — Injury to a child (Tex. Penal Code § 22.04)
+Facts: A caregiver is accused after an accidental injury.
+Focus: The mental state, causation, and the reasonable-discipline question.
+Prompt: Act as a Texas criminal defense attorney on an injury-to-a-child charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 22.04, medical records, and statements]. Using ONLY what I provide: (1) identify the culpable mental state charged and test the proof; (2) analyze causation and the accident theory; (3) list the strongest defense angles. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
 
 ## E. Property and theft
 
-32. **Aggregated shoplifting** — Theft (§ 31.03). Several small thefts are aggregated to a felony. Focus: the aggregation rules, value, and the one-scheme requirement.
-33. **Theft by check** — (§ 31.03 with § 31.06). A dishonored check; intent to deprive is disputed. Focus: rebutting the statutory presumption and notice.
-34. **Unauthorized use of a vehicle** — (§ 31.07). Client drove a relative's car; consent is disputed. Focus: effective consent and mistake of fact.
-35. **Burglary of a habitation** — (§ 30.02). Entry into a detached garage. Focus: habitation versus building and intent at entry.
-36. **Burglary of a vehicle** — (§ 30.04). Items were taken from an unlocked truck bed. Focus: the vehicle definition, the entry element, and identity.
-37. **Criminal mischief** — (§ 28.03). The damage valuation is disputed. Focus: pecuniary loss, intent, and identity.
-38. **Robbery** — (§ 29.02). A shoplifting turned into an alleged shove on the way out. Focus: the force element and whether it was in the course of theft.
+**32. Aggregated shoplifting** — Theft (Tex. Penal Code § 31.03)
+Facts: Several small thefts are aggregated to a felony.
+Focus: The aggregation rules, value, and the one-scheme requirement.
+Prompt: Act as a Texas criminal defense attorney attacking aggregated theft. Facts (fictional): [paste]. Sources: [paste Penal Code § 31.03 and the aggregation allegations]. Using ONLY what I provide: (1) state the aggregation and one-scheme requirements; (2) test whether the incidents form a single continuing scheme; (3) attack the value proof to lower the offense level. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**33. Theft by check** — Theft by check (Tex. Penal Code § 31.03 with § 31.06)
+Facts: A dishonored check; intent to deprive is disputed.
+Focus: Rebutting the statutory presumption and notice.
+Prompt: Act as a Texas criminal defense attorney on a theft-by-check case. Facts (fictional): [paste]. Sources: [paste Penal Code § 31.03 and § 31.06 and the check and notice records]. Using ONLY what I provide: (1) explain the intent-to-deprive element and the § 31.06 presumption; (2) build the argument to rebut the presumption using notice and account facts; (3) list reasonable-doubt themes. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**34. Unauthorized use of a vehicle** — UUMV (Tex. Penal Code § 31.07)
+Facts: Client drove a relative's car; consent is disputed.
+Focus: Effective consent and mistake of fact.
+Prompt: Act as a Texas criminal defense attorney on an unauthorized-use-of-a-vehicle charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 31.07 and statements]. Using ONLY what I provide: (1) analyze the effective-consent element given the family relationship; (2) develop a mistake-of-fact defense; (3) give the State's best response. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**35. Burglary of a habitation** — Burglary of a habitation (Tex. Penal Code § 30.02)
+Facts: Entry into a detached garage is alleged.
+Focus: Habitation versus building and intent at entry.
+Prompt: Act as a Texas criminal defense attorney on a burglary charge involving a detached garage. Facts (fictional): [paste]. Sources: [paste Penal Code § 30.02 and the definitions and report]. Using ONLY what I provide: (1) test whether the garage is a habitation or a building under the definitions; (2) analyze intent at the moment of entry; (3) argue the lesser offense if the structure is a building. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**36. Burglary of a vehicle** — Burglary of a vehicle (Tex. Penal Code § 30.04)
+Facts: Items were taken from an unlocked truck bed.
+Focus: The vehicle definition, the entry element, and identity.
+Prompt: Act as a Texas criminal defense attorney on a burglary-of-a-vehicle charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 30.04 and the report]. Using ONLY what I provide: (1) test whether an open truck bed satisfies the entry and vehicle elements; (2) evaluate the identity proof; (3) list the strongest defense angles. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**37. Criminal mischief** — Criminal mischief (Tex. Penal Code § 28.03)
+Facts: The damage valuation is disputed.
+Focus: Pecuniary loss, intent, and identity.
+Prompt: Act as a Texas criminal defense attorney on a criminal-mischief charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 28.03 and repair estimates]. Using ONLY what I provide: (1) explain how pecuniary loss sets the offense level and test the valuation; (2) analyze the intent element; (3) evaluate the identity proof. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**38. Robbery** — Robbery (Tex. Penal Code § 29.02)
+Facts: A shoplifting turned into an alleged shove on the way out.
+Focus: The force element and whether it was in the course of theft.
+Prompt: Act as a Texas criminal defense attorney contesting a robbery charge that began as shoplifting. Facts (fictional): [paste]. Sources: [paste Penal Code § 29.02, § 31.03, and the report]. Using ONLY what I provide: (1) test whether the contact meets the force or threat element; (2) analyze whether it occurred in the course of committing theft; (3) argue for the lesser theft offense. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
 
 ## F. Weapons
 
-39. **Unlawful carrying of a weapon** — (Tex. Penal Code § 46.02). A handgun in a vehicle, with post-HB 1927 carry nuances. Focus: lawful-carry exceptions and prohibited-person status.
-40. **Felon in possession of a firearm** — (§ 46.04). A firearm in a shared home; access is disputed. Focus: possession and affirmative links, and the statutory time window.
-41. **Places weapons prohibited** — (§ 46.03). A firearm is alleged at a prohibited location. Focus: notice, knowledge, and the location element.
-42. **Prohibited weapon** — (§ 46.05). An alleged short-barreled firearm. Focus: the definition, federal compliance, and knowledge.
+**39. Unlawful carrying of a weapon** — UCW (Tex. Penal Code § 46.02)
+Facts: A handgun in a vehicle, with post-HB 1927 carry nuances.
+Focus: Lawful-carry exceptions and prohibited-person status.
+Prompt: Act as a Texas criminal defense attorney on an unlawful-carrying-of-a-weapon charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 46.02 and the client's status facts]. Using ONLY what I provide: (1) analyze whether the conduct falls within lawful carry and its exceptions; (2) test any prohibited-person or engaged-in-crime allegation; (3) list the strongest defense angles. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**40. Felon in possession of a firearm** — Unlawful possession of a firearm (Tex. Penal Code § 46.04)
+Facts: A firearm in a shared home; access is disputed.
+Focus: Possession and affirmative links, and the statutory time window.
+Prompt: Act as a Texas criminal defense attorney on a felon-in-possession charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 46.04, the prior-conviction dates, and the search report]. Using ONLY what I provide: (1) run the affirmative-links analysis for a firearm in a shared home; (2) test the statutory time window against the prior; (3) list the strongest lack-of-possession angles. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**41. Places weapons prohibited** — Places weapons prohibited (Tex. Penal Code § 46.03)
+Facts: A firearm is alleged at a prohibited location.
+Focus: Notice, knowledge, and the location element.
+Prompt: Act as a Texas criminal defense attorney on a places-weapons-prohibited charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 46.03 and the location and signage facts]. Using ONLY what I provide: (1) test the location and notice elements; (2) analyze the knowledge requirement; (3) list the strongest defense angles. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**42. Prohibited weapon** — Prohibited weapon (Tex. Penal Code § 46.05)
+Facts: An alleged short-barreled firearm.
+Focus: The definition, federal compliance, and knowledge.
+Prompt: Act as a Texas criminal defense attorney on a prohibited-weapon charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 46.05, the weapon description, and any federal registration]. Using ONLY what I provide: (1) apply the statutory definition to the weapon; (2) analyze the federal-compliance exception and the knowledge element; (3) list the strongest defense angles. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
 
 ## G. Homicide and serious violence
 
-43. **Manslaughter, single-vehicle crash** — (§ 19.04). A passenger died; recklessness is disputed. Focus: recklessness versus criminal negligence and causation.
-44. **Murder and self-defense** — (§ 19.02; §§ 9.31, 9.32). A confrontation at the client's home. Focus: self-defense and defense of habitation, and reasonableness.
-45. **Criminally negligent homicide** — (§ 19.05). A firearm discharged while being cleaned. Focus: the negligence standard and accident.
+**43. Manslaughter, single-vehicle crash** — Manslaughter (Tex. Penal Code § 19.04)
+Facts: A passenger died; recklessness is disputed.
+Focus: Recklessness versus criminal negligence and causation.
+Prompt: Act as a Texas criminal defense attorney on a manslaughter charge from a crash. Facts (fictional): [paste]. Sources: [paste Penal Code § 19.04, § 19.05, and the crash reconstruction]. Using ONLY what I provide: (1) distinguish recklessness from criminal negligence on these facts; (2) analyze causation; (3) argue for the lesser offense or acquittal. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**44. Murder and self-defense** — Murder (Tex. Penal Code § 19.02)
+Facts: A confrontation at the client's home.
+Focus: Self-defense and defense of habitation, and reasonableness.
+Prompt: Act as a Texas criminal defense attorney raising self-defense to a murder charge at the client's home. Facts (fictional): [paste]. Sources: [paste Penal Code § 19.02, § 9.31, § 9.32, and the scene facts]. Using ONLY what I provide: (1) map the self-defense and defense-of-habitation elements to the facts; (2) analyze the reasonableness and any presumption; (3) anticipate the State's strongest attack on justification. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**45. Criminally negligent homicide** — Criminally negligent homicide (Tex. Penal Code § 19.05)
+Facts: A firearm discharged while being cleaned.
+Focus: The negligence standard and accident.
+Prompt: Act as a Texas criminal defense attorney on a criminally-negligent-homicide charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 19.05 and the scene and forensic facts]. Using ONLY what I provide: (1) state the criminal-negligence standard and test the proof; (2) develop the accident theory; (3) list the strongest reasonable-doubt angles. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
 
 ## H. Public order, evading, and obstruction
 
-46. **Evading arrest with a vehicle** — (§ 38.04). Client says he did not know it was police. Focus: knowledge and the lawfulness of the attempted detention.
-47. **Resisting arrest** — (§ 38.03). Alleged pulling away during handcuffing. Focus: the use-of-force element and the lawfulness of the arrest.
-48. **Failure to identify** — (§ 38.02). A false name given during a stop. Focus: arrest versus detention and the elements.
-49. **Tampering with evidence** — (§ 37.09). A baggie allegedly discarded during a stop. Focus: knowledge of an investigation and the concealment element.
-50. **Online solicitation of a minor** — (§ 33.021). A sting where the "minor" was an officer. Focus: intent, the belief element, and entrapment.
+**46. Evading arrest with a vehicle** — Evading arrest or detention (Tex. Penal Code § 38.04)
+Facts: Client says he did not know it was police.
+Focus: Knowledge and the lawfulness of the attempted detention.
+Prompt: Act as a Texas criminal defense attorney on an evading-with-a-vehicle charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 38.04 and the pursuit report and video]. Using ONLY what I provide: (1) test the knowledge element that the client knew a peace officer was attempting to detain him; (2) analyze the lawfulness of the attempted detention; (3) list the strongest defense angles. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**47. Resisting arrest** — Resisting arrest (Tex. Penal Code § 38.03)
+Facts: Alleged pulling away during handcuffing.
+Focus: The use-of-force element and the lawfulness of the arrest.
+Prompt: Act as a Texas criminal defense attorney on a resisting-arrest charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 38.03 and the report and video]. Using ONLY what I provide: (1) test whether pulling away meets the use-of-force element; (2) note that lawfulness of the arrest is not a defense but affects the facts and related charges; (3) list the strongest reasonable-doubt angles. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**48. Failure to identify** — Failure to identify (Tex. Penal Code § 38.02)
+Facts: A false name given during a stop.
+Focus: Arrest versus detention and the elements.
+Prompt: Act as a Texas criminal defense attorney on a failure-to-identify charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 38.02 and the encounter facts]. Using ONLY what I provide: (1) determine whether the client was under arrest or merely detained, which changes the offense; (2) map the facts to the correct subsection; (3) list the strongest defense angles. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**49. Tampering with evidence** — Tampering with physical evidence (Tex. Penal Code § 37.09)
+Facts: A baggie allegedly discarded during a stop.
+Focus: Knowledge of an investigation and the concealment element.
+Prompt: Act as a Texas criminal defense attorney on a tampering-with-evidence charge. Facts (fictional): [paste]. Sources: [paste Penal Code § 37.09 and the report and video]. Using ONLY what I provide: (1) test the knowledge-of-an-investigation and concealment or destruction elements; (2) analyze whether dropping an item meets the statute; (3) list the strongest defense angles. Mark unsupported points, cite only my sources, and end with what to verify. Draft for attorney review.
+
+**50. Online solicitation of a minor** — Online solicitation of a minor (Tex. Penal Code § 33.021)
+Facts: A sting where the "minor" was an officer.
+Focus: Intent, the belief element, and entrapment.
+Prompt: Act as a Texas criminal defense attorney on an online-solicitation sting. Facts (fictional): [paste]. Sources: [paste Penal Code § 33.021 and the full chat transcript]. Using ONLY what I provide: (1) isolate the intent and belief elements the State must prove; (2) analyze an entrapment defense against the officer conduct; (3) list the strongest reasonable-doubt themes from the transcript. Mark gaps, cite only my sources, and end with what to verify. Draft for attorney review.
 
 ---
 
