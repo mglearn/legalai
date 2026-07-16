@@ -167,8 +167,8 @@ footer.page .cc{font-size:0.72rem;color:#5A6B8C;margin-top:0.5rem;}
 [dir="rtl"] .bb-right{margin-left:0;margin-right:auto;}
 
 /* ── Hero banner image ────────────────────────────────────── */
-.hero{background:var(--navy-dk);line-height:0;text-align:center;}
-.hero img{display:block;width:100%;max-width:1120px;margin:0 auto;height:auto;}
+.hero{background:var(--navy-dk);text-align:center;line-height:0;}
+.hero img{display:block;max-width:min(100%,860px);max-height:40vh;width:auto;height:auto;margin:0 auto;}
 .i18n-note{font-size:0.72rem;color:#7E8BA8;margin-top:0.5rem;}
 
 /* ── Responsive ───────────────────────────────────────────── */
@@ -176,3 +176,7 @@ footer.page .cc{font-size:0.72rem;color:#5A6B8C;margin-top:0.5rem;}
   .how-inner{grid-template-columns:1fr 1fr;}
   .cards.c3,.cards.c2,.tiers,.guard{grid-template-columns:1fr;}
 }
+
+.menu-drop a.mi-in{padding-left:26px;}
+.menu-drop a.mi-in .mi-t{font-weight:600;font-size:0.85rem;color:var(--slate);}
+.menu-drop a.mi-in:hover .mi-t{color:var(--navy);}

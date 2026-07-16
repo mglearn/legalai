@@ -3,6 +3,7 @@
 BreakoutI18n.register('hub', {
   en: {
     "menu.contents":"Contents",
+    "pres.h1":"Presentations", "pres.sub":"Four self-contained decks, each with speaker notes.",
     "menu.presentSub":"Four decks",
     "menu.actSub":"Fluency check, scenario lab, scenario bank",
     "menu.takeSub":"Guide, checklist, prompts, bot",
@@ -22,6 +23,7 @@ BreakoutI18n.register('hub', {
   },
   es: {
     "menu.contents":"Contenido",
+    "pres.h1":"Presentaciones", "pres.sub":"Cuatro presentaciones independientes, cada una con notas del orador.",
     "menu.presentSub":"Cuatro presentaciones",
     "menu.actSub":"Autoevaluación, laboratorio de casos, banco de casos",
     "menu.takeSub":"Guía, lista de verificación, prompts, bot",
@@ -41,6 +43,7 @@ BreakoutI18n.register('hub', {
   },
   vi: {
     "menu.contents":"Nội dung",
+    "pres.h1":"Bài trình chiếu", "pres.sub":"Bốn bộ trình chiếu độc lập, mỗi bộ có ghi chú cho người trình bày.",
     "menu.presentSub":"Bốn bộ trình chiếu",
     "menu.actSub":"Tự đánh giá, phòng thực hành tình huống, ngân hàng tình huống",
     "menu.takeSub":"Hướng dẫn, danh sách kiểm tra, câu lệnh, bot",
@@ -60,6 +63,7 @@ BreakoutI18n.register('hub', {
   },
   ar: {
     "menu.contents":"المحتويات",
+    "pres.h1":"العروض التقديمية", "pres.sub":"أربع عروض مستقلة، لكل منها ملاحظات للمتحدث.",
     "menu.presentSub":"أربع عروض تقديمية",
     "menu.actSub":"تقييم ذاتي، مختبر الحالات، بنك الحالات",
     "menu.takeSub":"دليل، قائمة تحقق، مطالبات، روبوت",
@@ -79,6 +83,7 @@ BreakoutI18n.register('hub', {
   },
   hi: {
     "menu.contents":"विषय-सूची",
+    "pres.h1":"प्रस्तुतियाँ", "pres.sub":"चार स्वतंत्र प्रस्तुतियाँ, प्रत्येक में वक्ता नोट्स।",
     "menu.presentSub":"चार प्रस्तुतियाँ",
     "menu.actSub":"स्व-मूल्यांकन, परिदृश्य लैब, परिदृश्य बैंक",
     "menu.takeSub":"गाइड, चेकलिस्ट, प्रॉम्प्ट, बॉट",
@@ -98,6 +103,7 @@ BreakoutI18n.register('hub', {
   },
   ur: {
     "menu.contents":"فہرست",
+    "pres.h1":"پریزنٹیشنز", "pres.sub":"چار خودمختار پریزنٹیشنز، ہر ایک میں مقرر نوٹس۔",
     "menu.presentSub":"چار پریزنٹیشنز",
     "menu.actSub":"خود جانچ، منظرنامہ لیب، منظرنامہ بینک",
     "menu.takeSub":"گائیڈ، چیک لسٹ، پرامپٹس، بوٹ",
@@ -117,6 +123,7 @@ BreakoutI18n.register('hub', {
   },
   zh: {
     "menu.contents":"目录",
+    "pres.h1":"演示", "pres.sub":"四套独立的演示，每套都附有演讲者备注。",
     "menu.presentSub":"四套演示",
     "menu.actSub":"自评、情境实验室、情境库",
     "menu.takeSub":"指南、清单、提示词、机器人",
