@@ -96,7 +96,7 @@
 
   <div id="result" class="panel">
     <div class="print-only print-head" id="printHead"></div>
-    <img class="levels-img" src="../assets/fluency-levels.webp" alt="AI fluency in legal practice, maturing from awareness to advantage: Disconnected, Foundational, Integrated, and Strategic stages" loading="lazy">
+    <img class="levels-img" id="levelsImg" src="../assets/fluency-levels.webp" alt="AI fluency self-assessment for legal professionals: Disconnected, Foundational, Integrated, and Strategic stages">
     <div class="section-label" id="resLabel">Your result</div>
     <div id="badge"></div>
     <div class="score-line" id="scoreLine"></div>
@@ -150,6 +150,7 @@
   var F = window.FLUENCY || {en:{}};
   var BANDS = [[5,8],[9,12],[13,16],[17,20]];
   var BARCOLORS = ['#C8D2DC','#6F8FAF','#2F5F8F','#102A54'];
+  var IMG_LANGS = {es:1, vi:1, ar:1, hi:1, zh:1}; // languages with their own infographic (else English)
   var LINKS = [
     ['pbl-scenario-lab.html','../handouts/guardrail-checklist.html'],
     ['../handouts/tcdlai-guide.html','scenario-bank.html','../handouts/guardrail-checklist.html'],
@@ -225,7 +226,9 @@
   }
 
   function fillStatic(){
-    var d = D();
+    var d = D(), lg = lang();
+    var im = document.getElementById('levelsImg');
+    if(im) im.src = '../assets/fluency-levels' + (IMG_LANGS[lg] ? '-'+lg : '') + '.webp';
     txt('fluEyebrow', d.eyebrow);
     txt('leadP', d.lead);
     txt('calcBtn', d.calcBtn);
