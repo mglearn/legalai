@@ -16,6 +16,14 @@
   .big-cards .card h3{font-size:28px;gap:13px;margin:6px 0 14px;line-height:1.15;}
   .big-cards .card p{font-size:23px;line-height:1.5;}
   .big-cards .card .ico{font-size:30px;}
+  /* Cover slide: hero visual in the empty space + prominent session resources link */
+  .cover-visual{position:absolute;top:0;right:0;height:100%;width:auto;z-index:0;
+    -webkit-mask-image:linear-gradient(to right, transparent 0, #000 18%);
+    mask-image:linear-gradient(to right, transparent 0, #000 18%);}
+  .resources-cta{display:inline-flex;flex-direction:column;gap:3px;margin-top:26px;align-self:flex-start;
+    border:2px solid var(--gold);border-radius:12px;padding:13px 26px;background:rgba(255,255,255,0.06);}
+  .resources-cta .rc-label{font-family:var(--font-body);font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:var(--gold-lt);font-weight:600;}
+  .resources-cta .rc-url{font-family:var(--font-display);font-size:37px;font-weight:600;color:#F4F8FE;line-height:1.05;}
 </style>
 </head>
 <body>
@@ -23,13 +31,17 @@
 
   <!-- 1 · COVER -->
   <section class="slide cover current">
+    <img class="cover-visual" src="../assets/cover-visual.webp" alt="A laptop showing an AI circuit-brain, a judge's gavel, the scales of justice, and law books labeled Criminal Law, Evidence, and Privacy and Ethics">
     <div class="slide-body">
       <div class="cover-eyebrow">Texas Criminal Defense Lawyers Association · July 2026</div>
       <h1>AI for the Defense</h1>
       <div class="subtitle">Ethical Use, Accuracy, and Attorney Responsibility</div>
+      <div class="resources-cta">
+        <span class="rc-label">Session resources</span>
+        <span class="rc-url">go.mgpd.org/tcdla26</span>
+      </div>
       <div class="meta">
         <strong>Facilitator:</strong> Miguel Guhlin, TCEA<br>
-        Session resources: <strong>go.mgpd.org/tcdla26</strong><br>
         No AI subscription required to attend. A laptop or device with a keyboard is recommended.
       </div>
     </div>
