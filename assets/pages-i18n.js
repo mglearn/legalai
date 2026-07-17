@@ -45,7 +45,11 @@ BreakoutI18n.register('pages', {
     "erz.t2.tag":"Activity · 12 min", "erz.t2.h":"PBL Scenario Lab", "erz.t2.p":"Put the duties to work: run a fictional defense problem through the TCDLAi framework, from the vague prompt to the grounded, verified one.",
     "erz.foot.cc":"AI for the Defense · Legal Ethics Scenario Randomizer · Fictional discussion materials, not legal advice",
     "erz.cat.ALL":"All duties", "erz.cat.COMP":"Competence & tech fluency", "erz.cat.CONF":"Confidentiality & client data", "erz.cat.SUP":"Supervision & responsibility", "erz.cat.CAND":"Candor & accuracy", "erz.cat.COMM":"Communication & fees", "erz.cat.FAIR":"Fairness, bias & access",
-    "erz.hint.all":"six professional duties", "erz.hint.card":"card", "erz.hint.cards":"cards", "erz.count":"Card #{n} · {total} in play"
+    "erz.hint.all":"six professional duties", "erz.hint.card":"card", "erz.hint.cards":"cards", "erz.count":"Card #{n} · {total} in play",
+    "flref.eyebrow":"Reference · the four levels", "flref.h1":"The AI Fluency Levels", "flref.sub":"A field guide to the four stages of AI adoption in criminal defense practice",
+    "flref.intro":"AI fluency is not on or off. It matures in stages — from avoiding the tools, to using them for simple tasks, to weaving them into your workflow, to redesigning your practice around them. Find where you are today, then use the next stage as your map.",
+    "flref.lookslike":"What it looks like", "flref.grow":"How to grow from here", "flref.bandTmpl":"Self-assessment score {a}–{b}",
+    "flref.ctaLabel":"Ready to place yourself?", "flref.ctaSub":"Five quick questions, a color chart, and tailored next steps.", "flref.ctaBtn":"Take the 2-minute self-assessment"
   },
   es: {
     "pg.resources":"Recursos",
@@ -91,7 +95,11 @@ BreakoutI18n.register('pages', {
     "erz.t2.tag":"Actividad · 12 min", "erz.t2.h":"Laboratorio de casos (ABP)", "erz.t2.p":"Pon los deberes en práctica: trabaja un problema de defensa ficticio con el marco TCDLAi, del prompt vago al fundamentado y verificado.",
     "erz.foot.cc":"AI for the Defense · Aleatorizador de escenarios de ética legal · Materiales ficticios de debate, no asesoría legal",
     "erz.cat.ALL":"Todos los deberes", "erz.cat.COMP":"Competencia y fluidez técnica", "erz.cat.CONF":"Confidencialidad y datos del cliente", "erz.cat.SUP":"Supervisión y responsabilidad", "erz.cat.CAND":"Franqueza y exactitud", "erz.cat.COMM":"Comunicación y honorarios", "erz.cat.FAIR":"Equidad, sesgo y acceso",
-    "erz.hint.all":"seis deberes profesionales", "erz.hint.card":"tarjeta", "erz.hint.cards":"tarjetas", "erz.count":"Tarjeta n.º {n} · {total} en juego"
+    "erz.hint.all":"seis deberes profesionales", "erz.hint.card":"tarjeta", "erz.hint.cards":"tarjetas", "erz.count":"Tarjeta n.º {n} · {total} en juego",
+    "flref.eyebrow":"Referencia · los cuatro niveles", "flref.h1":"Los niveles de fluidez con IA", "flref.sub":"Una guía de campo de las cuatro etapas de adopción de la IA en la defensa penal",
+    "flref.intro":"La fluidez con IA no es de encender o apagar. Madura por etapas: de evitar las herramientas, a usarlas para tareas simples, a integrarlas en tu flujo de trabajo, a rediseñar tu práctica en torno a ellas. Encuentra dónde estás hoy y usa la siguiente etapa como tu mapa.",
+    "flref.lookslike":"Cómo se ve", "flref.grow":"Cómo crecer desde aquí", "flref.bandTmpl":"Puntuación de la autoevaluación {a}–{b}",
+    "flref.ctaLabel":"¿Listo para ubicarte?", "flref.ctaSub":"Cinco preguntas rápidas, un gráfico de colores y próximos pasos personalizados.", "flref.ctaBtn":"Haz la autoevaluación de 2 minutos"
   },
   vi: {
     "pg.resources":"Tài nguyên",
@@ -137,7 +145,11 @@ BreakoutI18n.register('pages', {
     "erz.t2.tag":"Hoạt động · 12 phút", "erz.t2.h":"Phòng thực hành tình huống (PBL)", "erz.t2.p":"Đưa các nghĩa vụ vào thực hành: xử lý một vấn đề bào chữa hư cấu bằng khung TCDLAi, từ câu lệnh mơ hồ đến câu lệnh có căn cứ và đã kiểm chứng.",
     "erz.foot.cc":"AI for the Defense · Bộ chọn ngẫu nhiên tình huống đạo đức pháp lý · Tài liệu thảo luận hư cấu, không phải tư vấn pháp lý",
     "erz.cat.ALL":"Tất cả nghĩa vụ", "erz.cat.COMP":"Năng lực & thành thạo công nghệ", "erz.cat.CONF":"Bảo mật & dữ liệu thân chủ", "erz.cat.SUP":"Giám sát & trách nhiệm", "erz.cat.CAND":"Trung thực & chính xác", "erz.cat.COMM":"Giao tiếp & phí", "erz.cat.FAIR":"Công bằng, thiên kiến & tiếp cận",
-    "erz.hint.all":"sáu nghĩa vụ nghề nghiệp", "erz.hint.card":"thẻ", "erz.hint.cards":"thẻ", "erz.count":"Thẻ #{n} · {total} đang dùng"
+    "erz.hint.all":"sáu nghĩa vụ nghề nghiệp", "erz.hint.card":"thẻ", "erz.hint.cards":"thẻ", "erz.count":"Thẻ #{n} · {total} đang dùng",
+    "flref.eyebrow":"Tham khảo · bốn cấp độ", "flref.h1":"Các cấp độ thành thạo AI", "flref.sub":"Cẩm nang về bốn giai đoạn ứng dụng AI trong hành nghề bào chữa hình sự",
+    "flref.intro":"Thành thạo AI không phải bật hay tắt. Nó trưởng thành theo giai đoạn — từ né tránh công cụ, đến dùng cho việc đơn giản, đến đưa vào quy trình, đến thiết kế lại việc hành nghề quanh nó. Tìm xem bạn đang ở đâu hôm nay, rồi lấy giai đoạn kế làm bản đồ.",
+    "flref.lookslike":"Trông như thế nào", "flref.grow":"Cách phát triển từ đây", "flref.bandTmpl":"Điểm tự đánh giá {a}–{b}",
+    "flref.ctaLabel":"Sẵn sàng xác định vị trí của bạn?", "flref.ctaSub":"Năm câu hỏi nhanh, một biểu đồ màu, và các bước tiếp theo phù hợp.", "flref.ctaBtn":"Làm bài tự đánh giá 2 phút"
   },
   ar: {
     "pg.resources":"الموارد",
@@ -183,7 +195,11 @@ BreakoutI18n.register('pages', {
     "erz.t2.tag":"نشاط · 12 دقيقة", "erz.t2.h":"مختبر الحالات (التعلّم القائم على المشكلات)", "erz.t2.p":"ضعوا الواجبات موضع التطبيق: عالجوا مشكلة دفاع افتراضية بإطار TCDLAi، من المطالبة الغامضة إلى المطالبة المستندة والمُتحقَّق منها.",
     "erz.foot.cc":"AI for the Defense · المولّد العشوائي لسيناريوهات الأخلاقيات القانونية · مواد نقاش افتراضية، وليست استشارة قانونية",
     "erz.cat.ALL":"كل الواجبات", "erz.cat.COMP":"الكفاءة والطلاقة التقنية", "erz.cat.CONF":"السرية وبيانات الموكل", "erz.cat.SUP":"الإشراف والمسؤولية", "erz.cat.CAND":"الصراحة والدقة", "erz.cat.COMM":"التواصل والأتعاب", "erz.cat.FAIR":"الإنصاف والتحيّز والوصول",
-    "erz.hint.all":"ستة واجبات مهنية", "erz.hint.card":"بطاقة", "erz.hint.cards":"بطاقة", "erz.count":"بطاقة رقم {n} · {total} قيد اللعب"
+    "erz.hint.all":"ستة واجبات مهنية", "erz.hint.card":"بطاقة", "erz.hint.cards":"بطاقة", "erz.count":"بطاقة رقم {n} · {total} قيد اللعب",
+    "flref.eyebrow":"مرجع · المستويات الأربعة", "flref.h1":"مستويات الكفاءة في الذكاء الاصطناعي", "flref.sub":"دليل ميداني لمراحل تبنّي الذكاء الاصطناعي الأربع في ممارسة الدفاع الجنائي",
+    "flref.intro":"الكفاءة في الذكاء الاصطناعي ليست تشغيلاً أو إيقافاً. إنها تنضج على مراحل — من تجنّب الأدوات، إلى استخدامها لمهام بسيطة، إلى دمجها في سير عملك، إلى إعادة تصميم ممارستك حولها. اعرف أين تقف اليوم، ثم اجعل المرحلة التالية خريطتك.",
+    "flref.lookslike":"كيف يبدو", "flref.grow":"كيف تنمو من هنا", "flref.bandTmpl":"درجة التقييم الذاتي {a}–{b}",
+    "flref.ctaLabel":"مستعد لتحديد موضعك؟", "flref.ctaSub":"خمسة أسئلة سريعة، ورسم بياني ملوّن، وخطوات تالية مخصصة.", "flref.ctaBtn":"أجرِ التقييم الذاتي في دقيقتين"
   },
   hi: {
     "pg.resources":"संसाधन",
@@ -229,7 +245,11 @@ BreakoutI18n.register('pages', {
     "erz.t2.tag":"गतिविधि · 12 मिनट", "erz.t2.h":"परिदृश्य लैब (PBL)", "erz.t2.p":"कर्तव्यों को व्यवहार में लाएँ: TCDLAi ढाँचे से एक काल्पनिक बचाव समस्या पर काम करें, अस्पष्ट प्रॉम्प्ट से स्रोत-आधारित, सत्यापित प्रॉम्प्ट तक।",
     "erz.foot.cc":"AI for the Defense · कानूनी नैतिकता परिदृश्य रैंडमाइज़र · काल्पनिक चर्चा सामग्री, कानूनी सलाह नहीं",
     "erz.cat.ALL":"सभी कर्तव्य", "erz.cat.COMP":"सक्षमता और तकनीकी प्रवाह", "erz.cat.CONF":"गोपनीयता और मुवक्किल डेटा", "erz.cat.SUP":"पर्यवेक्षण और ज़िम्मेदारी", "erz.cat.CAND":"स्पष्टवादिता और सटीकता", "erz.cat.COMM":"संचार और शुल्क", "erz.cat.FAIR":"निष्पक्षता, पूर्वाग्रह और पहुँच",
-    "erz.hint.all":"छह पेशेवर कर्तव्य", "erz.hint.card":"कार्ड", "erz.hint.cards":"कार्ड", "erz.count":"कार्ड #{n} · {total} उपलब्ध"
+    "erz.hint.all":"छह पेशेवर कर्तव्य", "erz.hint.card":"कार्ड", "erz.hint.cards":"कार्ड", "erz.count":"कार्ड #{n} · {total} उपलब्ध",
+    "flref.eyebrow":"संदर्भ · चार स्तर", "flref.h1":"AI फ़्लुएंसी के स्तर", "flref.sub":"आपराधिक बचाव प्रैक्टिस में AI अपनाने के चार चरणों की एक फ़ील्ड गाइड",
+    "flref.intro":"AI प्रवीणता चालू-बंद जैसी नहीं है। यह चरणों में परिपक्व होती है — उपकरणों से बचने से, सरल कार्यों में उपयोग तक, अपने वर्कफ़्लो में पिरोने तक, और उनके इर्द-गिर्द अपनी प्रैक्टिस को नया रूप देने तक। देखें कि आप आज कहाँ हैं, फिर अगले चरण को अपना नक्शा बनाएं।",
+    "flref.lookslike":"यह कैसा दिखता है", "flref.grow":"यहाँ से आगे कैसे बढ़ें", "flref.bandTmpl":"स्व-मूल्यांकन स्कोर {a}–{b}",
+    "flref.ctaLabel":"खुद को रखने के लिए तैयार?", "flref.ctaSub":"पाँच त्वरित प्रश्न, एक रंगीन चार्ट, और अनुरूप अगले कदम।", "flref.ctaBtn":"2-मिनट का स्व-मूल्यांकन करें"
   },
   ur: {
     "pg.resources":"وسائل",
@@ -275,7 +295,11 @@ BreakoutI18n.register('pages', {
     "erz.t2.tag":"سرگرمی · 12 منٹ", "erz.t2.h":"منظرنامہ لیب (PBL)", "erz.t2.p":"فرائض کو عمل میں لائیں: TCDLAi فریم ورک سے ایک فرضی دفاعی مسئلے پر کام کریں، مبہم پرامپٹ سے ماخذ پر مبنی، تصدیق شدہ پرامپٹ تک۔",
     "erz.foot.cc":"AI for the Defense · قانونی اخلاقیات منظرنامہ رینڈمائزر · فرضی مباحثہ مواد، قانونی مشورہ نہیں",
     "erz.cat.ALL":"تمام فرائض", "erz.cat.COMP":"اہلیت اور تکنیکی روانی", "erz.cat.CONF":"رازداری اور موکل کا ڈیٹا", "erz.cat.SUP":"نگرانی اور ذمہ داری", "erz.cat.CAND":"صاف گوئی اور درستگی", "erz.cat.COMM":"رابطہ اور فیس", "erz.cat.FAIR":"انصاف، تعصب اور رسائی",
-    "erz.hint.all":"چھ پیشہ ورانہ فرائض", "erz.hint.card":"کارڈ", "erz.hint.cards":"کارڈز", "erz.count":"کارڈ #{n} · {total} زیرِ استعمال"
+    "erz.hint.all":"چھ پیشہ ورانہ فرائض", "erz.hint.card":"کارڈ", "erz.hint.cards":"کارڈز", "erz.count":"کارڈ #{n} · {total} زیرِ استعمال",
+    "flref.eyebrow":"حوالہ · چار درجات", "flref.h1":"اے آئی مہارت کے درجات", "flref.sub":"فوجداری دفاع کی پریکٹس میں اے آئی اپنانے کے چار مراحل کی فیلڈ گائیڈ",
+    "flref.intro":"اے آئی مہارت آن یا آف نہیں ہوتی۔ یہ مراحل میں پختہ ہوتی ہے — ٹولز سے گریز سے، سادہ کاموں میں استعمال تک، اپنے ورک فلو میں شامل کرنے تک، اور ان کے گرد اپنی پریکٹس کو نئے سرے سے ترتیب دینے تک۔ دیکھیں کہ آپ آج کہاں ہیں، پھر اگلے مرحلے کو اپنا نقشہ بنائیں۔",
+    "flref.lookslike":"یہ کیسا دکھتا ہے", "flref.grow":"یہاں سے آگے کیسے بڑھیں", "flref.bandTmpl":"خود جانچ اسکور {a}–{b}",
+    "flref.ctaLabel":"خود کو متعین کرنے کے لیے تیار؟", "flref.ctaSub":"پانچ فوری سوالات، ایک رنگین چارٹ، اور موزوں اگلے اقدامات۔", "flref.ctaBtn":"2 منٹ کی خود جانچ کریں"
   },
   zh: {
     "pg.resources":"资源",
@@ -321,6 +345,10 @@ BreakoutI18n.register('pages', {
     "erz.t2.tag":"活动 · 12 分钟", "erz.t2.h":"情境实验室（PBL）", "erz.t2.p":"把职责落到实处：用 TCDLAi 框架处理一个虚构的辩护问题，从含糊的提示词到有依据、经核实的提示词。",
     "erz.foot.cc":"AI for the Defense · 法律伦理情境随机器 · 虚构讨论材料，非法律意见",
     "erz.cat.ALL":"全部职责", "erz.cat.COMP":"胜任与技术素养", "erz.cat.CONF":"保密与当事人数据", "erz.cat.SUP":"监督与责任", "erz.cat.CAND":"坦诚与准确", "erz.cat.COMM":"沟通与收费", "erz.cat.FAIR":"公平、偏见与可及性",
-    "erz.hint.all":"六项职业职责", "erz.hint.card":"张", "erz.hint.cards":"张", "erz.count":"第 {n} 号卡 · 共 {total} 张可选"
+    "erz.hint.all":"六项职业职责", "erz.hint.card":"张", "erz.hint.cards":"张", "erz.count":"第 {n} 号卡 · 共 {total} 张可选",
+    "flref.eyebrow":"参考 · 四个级别", "flref.h1":"AI 素养的各个级别", "flref.sub":"刑事辩护执业中 AI 采用四个阶段的实用指南",
+    "flref.intro":"AI 素养不是开或关。它按阶段成熟——从回避工具，到用于简单任务，到融入工作流程，再到围绕它重新设计执业。先看看你今天在哪里，再把下一个阶段当作地图。",
+    "flref.lookslike":"它是什么样子", "flref.grow":"如何从这里成长", "flref.bandTmpl":"自评得分 {a}–{b}",
+    "flref.ctaLabel":"准备好给自己定位了吗？", "flref.ctaSub":"五个快速问题、一张彩色图表，以及量身定制的后续步骤。", "flref.ctaBtn":"做 2 分钟自评"
   }
 });
