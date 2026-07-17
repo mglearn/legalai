@@ -37,6 +37,10 @@
   .bio-now p{font-family:var(--font-body);font-size:17px;font-weight:300;color:var(--gold-lt);line-height:1.5;margin:0;}
   .bio-now p strong{color:#fff;font-weight:600;}
   .bio-now a{color:#fff;font-weight:600;text-decoration:underline;text-decoration-color:var(--gold-lt);}
+  /* Description slide with illustration */
+  .desc-bullets{max-width:530px;}
+  .desc-photo{position:absolute;top:150px;right:56px;width:560px;height:auto;border-radius:14px;
+    box-shadow:0 12px 34px rgba(10,29,51,0.26);z-index:1;}
 </style>
 </head>
 <body>
@@ -135,13 +139,14 @@
     <div class="slide-body">
       <div class="slide-kicker">What we will cover</div>
       <h2 class="slide-title">Where AI helps, where it hurts, and who answers for it</h2>
-      <ul class="bullets">
+      <ul class="bullets desc-bullets">
         <li>Common AI failures, including <strong>hallucinated case law</strong> and fabricated citations</li>
         <li>Confidentiality and client data risk in consumer chatbots</li>
         <li>Structured prompting and few-shot examples as safeguards</li>
         <li>Retrieval-augmented generation to hold AI to <strong>trusted sources</strong></li>
         <li>Human oversight, verification, and ethical decision-making throughout</li>
       </ul>
+      <img class="desc-photo" src="../assets/ai-law-overview.webp" alt="An attorney examining a document with a magnifying glass beside the scales of justice, with helpful AI tools on one side and AI failures — fabricated citations, warnings, and data-leak locks — on the other">
     </div>
     <div class="slide-footer">
       <span class="brand"><span class="star">✦</span> TCDLAi</span>
