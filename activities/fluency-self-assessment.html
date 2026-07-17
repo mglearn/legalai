@@ -34,6 +34,31 @@
   .res-links a{font-size:0.82rem;font-weight:700;color:var(--navy);background:#EEF2F7;border:1px solid var(--gold-lt);border-radius:999px;padding:0.35rem 0.85rem;text-decoration:none;transition:all .12s;}
   .res-links a:hover{background:var(--navy);color:var(--gold);border-color:var(--navy);}
   .res-lbl{font-size:0.72rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);margin:0.2rem 0 0.4rem;}
+  .chart{margin:0.5rem 0 0.3rem;}
+  .crow{display:grid;grid-template-columns:150px 1fr 1.7rem;align-items:center;gap:0.6rem;margin-bottom:0.55rem;}
+  .crow .clab{font-size:0.85rem;color:var(--text);line-height:1.2;}
+  .ctrack{background:var(--lgray);border:1px solid var(--mgray);border-radius:999px;height:16px;overflow:hidden;}
+  .cbar{height:100%;border-radius:999px;width:0;transition:width .6s cubic-bezier(.2,.7,.3,1);}
+  .cval{font-family:'Playfair Display',serif;font-weight:700;font-size:0.92rem;color:var(--navy);text-align:right;}
+  .chart-cap{font-size:0.82rem;color:var(--slate);font-style:italic;margin:0.15rem 0 0.2rem;}
+  .clegend{display:flex;flex-wrap:wrap;gap:0.8rem;margin:0.5rem 0 0.2rem;font-size:0.72rem;color:var(--slate);}
+  .clegend span{display:inline-flex;align-items:center;gap:0.35rem;}
+  .clegend i{width:0.9rem;height:0.9rem;border-radius:3px;display:inline-block;}
+  @media (max-width:620px){.crow{grid-template-columns:1fr 1.7rem;}.crow .clab{grid-column:1 / -1;margin-bottom:-0.15rem;}}
+  .btn-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;}
+  .print-only{display:none;}
+  .print-head{font-family:'Playfair Display',serif;font-weight:800;color:var(--navy);font-size:1.15rem;line-height:1.3;margin-bottom:0.7rem;padding-bottom:0.6rem;border-bottom:2px solid var(--gold);}
+  .print-head span{display:block;font-family:'Source Sans 3',sans-serif;font-weight:400;font-size:0.82rem;color:var(--slate);margin-top:0.15rem;}
+  /* While exporting to PNG: hide the buttons and show the title block. */
+  .capturing .btn-row{display:none;}
+  .capturing .print-only{display:block;}
+  @media print{
+    .back-bar,.how,header.page,footer.page,.lead-p,#quiz,.reflect-strip,.btn-row{display:none !important;}
+    #result{box-shadow:none;border:none;padding:0;}
+    .print-only{display:block;}
+    body{background:#fff;margin:0;}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  }
 </style>
 </head>
 <body>
@@ -93,12 +118,24 @@
   </div>
 
   <div id="result" class="panel">
+    <div class="print-only print-head">AI Fluency Self-Assessment — My Result<span>AI for the Defense · Texas Criminal Defense Lawyers Association · go.mgpd.org/tcdla26</span></div>
     <div class="section-label">Your result</div>
     <div id="badge"></div>
     <div class="score-line" id="scoreLine"></div>
     <p id="levelDesc" style="font-size:1rem;color:var(--text);"></p>
     <div class="ladder" id="ladder"></div>
-    <p id="nextStep" style="font-size:0.95rem;color:var(--navy);font-weight:600;"></p>
+
+    <div class="section-label" style="margin-top:1.2rem;">Your fluency by area</div>
+    <div class="chart" id="chart"></div>
+    <div class="clegend">
+      <span><i style="background:#C8D2DC"></i>1 · Just starting</span>
+      <span><i style="background:#6F8FAF"></i>2 · Building</span>
+      <span><i style="background:#2F5F8F"></i>3 · Solid</span>
+      <span><i style="background:#102A54"></i>4 · Strong</span>
+    </div>
+    <p class="chart-cap">Longer, darker bars are your strengths. Short, light bars are where to grow next.</p>
+
+    <p id="nextStep" style="font-size:0.95rem;color:var(--navy);font-weight:600;margin-top:0.8rem;"></p>
 
     <div class="section-label" style="margin-top:1.3rem;">How to level up</div>
     <p id="boostsIntro" style="font-size:0.95rem;color:var(--text);margin-bottom:0.2rem;"></p>
@@ -106,7 +143,11 @@
     <div class="res-lbl">Use these from today's session</div>
     <div class="res-links" id="resLinks"></div>
 
-    <button class="btn ghost" onclick="reset()" style="margin-top:1rem;">Start over</button>
+    <div class="btn-row">
+      <button class="btn" id="pngBtn" onclick="saveImage()">⬇ Save as image</button>
+      <button class="btn ghost" onclick="window.print()">🖨 Print / Save as PDF</button>
+      <button class="btn ghost" onclick="reset()">Start over</button>
+    </div>
   </div>
 
   <div class="reflect-strip" style="margin-top:1.4rem;">
@@ -172,12 +213,26 @@ const LEVELS = [
    links:[{t:'Build a Claude Project', u:'claude-project-tutorial.html'}, {t:'Legal Prompt Library', u:'../handouts/prompt-library.html'}, {t:'TCDLALegalAI Bot', u:'https://box.boodle.ai/a/@TCDLALegalAI'}]}
 ];
 
+const DIMS = ['AI in drafting','Structured prompting','Citation verification','Client confidentiality','Workflow & systems'];
 function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
+function barColor(v){return v>=4?'#102A54':v===3?'#2F5F8F':v===2?'#6F8FAF':'#C8D2DC';}
+function renderChart(scores){
+  const c=document.getElementById('chart');
+  c.innerHTML=DIMS.map(function(d,i){
+    const v=scores[i];
+    return '<div class="crow"><div class="clab">'+esc(d)+'</div>'+
+      '<div class="ctrack"><div class="cbar" data-w="'+(v/4*100)+'" style="background:'+barColor(v)+'"></div></div>'+
+      '<div class="cval">'+v+'</div></div>';
+  }).join('');
+  requestAnimationFrame(function(){
+    c.querySelectorAll('.cbar').forEach(function(b){ b.style.width=b.getAttribute('data-w')+'%'; });
+  });
+}
 function calc(){
-  let total=0, answered=0;
+  let total=0, answered=0; const scores=[];
   for(let i=0;i<5;i++){
     const sel=document.querySelector('input[name="q'+i+'"]:checked');
-    if(sel){total+=parseInt(sel.value,10);answered++;}
+    if(sel){const v=parseInt(sel.value,10);total+=v;scores[i]=v;answered++;}
   }
   if(answered<5){document.getElementById('warn').style.display='inline-block';return;}
   document.getElementById('warn').style.display='none';
@@ -188,6 +243,7 @@ function calc(){
   document.getElementById('nextStep').textContent=lvl.next;
   document.getElementById('ladder').innerHTML=LEVELS.map(l=>
     '<div class="rung'+(l.name===lvl.name?' on':'')+'"><b>'+l.name+'</b><small>'+l.min+' to '+l.max+'</small></div>').join('');
+  renderChart(scores);
   document.getElementById('boostsIntro').textContent=lvl.boostIntro;
   document.getElementById('boosts').innerHTML=lvl.boosts.map(b=>'<li>'+esc(b)+'</li>').join('');
   document.getElementById('resLinks').innerHTML=lvl.links.map(function(l){
@@ -202,6 +258,35 @@ function reset(){
   document.querySelectorAll('input[type=radio]').forEach(i=>i.checked=false);
   document.getElementById('result').classList.remove('show');
   window.scrollTo({top:0,behavior:'smooth'});
+}
+// Lazy-load the locally vendored html2canvas so the page stays light and works offline.
+function ensureH2C(cb){
+  if(window.html2canvas) return cb(true);
+  var s=document.createElement('script');
+  s.src='../assets/html2canvas.min.js';
+  s.onload=function(){cb(!!window.html2canvas);};
+  s.onerror=function(){cb(false);};
+  document.head.appendChild(s);
+}
+function saveImage(){
+  var btn=document.getElementById('pngBtn'), old=btn.textContent;
+  btn.textContent='Rendering…'; btn.disabled=true;
+  ensureH2C(function(ok){
+    if(!ok){ btn.textContent=old; btn.disabled=false; alert('Could not load the image tool. Use "Print / Save as PDF" instead.'); return; }
+    var node=document.getElementById('result');
+    node.classList.add('capturing');
+    html2canvas(node,{backgroundColor:'#ffffff',scale:2}).then(function(canvas){
+      node.classList.remove('capturing');
+      canvas.toBlob(function(blob){
+        var a=document.createElement('a');
+        a.href=URL.createObjectURL(blob);
+        a.download='ai-fluency-result.png';
+        a.click();
+        setTimeout(function(){URL.revokeObjectURL(a.href);},1000);
+        btn.textContent=old; btn.disabled=false;
+      },'image/png');
+    }).catch(function(){ node.classList.remove('capturing'); btn.textContent=old; btn.disabled=false; alert('Image export failed. Use "Print / Save as PDF" instead.'); });
+  });
 }
 </script>
 <script src="../assets/i18n.js"></script>
