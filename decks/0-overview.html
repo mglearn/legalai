@@ -41,6 +41,9 @@
   .desc-bullets{max-width:530px;}
   .desc-photo{position:absolute;top:150px;right:56px;width:560px;height:auto;border-radius:14px;
     box-shadow:0 12px 34px rgba(10,29,51,0.26);z-index:1;}
+  /* Learning objectives: image on the left, words on the right */
+  .obj-grid{display:grid;grid-template-columns:450px 1fr;gap:52px;align-items:center;height:100%;}
+  .obj-photo{width:450px;height:450px;border-radius:50%;box-shadow:0 14px 38px rgba(10,29,51,0.26);}
 </style>
 </head>
 <body>
@@ -164,15 +167,20 @@
   <!-- 5 · LEARNING OBJECTIVES -->
   <section class="slide">
     <div class="slide-body">
-      <div class="slide-kicker">Learning objectives</div>
-      <h2 class="slide-title">By the end you will be able to</h2>
-      <ul class="bullets">
-        <li>Identify ethical risks tied to AI use in legal practice</li>
-        <li>Explain why you remain responsible for AI-assisted work product</li>
-        <li>Recognize when AI use implicates confidentiality or competence</li>
-        <li>Apply guardrails and verification to reduce AI-related errors</li>
-        <li>Use structured prompting and source-grounded workflows for accuracy</li>
-      </ul>
+      <div class="obj-grid">
+        <img class="obj-photo" src="../assets/session-map.webp" alt="A circular map of the session: an attorney at a laptop at the center, ringed by ethics and bias, candor to the court, verification, source-grounded AI, and confidentiality">
+        <div class="obj-text">
+          <div class="slide-kicker">Learning objectives</div>
+          <h2 class="slide-title">By the end you will be able to</h2>
+          <ul class="bullets">
+            <li>Identify ethical risks tied to AI use in legal practice</li>
+            <li>Explain why you remain responsible for AI-assisted work product</li>
+            <li>Recognize when AI use implicates confidentiality or competence</li>
+            <li>Apply guardrails and verification to reduce AI-related errors</li>
+            <li>Use structured prompting and source-grounded workflows for accuracy</li>
+          </ul>
+        </div>
+      </div>
     </div>
     <div class="slide-footer">
       <span class="brand"><span class="star">✦</span> TCDLAi</span>
