@@ -26,6 +26,14 @@
   .rung.on{border-color:var(--gold);background:#EEF2F7;box-shadow:0 4px 14px rgba(47,95,143,0.18);}
   .rung b{display:block;color:var(--navy);font-family:'Playfair Display',serif;margin-bottom:0.2rem;}
   .rung small{color:var(--slate);}
+  .boosts-list{list-style:none;padding:0;margin:0.4rem 0 0.9rem;}
+  .boosts-list li{position:relative;padding:0.5rem 0 0.5rem 1.8rem;font-size:0.96rem;color:var(--text);line-height:1.5;border-bottom:1px solid var(--lgray);}
+  .boosts-list li:last-child{border-bottom:none;}
+  .boosts-list li::before{content:'✓';position:absolute;left:0;top:0.5rem;color:var(--gold-dk);font-weight:800;}
+  .res-links{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:0.2rem;}
+  .res-links a{font-size:0.82rem;font-weight:700;color:var(--navy);background:#EEF2F7;border:1px solid var(--gold-lt);border-radius:999px;padding:0.35rem 0.85rem;text-decoration:none;transition:all .12s;}
+  .res-links a:hover{background:var(--navy);color:var(--gold);border-color:var(--navy);}
+  .res-lbl{font-size:0.72rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--slate);margin:0.2rem 0 0.4rem;}
 </style>
 </head>
 <body>
@@ -91,7 +99,14 @@
     <p id="levelDesc" style="font-size:1rem;color:var(--text);"></p>
     <div class="ladder" id="ladder"></div>
     <p id="nextStep" style="font-size:0.95rem;color:var(--navy);font-weight:600;"></p>
-    <button class="btn ghost" onclick="reset()" style="margin-top:0.6rem;">Start over</button>
+
+    <div class="section-label" style="margin-top:1.3rem;">How to level up</div>
+    <p id="boostsIntro" style="font-size:0.95rem;color:var(--text);margin-bottom:0.2rem;"></p>
+    <ul class="boosts-list" id="boosts"></ul>
+    <div class="res-lbl">Use these from today's session</div>
+    <div class="res-links" id="resLinks"></div>
+
+    <button class="btn ghost" onclick="reset()" style="margin-top:1rem;">Start over</button>
   </div>
 
   <div class="reflect-strip" style="margin-top:1.4rem;">
@@ -113,18 +128,51 @@
 const LEVELS = [
   {name:'Disconnected', min:5, max:8,
    desc:'You handle legal work manually and have not yet folded AI into your practice. That is a fine starting point. The fastest gain is one small, low-risk task, like turning rough notes into a clean summary you fully control.',
-   next:'Next step: try one fictional-fact drafting task in a free chatbot, and verify anything it claims.'},
+   next:'Next step: try one fictional-fact drafting task in a free chatbot, and verify anything it claims.',
+   boostIntro:'Start with one habit, on low-stakes work, before AI touches anything real:',
+   boosts:[
+     'Pick one low-risk task this week — turn rough notes into a clean summary, or outline an argument — using only fictional or de-identified facts.',
+     'Set up one free chatbot (Claude, ChatGPT, Z.ai, or Mistral) and run the PBL Scenario Lab once, start to finish.',
+     'Learn the one rule before anything else: never paste client-identifying facts into a consumer tool.',
+     'Treat every AI answer as a first draft to check, never a finished product.'
+   ],
+   links:[{t:'PBL Scenario Lab', u:'pbl-scenario-lab.html'}, {t:'Ethical Guardrail Checklist', u:'../handouts/guardrail-checklist.html'}]},
   {name:'Foundational', min:9, max:12,
    desc:'You use AI for simple tasks and quick drafts, but use is inconsistent and mostly unstructured. The biggest lift now is structure and a verification habit, so the output becomes reliable instead of hit-or-miss.',
-   next:'Next step: adopt the TCDLAi framework and verify every citation before you rely on it.'},
+   next:'Next step: adopt the TCDLAi framework and verify every citation before you rely on it.',
+   boostIntro:'Trade ad-hoc prompting for structure and a verification habit:',
+   boosts:[
+     'Adopt the TCDLAi framework so every prompt names the issue, facts, jurisdiction, and sources — stop free-typing prompts.',
+     'Make verification a fixed step: if you cannot open the opinion in a real database, you do not have a citation.',
+     'De-identify facts or use a fictional stand-in every time, not only when you remember.',
+     'Save the three to five prompts you reuse into one document so your good work repeats.'
+   ],
+   links:[{t:'TCDLAi Prompt Design Guide', u:'../handouts/tcdlai-guide.html'}, {t:'Scenario Bank', u:'scenario-bank.html'}, {t:'Ethical Guardrail Checklist', u:'../handouts/guardrail-checklist.html'}]},
   {name:'Integrated', min:13, max:16,
    desc:'AI is part of your routine work. You structure prompts, protect confidentiality most of the time, and check citations. Now tighten grounding and make your verification and confidentiality rules fully consistent.',
-   next:'Next step: ground prompts in your own sources, and write down your do-and-do-not rules.'},
+   next:'Next step: ground prompts in your own sources, and write down your do-and-do-not rules.',
+   boostIntro:'Close the consistency gaps and ground the model in your own materials:',
+   boosts:[
+     'Ground prompts in your own sources — paste the statute, the report, the record — so the model works from your materials, not its memory.',
+     'Write your do-and-do-not rules and verification checkpoints into a one-page office standard.',
+     'Make confidentiality and citation-checking automatic on every matter, not most of them.',
+     'Pressure-test your judgment on hard calls with the Legal Ethics Scenario Randomizer, ideally with colleagues.'
+   ],
+   links:[{t:'Legal Prompt Library', u:'../handouts/prompt-library.html'}, {t:'Legal Ethics Scenario Randomizer', u:'ethics-scenario-randomizer.html'}, {t:'Ethical Guardrail Checklist', u:'../handouts/guardrail-checklist.html'}]},
   {name:'Strategic', min:17, max:20,
    desc:'You have built repeatable, documented workflows with grounding, verification, and confidentiality baked in. Your edge now is sharing that system with your team and building custom tooling that carries your standards by default.',
-   next:'Next step: build a defense-focused bot with your guardrails, and standardize it across matters.'}
+   next:'Next step: build a defense-focused bot with your guardrails, and standardize it across matters.',
+   boostIntro:'Turn your personal system into shared, durable infrastructure:',
+   boosts:[
+     'Package your standards into a custom, review-gated tool — build a defense-focused bot or Claude Project that carries your guardrails by default.',
+     'Standardize across the team: one shared prompt library, one checklist, one verification step.',
+     'Bring a colleague up a level using your documented workflow.',
+     'Schedule a periodic review so your system keeps pace as models and rules change.'
+   ],
+   links:[{t:'Build a Claude Project', u:'claude-project-tutorial.html'}, {t:'Legal Prompt Library', u:'../handouts/prompt-library.html'}, {t:'TCDLALegalAI Bot', u:'https://box.boodle.ai/a/@TCDLALegalAI'}]}
 ];
 
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
 function calc(){
   let total=0, answered=0;
   for(let i=0;i<5;i++){
@@ -140,6 +188,12 @@ function calc(){
   document.getElementById('nextStep').textContent=lvl.next;
   document.getElementById('ladder').innerHTML=LEVELS.map(l=>
     '<div class="rung'+(l.name===lvl.name?' on':'')+'"><b>'+l.name+'</b><small>'+l.min+' to '+l.max+'</small></div>').join('');
+  document.getElementById('boostsIntro').textContent=lvl.boostIntro;
+  document.getElementById('boosts').innerHTML=lvl.boosts.map(b=>'<li>'+esc(b)+'</li>').join('');
+  document.getElementById('resLinks').innerHTML=lvl.links.map(function(l){
+    var ext=/^https?:/.test(l.u)?' target="_blank" rel="noopener"':'';
+    return '<a href="'+l.u+'"'+ext+'>'+esc(l.t)+(ext?' ↗':'')+'</a>';
+  }).join('');
   const r=document.getElementById('result');
   r.classList.add('show');
   r.scrollIntoView({behavior:'smooth',block:'start'});
