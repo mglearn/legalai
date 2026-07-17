@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The AI Fluency Levels | AI for the Defense | TCDLA</title>
+<meta name="description" content="A reference guide to the four stages of AI adoption in criminal defense practice: Disconnected, Foundational, Integrated, and Strategic. Featuring the AI fluency infographic and how to grow at each level.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/pages.css">
+<style>
+  .fl-hero{width:100%;height:auto;border-radius:12px;border:1px solid var(--mgray);box-shadow:0 2px 14px rgba(10,52,118,0.08);margin-bottom:0.6rem;}
+  .fl-cap{text-align:center;font-size:0.78rem;font-weight:800;letter-spacing:0.05em;color:var(--gold-dk);text-transform:uppercase;margin:0 0 1.5rem;}
+  .lvl-card{background:#fff;border:1px solid var(--mgray);border-left:6px solid var(--navy);border-radius:12px;padding:1.4rem 1.6rem;margin-bottom:1.1rem;box-shadow:0 2px 12px rgba(10,52,118,0.06);}
+  .lvl-head{display:flex;align-items:center;gap:0.8rem;margin-bottom:0.55rem;}
+  .lvl-num{width:2.4rem;height:2.4rem;min-width:2.4rem;border-radius:50%;color:#fff;font-family:'Playfair Display',serif;font-weight:800;font-size:1.2rem;display:flex;align-items:center;justify-content:center;}
+  .lvl-head h2{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--navy);margin:0;line-height:1.1;}
+  .lvl-band{font-size:0.74rem;font-weight:700;letter-spacing:0.04em;color:var(--slate);text-transform:uppercase;margin-top:0.15rem;}
+  .lvl-tag{font-weight:700;color:var(--navy-md);font-size:1.02rem;margin-bottom:0.7rem;}
+  .sub-label{font-size:0.7rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dk);margin:0.2rem 0 0.3rem;}
+  .lvl-def{font-size:1rem;color:var(--text);line-height:1.6;margin-bottom:0.9rem;}
+  .boosts-list{list-style:none;padding:0;margin:0;}
+  .boosts-list li{position:relative;padding:0.45rem 0 0.45rem 1.7rem;font-size:0.95rem;color:var(--text);line-height:1.5;border-bottom:1px solid var(--lgray);}
+  .boosts-list li:last-child{border-bottom:none;}
+  .boosts-list li::before{content:'→';position:absolute;left:0;top:0.45rem;color:var(--gold-dk);font-weight:700;}
+  .cta{background:var(--navy);border-radius:12px;padding:1.7rem 1.8rem;text-align:center;margin-top:0.5rem;}
+  .cta .cl{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:800;color:#fff;margin-bottom:0.3rem;}
+  .cta .cs{font-size:0.9rem;color:var(--gold-lt);margin-bottom:1rem;}
+  .cta a{display:inline-block;background:var(--gold);color:var(--navy-dk);font-weight:800;font-size:1rem;padding:0.75rem 1.8rem;border-radius:10px;text-decoration:none;transition:transform .12s,box-shadow .12s;box-shadow:0 6px 18px rgba(10,52,118,0.22);}
+  .cta a:hover{transform:translateY(-2px);}
+  @media (max-width:620px){.lvl-head h2{font-size:1.25rem;}}
+</style>
+</head>
+<body>
+<div class="back-bar"><a href="../index.html"><span>←</span> AI for the Defense <span class="sep">/</span> <span data-i18n="pg.resources">Resources</span></a><div class="bb-right"><span class="bb-lang" data-i18n-picker></span></div></div>
+
+<header class="page">
+  <div class="header-inner">
+    <img class="hdr-ico" src="../assets/fluency-icon.png" alt="">
+    <span class="eyebrow" data-i18n="flref.eyebrow">Reference · the four levels</span>
+    <h1 data-i18n="flref.h1">The AI Fluency Levels</h1>
+    <div class="header-sub" data-i18n="flref.sub">A field guide to the four stages of AI adoption in criminal defense practice</div>
+    <div class="header-meta">Texas Criminal Defense Lawyers Association · Facilitator <a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a></div>
+  </div>
+</header>
+
+<main>
+  <img class="fl-hero" src="../assets/fluency-levels.webp" alt="AI fluency in legal practice, maturing from awareness to advantage: Disconnected, Foundational, Integrated, and Strategic stages">
+  <div class="fl-cap" id="flCap"></div>
+
+  <p class="lead-p" data-i18n="flref.intro">AI fluency is not on or off. It matures in stages — from avoiding the tools, to using them for simple tasks, to weaving them into your workflow, to redesigning your practice around them. Find where you are today, then use the next stage as your map.</p>
+
+  <div id="levels"></div>
+
+  <div class="cta">
+    <div class="cl" data-i18n="flref.ctaLabel">Ready to place yourself?</div>
+    <div class="cs" data-i18n="flref.ctaSub">Five quick questions, a color chart, and tailored next steps.</div>
+    <a href="fluency-self-assessment.html" data-i18n="flref.ctaBtn">Take the 2-minute self-assessment</a>
+  </div>
+</main>
+
+<footer class="page">
+  <div class="fin">
+    <div class="brand">Texas Criminal Defense Lawyers Association</div>
+    <p><a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · <a href="https://mglearn.github.io/legalai">mglearn.github.io/legalai</a></p>
+    <p class="cc">AI for the Defense · The AI Fluency Levels · Reference</p>
+  </div>
+</footer>
+
+<script src="../assets/fluency-data.js"></script>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/pages-i18n.js"></script>
+<script>
+(function(){
+  var F = window.FLUENCY || {en:{}};
+  var BANDS = [[5,8],[9,12],[13,16],[17,20]];
+  var ACCENTS = ['#6F8FAF','#2F5F8F','#173766','#2E6B4F'];
+  function lang(){ var l=(window.BreakoutI18n&&BreakoutI18n.getLang)?BreakoutI18n.getLang():'en'; return F[l]?l:'en'; }
+  function D(){ return F[lang()]; }
+  function t(k){ return (window.BreakoutI18n&&BreakoutI18n.t)?BreakoutI18n.t(k):k; }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function render(){
+    var d = D();
+    document.getElementById('flCap').textContent = d.caption;
+    var looks = t('flref.lookslike'), grow = t('flref.grow'), bandT = t('flref.bandTmpl');
+    document.getElementById('levels').innerHTML = d.levels.map(function(l,i){
+      var band = bandT.replace('{a}', BANDS[i][0]).replace('{b}', BANDS[i][1]);
+      var boosts = l.boosts.map(function(b){ return '<li>'+esc(b)+'</li>'; }).join('');
+      return '<div class="lvl-card" style="border-left-color:'+ACCENTS[i]+'">'+
+        '<div class="lvl-head"><span class="lvl-num" style="background:'+ACCENTS[i]+'">'+i+'</span>'+
+          '<div><h2>'+esc(l.name)+'</h2><div class="lvl-band">'+esc(band)+'</div></div></div>'+
+        '<div class="lvl-tag">'+esc(l.tag)+'</div>'+
+        '<div class="sub-label">'+esc(looks)+'</div><p class="lvl-def">'+esc(l.def)+'</p>'+
+        '<div class="sub-label">'+esc(grow)+'</div><ul class="boosts-list">'+boosts+'</ul>'+
+        '</div>';
+    }).join('');
+  }
+  function init(){ render(); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
+  window.addEventListener('breakout-i18n:changed', render);
+})();
+</script>
+</body>
+</html>
