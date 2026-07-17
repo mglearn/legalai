@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Legal Ethics Scenario Randomizer | AI for the Defense | TCDLA</title>
+<meta name="description" content="Draw a random AI ethics scenario for criminal defense practice, discuss it in a small group, and share out. Grounded in the Texas Disciplinary Rules of Professional Conduct.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/pages.css">
+<style>
+  .filter{display:flex;flex-wrap:wrap;gap:0.45rem;margin:0.2rem 0 1.2rem;}
+  .fbtn{font-size:0.76rem;font-weight:700;padding:0.35rem 0.8rem;border-radius:999px;border:1.5px solid var(--mgray);
+        background:#fff;color:var(--slate);cursor:pointer;letter-spacing:0.02em;transition:all .12s;}
+  .fbtn:hover{border-color:var(--navy-md);color:var(--navy);}
+  .fbtn.active{background:var(--navy);border-color:var(--navy);color:var(--gold);}
+
+  .draw-wrap{text-align:center;margin:0.4rem 0 1.6rem;}
+  .draw-btn{font-family:'Playfair Display',serif;font-weight:800;font-size:1.15rem;color:#fff;background:var(--navy);
+        border:none;border-radius:12px;padding:0.95rem 2.2rem;cursor:pointer;letter-spacing:0.01em;
+        box-shadow:0 8px 22px rgba(10,52,118,0.22);transition:transform .12s,box-shadow .12s,background .12s;}
+  .draw-btn:hover{transform:translateY(-2px);background:#0d234a;box-shadow:0 12px 28px rgba(10,52,118,0.28);}
+  .draw-btn:active{transform:translateY(0);}
+  .draw-btn .dice{margin-right:0.5rem;}
+  .draw-hint{font-size:0.82rem;color:var(--slate);margin-top:0.55rem;}
+
+  #card{display:none;}
+  #card.show{display:block;animation:fade .3s ease;}
+  @keyframes fade{from{opacity:0;transform:translateY(12px);}to{opacity:1;transform:none;}}
+
+  .card-top{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:0.5rem;margin-bottom:0.5rem;}
+  .card-count{font-family:'Playfair Display',serif;font-weight:700;color:var(--gold-dk);font-size:0.95rem;letter-spacing:0.02em;}
+  .rule-chip{display:inline-block;font-size:0.72rem;font-weight:700;padding:0.28rem 0.7rem;border-radius:999px;
+        background:var(--gold-lt);color:var(--navy-dk);border:1px solid var(--gold);letter-spacing:0.02em;}
+
+  .ecard{background:#fff;border:1px solid var(--mgray);border-top:5px solid var(--navy);border-radius:12px;
+        padding:1.5rem 1.7rem;box-shadow:0 2px 12px rgba(10,52,118,0.07);margin-bottom:1.1rem;}
+  .ecard h2{font-family:'Playfair Display',serif;font-weight:800;color:var(--navy);font-size:1.6rem;line-height:1.15;margin:0.1rem 0 0.9rem;}
+  .sit-label,.bq-label,.gq-label{font-size:0.66rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:0.35rem;}
+  .ecard .situation{font-size:1.06rem;color:var(--text);line-height:1.62;margin-bottom:1.25rem;}
+  .bigq{background:#EEF2F7;border-left:5px solid var(--gold);border-radius:8px;padding:0.9rem 1.1rem;margin-bottom:1.25rem;}
+  .bigq p{font-family:'Playfair Display',serif;font-weight:700;font-style:italic;color:var(--navy);font-size:1.18rem;line-height:1.4;}
+  .gqlist{list-style:none;padding:0;margin:0;}
+  .gqlist li{position:relative;padding:0.4rem 0 0.4rem 1.7rem;font-size:0.98rem;color:var(--text);line-height:1.5;border-bottom:1px solid var(--lgray);}
+  .gqlist li:last-child{border-bottom:none;}
+  .gqlist li::before{content:'→';position:absolute;left:0;top:0.4rem;color:var(--gold-dk);font-weight:700;}
+
+  .again-wrap{text-align:center;margin:0.2rem 0 1.6rem;}
+  .again-btn{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:0.92rem;color:var(--navy);background:#fff;
+        border:1.5px solid var(--navy);border-radius:10px;padding:0.6rem 1.4rem;cursor:pointer;transition:all .12s;}
+  .again-btn:hover{background:var(--navy);color:var(--gold);}
+
+  .steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:0.9rem;margin:0.4rem 0 1.4rem;}
+  .dstep{background:var(--lgray);border:1px solid var(--mgray);border-radius:10px;padding:1rem 1.05rem;}
+  .dstep .dn{width:1.7rem;height:1.7rem;background:var(--navy);color:var(--gold);border-radius:50%;
+        font-family:'Playfair Display',serif;font-weight:700;font-size:0.9rem;display:flex;align-items:center;justify-content:center;margin-bottom:0.55rem;}
+  .dstep h4{font-size:0.92rem;color:var(--navy);margin-bottom:0.25rem;}
+  .dstep .t{display:block;font-size:0.66rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:0.15rem;}
+  .dstep p{font-size:0.83rem;color:var(--slate);line-height:1.45;}
+
+  @media (max-width:760px){
+    .steps4{grid-template-columns:1fr 1fr;}
+    .ecard h2{font-size:1.35rem;}
+    .bigq p{font-size:1.05rem;}
+  }
+</style>
+</head>
+<body>
+<div class="back-bar"><a href="../index.html"><span>←</span> AI for the Defense <span class="sep">/</span> <span data-i18n="pg.resources">Resources</span></a><div class="bb-right"><span class="bb-lang" data-i18n-picker></span></div></div>
+
+<header class="page">
+  <div class="header-inner">
+    <img class="hdr-ico" src="../assets/ethics-icon.svg" alt="">
+    <span class="eyebrow">Small-group activity · about 15 minutes per card</span>
+    <h1>Legal Ethics Scenario Randomizer</h1>
+    <div class="header-sub">Draw a fictional AI-ethics dilemma from criminal defense practice, talk it through at your table, and share out. Every card ties back to a Texas Disciplinary Rule.</div>
+    <div class="header-meta">Texas Criminal Defense Lawyers Association · Facilitator <a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · Adapted for the defense from a Think-Pair-Share tabletop set (CC&nbsp;BY-SA), inspired by the OECD Ethics of AI discussion flashcards</div>
+  </div>
+</header>
+
+<div class="how">
+  <div class="how-inner">
+    <div class="how-step"><div class="how-num">1</div><div class="how-label"><strong>Draw</strong>One person taps the button and reads the card aloud.</div></div>
+    <div class="how-step"><div class="how-num">2</div><div class="how-label"><strong>Think</strong>Two silent minutes. Jot your own first answer.</div></div>
+    <div class="how-step"><div class="how-num">3</div><div class="how-label"><strong>Discuss</strong>Work the guiding questions. Name the rule in play.</div></div>
+    <div class="how-step"><div class="how-num">4</div><div class="how-label"><strong>Share</strong>Bring one tension and one practice rule to the room.</div></div>
+  </div>
+</div>
+
+<main>
+  <div class="warn"><strong>For discussion, not advice.</strong> Every scenario is fictional and simplified to spark conversation. The rule references reflect the Texas framework and may change — verify the current text. Nothing here is legal advice, and the goal is not a single right answer. It is a shared standard of practice you can carry back to your office.</div>
+
+  <div class="section-label">Draw a scenario</div>
+  <p class="note" style="margin-bottom:0.7rem;">Filter to a duty if you want to focus your table, or leave it on <strong>All duties</strong> for the full deck. Then draw.</p>
+  <div class="filter" id="filter"></div>
+
+  <div class="draw-wrap">
+    <button class="draw-btn" id="drawBtn"><span class="dice">🎲</span>Draw a scenario</button>
+    <div class="draw-hint" id="drawHint">Thirty cards across six professional duties.</div>
+  </div>
+
+  <div id="card">
+    <div class="card-top">
+      <span class="card-count" id="cardCount"></span>
+      <span class="rule-chip" id="cardRule"></span>
+    </div>
+    <div class="ecard">
+      <div class="sit-label">The situation</div>
+      <h2 id="cardTitle"></h2>
+      <p class="situation" id="cardSituation"></p>
+      <div class="bq-label">The big question</div>
+      <div class="bigq"><p id="cardBig"></p></div>
+      <div class="gq-label">Guiding questions · work these together</div>
+      <ul class="gqlist" id="cardGuiding"></ul>
+    </div>
+    <div class="again-wrap">
+      <button class="again-btn" id="againBtn">↻ Draw another</button>
+    </div>
+  </div>
+
+  <div class="section-label">How to run the discussion</div>
+  <div class="steps4">
+    <div class="dstep"><div class="dn">1</div><span class="t">1 min</span><h4>Draw &amp; read</h4><p>One person draws a card and reads the situation and the big question aloud to the table.</p></div>
+    <div class="dstep"><div class="dn">2</div><span class="t">2 min · silent</span><h4>Think first</h4><p>Everyone reads the guiding questions alone and jots a first answer to the big question — before anyone speaks. This protects the quiet voices.</p></div>
+    <div class="dstep"><div class="dn">3</div><span class="t">8–10 min</span><h4>Discuss</h4><p>Go around once so every voice is in. Then work the guiding questions. Name the Texas rule in play and push on where good defense lawyers would disagree.</p></div>
+    <div class="dstep"><div class="dn">4</div><span class="t">2 min</span><h4>Land it</h4><p>Pick a note-taker. Agree on what your table will report out, using the prompts below.</p></div>
+  </div>
+
+  <div class="section-label">What to bring back to the room</div>
+  <div class="panel">
+    <p>Before you share out, land your table on three things. Keep it short — one line each — so several tables can report in the time you have.</p>
+    <ul style="margin:0.7rem 0 0.2rem;padding-left:1.2rem;line-height:1.7;">
+      <li><strong>The sharpest tension.</strong> What is the real conflict in this card — efficiency versus a duty, speed versus the client, access versus a risk?</li>
+      <li><strong>Where you disagreed.</strong> Name the point reasonable defense lawyers at your table split on, and why. Disagreement is the useful part.</li>
+      <li><strong>One practice rule.</strong> Finish this sentence: <em>“We will…”</em> or <em>“We will not…”</em> — a single guardrail you would actually adopt in your practice.</li>
+    </ul>
+  </div>
+
+  <div class="reflect-strip">
+    <div class="i">💬</div>
+    <p><strong>Facilitator's synthesis.</strong> Don't have each table replay everything. Ask: what theme showed up across tables? Where was the most interesting disagreement? Did anyone land somewhere surprising? Capture the “We will / We will not” statements — those are the takeaway.</p>
+  </div>
+
+  <div class="section-label">Keep exploring</div>
+  <div class="cards c2">
+    <a class="tile gold" href="../handouts/guardrail-checklist.html"><div class="tag">Handout</div><h3>Ethical Guardrail Checklist</h3><p>The eight-point, one-page check that turns these conversations into a routine you run before relying on any output.</p></a>
+    <a class="tile" href="pbl-scenario-lab.html"><div class="tag">Activity · 12 min</div><h3>PBL Scenario Lab</h3><p>Put the duties to work: run a fictional defense problem through the TCDLAi framework, from the vague prompt to the grounded, verified one.</p></a>
+  </div>
+</main>
+
+<footer class="page">
+  <div class="fin">
+    <div class="brand">Texas Criminal Defense Lawyers Association</div>
+    <p><a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · <a href="https://go.mgpd.org/tcdla26">go.mgpd.org/tcdla26</a></p>
+    <p class="cc">AI for the Defense · Legal Ethics Scenario Randomizer · Fictional discussion materials, not legal advice</p>
+  </div>
+</footer>
+
+<script src="../assets/ethics-scenarios-data.js"></script>
+<script>
+(function(){
+  var CATS = window.ETHICS_CATS, ALL = window.ETHICS_SCENARIOS;
+  var active = 'ALL', lastN = null;
+
+  // Build filter chips
+  var fw = document.getElementById('filter');
+  function chip(code, label){
+    var b = document.createElement('button');
+    b.className = 'fbtn' + (code === active ? ' active' : '');
+    b.textContent = label;
+    b.setAttribute('data-c', code);
+    b.addEventListener('click', function(){
+      active = code; lastN = null;
+      fw.querySelectorAll('.fbtn').forEach(function(x){ x.classList.toggle('active', x.getAttribute('data-c') === code); });
+      updateHint();
+    });
+    fw.appendChild(b);
+  }
+  chip('ALL', 'All duties');
+  Object.keys(CATS).forEach(function(code){ chip(code, CATS[code].label); });
+
+  function pool(){ return active === 'ALL' ? ALL : ALL.filter(function(s){ return s.cat === active; }); }
+  function updateHint(){
+    var p = pool();
+    var label = active === 'ALL' ? 'six professional duties' : CATS[active].label + ' · ' + CATS[active].rule;
+    document.getElementById('drawHint').innerHTML = p.length + (p.length === 1 ? ' card' : ' cards') + ' — ' + label + '.';
+  }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+
+  function draw(){
+    var p = pool();
+    if(!p.length) return;
+    var pick;
+    if(p.length === 1){ pick = p[0]; }
+    else { do { pick = p[Math.floor(Math.random()*p.length)]; } while(pick.n === lastN); }
+    lastN = pick.n;
+    render(pick, p.length);
+  }
+
+  function render(s, poolSize){
+    document.getElementById('cardCount').textContent = 'Card #' + s.n + ' · ' + (active === 'ALL' ? ALL.length : poolSize) + ' in play';
+    document.getElementById('cardRule').textContent = s.rule;
+    document.getElementById('cardTitle').textContent = s.title;
+    document.getElementById('cardSituation').textContent = s.situation;
+    document.getElementById('cardBig').textContent = s.big;
+    var ul = document.getElementById('cardGuiding');
+    ul.innerHTML = s.guiding.map(function(q){ return '<li>' + esc(q) + '</li>'; }).join('');
+    var c = document.getElementById('card');
+    c.classList.add('show');
+    // restart the fade animation on redraw
+    c.style.animation = 'none'; void c.offsetWidth; c.style.animation = '';
+    c.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+
+  document.getElementById('drawBtn').addEventListener('click', draw);
+  document.getElementById('againBtn').addEventListener('click', draw);
+  updateHint();
+})();
+</script>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/pages-i18n.js"></script>
+</body>
+</html>
