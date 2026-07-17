@@ -46,7 +46,7 @@
 </header>
 
 <main>
-  <img class="fl-hero" src="../assets/fluency-levels.webp" alt="AI fluency in legal practice, maturing from awareness to advantage: Disconnected, Foundational, Integrated, and Strategic stages">
+  <img class="fl-hero" id="flHero" src="../assets/fluency-levels.webp" alt="AI fluency self-assessment for legal professionals: Disconnected, Foundational, Integrated, and Strategic stages">
   <div class="fl-cap" id="flCap"></div>
 
   <p class="lead-p" data-i18n="flref.intro">AI fluency is not on or off. It matures in stages — from avoiding the tools, to using them for simple tasks, to weaving them into your workflow, to redesigning your practice around them. Find where you are today, then use the next stage as your map.</p>
@@ -76,13 +76,15 @@
   var F = window.FLUENCY || {en:{}};
   var BANDS = [[5,8],[9,12],[13,16],[17,20]];
   var ACCENTS = ['#6F8FAF','#2F5F8F','#173766','#2E6B4F'];
+  var IMG_LANGS = {es:1, vi:1, ar:1, hi:1, zh:1}; // languages with their own infographic (else English)
   function lang(){ var l=(window.BreakoutI18n&&BreakoutI18n.getLang)?BreakoutI18n.getLang():'en'; return F[l]?l:'en'; }
   function D(){ return F[lang()]; }
   function t(k){ return (window.BreakoutI18n&&BreakoutI18n.t)?BreakoutI18n.t(k):k; }
   function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
   function render(){
-    var d = D();
+    var d = D(), lg = lang();
+    document.getElementById('flHero').src = '../assets/fluency-levels' + (IMG_LANGS[lg] ? '-'+lg : '') + '.webp';
     document.getElementById('flCap').textContent = d.caption;
     var looks = t('flref.lookslike'), grow = t('flref.grow'), bandT = t('flref.bandTmpl');
     document.getElementById('levels').innerHTML = d.levels.map(function(l,i){
