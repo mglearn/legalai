@@ -20,7 +20,8 @@
   @keyframes fade{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:none;}}
   .level-badge{display:inline-block;font-family:'Playfair Display',serif;font-size:1.6rem;font-weight:900;color:#fff;background:var(--navy);
     padding:0.5rem 1.4rem;border-radius:8px;border-left:6px solid var(--gold);}
-  .score-line{font-size:1rem;color:var(--slate);margin:0.8rem 0;}
+  .score-line{font-size:1rem;color:var(--slate);margin:0.8rem 0 0.2rem;}
+  .level-tag{font-weight:700;color:var(--navy-md);font-size:1rem;margin:0.3rem 0 0.5rem;}
   .ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:0.6rem;margin:1rem 0;}
   .rung{border-radius:8px;padding:0.7rem 0.8rem;font-size:0.8rem;border:1.5px solid var(--mgray);background:#fff;}
   .rung.on{border-color:var(--gold);background:#EEF2F7;box-shadow:0 4px 14px rgba(47,95,143,0.18);}
@@ -45,15 +46,25 @@
   .clegend span{display:inline-flex;align-items:center;gap:0.35rem;}
   .clegend i{width:0.9rem;height:0.9rem;border-radius:3px;display:inline-block;}
   @media (max-width:620px){.crow{grid-template-columns:1fr 1.7rem;}.crow .clab{grid-column:1 / -1;margin-bottom:-0.15rem;}}
+  .lvls{display:grid;grid-template-columns:1fr 1fr;gap:0.7rem;margin:0.5rem 0 0.3rem;}
+  .lvl{border:1.5px solid var(--mgray);border-radius:8px;padding:0.85rem 1rem;background:#fff;}
+  .lvl.on{border-color:var(--gold);background:#EEF2F7;box-shadow:0 4px 14px rgba(47,95,143,0.15);}
+  .lvl h4{font-family:'Playfair Display',serif;color:var(--navy);font-size:1.05rem;display:flex;align-items:center;gap:0.45rem;margin-bottom:0.2rem;}
+  .lvl .num{width:1.5rem;height:1.5rem;min-width:1.5rem;border-radius:50%;background:var(--navy);color:#fff;font-size:0.82rem;display:inline-flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;}
+  .lvl.on .num{background:var(--gold);color:var(--navy-dk);}
+  .lvl .ltag{font-weight:700;color:var(--navy-md);font-size:0.88rem;margin-bottom:0.3rem;}
+  .lvl p{font-size:0.87rem;color:var(--slate);line-height:1.45;}
+  .lvl .youre{display:inline-block;font-size:0.64rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold-dk);margin-top:0.4rem;}
+  .lvls-cap{text-align:center;font-size:0.78rem;font-weight:800;letter-spacing:0.05em;color:var(--gold-dk);text-transform:uppercase;margin:0.7rem 0 0.2rem;}
+  @media (max-width:620px){.lvls{grid-template-columns:1fr;}}
   .btn-row{display:flex;flex-wrap:wrap;gap:0.5rem;margin-top:1rem;}
   .print-only{display:none;}
   .print-head{font-family:'Playfair Display',serif;font-weight:800;color:var(--navy);font-size:1.15rem;line-height:1.3;margin-bottom:0.7rem;padding-bottom:0.6rem;border-bottom:2px solid var(--gold);}
   .print-head span{display:block;font-family:'Source Sans 3',sans-serif;font-weight:400;font-size:0.82rem;color:var(--slate);margin-top:0.15rem;}
-  /* While exporting to PNG: hide the buttons and show the title block. */
   .capturing .btn-row{display:none;}
   .capturing .print-only{display:block;}
   @media print{
-    .back-bar,.how,header.page,footer.page,.lead-p,#quiz,.reflect-strip,.btn-row{display:none !important;}
+    .back-bar,.how,header.page,footer.page,.lead-p,#quiz,#btnwrap,.reflect-strip,.btn-row{display:none !important;}
     #result{box-shadow:none;border:none;padding:0;}
     .print-only{display:block;}
     body{background:#fff;margin:0;}
@@ -66,7 +77,7 @@
 
 <header class="page">
   <div class="header-inner">
-    <img class="hdr-ico" src="../assets/fluency-icon.png" alt=""><span class="eyebrow">Optional opener · about 2 minutes</span>
+    <img class="hdr-ico" src="../assets/fluency-icon.png" alt=""><span class="eyebrow" id="fluEyebrow">Optional opener · about 2 minutes</span>
     <h1 data-i18n="fl.h1">AI Fluency Self-Assessment</h1>
     <div class="header-sub" data-i18n="fl.sub">Where does your practice stand with generative AI today</div>
     <div class="header-meta">Texas Criminal Defense Lawyers Association · Facilitator <a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a></div>
@@ -74,85 +85,50 @@
 </header>
 
 <main>
-  <p class="lead-p">Choose the option that best matches your current practice. There are no wrong answers, and nothing is stored or sent anywhere. When you finish, select <strong>Calculate my level</strong> to see where you stand and where to grow.</p>
+  <p class="lead-p" id="leadP"></p>
 
-  <div id="quiz">
-    <div class="q" data-q="0">
-      <div class="qn">1. How often do you use AI when drafting legal materials such as motions, letters, or summaries?</div>
-      <label class="opt"><input type="radio" name="q0" value="1"><span>A. Never</span></label>
-      <label class="opt"><input type="radio" name="q0" value="2"><span>B. Sometimes, for quick first drafts</span></label>
-      <label class="opt"><input type="radio" name="q0" value="3"><span>C. Regularly, for many drafting tasks</span></label>
-      <label class="opt"><input type="radio" name="q0" value="4"><span>D. Consistently, as part of a defined workflow I verify</span></label>
-    </div>
-    <div class="q" data-q="1">
-      <div class="qn">2. How confident are you writing a structured prompt that names the issue, facts, jurisdiction, and sources?</div>
-      <label class="opt"><input type="radio" name="q1" value="1"><span>A. Not confident</span></label>
-      <label class="opt"><input type="radio" name="q1" value="2"><span>B. Somewhat confident</span></label>
-      <label class="opt"><input type="radio" name="q1" value="3"><span>C. Mostly confident</span></label>
-      <label class="opt"><input type="radio" name="q1" value="4"><span>D. Very confident, and I use a framework</span></label>
-    </div>
-    <div class="q" data-q="2">
-      <div class="qn">3. How consistently do you verify every AI-provided citation against a real database before relying on it?</div>
-      <label class="opt"><input type="radio" name="q2" value="1"><span>A. I have not thought about it</span></label>
-      <label class="opt"><input type="radio" name="q2" value="2"><span>B. Occasionally, when something looks off</span></label>
-      <label class="opt"><input type="radio" name="q2" value="3"><span>C. Frequently, for anything I might file</span></label>
-      <label class="opt"><input type="radio" name="q2" value="4"><span>D. Always, as a fixed step in my process</span></label>
-    </div>
-    <div class="q" data-q="3">
-      <div class="qn">4. How well do you protect client confidentiality when using AI tools?</div>
-      <label class="opt"><input type="radio" name="q3" value="1"><span>A. I paste whatever is convenient</span></label>
-      <label class="opt"><input type="radio" name="q3" value="2"><span>B. I am careful sometimes</span></label>
-      <label class="opt"><input type="radio" name="q3" value="3"><span>C. I strip identifiers or use stand-ins for most tasks</span></label>
-      <label class="opt"><input type="radio" name="q3" value="4"><span>D. I have clear rules and use tools with proper data terms</span></label>
-    </div>
-    <div class="q" data-q="4">
-      <div class="qn">5. How organized is your AI workflow across matters?</div>
-      <label class="opt"><input type="radio" name="q4" value="1"><span>A. No workflow</span></label>
-      <label class="opt"><input type="radio" name="q4" value="2"><span>B. A few prompts saved somewhere</span></label>
-      <label class="opt"><input type="radio" name="q4" value="3"><span>C. Clear routines I follow</span></label>
-      <label class="opt"><input type="radio" name="q4" value="4"><span>D. A documented system with templates, prompts, and checkpoints</span></label>
-    </div>
-
+  <div id="quiz"></div>
+  <div id="btnwrap">
     <button class="btn" id="calcBtn" onclick="calc()">Calculate my level</button>
-    <span id="warn" class="warn" style="display:none;margin-left:1rem;">Please answer all five questions first.</span>
+    <span id="warn" class="warn" style="display:none;margin-left:1rem;"></span>
   </div>
 
   <div id="result" class="panel">
-    <div class="print-only print-head">AI Fluency Self-Assessment — My Result<span>AI for the Defense · Texas Criminal Defense Lawyers Association · go.mgpd.org/tcdla26</span></div>
-    <div class="section-label">Your result</div>
+    <div class="print-only print-head" id="printHead"></div>
+    <div class="section-label" id="resLabel">Your result</div>
     <div id="badge"></div>
     <div class="score-line" id="scoreLine"></div>
+    <p class="level-tag" id="levelTag"></p>
     <p id="levelDesc" style="font-size:1rem;color:var(--text);"></p>
     <div class="ladder" id="ladder"></div>
 
-    <div class="section-label" style="margin-top:1.2rem;">Your fluency by area</div>
+    <div class="section-label" id="byAreaLabel" style="margin-top:1.2rem;">Your fluency by area</div>
     <div class="chart" id="chart"></div>
-    <div class="clegend">
-      <span><i style="background:#C8D2DC"></i>1 · Just starting</span>
-      <span><i style="background:#6F8FAF"></i>2 · Building</span>
-      <span><i style="background:#2F5F8F"></i>3 · Solid</span>
-      <span><i style="background:#102A54"></i>4 · Strong</span>
-    </div>
-    <p class="chart-cap">Longer, darker bars are your strengths. Short, light bars are where to grow next.</p>
+    <div class="clegend" id="legend"></div>
+    <p class="chart-cap" id="chartCap"></p>
+
+    <div class="section-label" id="levelsHeadingLabel" style="margin-top:1.2rem;">What the levels mean</div>
+    <div class="lvls" id="lvls"></div>
+    <div class="lvls-cap" id="lvlsCap"></div>
 
     <p id="nextStep" style="font-size:0.95rem;color:var(--navy);font-weight:600;margin-top:0.8rem;"></p>
 
-    <div class="section-label" style="margin-top:1.3rem;">How to level up</div>
+    <div class="section-label" id="levelUpLabel" style="margin-top:1.2rem;">How to level up</div>
     <p id="boostsIntro" style="font-size:0.95rem;color:var(--text);margin-bottom:0.2rem;"></p>
     <ul class="boosts-list" id="boosts"></ul>
-    <div class="res-lbl">Use these from today's session</div>
+    <div class="res-lbl" id="resLbl"></div>
     <div class="res-links" id="resLinks"></div>
 
     <div class="btn-row">
-      <button class="btn" id="pngBtn" onclick="saveImage()">⬇ Save as image</button>
-      <button class="btn ghost" onclick="window.print()">🖨 Print / Save as PDF</button>
-      <button class="btn ghost" onclick="reset()">Start over</button>
+      <button class="btn" id="pngBtn" onclick="saveImage()">Save as image</button>
+      <button class="btn ghost" id="pdfBtn" onclick="window.print()">Print / Save as PDF</button>
+      <button class="btn ghost" id="startOverBtn" onclick="reset()">Start over</button>
     </div>
   </div>
 
   <div class="reflect-strip" style="margin-top:1.4rem;">
     <div class="i">💬</div>
-    <p><strong>Use it as a compass, not a grade.</strong> The point is to notice which habit to build next. Everyone in this room can move one level up this year.</p>
+    <p><strong id="reflectStrong"></strong> <span id="reflectRest"></span></p>
   </div>
 </main>
 
@@ -164,132 +140,147 @@
   </div>
 </footer>
 
-<script src="../assets/deck-framework.js"></script>
-<script>
-const LEVELS = [
-  {name:'Disconnected', min:5, max:8,
-   desc:'You handle legal work manually and have not yet folded AI into your practice. That is a fine starting point. The fastest gain is one small, low-risk task, like turning rough notes into a clean summary you fully control.',
-   next:'Next step: try one fictional-fact drafting task in a free chatbot, and verify anything it claims.',
-   boostIntro:'Start with one habit, on low-stakes work, before AI touches anything real:',
-   boosts:[
-     'Pick one low-risk task this week — turn rough notes into a clean summary, or outline an argument — using only fictional or de-identified facts.',
-     'Set up one free chatbot (Claude, ChatGPT, Z.ai, or Mistral) and run the PBL Scenario Lab once, start to finish.',
-     'Learn the one rule before anything else: never paste client-identifying facts into a consumer tool.',
-     'Treat every AI answer as a first draft to check, never a finished product.'
-   ],
-   links:[{t:'PBL Scenario Lab', u:'pbl-scenario-lab.html'}, {t:'Ethical Guardrail Checklist', u:'../handouts/guardrail-checklist.html'}]},
-  {name:'Foundational', min:9, max:12,
-   desc:'You use AI for simple tasks and quick drafts, but use is inconsistent and mostly unstructured. The biggest lift now is structure and a verification habit, so the output becomes reliable instead of hit-or-miss.',
-   next:'Next step: adopt the TCDLAi framework and verify every citation before you rely on it.',
-   boostIntro:'Trade ad-hoc prompting for structure and a verification habit:',
-   boosts:[
-     'Adopt the TCDLAi framework so every prompt names the issue, facts, jurisdiction, and sources — stop free-typing prompts.',
-     'Make verification a fixed step: if you cannot open the opinion in a real database, you do not have a citation.',
-     'De-identify facts or use a fictional stand-in every time, not only when you remember.',
-     'Save the three to five prompts you reuse into one document so your good work repeats.'
-   ],
-   links:[{t:'TCDLAi Prompt Design Guide', u:'../handouts/tcdlai-guide.html'}, {t:'Scenario Bank', u:'scenario-bank.html'}, {t:'Ethical Guardrail Checklist', u:'../handouts/guardrail-checklist.html'}]},
-  {name:'Integrated', min:13, max:16,
-   desc:'AI is part of your routine work. You structure prompts, protect confidentiality most of the time, and check citations. Now tighten grounding and make your verification and confidentiality rules fully consistent.',
-   next:'Next step: ground prompts in your own sources, and write down your do-and-do-not rules.',
-   boostIntro:'Close the consistency gaps and ground the model in your own materials:',
-   boosts:[
-     'Ground prompts in your own sources — paste the statute, the report, the record — so the model works from your materials, not its memory.',
-     'Write your do-and-do-not rules and verification checkpoints into a one-page office standard.',
-     'Make confidentiality and citation-checking automatic on every matter, not most of them.',
-     'Pressure-test your judgment on hard calls with the Legal Ethics Scenario Randomizer, ideally with colleagues.'
-   ],
-   links:[{t:'Legal Prompt Library', u:'../handouts/prompt-library.html'}, {t:'Legal Ethics Scenario Randomizer', u:'ethics-scenario-randomizer.html'}, {t:'Ethical Guardrail Checklist', u:'../handouts/guardrail-checklist.html'}]},
-  {name:'Strategic', min:17, max:20,
-   desc:'You have built repeatable, documented workflows with grounding, verification, and confidentiality baked in. Your edge now is sharing that system with your team and building custom tooling that carries your standards by default.',
-   next:'Next step: build a defense-focused bot with your guardrails, and standardize it across matters.',
-   boostIntro:'Turn your personal system into shared, durable infrastructure:',
-   boosts:[
-     'Package your standards into a custom, review-gated tool — build a defense-focused bot or Claude Project that carries your guardrails by default.',
-     'Standardize across the team: one shared prompt library, one checklist, one verification step.',
-     'Bring a colleague up a level using your documented workflow.',
-     'Schedule a periodic review so your system keeps pace as models and rules change.'
-   ],
-   links:[{t:'Build a Claude Project', u:'claude-project-tutorial.html'}, {t:'Legal Prompt Library', u:'../handouts/prompt-library.html'}, {t:'TCDLALegalAI Bot', u:'https://box.boodle.ai/a/@TCDLALegalAI'}]}
-];
-
-const DIMS = ['AI in drafting','Structured prompting','Citation verification','Client confidentiality','Workflow & systems'];
-function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');}
-function barColor(v){return v>=4?'#102A54':v===3?'#2F5F8F':v===2?'#6F8FAF':'#C8D2DC';}
-function renderChart(scores){
-  const c=document.getElementById('chart');
-  c.innerHTML=DIMS.map(function(d,i){
-    const v=scores[i];
-    return '<div class="crow"><div class="clab">'+esc(d)+'</div>'+
-      '<div class="ctrack"><div class="cbar" data-w="'+(v/4*100)+'" style="background:'+barColor(v)+'"></div></div>'+
-      '<div class="cval">'+v+'</div></div>';
-  }).join('');
-  requestAnimationFrame(function(){
-    c.querySelectorAll('.cbar').forEach(function(b){ b.style.width=b.getAttribute('data-w')+'%'; });
-  });
-}
-function calc(){
-  let total=0, answered=0; const scores=[];
-  for(let i=0;i<5;i++){
-    const sel=document.querySelector('input[name="q'+i+'"]:checked');
-    if(sel){const v=parseInt(sel.value,10);total+=v;scores[i]=v;answered++;}
-  }
-  if(answered<5){document.getElementById('warn').style.display='inline-block';return;}
-  document.getElementById('warn').style.display='none';
-  const lvl=LEVELS.find(l=>total>=l.min&&total<=l.max)||LEVELS[0];
-  document.getElementById('badge').innerHTML='<span class="level-badge">'+lvl.name+'</span>';
-  document.getElementById('scoreLine').textContent='Score: '+total+' of 20';
-  document.getElementById('levelDesc').textContent=lvl.desc;
-  document.getElementById('nextStep').textContent=lvl.next;
-  document.getElementById('ladder').innerHTML=LEVELS.map(l=>
-    '<div class="rung'+(l.name===lvl.name?' on':'')+'"><b>'+l.name+'</b><small>'+l.min+' to '+l.max+'</small></div>').join('');
-  renderChart(scores);
-  document.getElementById('boostsIntro').textContent=lvl.boostIntro;
-  document.getElementById('boosts').innerHTML=lvl.boosts.map(b=>'<li>'+esc(b)+'</li>').join('');
-  document.getElementById('resLinks').innerHTML=lvl.links.map(function(l){
-    var ext=/^https?:/.test(l.u)?' target="_blank" rel="noopener"':'';
-    return '<a href="'+l.u+'"'+ext+'>'+esc(l.t)+(ext?' ↗':'')+'</a>';
-  }).join('');
-  const r=document.getElementById('result');
-  r.classList.add('show');
-  r.scrollIntoView({behavior:'smooth',block:'start'});
-}
-function reset(){
-  document.querySelectorAll('input[type=radio]').forEach(i=>i.checked=false);
-  document.getElementById('result').classList.remove('show');
-  window.scrollTo({top:0,behavior:'smooth'});
-}
-// Lazy-load the locally vendored html2canvas so the page stays light and works offline.
-function ensureH2C(cb){
-  if(window.html2canvas) return cb(true);
-  var s=document.createElement('script');
-  s.src='../assets/html2canvas.min.js';
-  s.onload=function(){cb(!!window.html2canvas);};
-  s.onerror=function(){cb(false);};
-  document.head.appendChild(s);
-}
-function saveImage(){
-  var btn=document.getElementById('pngBtn'), old=btn.textContent;
-  btn.textContent='Rendering…'; btn.disabled=true;
-  ensureH2C(function(ok){
-    if(!ok){ btn.textContent=old; btn.disabled=false; alert('Could not load the image tool. Use "Print / Save as PDF" instead.'); return; }
-    var node=document.getElementById('result');
-    node.classList.add('capturing');
-    html2canvas(node,{backgroundColor:'#ffffff',scale:2}).then(function(canvas){
-      node.classList.remove('capturing');
-      canvas.toBlob(function(blob){
-        var a=document.createElement('a');
-        a.href=URL.createObjectURL(blob);
-        a.download='ai-fluency-result.png';
-        a.click();
-        setTimeout(function(){URL.revokeObjectURL(a.href);},1000);
-        btn.textContent=old; btn.disabled=false;
-      },'image/png');
-    }).catch(function(){ node.classList.remove('capturing'); btn.textContent=old; btn.disabled=false; alert('Image export failed. Use "Print / Save as PDF" instead.'); });
-  });
-}
-</script>
+<script src="../assets/fluency-data.js"></script>
 <script src="../assets/i18n.js"></script>
 <script src="../assets/pages-i18n.js"></script>
+<script>
+(function(){
+  var F = window.FLUENCY || {en:{}};
+  var BANDS = [[5,8],[9,12],[13,16],[17,20]];
+  var BARCOLORS = ['#C8D2DC','#6F8FAF','#2F5F8F','#102A54'];
+  var LINKS = [
+    ['pbl-scenario-lab.html','../handouts/guardrail-checklist.html'],
+    ['../handouts/tcdlai-guide.html','scenario-bank.html','../handouts/guardrail-checklist.html'],
+    ['../handouts/prompt-library.html','ethics-scenario-randomizer.html','../handouts/guardrail-checklist.html'],
+    ['claude-project-tutorial.html','../handouts/prompt-library.html','https://box.boodle.ai/a/@TCDLALegalAI']
+  ];
+  var lastScores = null, resultShown = false;
+
+  function lang(){ var l = (window.BreakoutI18n && BreakoutI18n.getLang) ? BreakoutI18n.getLang() : 'en'; return F[l] ? l : 'en'; }
+  function D(){ return F[lang()]; }
+  function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
+  function txt(id,v){ var e=document.getElementById(id); if(e) e.textContent = v; }
+  function barColor(v){ return BARCOLORS[Math.max(1,Math.min(4,v))-1]; }
+
+  function currentAnswers(){
+    var a=[]; for(var i=0;i<5;i++){ var s=document.querySelector('input[name="q'+i+'"]:checked'); a[i] = s ? parseInt(s.value,10) : null; } return a;
+  }
+  function renderQuiz(){
+    var saved = currentAnswers(), d = D();
+    document.getElementById('quiz').innerHTML = d.questions.map(function(q,i){
+      var opts = q.o.map(function(o,j){
+        var val=j+1, chk=(saved[i]===val)?' checked':'';
+        return '<label class="opt"><input type="radio" name="q'+i+'" value="'+val+'"'+chk+'><span>'+esc(o)+'</span></label>';
+      }).join('');
+      return '<div class="q" data-q="'+i+'"><div class="qn">'+esc(q.q)+'</div>'+opts+'</div>';
+    }).join('');
+  }
+
+  function renderChart(scores){
+    var d = D(), c = document.getElementById('chart');
+    c.innerHTML = d.dims.map(function(dim,i){
+      var v=scores[i];
+      return '<div class="crow"><div class="clab">'+esc(dim)+'</div>'+
+        '<div class="ctrack"><div class="cbar" data-w="'+(v/4*100)+'" style="background:'+barColor(v)+'"></div></div>'+
+        '<div class="cval">'+v+'</div></div>';
+    }).join('');
+    requestAnimationFrame(function(){ c.querySelectorAll('.cbar').forEach(function(b){ b.style.width=b.getAttribute('data-w')+'%'; }); });
+  }
+
+  function renderResult(){
+    if(!lastScores) return;
+    var d = D();
+    var total = lastScores.reduce(function(a,b){ return a+b; }, 0);
+    var idx = 0; for(var i=0;i<BANDS.length;i++){ if(total>=BANDS[i][0] && total<=BANDS[i][1]){ idx=i; break; } }
+    var lvl = d.levels[idx];
+    document.getElementById('badge').innerHTML = '<span class="level-badge">'+esc(lvl.name)+'</span>';
+    txt('scoreLine', d.scoreTmpl.replace('{n}', total));
+    txt('levelTag', lvl.tag);
+    txt('levelDesc', lvl.desc);
+    document.getElementById('ladder').innerHTML = d.levels.map(function(l,i){
+      return '<div class="rung'+(i===idx?' on':'')+'"><b>'+esc(l.name)+'</b><small>'+BANDS[i][0]+'–'+BANDS[i][1]+'</small></div>';
+    }).join('');
+    renderChart(lastScores);
+    document.getElementById('legend').innerHTML = d.legend.map(function(lg,i){
+      return '<span><i style="background:'+BARCOLORS[i]+'"></i>'+esc(lg)+'</span>';
+    }).join('');
+    txt('chartCap', d.chartCap);
+    document.getElementById('lvls').innerHTML = d.levels.map(function(l,i){
+      var here = (i===idx) ? '<span class="youre">'+esc(d.youAreHere)+'</span>' : '';
+      return '<div class="lvl'+(i===idx?' on':'')+'"><h4><span class="num">'+i+'</span>'+esc(l.name)+'</h4>'+
+        '<div class="ltag">'+esc(l.tag)+'</div><p>'+esc(l.def)+'</p>'+here+'</div>';
+    }).join('');
+    txt('lvlsCap', d.caption);
+    txt('nextStep', lvl.next);
+    txt('boostsIntro', lvl.boostIntro);
+    document.getElementById('boosts').innerHTML = lvl.boosts.map(function(b){ return '<li>'+esc(b)+'</li>'; }).join('');
+    txt('resLbl', d.resLbl);
+    document.getElementById('resLinks').innerHTML = lvl.links.map(function(t,j){
+      var u = LINKS[idx][j] || '#', ext = /^https?:/.test(u) ? ' target="_blank" rel="noopener"' : '';
+      return '<a href="'+u+'"'+ext+'>'+esc(t)+(ext?' ↗':'')+'</a>';
+    }).join('');
+    document.getElementById('printHead').innerHTML = esc(d.printTitle)+'<span>'+esc(d.printSub)+'</span>';
+  }
+
+  function fillStatic(){
+    var d = D();
+    txt('fluEyebrow', d.eyebrow);
+    txt('leadP', d.lead);
+    txt('calcBtn', d.calcBtn);
+    txt('warn', d.warn);
+    txt('resLabel', d.resultLabel);
+    txt('byAreaLabel', d.byArea);
+    txt('levelsHeadingLabel', d.levelsHeading);
+    txt('levelUpLabel', d.levelUp);
+    txt('pngBtn', d.saveImage);
+    txt('pdfBtn', d.savePdf);
+    txt('startOverBtn', d.startOver);
+    txt('reflectStrong', d.reflectStrong);
+    txt('reflectRest', d.reflectRest);
+  }
+
+  window.calc = function(){
+    var a = currentAnswers();
+    if(a.some(function(x){ return x==null; })){ document.getElementById('warn').style.display='inline-block'; return; }
+    document.getElementById('warn').style.display='none';
+    lastScores = a.slice(); resultShown = true;
+    renderResult();
+    var r = document.getElementById('result'); r.classList.add('show'); r.scrollIntoView({behavior:'smooth', block:'start'});
+  };
+  window.reset = function(){
+    document.querySelectorAll('input[type=radio]').forEach(function(i){ i.checked=false; });
+    lastScores = null; resultShown = false;
+    document.getElementById('result').classList.remove('show');
+    window.scrollTo({top:0, behavior:'smooth'});
+  };
+  function ensureH2C(cb){
+    if(window.html2canvas) return cb(true);
+    var s=document.createElement('script'); s.src='../assets/html2canvas.min.js';
+    s.onload=function(){ cb(!!window.html2canvas); }; s.onerror=function(){ cb(false); };
+    document.head.appendChild(s);
+  }
+  window.saveImage = function(){
+    var d = D(), btn = document.getElementById('pngBtn'), old = btn.textContent;
+    btn.textContent = d.rendering; btn.disabled = true;
+    ensureH2C(function(ok){
+      if(!ok){ btn.textContent=old; btn.disabled=false; alert(d.imgErr); return; }
+      var node = document.getElementById('result'); node.classList.add('capturing');
+      window.html2canvas(node,{backgroundColor:'#ffffff',scale:2}).then(function(canvas){
+        node.classList.remove('capturing');
+        canvas.toBlob(function(blob){
+          var link=document.createElement('a'); link.href=URL.createObjectURL(blob); link.download='ai-fluency-result.png'; link.click();
+          setTimeout(function(){ URL.revokeObjectURL(link.href); },1000);
+          btn.textContent=old; btn.disabled=false;
+        },'image/png');
+      }).catch(function(){ node.classList.remove('capturing'); btn.textContent=old; btn.disabled=false; alert(d.imgErr); });
+    });
+  };
+
+  function applyLang(){ fillStatic(); renderQuiz(); if(resultShown) renderResult(); }
+  function init(){ fillStatic(); renderQuiz(); }
+  if(document.readyState==='loading') document.addEventListener('DOMContentLoaded', init); else init();
+  window.addEventListener('breakout-i18n:changed', applyLang);
+})();
+</script>
 </body>
 </html>
