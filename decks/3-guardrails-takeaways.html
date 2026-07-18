@@ -13,6 +13,13 @@
   .checklist li { font-size:19px; padding-left:32px; position:relative; color:var(--text); line-height:1.35; }
   .checklist li::before { content:'☐'; position:absolute; left:0; top:-1px; color:var(--gold-dk); font-size:21px; }
   .checklist li strong { color:var(--navy); }
+  /* Framing quote slide */
+  .frame-quote{background:linear-gradient(135deg,#0B1D33 0%,#102A54 58%,#173766 100%);}
+  .frame-quote .slide-body{display:flex;flex-direction:column;justify-content:center;max-width:1050px;}
+  .fq-mark{font-family:var(--font-display);font-weight:600;font-size:110px;line-height:0.4;color:var(--gold);opacity:0.55;}
+  .fq-text{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:46px;line-height:1.3;color:#F4F8FE;margin:8px 0 34px;padding:0;border:none;}
+  .fq-attr{font-family:var(--font-body);font-size:23px;font-weight:600;color:var(--gold-lt);}
+  .fq-attr span{display:block;font-weight:400;font-size:18px;color:#9FB4CE;margin-top:7px;}
 </style>
 </head>
 <body>
@@ -38,7 +45,26 @@
     </div>
   </section>
 
-  <!-- 2 · ETHICAL CHECKLIST -->
+  <!-- 2 · FRAMING QUOTE -->
+  <section class="slide frame-quote">
+    <div class="slide-body">
+      <div class="fq-mark" aria-hidden="true">&ldquo;</div>
+      <blockquote class="fq-text">The ultimate decisions &mdash; what argument to raise, what strategic path to pursue, what risks to take &mdash; belong solely to us.</blockquote>
+      <div class="fq-attr">Andrew S. Birrell<span>Criminal defense attorney &middot; NACDL President &middot; NACDL, 2026</span></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">go.mgpd.org/tcdla26</span>
+    </div>
+    <div class="notes">
+      <p>To close the session, one line to carry with you. It comes from Andrew Birrell, the president of the National Association of Criminal Defense Lawyers.</p>
+      <p>The ultimate decisions, what argument to raise, what strategic path to pursue, what risks to take, belong solely to us. That is what this whole segment protects.</p>
+      <p>The checklist, the do-and-do-not rules, and the record all exist so the tool can draft and suggest while the choices that decide a case stay yours. Hold onto that, and let us finish.</p>
+    </div>
+  </section>
+
+  <!-- 3 · ETHICAL CHECKLIST -->
   <section class="slide">
     <div class="slide-body">
       <img class="slide-ico" src="../assets/checklist-icon.png" alt=""><div class="slide-kicker">Run this before you rely on any output</div>
@@ -67,7 +93,7 @@
     </div>
   </section>
 
-  <!-- 3 · DO AND DON'T -->
+  <!-- 4 · DO AND DON'T -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">Clear rules</div>
@@ -107,7 +133,7 @@
     </div>
   </section>
 
-  <!-- 4 · DOCUMENT REVIEW VERIFY -->
+  <!-- 5 · DOCUMENT REVIEW VERIFY -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">The record that protects you</div>
@@ -131,7 +157,7 @@
     </div>
   </section>
 
-  <!-- 5 · WHEN TO USE, WHEN NOT -->
+  <!-- 6 · WHEN TO USE, WHEN NOT -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">Fit test</div>
@@ -172,7 +198,7 @@
     </div>
   </section>
 
-  <!-- 6 · PURPOSE-BUILT TOOLING -->
+  <!-- 7 · PURPOSE-BUILT TOOLING -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">Beyond the chatbot</div>
@@ -196,7 +222,7 @@
     </div>
   </section>
 
-  <!-- 7 · TAKEAWAYS -->
+  <!-- 8 · TAKEAWAYS -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">Take these with you</div>
@@ -221,7 +247,7 @@
     </div>
   </section>
 
-  <!-- 8 · CLOSING -->
+  <!-- 9 · CLOSING -->
   <section class="slide cover">
     <div class="slide-body">
       <div class="cover-eyebrow">Thank you</div>
