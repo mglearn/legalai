@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Two Approaches to AI in a Defense Practice | AI for the Defense | TCDLA</title>
+<meta name="description" content="Two ways criminal defense lawyers can put generative AI to work: start with the problem, or start with the task. A defense-focused adaptation of Paul Roetzer's two-approaches framework, with examples, a way to choose, and prompting habits that keep the lawyer in charge.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/pages.css">
+<style>
+  .lead-p{font-size:1.15rem;line-height:1.7;color:var(--text);margin:0 0 1.4rem;}
+  .credit{background:var(--lgray);border:1px solid var(--mgray);border-radius:10px;padding:0.9rem 1.1rem;font-size:0.9rem;color:var(--slate);line-height:1.55;margin:0 0 2rem;}
+  .credit a{color:var(--navy-md);font-weight:600;}
+  .sec-h{font-family:'Playfair Display',serif;font-size:1.5rem;color:var(--navy);margin:2.2rem 0 0.4rem;line-height:1.2;}
+  .sec-sub{color:var(--slate);font-size:1rem;margin:0 0 1.2rem;}
+  .two-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.2rem;margin:1rem 0 0.6rem;}
+  .appr{background:#fff;border:1px solid var(--mgray);border-radius:12px;padding:1.4rem 1.5rem;box-shadow:0 2px 12px rgba(10,52,118,0.06);}
+  .appr.problem{border-top:5px solid var(--navy);}
+  .appr.task{border-top:5px solid var(--gold-dk);}
+  .appr .k{font-size:0.7rem;font-weight:800;letter-spacing:0.11em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:0.35rem;}
+  .appr h3{font-family:'Playfair Display',serif;font-size:1.3rem;color:var(--navy);margin:0 0 0.5rem;line-height:1.15;}
+  .appr .d{font-size:0.98rem;line-height:1.6;color:var(--text);margin-bottom:0.9rem;}
+  .appr .when{font-size:0.82rem;font-weight:700;letter-spacing:0.04em;text-transform:uppercase;color:var(--slate);margin:0.6rem 0 0.35rem;}
+  .ex-list{list-style:none;padding:0;margin:0;}
+  .ex-list li{position:relative;padding:0.42rem 0 0.42rem 1.6rem;font-size:0.94rem;color:var(--text);line-height:1.5;border-bottom:1px solid var(--lgray);}
+  .ex-list li:last-child{border-bottom:none;}
+  .ex-list li::before{content:'→';position:absolute;left:0;top:0.42rem;color:var(--gold-dk);font-weight:700;}
+  .compare-tbl{width:100%;border-collapse:collapse;margin:0.6rem 0 0.5rem;font-size:0.93rem;}
+  .compare-tbl th,.compare-tbl td{text-align:left;padding:0.7rem 0.8rem;border-bottom:1px solid var(--mgray);vertical-align:top;line-height:1.5;}
+  .compare-tbl th{font-size:0.72rem;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--gold-dk);background:var(--lgray);}
+  .compare-tbl td:first-child{font-weight:700;color:var(--navy);width:26%;}
+  .prompts{list-style:none;padding:0;margin:0.6rem 0 0;counter-reset:pc;}
+  .prompts li{position:relative;padding:0.7rem 0 0.7rem 2.6rem;border-bottom:1px solid var(--lgray);font-size:0.97rem;line-height:1.55;color:var(--text);}
+  .prompts li:last-child{border-bottom:none;}
+  .prompts li::before{counter-increment:pc;content:counter(pc);position:absolute;left:0;top:0.65rem;width:1.7rem;height:1.7rem;border-radius:50%;background:var(--navy);color:#fff;font-family:'Playfair Display',serif;font-weight:800;font-size:0.9rem;display:flex;align-items:center;justify-content:center;}
+  .prompts strong{color:var(--navy);}
+  .guard{background:var(--navy);border-radius:12px;padding:1.4rem 1.6rem;margin:2rem 0 0.5rem;color:#EAF1FB;}
+  .guard h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:#fff;margin:0 0 0.5rem;}
+  .guard p{font-size:0.98rem;line-height:1.65;margin:0;color:var(--gold-lt);}
+  .cta{background:var(--navy);border-radius:12px;padding:1.7rem 1.8rem;text-align:center;margin-top:2rem;}
+  .cta .cl{font-family:'Playfair Display',serif;font-size:1.35rem;font-weight:800;color:#fff;margin-bottom:0.3rem;}
+  .cta .cs{font-size:0.9rem;color:var(--gold-lt);margin-bottom:1rem;}
+  .cta a{display:inline-block;background:var(--gold);color:var(--navy-dk);font-weight:800;font-size:1rem;padding:0.75rem 1.7rem;border-radius:10px;text-decoration:none;margin:0.3rem 0.4rem;transition:transform .12s;box-shadow:0 6px 18px rgba(10,52,118,0.22);}
+  .cta a.alt{background:transparent;color:#fff;border:1.5px solid var(--gold-lt);box-shadow:none;}
+  .cta a:hover{transform:translateY(-2px);}
+  @media (max-width:640px){.two-grid{grid-template-columns:1fr;}.compare-tbl td:first-child{width:auto;}}
+</style>
+</head>
+<body>
+<div class="back-bar"><a href="../index.html"><span>←</span> AI for the Defense <span class="sep">/</span> <span data-i18n="pg.resources">Resources</span></a><div class="bb-right"><span class="bb-lang" data-i18n-picker></span></div></div>
+
+<header class="page">
+  <div class="header-inner">
+    <img class="hdr-ico" src="../assets/two-approaches-icon.svg" alt="">
+    <span class="eyebrow" data-i18n="two.eyebrow">Reference · reading</span>
+    <h1 data-i18n="two.h1">Two Approaches to AI in a Defense Practice</h1>
+    <div class="header-sub" data-i18n="two.sub">Start with the problem, or start with the task — two ways to put generative AI to work without letting it practice law</div>
+    <div class="header-meta">Texas Criminal Defense Lawyers Association · Facilitator <a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a></div>
+  </div>
+</header>
+
+<main>
+  <p class="lead-p">Most lawyers meet generative AI the same way: they open a chatbot and start typing. That is a fine way to get a feel for the tool, but it is a poor way to build a practice around it. There are two more deliberate approaches, and knowing which one you are using keeps you honest about what the tool is actually doing for you. One begins with a <strong>problem</strong> worth solving. The other begins with a <strong>task</strong> the tool does well. Both can work. Neither one changes a single duty you already carry.</p>
+
+  <div class="credit">This is a criminal-defense adaptation of Paul Roetzer's (SmarterX.ai) two-approaches framework, drawn from an earlier education-focused piece, <a href="https://mguhlin.org/two-approaches-to-gen-ai-use/" target="_blank" rel="noopener">Two Approaches to Gen AI Use</a>. The framework is his; the examples, the guardrails, and the fit to defense work are ours.</p>
+
+  <h2 class="sec-h">The two approaches</h2>
+  <p class="sec-sub">Same tool, two different starting points.</p>
+
+  <div class="two-grid">
+    <div class="appr problem">
+      <div class="k">Approach one</div>
+      <h3>Start with the problem</h3>
+      <p class="d">Begin with a real, recurring pain point in your practice — the thing that eats your evenings, delays your filings, or costs the client money. Name it, then ask whether AI can measurably reduce it: hours saved, turnaround shortened, a first draft where there used to be a blank page. AI becomes a targeted answer to a defined problem, not a gadget in search of a use.</p>
+      <div class="when">Best when</div>
+      <p class="d" style="margin-bottom:0.6rem;">You are trying to relieve a bottleneck that shows up across many matters, and you can point to the time or cost it takes today.</p>
+      <div class="when">In a defense practice</div>
+      <ul class="ex-list">
+        <li>Turning a stack of discovery into a first-pass timeline and issue list you then verify</li>
+        <li>Drafting the routine parts of a suppression motion so you spend your hours on the argument, not the boilerplate</li>
+        <li>Producing a plain-language explainer of a plea offer for a client, which you review before sending</li>
+        <li>Summarizing a long interview or bodycam transcript into points you confirm against the source</li>
+      </ul>
+    </div>
+
+    <div class="appr task">
+      <div class="k">Approach two</div>
+      <h3>Start with the task</h3>
+      <p class="d">Begin with the kind of work, not the problem. Look for tasks that are repetitive, data-heavy, generative, or predictable — the places AI is genuinely good — and drop the tool into that one step. You are not redesigning the practice; you are augmenting a discrete task where the model earns its keep and the risk is easy to bound.</p>
+      <div class="when">Best when</div>
+      <p class="d" style="margin-bottom:0.6rem;">You want a quick, low-stakes win you can adopt today without changing how the whole office runs.</p>
+      <div class="when">In a defense practice</div>
+      <ul class="ex-list">
+        <li>Reformatting notes into a clean, consistent memo structure</li>
+        <li>Generating a first set of cross-examination questions from a witness statement to react to and cut</li>
+        <li>Rewriting a dense paragraph into jury-plain language</li>
+        <li>Brainstorming defense theories to pressure-test, never to adopt unread</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="sec-h">How they differ</h2>
+  <table class="compare-tbl">
+    <thead><tr><th>&nbsp;</th><th>Start with the problem</th><th>Start with the task</th></tr></thead>
+    <tbody>
+      <tr><td>Starting point</td><td>A recurring pain point in the practice</td><td>A specific kind of task the tool does well</td></tr>
+      <tr><td>Question you ask</td><td>"What is this costing me, and can AI cut it?"</td><td>"Which step here is repetitive or generative?"</td></tr>
+      <tr><td>Scope</td><td>Systemic — changes a workflow</td><td>Contained — augments one task</td></tr>
+      <tr><td>Payoff</td><td>Larger, measurable, slower to stand up</td><td>Smaller, immediate, easy to adopt</td></tr>
+      <tr><td>Main risk</td><td>Over-building around an unproven tool</td><td>A pile of small wins that never add up to a system</td></tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec-h">Choosing between them</h2>
+  <p class="lead-p" style="font-size:1.02rem;">You do not have to pick one forever. Most practices start with the task to build confidence — a few contained wins that prove the tool and teach its limits — then graduate to the problem once they can see where the real hours go. If a task keeps recurring across matters and the time adds up, that is your signal that a task-level habit has grown into a problem worth solving deliberately. Whichever door you come in, the lawyer stays the one who decides.</p>
+
+  <h2 class="sec-h">Prompting habits that carry either approach</h2>
+  <p class="sec-sub">The approach sets your goal; the prompt sets the quality. Six habits do most of the work.</p>
+  <ol class="prompts">
+    <li><strong>Be specific.</strong> "Draft a three-paragraph fact summary for a suppression motion" beats "summarize this."</li>
+    <li><strong>Assign a role.</strong> "You are a Texas criminal defense attorney reviewing a police report…" focuses the model.</li>
+    <li><strong>Provide context.</strong> Give the charge, the posture, the audience, and the purpose — using fictional or de-identified facts only.</li>
+    <li><strong>Give examples.</strong> Show the format or style you want, such as a sample heading or the structure of a good issue list.</li>
+    <li><strong>Set constraints.</strong> Word count, tone, what to leave out, and what not to assert as settled law.</li>
+    <li><strong>Request structure.</strong> Ask for headings, numbered issues, or a table so the output is easy to check.</li>
+  </ol>
+
+  <div class="guard">
+    <h3>The line that does not move</h3>
+    <p>Neither approach turns a draft into a decision. Every AI output is a draft for attorney review, and every citation the model gives you is a lead to verify against the reporter, not an authority to file. Never put confidential, privileged, or client-identifying facts into a consumer chatbot. Competence, confidentiality, supervision, and candor to the court reach AI-assisted work exactly as they reach a new associate's draft. Start with the problem or start with the task — but finish as the lawyer.</p>
+  </div>
+
+  <div class="cta">
+    <div class="cl">Put an approach to work</div>
+    <div class="cs">Use the framework and the guardrails on real, fictional practice.</div>
+    <a href="../handouts/tcdlai-guide.html">Open the TCDLAi Prompt Guide</a>
+    <a class="alt" href="pbl-scenario-lab.html">Try the Scenario Lab</a>
+  </div>
+</main>
+
+<footer class="page">
+  <div class="fin">
+    <div class="brand">Texas Criminal Defense Lawyers Association</div>
+    <p><a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · <a href="https://mglearn.github.io/legalai">mglearn.github.io/legalai</a></p>
+    <p class="cc">AI for the Defense · Two Approaches to AI · Reference · Framework by Paul Roetzer (SmarterX.ai)</p>
+  </div>
+</footer>
+
+<script src="../assets/i18n.js"></script>
+<script src="../assets/pages-i18n.js"></script>
+</body>
+</html>
