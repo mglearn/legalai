@@ -6,12 +6,14 @@ Live site: **https://mglearn.github.io/legalai**
 
 This is a modular, hands-on session on responsible generative AI use in criminal defense practice. It leads with ethics, spends most of its time on problem-based practice in free AI chatbots, and sends attorneys home with a framework, a checklist, a prompt library, and a bot they can build.
 
+The resource hub is `index.html`; `presentations.html` and `about.html` round out the site. Every page carries a language switcher (English, Spanish, Vietnamese, Arabic, Hindi, Urdu, and Chinese) that translates the interface; substantive legal content stays in English.
+
 ## What is here
 
 ### Presentations (`decks/`)
 Self-contained HTML slide decks. Arrow keys to navigate, **S** for speaker notes, **P** to print or export to PDF.
 
-**For the facilitator (not shown to participants):** in any deck, press **V** to open a presenter window on your laptop (current slide, next slide, notes, and a timer), move the deck window to the projector, and press **F** for fullscreen. Both windows stay in sync. Press **S** for notes on the current screen. The full shortcut list is on the **?** overlay in each deck.
+**For the facilitator (not shown to participants):** in any deck, press **V** to open a presenter window on your laptop (current slide, next slide, notes, and a timer), move the deck window to the projector, and press **F** for fullscreen. Both windows stay in sync. Press **S** for notes on the current screen. A small exit icon in the top-left corner of every non-title slide returns to the resources hub. The full shortcut list is on the **?** overlay in each deck.
 
 - `0-overview.html` — title, description, learning objectives, agenda
 - `1-ethical-foundations.html` — duties, hallucinated citations, confidentiality, judgment
@@ -19,8 +21,13 @@ Self-contained HTML slide decks. Arrow keys to navigate, **S** for speaker notes
 - `3-guardrails-takeaways.html` — ethics checklist, do-and-do-not, documentation
 
 ### Activities (`activities/`)
-- `fluency-self-assessment.html` — a five-question AI fluency self-check for legal practice
+- `fluency-self-assessment.html` — a five-question AI fluency self-check with a color chart, tailored next steps, and PDF/PNG export
+- `ai-fluency-levels.html` — a reference page explaining the four AI-adoption stages in detail
+- `ethics-scenario-randomizer.html` — draw a defense ethics scenario for small-group discussion
 - `pbl-scenario-lab.html` — three fictional fact patterns worked through TCDLAi, good to best
+- `scenario-bank.html` — the full bank of fictional Texas scenarios and prompts
+- `legal-ai-news.html` — real cases where AI use went wrong in court
+- `claude-project-tutorial.html` — bonus step-by-step build of a defense-focused Claude Project
 
 ### Handouts (`handouts/`)
 - `tcdlai-guide.html` — the TCDLAi Prompt Design Guide
@@ -28,7 +35,10 @@ Self-contained HTML slide decks. Arrow keys to navigate, **S** for speaker notes
 - `prompt-library.html` — a legal prompt library, sorted by type and task
 
 ### BoodleBox Bot LegalAI (`BoodleBox Bot LegalAI/`)
-Custom instructions and knowledge files to build a defense-focused AI bot in BoodleBox, a Claude Project, a Custom GPT, or a Mistral agent. See that folder's `README.md`.
+Custom instructions and knowledge files to build a defense-focused AI bot in BoodleBox, a Claude Project, a Custom GPT, or a Mistral agent. Downloadable as a zip from the site. See that folder's `README.md`.
+
+### Building or reusing the decks
+`webdeck_instructions_v5.md` is the single source of truth for the slide-deck system: the design system, slide components, image patterns, presenter view, and deploy flow. The `build-scenarios/gen.js` Node script regenerates the scenario bank data (`assets/scenario-bank-data.js` and the bot's `08-scenario-bank.txt`) from one source.
 
 ## The TCDLAi framework
 
