@@ -23,6 +23,12 @@
   .wt .pill{display:inline-block;font-size:0.68rem;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;
     color:var(--gold-dk);background:#EAF0F7;border-radius:20px;padding:0.15rem 0.6rem;}
   @media(max-width:600px){.wt .meta{white-space:normal;}.wt td{padding:0.5rem 0.4rem;}}
+  .inspire{position:relative;background:var(--lgray);border:1px solid var(--mgray);border-left:5px solid var(--gold-dk);border-radius:12px;padding:1.5rem 1.8rem;margin:0 0 1.7rem;}
+  .inspire blockquote{font-family:'Playfair Display',serif;font-style:italic;font-size:1.24rem;line-height:1.5;color:var(--navy);margin:0 0 0.85rem;padding:0;border:none;}
+  .inspire figcaption{color:var(--navy-md);font-weight:700;font-size:0.92rem;line-height:1.4;}
+  .inspire figcaption span{display:block;color:var(--slate);font-weight:400;font-size:0.82rem;margin-top:0.2rem;}
+  .inspire figcaption a{color:var(--navy-md);text-decoration:underline;}
+  @media(max-width:600px){.inspire blockquote{font-size:1.08rem;}}
   .quote{position:relative;background:var(--navy);border-radius:12px;margin:1.8rem 0 0;padding:1.9rem 2.2rem 1.8rem;overflow:hidden;}
   .quote::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--gold);}
   .q-mark{font-family:'Playfair Display',serif;font-size:3.2rem;line-height:0.5;color:var(--gold-lt);opacity:0.45;}
@@ -49,6 +55,14 @@
 </header>
 
 <main>
+  <figure class="inspire">
+    <blockquote>The future belongs to a seamless and sustainable co-existence between lawyers and GenAI: the inimitable human intelligence, cognition and reasoning, combined with the speed of AI, can hammer out an unprecedented human-machine synergy for a more efficient legal system.</blockquote>
+    <figcaption>
+      Michael P. Heiskell
+      <span>Criminal defense attorney, Fort Worth, Texas · then NACDL President · <a href="https://www.nacdl.org/Article/June2024-FromthePresidentGenerativeAIforCriminalDe" target="_blank" rel="noopener">NACDL, June 2024</a></span>
+    </figcaption>
+  </figure>
+
   <table class="wt">
     <tr class="phase"><td colspan="3">Before you start</td></tr>
     <tr><td class="num">1</td><td class="it"><a href="activities/fluency-self-assessment.html">AI Fluency Self-Assessment</a></td><td class="meta"><span class="pill">Warm-up</span> · ~2 min</td></tr>
