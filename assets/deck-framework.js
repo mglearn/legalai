@@ -66,8 +66,12 @@
     '<tr><td><kbd>P</kbd></td><td>Print / export to PDF</td></tr>' +
     '</table><div class="close-hint">Press any key or click to close</div></div>';
 
+  var exitLink = el('a', { id: 'exitDeck', href: '../index.html', title: 'Exit to AI for the Defense', 'aria-label': 'Exit to AI for the Defense' });
+  exitLink.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>';
+
   document.body.appendChild(progress);
   document.body.appendChild(controls);
+  document.body.appendChild(exitLink);
   document.body.appendChild(notesPanel);
   document.body.appendChild(help);
 
@@ -86,6 +90,7 @@
     slides.forEach(function (s, i) { s.classList.toggle('current', i === idx); });
     counter.textContent = (idx + 1) + ' / ' + TOTAL;
     progress.style.width = ((idx + 1) / TOTAL * 100) + '%';
+    exitLink.style.display = (idx === 0) ? 'none' : 'flex';
     updateNotes();
     if (history.replaceState) history.replaceState(null, '', '#' + (idx + 1));
     if (!fromSync) send({ type: 'goto', idx: idx });

@@ -308,6 +308,9 @@ a.inline:hover { text-decoration-color: var(--navy); }
 
 #progress { position: fixed; top: 0; left: 0; height: 3px; background: var(--metal); z-index: 60; transition: width .3s cubic-bezier(.22,.7,.2,1); width: 0; box-shadow:0 0 8px rgba(147,175,206,.6); }
 
+#exitDeck { position: fixed; top: 14px; left: 16px; z-index: 60; width: 34px; height: 34px; display: none; align-items: center; justify-content: center; background: rgba(16,42,84,.82); color: #EAF0FB; border: 1px solid rgba(200,210,220,.35); border-radius: 6px; opacity: .35; transition: all .15s; text-decoration: none; }
+#exitDeck:hover { opacity: 1; background: var(--gold-lt); color: var(--navy-dk); border-color: var(--gold-lt); }
+
 /* ── Help ───────────────────────────────────────────────── */
 #help { position: fixed; inset: 0; background: rgba(8,22,39,.94); z-index: 100; display: none; align-items: center; justify-content: center; backdrop-filter: blur(4px); }
 #help.open { display: flex; }
@@ -328,7 +331,7 @@ a.inline:hover { text-decoration-color: var(--navy); }
   .slide { position: relative !important; left: auto !important; top: auto !important; display: flex !important; transform: none !important; page-break-after: always; break-after: page; box-shadow: none; margin: 0 auto; }
   .slide:last-child { page-break-after: auto; break-after: auto; }
   .slide.current .slide-body > * { animation: none !important; }
-  #controls, #notesPanel, #progress, #help, .back-bar { display: none !important; }
+  #controls, #notesPanel, #progress, #help, #exitDeck, .back-bar { display: none !important; }
 }
 
 /* ── Small screens ──────────────────────────────────────── */
