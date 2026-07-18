@@ -3,7 +3,7 @@
 *Specification for the self-contained "TCDLAi" HTML slide-deck system.*
 *Project: `mglearn.github.io/legalai` — "AI for the Defense," TCDLA. Last revised 2026-07-17.*
 
-This version supersedes `WEBDECK-GUIDE.md` and the `webdeck` skill. It folds in everything added since the first build: the **exit-to-hub icon**, the **image and photo layout patterns**, the **headless-Chrome verification workflow**, and the **two-account deploy flow**. Where this document and the older guide disagree, this one wins.
+This is the single source of truth for the deck system. It replaces the former `WEBDECK-GUIDE.md` (now removed); the `webdeck` skill defers to this file. It folds in everything added since the first build: the **exit-to-hub icon**, the **image and photo layout patterns**, the **headless-Chrome verification workflow**, and the **two-account deploy flow**.
 
 ---
 
