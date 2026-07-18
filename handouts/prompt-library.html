@@ -23,13 +23,14 @@
   .ptype{font-size:0.6rem;font-weight:800;letter-spacing:0.06em;text-transform:uppercase;padding:0.16rem 0.5rem;border-radius:3px;white-space:nowrap;}
   .ptype.short{background:#E7EEFB;color:var(--navy);}
   .ptype.long{background:var(--gold-lt);color:var(--navy-dk);}
-  .ptype.system{background:var(--navy);color:var(--gold);}
+  .ptype.system{background:var(--navy);color:var(--gold-lt);}
   .pcard .pd{font-size:0.85rem;color:var(--slate);margin-bottom:0.6rem;line-height:1.45;}
   .cat-head{scroll-margin-top:120px;}
   @media (max-width:760px){.plist{grid-template-columns:1fr;} .toolbar{top:34px;}}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 <div class="back-bar"><a href="../index.html"><span>←</span> AI for the Defense <span class="sep">/</span> <span data-i18n="pg.resources">Resources</span></a><div class="bb-right"><span class="bb-lang" data-i18n-picker></span></div></div>
 
 <header class="page">
@@ -41,7 +42,7 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
   <p class="lead-p">Each prompt is built to keep the model grounded and to push you toward verification. Replace bracketed fields, and paste your <strong>fictional or de-identified</strong> facts. Filter by length, or jump to a category. Select <strong>Copy</strong> on any card.</p>
 
   <div class="toolbar">

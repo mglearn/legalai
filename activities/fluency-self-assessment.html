@@ -74,6 +74,7 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 <div class="back-bar"><a href="../index.html"><span>←</span> AI for the Defense <span class="sep">/</span> <span data-i18n="pg.resources">Resources</span></a><div class="bb-right"><span class="bb-lang" data-i18n-picker></span></div></div>
 
 <header class="page">
@@ -85,37 +86,37 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
   <p class="lead-p" id="leadP"></p>
 
   <div id="quiz"></div>
   <div id="btnwrap">
     <button class="btn" id="calcBtn" onclick="calc()">Calculate my level</button>
-    <span id="warn" class="warn" style="display:none;margin-left:1rem;"></span>
+    <span id="warn" class="warn" role="alert" style="display:none;margin-left:1rem;"></span>
   </div>
 
-  <div id="result" class="panel">
+  <div id="result" class="panel" tabindex="-1" aria-live="polite">
     <div class="print-only print-head" id="printHead"></div>
     <img class="levels-img" id="levelsImg" src="../assets/fluency-levels.webp" alt="AI fluency self-assessment for legal professionals: Disconnected, Foundational, Integrated, and Strategic stages">
-    <div class="section-label" id="resLabel">Your result</div>
+    <h2 class="section-label" id="resLabel">Your result</h2>
     <div id="badge"></div>
     <div class="score-line" id="scoreLine"></div>
     <p class="level-tag" id="levelTag"></p>
     <p id="levelDesc" style="font-size:1rem;color:var(--text);"></p>
     <div class="ladder" id="ladder"></div>
 
-    <div class="section-label" id="byAreaLabel" style="margin-top:1.2rem;">Your fluency by area</div>
+    <h2 class="section-label" id="byAreaLabel" style="margin-top:1.2rem;">Your fluency by area</h2>
     <div class="chart" id="chart"></div>
     <div class="clegend" id="legend"></div>
     <p class="chart-cap" id="chartCap"></p>
 
-    <div class="section-label" id="levelsHeadingLabel" style="margin-top:1.2rem;">What the levels mean</div>
+    <h2 class="section-label" id="levelsHeadingLabel" style="margin-top:1.2rem;">What the levels mean</h2>
     <div class="lvls" id="lvls"></div>
     <div class="lvls-cap" id="lvlsCap"></div>
 
     <p id="nextStep" style="font-size:0.95rem;color:var(--navy);font-weight:600;margin-top:0.8rem;"></p>
 
-    <div class="section-label" id="levelUpLabel" style="margin-top:1.2rem;">How to level up</div>
+    <h2 class="section-label" id="levelUpLabel" style="margin-top:1.2rem;">How to level up</h2>
     <p id="boostsIntro" style="font-size:0.95rem;color:var(--text);margin-bottom:0.2rem;"></p>
     <ul class="boosts-list" id="boosts"></ul>
     <div class="res-lbl" id="resLbl"></div>
@@ -175,7 +176,7 @@
         var val=j+1, chk=(saved[i]===val)?' checked':'';
         return '<label class="opt"><input type="radio" name="q'+i+'" value="'+val+'"'+chk+'><span>'+esc(o)+'</span></label>';
       }).join('');
-      return '<div class="q" data-q="'+i+'"><div class="qn">'+esc(q.q)+'</div>'+opts+'</div>';
+      return '<div class="q" data-q="'+i+'" role="radiogroup" aria-labelledby="qn'+i+'"><div class="qn" id="qn'+i+'">'+esc(q.q)+'</div>'+opts+'</div>';
     }).join('');
   }
 
@@ -246,11 +247,12 @@
 
   window.calc = function(){
     var a = currentAnswers();
-    if(a.some(function(x){ return x==null; })){ document.getElementById('warn').style.display='inline-block'; return; }
+    if(a.some(function(x){ return x==null; })){ var w=document.getElementById('warn'); w.textContent=D().warn; w.style.display='inline-block'; return; }
     document.getElementById('warn').style.display='none';
     lastScores = a.slice(); resultShown = true;
     renderResult();
     var r = document.getElementById('result'); r.classList.add('show'); r.scrollIntoView({behavior:'smooth', block:'start'});
+    r.focus();
   };
   window.reset = function(){
     document.querySelectorAll('input[type=radio]').forEach(function(i){ i.checked=false; });

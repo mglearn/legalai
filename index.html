@@ -14,32 +14,33 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 <div class="back-bar">
   <a href="https://go.mgpd.org/tcdla26" target="_blank"><span>←</span> MGuhlin.org</a>
   <div class="bb-right">
     <div class="menu-wrap">
-      <button class="bb-btn" id="menuBtn" aria-haspopup="true" aria-expanded="false">&#9776; <span data-i18n="menu.contents">Contents</span></button>
-      <div class="menu-drop" id="menuDrop" role="menu">
-        <a href="about.html" role="menuitem"><span class="mi-t" data-i18n="about.h">About this session</span></a>
-        <a href="walkthrough.html" role="menuitem"><span class="mi-t" data-i18n="menu.walk">Session walkthrough</span><span class="mi-s" data-i18n="menu.walkSub">Everything in order</span></a>
-        <a href="quotes.html" role="menuitem"><span class="mi-t" data-i18n="menu.quotes">Quotes on AI</span><span class="mi-s" data-i18n="menu.quotesSub">Every quote, with sources</span></a>
-        <a href="presentations.html" role="menuitem"><span class="mi-t" data-i18n="sec.present">Presentations</span><span class="mi-s" data-i18n="menu.presentSub">Four decks</span></a>
-        <a class="mi-in" href="decks/0-overview.html" role="menuitem"><span class="mi-t" data-i18n="menu.deck0">0 · Overview</span></a>
-        <a class="mi-in" href="decks/1-ethical-foundations.html" role="menuitem"><span class="mi-t" data-i18n="menu.deck1">1 · Ethical Foundations</span></a>
-        <a class="mi-in" href="decks/2-risk-reducing-tcdlai.html" role="menuitem"><span class="mi-t" data-i18n="menu.deck2">2 · Risk-Reducing Practices</span></a>
-        <a class="mi-in" href="decks/3-guardrails-takeaways.html" role="menuitem"><span class="mi-t" data-i18n="menu.deck3">3 · Guardrails and Takeaways</span></a>
-        <a href="#activities" role="menuitem"><span class="mi-t" data-i18n="sec.act">Do the activities</span><span class="mi-s" data-i18n="menu.actSub">Fluency check, ethics randomizer, scenario lab, scenario bank</span></a>
-        <a class="mi-in" href="activities/ethics-scenario-randomizer.html" role="menuitem"><span class="mi-t" data-i18n="card.er.h">Legal Ethics Scenario Randomizer</span></a>
-        <a class="mi-in" href="activities/ai-fluency-levels.html" role="menuitem"><span class="mi-t" data-i18n="menu.flref">AI Fluency Levels (reference)</span></a>
-        <a class="mi-in" href="activities/two-approaches.html" role="menuitem"><span class="mi-t" data-i18n="menu.twoapp">Two Approaches to AI (reference)</span></a>
-        <a href="#takeaways" role="menuitem"><span class="mi-t" data-i18n="sec.take">Take it with you</span><span class="mi-s" data-i18n="menu.takeSub">Guide, checklist, prompts, bot</span></a>
-        <a href="#tools" role="menuitem"><span class="mi-t" data-i18n="sec.tools">Tools and requirements</span></a>
+      <button class="bb-btn" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-controls="menuDrop">&#9776; <span data-i18n="menu.contents">Contents</span></button>
+      <nav class="menu-drop" id="menuDrop" aria-label="Site contents">
+        <a href="about.html"><span class="mi-t" data-i18n="about.h">About this session</span></a>
+        <a href="walkthrough.html"><span class="mi-t" data-i18n="menu.walk">Session walkthrough</span><span class="mi-s" data-i18n="menu.walkSub">Everything in order</span></a>
+        <a href="quotes.html"><span class="mi-t" data-i18n="menu.quotes">Quotes on AI</span><span class="mi-s" data-i18n="menu.quotesSub">Every quote, with sources</span></a>
+        <a href="presentations.html"><span class="mi-t" data-i18n="sec.present">Presentations</span><span class="mi-s" data-i18n="menu.presentSub">Four decks</span></a>
+        <a class="mi-in" href="decks/0-overview.html"><span class="mi-t" data-i18n="menu.deck0">0 · Overview</span></a>
+        <a class="mi-in" href="decks/1-ethical-foundations.html"><span class="mi-t" data-i18n="menu.deck1">1 · Ethical Foundations</span></a>
+        <a class="mi-in" href="decks/2-risk-reducing-tcdlai.html"><span class="mi-t" data-i18n="menu.deck2">2 · Risk-Reducing Practices</span></a>
+        <a class="mi-in" href="decks/3-guardrails-takeaways.html"><span class="mi-t" data-i18n="menu.deck3">3 · Guardrails and Takeaways</span></a>
+        <a href="#activities"><span class="mi-t" data-i18n="sec.act">Do the activities</span><span class="mi-s" data-i18n="menu.actSub">Fluency check, ethics randomizer, scenario lab, scenario bank</span></a>
+        <a class="mi-in" href="activities/ethics-scenario-randomizer.html"><span class="mi-t" data-i18n="card.er.h">Legal Ethics Scenario Randomizer</span></a>
+        <a class="mi-in" href="activities/ai-fluency-levels.html"><span class="mi-t" data-i18n="menu.flref">AI Fluency Levels (reference)</span></a>
+        <a class="mi-in" href="activities/two-approaches.html"><span class="mi-t" data-i18n="menu.twoapp">Two Approaches to AI (reference)</span></a>
+        <a href="#takeaways"><span class="mi-t" data-i18n="sec.take">Take it with you</span><span class="mi-s" data-i18n="menu.takeSub">Guide, checklist, prompts, bot</span></a>
+        <a href="#tools"><span class="mi-t" data-i18n="sec.tools">Tools and requirements</span></a>
         <div class="mi-div"></div>
-        <a href="activities/claude-project-tutorial.html" role="menuitem"><span class="mi-t" data-i18n="menu.bonus">Bonus · Build a Claude Project</span><span class="mi-s" data-i18n="menu.bonusSub">Step-by-step tutorial</span></a>
-        <a href="https://box.boodle.ai/a/@TCDLALegalAI" target="_blank" role="menuitem"><span class="mi-t">TCDLALegalAI Bot &#8599;</span></a>
+        <a href="activities/claude-project-tutorial.html"><span class="mi-t" data-i18n="menu.bonus">Bonus · Build a Claude Project</span><span class="mi-s" data-i18n="menu.bonusSub">Step-by-step tutorial</span></a>
+        <a href="https://box.boodle.ai/a/@TCDLALegalAI" target="_blank"><span class="mi-t">TCDLALegalAI Bot &#8599;</span></a>
         <div class="mi-div"></div>
-        <a href="how-built.html" role="menuitem"><span class="mi-t" data-i18n="menu.built">How this site came to be</span><span class="mi-s" data-i18n="menu.builtSub">Built with AI, an honest note</span></a>
-      </div>
+        <a href="how-built.html"><span class="mi-t" data-i18n="menu.built">How this site came to be</span><span class="mi-s" data-i18n="menu.builtSub">Built with AI, an honest note</span></a>
+      </nav>
     </div>
     <span class="bb-lang" data-i18n-picker></span>
   </div>
@@ -57,8 +58,9 @@
   </a>
 </div>
 
-<main>
-  <div class="section-label" id="activities" data-i18n="sec.act">Do the activities</div>
+<main id="main" tabindex="-1">
+  <h1 class="sr-only">AI for the Defense — Ethical Use, Accuracy, and Attorney Responsibility. TCDLA session resources.</h1>
+  <h2 class="section-label" id="activities" data-i18n="sec.act">Do the activities</h2>
   <div class="cards c2">
     <a class="tile" href="activities/fluency-self-assessment.html"><img class="tile-ico" src="assets/fluency-icon.png" alt=""><div class="tag" data-i18n="card.fl.tag">Activity · 2 min</div><h3 data-i18n="card.fl.h">AI Fluency Self-Assessment</h3><p data-i18n="card.fl.p">A five-question self-check that places your practice on a four-level ladder.</p></a>
     <a class="tile" href="activities/legal-ai-news.html"><img class="tile-ico" src="assets/news-icon.png" alt=""><div class="tag" data-i18n="card.nw.tag">Reference</div><h3 data-i18n="card.nw.h">AI in the Courts</h3><p data-i18n="card.nw.p">Real sanctions, privilege rulings, and coverage behind the ethics we cover, plus a Stay up to date link.</p></a>
@@ -67,7 +69,7 @@
     <a class="tile" href="activities/ethics-scenario-randomizer.html"><img class="tile-ico" src="assets/ethics-icon.svg" alt=""><div class="tag" data-i18n="card.er.tag">Discussion · 15 min</div><h3 data-i18n="card.er.h">Legal Ethics Scenario Randomizer</h3><p data-i18n="card.er.p">Draw a fictional AI-ethics dilemma tied to a Texas Disciplinary Rule, talk it through at your table, and share out.</p></a>
   </div>
 
-  <div class="section-label" id="takeaways" data-i18n="sec.take">Take it with you</div>
+  <h2 class="section-label" id="takeaways" data-i18n="sec.take">Take it with you</h2>
   <div class="cards c2">
     <a class="tile gold" href="handouts/tcdlai-guide.html"><img class="tile-ico" src="assets/tcdlai-framework.webp" alt=""><div class="tag" data-i18n="card.gd.tag">Handout</div><h3 data-i18n="card.gd.h">TCDLAi Prompt Design Guide</h3><p data-i18n="card.gd.p">The six-move framework with example defense prompts for each letter. Printable.</p></a>
     <a class="tile" href="handouts/guardrail-checklist.html"><img class="tile-ico" src="assets/checklist-icon.png" alt=""><div class="tag" data-i18n="card.ck.tag">Handout</div><h3 data-i18n="card.ck.h">Ethical Guardrail Checklist</h3><p data-i18n="card.ck.p">The eight-point, one-page check you run before relying on any output. Printable.</p></a>
@@ -77,7 +79,7 @@
   </div>
   <p class="note" data-i18n-html="card.note">Want to build your own copy? <a class="inline" href="BoodleBox%20Bot%20LegalAI/LegalAI-BoodleBox-Bot.zip">Download the bot files as a zip</a> (markdown with a <strong>.txt</strong> extension so they upload cleanly), or <a class="inline" href="https://github.com/mglearn/legalai/tree/main/BoodleBox%20Bot%20LegalAI">browse them on GitHub</a>.</p>
 
-  <div class="section-label" id="tools" data-i18n="sec.tools">Tools and requirements</div>
+  <h2 class="section-label" id="tools" data-i18n="sec.tools">Tools and requirements</h2>
   <div class="panel navy">
     <h2 data-i18n="tools.h">Pick one free AI chatbot</h2>
     <p><a class="inline" href="https://claude.ai" target="_blank"><strong>Claude</strong></a>, <a class="inline" href="https://chatgpt.com" target="_blank"><strong>ChatGPT</strong></a>, <a class="inline" href="https://chat.z.ai" target="_blank"><strong>Z.ai</strong></a>, or <a class="inline" href="https://chat.mistral.ai" target="_blank"><strong>Mistral</strong></a> <span data-i18n="tools.p1tail">all have free tiers that work for every activity today. If you have none set up, use the BoodleBox code from the session. We also look at Claude for Legal as an example of purpose-built, review-gated legal AI.</span></p>

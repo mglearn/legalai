@@ -69,6 +69,7 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 <div class="back-bar"><a href="../index.html"><span>←</span> AI for the Defense <span class="sep">/</span> <span data-i18n="pg.resources">Resources</span></a><div class="bb-right"><span class="bb-lang" data-i18n-picker></span></div></div>
 
 <header class="page">
@@ -90,10 +91,10 @@
   </div>
 </div>
 
-<main>
+<main id="main" tabindex="-1">
   <div class="warn" data-i18n-html="erz.warn"><strong>For discussion, not advice.</strong> Every scenario is fictional and simplified to spark conversation. The rule references reflect the Texas framework and may change — verify the current text. Nothing here is legal advice, and the goal is not a single right answer. It is a shared standard of practice you can carry back to your office.</div>
 
-  <div class="section-label" data-i18n="erz.sl.draw">Draw a scenario</div>
+  <h2 class="section-label" data-i18n="erz.sl.draw">Draw a scenario</h2>
   <p class="note" style="margin-bottom:0.7rem;" data-i18n-html="erz.filternote">Filter to a duty if you want to focus your table, or leave it on <strong>All duties</strong> for the full deck. Then draw.</p>
   <div class="filter" id="filter"></div>
 
@@ -102,7 +103,7 @@
     <div class="draw-hint" id="drawHint">Thirty cards across six professional duties.</div>
   </div>
 
-  <div id="card">
+  <div id="card" role="region" aria-live="polite" aria-label="Drawn scenario" tabindex="-1">
     <div class="card-top">
       <span class="card-count" id="cardCount"></span>
       <span class="rule-chip" id="cardRule"></span>
@@ -121,7 +122,7 @@
     </div>
   </div>
 
-  <div class="section-label" data-i18n="erz.sl.run">How to run the discussion</div>
+  <h2 class="section-label" data-i18n="erz.sl.run">How to run the discussion</h2>
   <div class="steps4">
     <div class="dstep"><div class="dn">1</div><span class="t" data-i18n="erz.d1t">1 min</span><h4 data-i18n="erz.d1h">Draw &amp; read</h4><p data-i18n="erz.d1p">One person draws a card and reads the situation and the big question aloud to the table.</p></div>
     <div class="dstep"><div class="dn">2</div><span class="t" data-i18n="erz.d2t">2 min · silent</span><h4 data-i18n="erz.d2h">Think first</h4><p data-i18n="erz.d2p">Everyone reads the guiding questions alone and jots a first answer to the big question — before anyone speaks. This protects the quiet voices.</p></div>
@@ -129,7 +130,7 @@
     <div class="dstep"><div class="dn">4</div><span class="t" data-i18n="erz.d4t">2 min</span><h4 data-i18n="erz.d4h">Land it</h4><p data-i18n="erz.d4p">Pick a note-taker. Agree on what your table will report out, using the prompts below.</p></div>
   </div>
 
-  <div class="section-label" data-i18n="erz.sl.bring">What to bring back to the room</div>
+  <h2 class="section-label" data-i18n="erz.sl.bring">What to bring back to the room</h2>
   <div class="panel">
     <p data-i18n="erz.bring.intro">Before you share out, land your table on three things. Keep it short — one line each — so several tables can report in the time you have.</p>
     <ul style="margin:0.7rem 0 0.2rem;padding-left:1.2rem;line-height:1.7;">
@@ -144,7 +145,7 @@
     <p data-i18n-html="erz.synth"><strong>Facilitator's synthesis.</strong> Don't have each table replay everything. Ask: what theme showed up across tables? Where was the most interesting disagreement? Did anyone land somewhere surprising? Capture the “We will / We will not” statements — those are the takeaway.</p>
   </div>
 
-  <div class="section-label" data-i18n="erz.sl.explore">Keep exploring</div>
+  <h2 class="section-label" data-i18n="erz.sl.explore">Keep exploring</h2>
   <div class="cards c2">
     <a class="tile gold" href="../handouts/guardrail-checklist.html"><div class="tag" data-i18n="erz.t1.tag">Handout</div><h3 data-i18n="erz.t1.h">Ethical Guardrail Checklist</h3><p data-i18n="erz.t1.p">The eight-point, one-page check that turns these conversations into a routine you run before relying on any output.</p></a>
     <a class="tile" href="pbl-scenario-lab.html"><div class="tag" data-i18n="erz.t2.tag">Activity · 12 min</div><h3 data-i18n="erz.t2.h">PBL Scenario Lab</h3><p data-i18n="erz.t2.p">Put the duties to work: run a fictional defense problem through the TCDLAi framework, from the vague prompt to the grounded, verified one.</p></a>

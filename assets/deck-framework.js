@@ -69,18 +69,29 @@
   var exitLink = el('a', { id: 'exitDeck', href: '../index.html', title: 'Exit to AI for the Defense', 'aria-label': 'Exit to AI for the Defense' });
   exitLink.innerHTML = '<svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>';
 
+  // live region for slide-change announcements (WCAG 4.1.3)
+  var liveRegion = el('div', { id: 'slideLive', 'aria-live': 'polite', 'aria-atomic': 'true', class: 'sr-only' });
+
   document.body.appendChild(progress);
   document.body.appendChild(controls);
   document.body.appendChild(exitLink);
   document.body.appendChild(notesPanel);
   document.body.appendChild(help);
+  document.body.appendChild(liveRegion);
 
   function fit() {
     var pad = 24;
-    var scale = Math.max(0.2, Math.min((window.innerWidth - pad) / SLIDE_W, (window.innerHeight - pad) / SLIDE_H));
+    var raw = Math.min((window.innerWidth - pad) / SLIDE_W, (window.innerHeight - pad) / SLIDE_H);
+    // Reflow when the screen is narrow or zoom shrinks the fit below a usable scale (WCAG 1.4.10 / 1.4.4).
+    var reflow = window.innerWidth < 800 || raw < 0.55;
+    deck.classList.toggle('reflow', reflow);
     slides.forEach(function (s) {
-      s.style.transform = 'translate(-50%, -50%) scale(' + scale + ')';
-      s.style.left = '50%'; s.style.top = '50%';
+      if (reflow) {
+        s.style.transform = ''; s.style.left = ''; s.style.top = '';
+      } else {
+        s.style.transform = 'translate(-50%, -50%) scale(' + Math.max(0.2, raw) + ')';
+        s.style.left = '50%'; s.style.top = '50%';
+      }
     });
   }
   window.addEventListener('resize', fit);
@@ -91,6 +102,8 @@
     counter.textContent = (idx + 1) + ' / ' + TOTAL;
     progress.style.width = ((idx + 1) / TOTAL * 100) + '%';
     exitLink.style.display = (idx === 0) ? 'none' : 'flex';
+    var titleEl = slides[idx].querySelector('.slide-title, h1, h2');
+    liveRegion.textContent = 'Slide ' + (idx + 1) + ' of ' + TOTAL + (titleEl ? ': ' + titleEl.textContent.trim() : '');
     updateNotes();
     if (history.replaceState) history.replaceState(null, '', '#' + (idx + 1));
     if (!fromSync) send({ type: 'goto', idx: idx });
