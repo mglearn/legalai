@@ -43,6 +43,12 @@ header.page h1{font-size:clamp(1.9rem,4.4vw,2.9rem);font-weight:900;line-height:
   font-weight:700;font-size:0.85rem;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-top:2px;}
 .how-label{color:#fff;font-size:0.8rem;line-height:1.35;}
 .how-label strong{color:var(--gold);display:block;font-size:0.72rem;letter-spacing:0.06em;text-transform:uppercase;}
+.how-inner.solo{display:flex;grid-template-columns:none;justify-content:center;align-items:center;gap:0.5rem 1rem;flex-wrap:wrap;text-align:center;text-decoration:none;transition:opacity .12s;}
+.how-inner.solo:hover{opacity:0.92;}
+.how-inner.solo .lbl{color:var(--gold);font-size:0.72rem;font-weight:800;letter-spacing:0.09em;text-transform:uppercase;}
+.how-inner.solo .txt{color:#fff;font-size:1rem;font-weight:600;}
+.how-inner.solo .arrow{color:var(--gold);font-size:1.15rem;font-weight:700;line-height:1;}
+.how-inner.solo:hover .txt{color:var(--gold);}
 
 /* ── Main ─────────────────────────────────────────────────── */
 main{max-width:1000px;margin:0 auto;padding:2rem;}
