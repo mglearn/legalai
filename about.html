@@ -8,6 +8,25 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="assets/pages.css">
+<style>
+  .startbox{background:var(--navy);border-radius:12px;padding:1.2rem 1.4rem;margin:0 0 1.6rem;color:#EAF1FB;}
+  .startbox h2{font-family:'Playfair Display',serif;font-size:1.2rem;color:#fff;margin:0 0 0.35rem;}
+  .startbox p{margin:0;font-size:0.96rem;line-height:1.6;color:var(--gold-lt);}
+  .startbox a{color:#fff;font-weight:700;text-decoration:underline;}
+  .wt{width:100%;border-collapse:collapse;margin:0.4rem 0 0.5rem;font-size:0.95rem;}
+  .wt td{padding:0.62rem 0.7rem;border-bottom:1px solid var(--mgray);vertical-align:middle;color:var(--text);}
+  .wt tr.phase td{background:var(--lgray);border-bottom:2px solid var(--gold-dk);font-family:'Playfair Display',serif;
+    font-weight:800;font-size:0.8rem;letter-spacing:0.06em;text-transform:uppercase;color:var(--navy);
+    padding-top:0.95rem;padding-bottom:0.5rem;}
+  .wt .num{width:2rem;color:var(--slate);font-family:'Playfair Display',serif;font-weight:800;text-align:center;}
+  .wt .it{font-weight:700;}
+  .wt .it a{color:var(--navy);text-decoration:none;border-bottom:1px solid var(--gold-lt);}
+  .wt .it a:hover{border-bottom-color:var(--gold-dk);}
+  .wt .meta{color:var(--slate);font-size:0.82rem;white-space:nowrap;text-align:right;}
+  .wt .pill{display:inline-block;font-size:0.67rem;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;
+    color:var(--gold-dk);background:#EAF0F7;border-radius:20px;padding:0.15rem 0.6rem;}
+  @media(max-width:600px){.wt .meta{white-space:normal;}.wt td{padding:0.5rem 0.4rem;}}
+</style>
 </head>
 <body>
 <div class="back-bar">
@@ -29,6 +48,11 @@
     <p data-i18n="about.p">This session examines the ethical use of generative AI in criminal defense practice, with a focus on attorney responsibility, accuracy, confidentiality, and professional judgment. You will see where AI tools can assist legal work, where they present ethical risks, and how you remain fully accountable for all AI-assisted output. Through fictional scenarios and hands-on practice, we address common failures such as hallucinated case law and data-privacy concerns, and we build structured prompting and source-grounded habits that reduce risk. No AI subscription is required to attend. A laptop or device with a keyboard is recommended.</p>
   </div>
 
+  <div class="startbox">
+    <h2 data-i18n="about.startH">Start here</h2>
+    <p data-i18n-html="about.startP">You are on the About page. For the whole session in one place, follow the <a href="#walkthrough">participant walkthrough</a> below from top to bottom: the warm-up assessment, the three segments with their slides and activities, then everything to take home.</p>
+  </div>
+
   <div class="section-label">Learning objectives</div>
   <div class="panel">
     <p style="margin-bottom:0.6rem;color:var(--text);">By the end you will be able to:</p>
@@ -41,7 +65,42 @@
     </ul>
   </div>
 
-  <div class="cards c2" style="margin-top:1rem;">
+  <div class="section-label" id="walkthrough" data-i18n="about.wtH">Session walkthrough</div>
+  <p style="color:var(--slate);margin:0 0 1rem;line-height:1.6;" data-i18n="about.wtP">Every piece of the session, in the order we use it. Work top to bottom during the session, or jump back to any piece afterward.</p>
+
+  <table class="wt">
+    <tr class="phase"><td colspan="3">Before you start</td></tr>
+    <tr><td class="num">1</td><td class="it"><a href="activities/fluency-self-assessment.html">AI Fluency Self-Assessment</a></td><td class="meta"><span class="pill">Warm-up</span> · ~2 min</td></tr>
+
+    <tr class="phase"><td colspan="3">Opening</td></tr>
+    <tr><td class="num">2</td><td class="it"><a href="decks/0-overview.html">Deck 0 · Overview</a></td><td class="meta"><span class="pill">Slides</span></td></tr>
+
+    <tr class="phase"><td colspan="3">Segment 1 · Ethical Foundations</td></tr>
+    <tr><td class="num">3</td><td class="it"><a href="decks/1-ethical-foundations.html">Deck 1 · Ethical Foundations</a></td><td class="meta"><span class="pill">Slides</span> · ~20 min</td></tr>
+    <tr><td class="num">4</td><td class="it"><a href="activities/legal-ai-news.html">AI in the Courts</a></td><td class="meta"><span class="pill">Reference</span></td></tr>
+    <tr><td class="num">5</td><td class="it"><a href="activities/ethics-scenario-randomizer.html">Legal Ethics Scenario Randomizer</a></td><td class="meta"><span class="pill">Discussion</span> · ~15 min</td></tr>
+
+    <tr class="phase"><td colspan="3">Segment 2 · Risk-Reducing Practices</td></tr>
+    <tr><td class="num">6</td><td class="it"><a href="decks/2-risk-reducing-tcdlai.html">Deck 2 · Risk-Reducing Practices</a></td><td class="meta"><span class="pill">Slides</span> · ~20 min</td></tr>
+    <tr><td class="num">7</td><td class="it"><a href="activities/two-approaches.html">Two Approaches to AI</a></td><td class="meta"><span class="pill">Reference</span></td></tr>
+    <tr><td class="num">8</td><td class="it"><a href="handouts/tcdlai-guide.html">TCDLAi Prompt Design Guide</a></td><td class="meta"><span class="pill">Handout</span></td></tr>
+    <tr><td class="num">9</td><td class="it"><a href="activities/pbl-scenario-lab.html">PBL Scenario Lab</a></td><td class="meta"><span class="pill">Activity</span> · ~12 min</td></tr>
+
+    <tr class="phase"><td colspan="3">Segment 3 · Guardrails &amp; Takeaways</td></tr>
+    <tr><td class="num">10</td><td class="it"><a href="decks/3-guardrails-takeaways.html">Deck 3 · Guardrails and Takeaways</a></td><td class="meta"><span class="pill">Slides</span> · ~15 min</td></tr>
+    <tr><td class="num">11</td><td class="it"><a href="handouts/guardrail-checklist.html">Ethical Guardrail Checklist</a></td><td class="meta"><span class="pill">Handout</span></td></tr>
+
+    <tr class="phase"><td colspan="3">Take it with you</td></tr>
+    <tr><td class="num">12</td><td class="it"><a href="handouts/prompt-library.html">Legal Prompt Library</a></td><td class="meta"><span class="pill">Library</span></td></tr>
+    <tr><td class="num">13</td><td class="it"><a href="activities/scenario-bank.html">Scenario Bank</a></td><td class="meta"><span class="pill">Keep practicing</span> · 50</td></tr>
+    <tr><td class="num">14</td><td class="it"><a href="activities/ai-fluency-levels.html">AI Fluency Levels</a></td><td class="meta"><span class="pill">Reference</span></td></tr>
+    <tr><td class="num">15</td><td class="it"><a href="https://box.boodle.ai/a/@TCDLALegalAI" target="_blank" rel="noopener">TCDLALegalAI Bot (BoodleBox) &#8599;</a></td><td class="meta"><span class="pill">Assistant</span></td></tr>
+    <tr><td class="num">16</td><td class="it"><a href="https://chatgpt.com/g/g-6a594b38484c8191bdea73bca6a584e2-legalai" target="_blank" rel="noopener">LegalAI Custom GPT (ChatGPT) &#8599;</a></td><td class="meta"><span class="pill">Assistant</span></td></tr>
+    <tr><td class="num">17</td><td class="it"><a href="activities/claude-project-tutorial.html">Build a Claude Project</a></td><td class="meta"><span class="pill">Bonus tutorial</span></td></tr>
+    <tr><td class="num">18</td><td class="it"><a href="BoodleBox%20Bot%20LegalAI/LegalAI-BoodleBox-Bot.zip">Download the bot files</a></td><td class="meta"><span class="pill">Zip</span></td></tr>
+  </table>
+
+  <div class="cards c2" style="margin-top:1.4rem;">
     <a class="tile" href="presentations.html"><div class="tag">Slides</div><h3 data-i18n="pres.h1">Presentations</h3><p data-i18n="pres.sub">Four self-contained decks, each with speaker notes.</p></a>
     <a class="tile gold" href="index.html"><div class="tag">Home</div><h3>All session resources</h3><p>Activities, handouts, the prompt library, and the ready-made bots.</p></a>
   </div>
