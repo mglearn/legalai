@@ -30,6 +30,7 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 <div class="back-bar">
   <a href="index.html"><span>←</span> AI for the Defense <span class="sep">/</span> <span data-i18n="pg.resources">Resources</span></a>
   <div class="bb-right"><span class="bb-lang" data-i18n-picker></span></div>
@@ -44,13 +45,13 @@
   </div>
 </header>
 
-<main>
+<main id="main" tabindex="-1">
   <p class="lead-p" data-i18n="built.intro">In keeping with a session about using AI responsibly, here is an honest account of how the site itself was made. It was built over about two days of focused work by Miguel Guhlin working with Claude, an AI assistant. A person directed every decision: what to build, which quotes to use, and what is appropriate for a criminal defense audience. The figures below are rough estimates, offered in the same spirit of candor the session asks of any AI-assisted work.</p>
 
   <h2 class="sec-h" data-i18n="built.figH">Three figures</h2>
   <p class="sec-sub" data-i18n="built.figSub">Estimated, not measured &mdash; the ranges matter more than the numbers.</p>
   <table class="figtable">
-    <thead><tr><th>Whose time</th><th>Estimate</th><th>What it covers</th></tr></thead>
+    <thead><tr><th scope="col">Whose time</th><th scope="col">Estimate</th><th scope="col">What it covers</th></tr></thead>
     <tbody>
       <tr>
         <td>AI assistant, active working time</td>
@@ -73,6 +74,7 @@
   <h2 class="sec-h" data-i18n="built.whyH">Why the human estimate is that large</h2>
   <p class="sec-sub" data-i18n="built.whySub">The same work, broken down by workstream for one skilled person.</p>
   <table class="wstable">
+    <thead><tr><th scope="col">Workstream</th><th scope="col">Estimated effort</th></tr></thead>
     <tbody>
       <tr><td>Design system, brand, and two CSS frameworks (pages and decks)</td><td>3&ndash;5 days</td></tr>
       <tr><td>Deck framework: presenter view with cross-window sync, keyboard navigation, print/PDF export, exit icon</td><td>4&ndash;6 days</td></tr>

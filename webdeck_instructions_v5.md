@@ -3,7 +3,7 @@
 *Specification for the self-contained "TCDLAi" HTML slide-deck system.*
 *Project: `mglearn.github.io/legalai` — "AI for the Defense," TCDLA. Last revised 2026-07-17.*
 
-This is the single source of truth for the deck system. It replaces the former `WEBDECK-GUIDE.md` (now removed); the `webdeck` skill defers to this file. It folds in everything added since the first build: the **exit-to-hub icon**, the **image and photo layout patterns**, the **headless-Chrome verification workflow**, and the **two-account deploy flow**.
+This is the single source of truth for the deck system. It replaces the former `WEBDECK-GUIDE.md` (now removed); the `webdeck` skill defers to this file. It folds in everything added since the first build: the **exit-to-hub icon**, the **image and photo layout patterns**, the **accessibility layer** (reflow mode, visible focus, a slide-change live region — §7), the **headless-Chrome verification workflow**, and the **two-account deploy flow**.
 
 ---
 
@@ -65,7 +65,7 @@ Slide title Fraunces ~41 px · kicker 13 px tracked caps in steel (diamond marke
 
 ## 2. The slide canvas
 
-Every slide is a fixed **1280 × 720** (16:9) canvas. The JS scales it to the viewport, so you author at a constant size and it fits any screen. The scale is recomputed on resize.
+Every slide is a fixed **1280 × 720** (16:9) canvas. The JS scales it to the viewport, so you author at a constant size and it fits any screen. The scale is recomputed on resize. Below ~800 px wide, or at high browser zoom, the framework switches to a **reflow mode** (§7) so the deck stays readable on phones and meets WCAG reflow; on laptops and projectors it scales as one unit exactly as before.
 
 ```html
 <div class="deck">
@@ -90,7 +90,7 @@ Each slide has three parts — **body, footer, notes**:
 </section>
 ```
 
-The framework reads `location.hash` on load, so `deck.html#4` opens on slide 4 — used for deep links **and** for screenshot verification (see §9).
+The framework reads `location.hash` on load, so `deck.html#4` opens on slide 4 — used for deep links **and** for screenshot verification (see §10).
 
 ---
 
@@ -105,7 +105,7 @@ The framework reads `location.hash` on load, so `deck.html#4` opens on slide 4 �
     <div class="meta"><strong>Facilitator:</strong> Name<br>url</div>
   </div>
   ```
-- **Divider** — `class="slide divider"`: cover-like, with an oversized ghosted `.seg-num` numeral. Some decks open on a `divider` instead of a `cover`; either counts as the **title slide** (see §7 exit-icon rule).
+- **Divider** — `class="slide divider"`: cover-like, with an oversized ghosted `.seg-num` numeral. Some decks open on a `divider` instead of a `cover`; either counts as the **title slide** (see §6 exit-icon rule).
   ```html
   <div class="slide-body">
     <div class="seg-num">1</div>
@@ -196,13 +196,37 @@ Injected once by the JS, fixed to the viewport (outside the scaled canvas):
 
 - **`#progress`** — 3 px silver bar at the very top; width tracks position.
 - **`#controls`** — top-right cluster (~50 % opacity, 100 % on hover): `‹` prev · counter · `›` next · 🗒 notes · 🖥 presenter · ⛶ fullscreen · ? help.
-- **`#exitDeck`** — top-**left** exit-to-hub icon (a `log-out` SVG glyph in a navy rounded square). ~35 % opacity, brightens on hover. Links to `../index.html`. **Hidden on the title slide** (`idx === 0`) and in print. It appears on every other slide of every deck automatically, because it lives in the shared framework — do not add it per-deck.
+- **`#exitDeck`** — top-**left** exit-to-hub icon (a `log-out` SVG glyph in a navy rounded square). ~62 % idle opacity (raised for non-text contrast, 1.4.11), brightens on hover and on keyboard focus. Links to `../index.html`. **Hidden on the title slide** (`idx === 0`) and in print. It appears on every other slide of every deck automatically, because it lives in the shared framework — do not add it per-deck.
 
 All of the above are hidden by the print stylesheet.
 
 ---
 
-## 7. Speaker notes and the presenter view
+## 7. Accessibility (WCAG 2.1 AA)
+
+The framework targets WCAG 2.1 Level A/AA. The shared `deck-framework.css` / `deck-framework.js` handle most of it automatically; deck authors only need to follow the content rules at the end.
+
+**Built into the framework (automatic):**
+
+- **Reflow mode — resolves reflow (1.4.10), resize (1.4.4), and text-spacing (1.4.12).** A fixed 1280×720 transform-scaled canvas does not reflow, so `fit()` toggles a `.reflow` class on `.deck` when the viewport is narrow (`innerWidth < 800`) or high zoom shrinks the fit below `0.55×`. In reflow mode slides drop the transform and become a normal-flow, single-column, scrollable layout with **relative** type; the desktop/projector view is unchanged. Absolutely-positioned decorative art (`.cover-visual`, `.divider-photo`, `.desc-photo`, `.obj-photo`, `.recap-emblem`) is neutralized so it can't overlap text. **When you add a new deck-local absolute-positioned image, add its selector to the `.deck.reflow` neutralize rule** (and its heading/lead to the relative-type overrides) so it stacks cleanly on phones.
+- **Visible focus (2.4.7).** `:focus-visible` outlines on every control and link; light outlines on dark surfaces; the controls toolbar and exit icon jump to full opacity on focus.
+- **Slide-change announcements (4.1.3).** A visually-hidden `#slideLive` `aria-live="polite"` region announces "Slide X of Y: {title}" on each move (reads `.slide-title`/`h1`/`h2`).
+- **Reduced motion (2.3.3).** `prefers-reduced-motion` disables the entrance animation **and** the notes-panel, progress-bar, and control transitions.
+- **Non-text contrast (1.4.11).** Idle `#controls` and `#exitDeck` sit at ~0.62 opacity (raised from 0.5/0.35) so they stay perceptible; the exit link carries an `aria-label`.
+
+**Author rules (your job, per slide):**
+
+- Use **real text**, never images of text (1.4.5) — the whole design is live HTML; keep it that way.
+- Give every content image accurate `alt`; decorative images get `alt=""` (1.1.1).
+- Keep slide text contrast ≥ 4.5:1 on its background (1.4.3) — the navy/silver palette passes; verify any custom colors.
+- Don't encode meaning in color alone (1.4.1).
+- Give every slide a real heading (`<h1>` or `.slide-title`) so the live region and heading navigation work.
+
+**Not automatic — still needs a human:** screen-reader passes (NVDA/JAWS/VoiceOver/TalkBack), and for RTL languages marking English runs with `lang="en"`. These stay open until tested; do not claim conformance without them.
+
+---
+
+## 8. Speaker notes and the presenter view
 
 **Notes.** Every slide carries `<div class="notes"><p>…</p></div>`. Hidden on the slide; surfaced two ways:
 
@@ -219,13 +243,13 @@ All of the above are hidden by the print stylesheet.
 
 ---
 
-## 8. Print / PDF export
+## 9. Print / PDF export
 
 Press **P** in any deck. The print stylesheet stacks every slide one-per-page at 1280 × 720, forces `print-color-adjust: exact` so navy and silver survive, resets the JS scaling transforms, and hides all chrome (`#controls`, `#progress`, `#notesPanel`, `#help`, `#exitDeck`, `.back-bar`). "Save as PDF" gives a clean handout.
 
 ---
 
-## 9. Verify before you ship — headless Chrome
+## 10. Verify before you ship — headless Chrome
 
 Never trust an edit to a fixed-canvas slide by eye alone. Render it:
 
@@ -238,11 +262,11 @@ google-chrome-stable --headless --disable-gpu --hide-scrollbars \
 
 Then Read the PNG. To inspect a detail (e.g. the exit icon), crop it: `magick /tmp/slide.png -crop 120x70+0+0 +repage /tmp/corner.png`.
 
-Notes: the framework honors `#N` on load, so no script injection is needed to reach a slide. Give animations time — `--virtual-time-budget=4000` is enough for the entrance. Check both a **content slide** (element present) and the **title slide** (exit icon absent) when touching shared chrome.
+Notes: the framework honors `#N` on load, so no script injection is needed to reach a slide. Give animations time — `--virtual-time-budget=4000` is enough for the entrance. Check both a **content slide** (element present) and the **title slide** (exit icon absent) when touching shared chrome. Also test **reflow**: render a deck at phone width (`--window-size=380,820`) and confirm the slide stacks into a readable single column (§7).
 
 ---
 
-## 10. Build a new deck — checklist
+## 11. Build a new deck — checklist
 
 1. Copy an existing deck's `<head>` (Google Fonts link + `<link rel="stylesheet" href="../assets/deck-framework.css">`).
 2. Open `<div class="deck">`. Add one `<section class="slide …">` per slide; give the **first** one `current`.
@@ -252,7 +276,8 @@ Notes: the framework honors `#N` on load, so no script injection is needed to re
 6. Optimize any images to WebP (§5.1) and place them with absolute positioning (§5.2).
 7. End the body with `<script src="../assets/deck-framework.js"></script>`.
 8. Write teleprompter notes for **every** slide before calling it done.
-9. Render each new/edited slide headless (§9) and eyeball it.
+9. Render each new/edited slide headless (§10) and eyeball it — at 1280×720 **and** at phone width to confirm reflow (§7).
+10. If you added an absolutely-positioned deck-local image, register its selector in the `.deck.reflow` neutralize rule so it doesn't overlap text on phones (§7).
 
 ### On-slide writing style
 
@@ -260,7 +285,7 @@ Second person · Oxford comma · spell out numbers one through ten · **no em da
 
 ---
 
-## 11. Resource pages and the language switcher
+## 12. Resource pages and the language switcher
 
 Reader pages (the hub, activities, handouts) use **`assets/pages.css`** instead of the deck framework, with the same palette and fonts. Cards use `.tile` (+ `.tile-ico` for a corner image); page headers carry a `.hdr-ico` badge; a `.back-bar` at top links home.
 
@@ -275,7 +300,7 @@ A lightweight i18n engine (`assets/i18n.js`, ported from the TCEA breakouts engi
 
 ---
 
-## 12. Deploy workflow (this project)
+## 13. Deploy workflow (this project)
 
 Two GitHub accounts via `gh`: **mguhlin** (read-only, the default active account) and **mglearn** (has push to `mglearn/legalai`). The site auto-builds on push to `main` (GitHub Pages).
 

@@ -32,6 +32,7 @@
 </style>
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to main content</a>
 <div class="back-bar"><a href="../index.html"><span>←</span> AI for the Defense <span class="sep">/</span> <span data-i18n="pg.resources">Resources</span></a><div class="bb-right"><span class="bb-lang" data-i18n-picker></span></div></div>
 
 <header class="page">
@@ -52,10 +53,10 @@
   </div>
 </div>
 
-<main>
+<main id="main" tabindex="-1">
   <div class="warn" data-i18n="warn.safe"><strong>Practice safely.</strong> These fact patterns are fictional and the statute excerpts are simplified paraphrases for practice only. Verify all law against the actual Texas codes. Never paste real client-identifying facts into a consumer chatbot.</div>
 
-  <div class="section-label">Choose a fact pattern</div>
+  <h2 class="section-label">Choose a fact pattern</h2>
   <div class="pick">
     <div class="pickcard active" data-c="dwi" onclick="show('dwi',this)"><div class="n">1</div><h3>The refused breath test</h3><small>Driving while intoxicated stop</small></div>
     <div class="pickcard" data-c="poss" onclick="show('poss',this)"><div class="n">2</div><h3>The console search</h3><small>Drug possession and search</small></div>
@@ -69,7 +70,7 @@
     <p><strong>Debrief questions.</strong> Which tier gave the most usable output. What did the inspect prompt catch that you would have missed. What is the one line you would add to make it safer.</p>
   </div>
 
-  <div class="section-label">Keep exploring</div>
+  <h2 class="section-label">Keep exploring</h2>
   <a class="tile gold" href="scenario-bank.html" style="max-width:560px;"><div class="tag">Scenario Bank · 50 more</div><h3>Fifty more Texas fact patterns</h3><p>Each with a ready-to-run prompt, sorted by area, with statute links to the Texas Legislature site. A place to keep practicing after the session.</p></a>
 </main>
 
@@ -151,19 +152,19 @@ function show(key,elm){
     '<div class="scenario-box"><div class="lbl">Fictional fact pattern</div>'+
       '<div class="chips">'+s.tags.map(t=>'<span class="chip navy">'+t+'</span>').join('')+'<span class="chip time">about 12 min</span></div>'+
       '<p>'+s.facts+'</p></div>'+
-    '<div class="section-label">Move through the framework</div>'+ tmap()+
-    '<div class="section-label">Provided source to ground your prompt · the D in TCDLAi</div>'+
+    '<h2 class="section-label">Move through the framework</h2>'+ tmap()+
+    '<h2 class="section-label">Provided source to ground your prompt · the D in TCDLAi</h2>'+
       '<div class="statute"><button class="copy-btn" data-target="stat-'+key+'" onclick="copyText(this,event)">Copy</button><span id="stat-'+key+'">'+esc(s.statute)+'</span></div>'+
       citeNote(s)+
-    '<div class="section-label">Climb the tiers</div>'+
+    '<h2 class="section-label">Climb the tiers</h2>'+
       '<div class="tiers">'+
         tierBlock('good','Good · fast draft','Vague','No role, no facts, no sources. Watch it guess.','p-'+key+'-g',s.good)+
         tierBlock('better','Better · structured','Role + limits','Adds role, facts, a number, and jurisdiction.','p-'+key+'-b',s.better)+
         tierBlock('best','Best · grounded + checked','TCDLAi','Targets the issue, compiles facts, defines law from your source, lists and analyzes, and asks to flag gaps.','p-'+key+'-x',s.best)+
       '</div>'+
-    '<div class="section-label">Inspect the result · the i in TCDLAi</div>'+
+    '<h2 class="section-label">Inspect the result · the i in TCDLAi</h2>'+
       '<div class="promptbox" id="p-'+key+'-i" style="margin-bottom:1.2rem;"><button class="copy-btn" data-target="p-'+key+'-i" onclick="copyText(this,event)">Copy</button>'+esc(s.inspect)+'</div>'+
-    '<div class="section-label">Guardrails for this scenario</div>'+
+    '<h2 class="section-label">Guardrails for this scenario</h2>'+
       '<div class="guard"><div class="gcol will"><h4>✓ You will</h4><ul>'+s.will.map(i=>'<li>'+i+'</li>').join('')+'</ul></div>'+
         '<div class="gcol wont"><h4>✗ You will not</h4><ul>'+s.wont.map(i=>'<li>'+i+'</li>').join('')+'</ul></div></div>';
   const d=document.getElementById('display');
