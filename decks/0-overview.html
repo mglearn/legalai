@@ -44,6 +44,13 @@
   /* Learning objectives: image on the left, words on the right */
   .obj-grid{display:grid;grid-template-columns:450px 1fr;gap:52px;align-items:center;height:100%;}
   .obj-photo{width:450px;height:450px;border-radius:50%;box-shadow:0 14px 38px rgba(10,29,51,0.26);}
+  /* Framing quote slide */
+  .frame-quote{background:linear-gradient(135deg,#0B1D33 0%,#102A54 58%,#173766 100%);}
+  .frame-quote .slide-body{display:flex;flex-direction:column;justify-content:center;max-width:1050px;}
+  .fq-mark{font-family:var(--font-display);font-weight:600;font-size:110px;line-height:0.4;color:var(--gold);opacity:0.55;}
+  .fq-text{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:48px;line-height:1.28;color:#F4F8FE;margin:8px 0 34px;padding:0;border:none;}
+  .fq-attr{font-family:var(--font-body);font-size:23px;font-weight:600;color:var(--gold-lt);}
+  .fq-attr span{display:block;font-weight:400;font-size:18px;color:#9FB4CE;margin-top:7px;}
 </style>
 </head>
 <body>
@@ -112,7 +119,26 @@
     </div>
   </section>
 
-  <!-- 3 · WHAT THIS SESSION IS -->
+  <!-- 3 · FRAMING QUOTE -->
+  <section class="slide frame-quote">
+    <div class="slide-body">
+      <div class="fq-mark" aria-hidden="true">&ldquo;</div>
+      <blockquote class="fq-text">Technology doesn&rsquo;t replace the judgment of an experienced criminal defense lawyer &mdash; it sharpens it.</blockquote>
+      <div class="fq-attr">Benson Varghese<span>Criminal defense attorney &middot; Varghese Summersett, Fort Worth, Texas</span></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">go.mgpd.org/tcdla26</span>
+    </div>
+    <div class="notes">
+      <p>Before I lay out the hour, I want one idea on the screen. It comes from a Texas criminal defense lawyer, Benson Varghese, in Fort Worth.</p>
+      <p>He says technology does not replace the judgment of an experienced defense lawyer. It sharpens it. That is the whole spirit of today. We are not here to hand our cases to a machine, and we are not here to pretend the machine is useless.</p>
+      <p>We are here to use it the way you would use a sharp young associate, with your judgment sitting on top of everything it produces. Hold that line in mind as we look at where AI helps and where it can quietly hurt.</p>
+    </div>
+  </section>
+
+  <!-- 4 · WHAT THIS SESSION IS -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">The session in one breath</div>
@@ -137,7 +163,7 @@
     </div>
   </section>
 
-  <!-- 4 · DESCRIPTION -->
+  <!-- 5 · DESCRIPTION -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">What we will cover</div>
@@ -164,7 +190,7 @@
     </div>
   </section>
 
-  <!-- 5 · LEARNING OBJECTIVES -->
+  <!-- 6 · LEARNING OBJECTIVES -->
   <section class="slide">
     <div class="slide-body">
       <div class="obj-grid">
@@ -195,7 +221,7 @@
     </div>
   </section>
 
-  <!-- 6 · AGENDA -->
+  <!-- 7 · AGENDA -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">Our plan for the hour</div>
@@ -219,7 +245,7 @@
     </div>
   </section>
 
-  <!-- 7 · TOOLS -->
+  <!-- 8 · TOOLS -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">What you will use today</div>
@@ -243,7 +269,7 @@
     </div>
   </section>
 
-  <!-- 8 · HOW WE WORK -->
+  <!-- 9 · HOW WE WORK -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">How the hands-on work runs</div>
@@ -282,7 +308,7 @@
     </div>
   </section>
 
-  <!-- 9 · TAKEAWAYS -->
+  <!-- 10 · TAKEAWAYS -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">What you leave with</div>
@@ -306,7 +332,7 @@
     </div>
   </section>
 
-  <!-- 10 · AI FLUENCY OPENER -->
+  <!-- 11 · AI FLUENCY OPENER -->
   <section class="slide">
     <div class="slide-body">
       <img class="slide-ico" src="../assets/fluency-icon.png" alt=""><div class="slide-kicker">Opener · everyone · about 5 minutes</div>
