@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quotes on AI and the defense | AI for the Defense | TCDLA</title>
+<meta name="description" content="Every sourced quote used across this site, gathered in one place: what named criminal defense lawyers, public defenders, and jurists say about artificial intelligence in legal practice.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/pages.css">
+<style>
+  .q-note{background:var(--lgray);border:1px solid var(--mgray);border-radius:10px;padding:0.85rem 1.1rem;font-size:0.88rem;color:var(--slate);line-height:1.55;margin:0 0 1.6rem;}
+  #qlist .sitequote{margin:0 0 1rem;}
+</style>
+</head>
+<body>
+<div class="back-bar">
+  <a href="index.html"><span>←</span> AI for the Defense <span class="sep">/</span> <span data-i18n="pg.resources">Resources</span></a>
+  <div class="bb-right"><span class="bb-lang" data-i18n-picker></span></div>
+</div>
+
+<header class="page">
+  <div class="header-inner">
+    <span class="eyebrow">Texas Criminal Defense Lawyers Association · July 2026</span>
+    <h1 data-i18n="quotes.h1">Quotes on AI and the defense</h1>
+    <div class="header-sub" data-i18n="quotes.sub">What lawyers and judges are saying about artificial intelligence in legal practice</div>
+    <div class="header-meta">Facilitator <a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a>, TCEA · <a href="https://mglearn.github.io/legalai">mglearn.github.io/legalai</a></div>
+  </div>
+</header>
+
+<main>
+  <p class="lead-p" data-i18n="quotes.intro" style="font-size:1.1rem;line-height:1.7;color:var(--text);margin:0 0 1.1rem;">Every quote used across this site, gathered in one place. Each is verbatim and links to its original source.</p>
+  <div class="q-note" data-i18n="quotes.note">Quotations appear in their original English. Language switching translates the page around them, not the speakers' own words.</div>
+  <div id="qlist"></div>
+</main>
+
+<footer class="page">
+  <div class="fin">
+    <div class="brand">Texas Criminal Defense Lawyers Association</div>
+    <p><a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · TCEA · <a href="https://mglearn.github.io/legalai">mglearn.github.io/legalai</a></p>
+    <p class="cc">AI for the Defense · Quotes on AI and the defense</p>
+  </div>
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/pages-i18n.js"></script>
+<script src="assets/sitequote.js"></script>
+<script>
+  (function () {
+    var wrap = document.getElementById("qlist");
+    var qs = window.SITE_QUOTES || [];
+    var mk = window.SITE_QUOTE_BLOCK;
+    if (!wrap || !mk) return;
+    qs.forEach(function (q) { wrap.appendChild(mk(q)); });
+  })();
+</script>
+</body>
+</html>
