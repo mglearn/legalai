@@ -40,6 +40,13 @@
   .divider .slide-body{max-width:560px;}
   .divider-photo{position:absolute;top:50%;right:54px;transform:translateY(-50%);width:600px;height:auto;
     border-radius:14px;box-shadow:0 16px 44px rgba(0,0,0,0.38);z-index:1;}
+  /* Framing quote slide */
+  .frame-quote{background:linear-gradient(135deg,#0B1D33 0%,#102A54 58%,#173766 100%);}
+  .frame-quote .slide-body{display:flex;flex-direction:column;justify-content:center;max-width:1050px;}
+  .fq-mark{font-family:var(--font-display);font-weight:600;font-size:110px;line-height:0.4;color:var(--gold);opacity:0.55;}
+  .fq-text{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:48px;line-height:1.3;color:#F4F8FE;margin:8px 0 34px;padding:0;border:none;}
+  .fq-attr{font-family:var(--font-body);font-size:23px;font-weight:600;color:var(--gold-lt);}
+  .fq-attr span{display:block;font-weight:400;font-size:18px;color:#9FB4CE;margin-top:7px;}
 </style>
 </head>
 <body>
@@ -63,6 +70,25 @@
       <p>We just spent twenty minutes on why AI is risky. Now we spend twenty-five on how to make it far less so. This is the working heart of the session, and it is where you will do the most typing.</p>
       <p>Three moves do most of the work. Give the model structure so it cannot wander. Ground it in sources you trust instead of its own memory. And verify what comes back before you rely on it.</p>
       <p>We will build all three around a framework made for this audience, called TCDLAi. Let us start with why the way most people prompt makes things worse.</p>
+    </div>
+  </section>
+
+  <!-- FRAMING QUOTE (after title) -->
+  <section class="slide frame-quote">
+    <div class="slide-body">
+      <div class="fq-mark" aria-hidden="true">&ldquo;</div>
+      <blockquote class="fq-text">This helps you zero in on what may actually be helpful and useful.</blockquote>
+      <div class="fq-attr">Chris Tracy<span>Regional Manager &middot; Kentucky Department of Public Advocacy &middot; Government Technology</span></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">go.mgpd.org/tcdla26</span>
+    </div>
+    <div class="notes">
+      <p>One idea to carry into this segment. Chris Tracy, a regional manager with the Kentucky Department of Public Advocacy, describes what these tools do when they work well. This helps you zero in on what may actually be helpful and useful.</p>
+      <p>That is the whole point of risk-reducing practice. We are not trying to make AI do the lawyering. We are using it to sort, surface, and shorten, so your attention lands on what matters.</p>
+      <p>Everything in this segment, structured prompts, grounding, and verification, is built to make the tool point you at the useful thing and keep the noise out. Let us begin.</p>
     </div>
   </section>
 
