@@ -46,6 +46,20 @@
   .cta a.alt{background:transparent;color:#fff;border:1.5px solid var(--gold-lt);box-shadow:none;}
   .cta a:hover{transform:translateY(-2px);}
   @media (max-width:640px){.two-grid{grid-template-columns:1fr;}.compare-tbl td:first-child{width:auto;}}
+  .steps3{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin:1rem 0 0.4rem;}
+  .step3{background:#fff;border:1px solid var(--mgray);border-top:4px solid var(--gold-dk);border-radius:12px;padding:1.2rem 1.3rem;box-shadow:0 2px 12px rgba(10,52,118,0.06);}
+  .step3 .n{font-family:'Playfair Display',serif;font-weight:800;color:var(--gold);font-size:1.7rem;line-height:1;}
+  .step3 h3{font-family:'Playfair Display',serif;font-size:1.12rem;color:var(--navy);margin:0.3rem 0 0.5rem;line-height:1.15;}
+  .step3 p{font-size:0.93rem;line-height:1.55;color:var(--text);margin:0;}
+  .wf-figure{margin:1.3rem 0 0.5rem;text-align:center;}
+  .wf-figure img{width:100%;max-width:660px;border:1px solid var(--mgray);border-radius:12px;box-shadow:0 2px 14px rgba(10,52,118,0.08);}
+  .wf-figure figcaption{font-size:0.82rem;color:var(--slate);margin-top:0.5rem;font-style:italic;}
+  .rag-list{list-style:none;padding:0;margin:0.7rem 0 0;}
+  .rag-list li{position:relative;padding:0.55rem 0 0.55rem 1.7rem;font-size:0.97rem;line-height:1.55;color:var(--text);border-bottom:1px solid var(--lgray);}
+  .rag-list li:last-child{border-bottom:none;}
+  .rag-list li::before{content:'\2192';position:absolute;left:0;top:0.55rem;color:var(--gold-dk);font-weight:700;}
+  .rag-list strong{color:var(--navy);}
+  @media(max-width:640px){.steps3{grid-template-columns:1fr;}}
 </style>
 </head>
 <body>
@@ -115,6 +129,32 @@
 
   <h2 class="sec-h">Choosing between them</h2>
   <p class="lead-p" style="font-size:1.02rem;">You do not have to pick one forever. Most practices start with the task to build confidence — a few contained wins that prove the tool and teach its limits — then graduate to the problem once they can see where the real hours go. If a task keeps recurring across matters and the time adds up, that is your signal that a task-level habit has grown into a problem worth solving deliberately. Whichever door you come in, the lawyer stays the one who decides.</p>
+
+  <h2 class="sec-h">A workflow for either approach</h2>
+  <p class="sec-sub">Whichever door you came in, the same three moves carry the work from a rough idea to something you can reuse.</p>
+  <div class="steps3">
+    <div class="step3"><div class="n">1</div><h3>Start with a spark</h3><p>Name the question or the information problem: a suppression issue, a pattern buried in discovery, a plea you need to explain plainly. Then gather the source materials you trust &mdash; the statute, a fictional or de-identified fact pattern, your own templates.</p></div>
+    <div class="step3"><div class="n">2</div><h3>Iterate to results</h3><p>Work in dialogue with the tool. Refine the output through feedback and follow-up prompts until it holds up. This back-and-forth is where the value lives, and where your judgment stays in charge.</p></div>
+    <div class="step3"><div class="n">3</div><h3>Capture for future use</h3><p>Turn a good result into something reusable. Ask the tool to write custom instructions from the conversation that worked, then build a reusable assistant so the next matter starts ahead. Keep it to process and public authority, never privileged facts.</p></div>
+  </div>
+  <figure class="wf-figure">
+    <img src="../assets/three-step-workflow.webp" alt="Three-step generative AI content workflow: 1 Start with a Spark — identify a question or information problem and gather initial materials; 2 Iterate to Results; 3 Capture for Future Use — generate custom instructions and build reusable bots">
+    <figcaption>Miguel Guhlin&rsquo;s three-step Gen AI content workflow.</figcaption>
+  </figure>
+
+  <h2 class="sec-h">Ground it in your own trusted files</h2>
+  <p class="sec-sub">Retrieval-augmented generation, or RAG, is the single biggest reliability upgrade for either approach.</p>
+  <p class="lead-p" style="font-size:1.02rem;">Instead of leaning on the model&rsquo;s general training, a RAG tool answers from documents you choose and trust. Environments like Projects, NotebookLM, Custom GPTs, Google Gems, and Bots give the model contextual grounding: it retrieves from your own files rather than its training data alone, which produces more reliable, predictable output aligned to how you actually practice.</p>
+  <ul class="rag-list">
+    <li><strong>Why it matters for the defense.</strong> Grounding is what turns a plausible-sounding tool into a checkable one. Pair the model with the authority and templates you trust, plus custom instructions that capture the process that worked, and it generates output that matches your expectations &mdash; and is far less likely to fabricate.</li>
+    <li><strong>Where to keep your files.</strong> The chart below sorts the options: a chat window with attached files for quick, temporary drafting; Projects for persistent, reusable work; Custom GPTs, Gems, and Bots for standard tasks and SOPs; group chats for live collaboration. The two marked RAG &mdash; Projects and Custom GPTs/Bots &mdash; keep and reuse your materials.</li>
+    <li><strong>The line that does not move.</strong> RAG grounds the model in your files, but confidentiality still governs. Use fictional or de-identified facts in consumer tools, and never upload privileged client material to a tool whose data handling you have not vetted.</li>
+  </ul>
+  <figure class="wf-figure">
+    <img src="../assets/rag-tools-comparison.webp" alt="Comparison of AI tools by category — Chat Window with Attached Files, Projects (RAG), Custom GPTs, Bots and Gems (RAG), and GroupChats — across what each is, what it is best for, how it handles files, sharing and collaboration, and notes">
+    <figcaption>Where your files live shapes what the tool can do. Projects and Custom GPTs/Bots are RAG environments that keep and reuse your materials.</figcaption>
+  </figure>
+  <p class="sec-sub" style="margin-top:0.9rem;">The RAG explanation and three-step workflow are adapted for defense practice from Miguel Guhlin, <a href="https://mguhlin.org/blog/nspa3-automating-office-tasks-with-ai/#RAG" target="_blank" rel="noopener" style="color:var(--navy-md);font-weight:600;">Automating Office Tasks with AI</a>.</p>
 
   <h2 class="sec-h">Prompting habits that carry either approach</h2>
   <p class="sec-sub">The approach sets your goal; the prompt sets the quality. Six habits do most of the work.</p>
