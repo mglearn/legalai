@@ -14,6 +14,13 @@
   .divider .slide-body{max-width:560px;}
   .divider-photo{position:absolute;top:50%;right:54px;transform:translateY(-50%);width:620px;height:auto;
     border-radius:14px;box-shadow:0 16px 44px rgba(0,0,0,0.42);z-index:1;}
+  /* Framing quote slide */
+  .frame-quote{background:linear-gradient(135deg,#0B1D33 0%,#102A54 58%,#173766 100%);}
+  .frame-quote .slide-body{display:flex;flex-direction:column;justify-content:center;max-width:1050px;}
+  .fq-mark{font-family:var(--font-display);font-weight:600;font-size:110px;line-height:0.4;color:var(--gold);opacity:0.55;}
+  .fq-text{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:48px;line-height:1.3;color:#F4F8FE;margin:8px 0 34px;padding:0;border:none;}
+  .fq-attr{font-family:var(--font-body);font-size:23px;font-weight:600;color:var(--gold-lt);}
+  .fq-attr span{display:block;font-weight:400;font-size:18px;color:#9FB4CE;margin-top:7px;}
 </style>
 </head>
 <body>
@@ -40,7 +47,26 @@
     </div>
   </section>
 
-  <!-- 2 · THE DUTIES DO NOT CHANGE -->
+  <!-- 2 · FRAMING QUOTE -->
+  <section class="slide frame-quote">
+    <div class="slide-body">
+      <div class="fq-mark" aria-hidden="true">&ldquo;</div>
+      <blockquote class="fq-text">Most importantly, lawyers must remember that ethical responsibility cannot be delegated to software.</blockquote>
+      <div class="fq-attr">Michael J. Epstein<span>Trial lawyer &middot; The Epstein Law Firm, New Jersey</span></div>
+    </div>
+    <div class="slide-footer">
+      <span class="brand"><span class="star">✦</span> TCDLAi</span>
+      <span class="fac">Facilitator: Miguel Guhlin</span>
+      <span class="url">go.mgpd.org/tcdla26</span>
+    </div>
+    <div class="notes">
+      <p>Before we walk through the duties one by one, I want to fix a single idea in place. It comes from Michael Epstein, a trial lawyer in New Jersey, writing for Above the Law.</p>
+      <p>He says, most importantly, ethical responsibility cannot be delegated to software. That is the hinge of this whole segment. You can hand the drafting to a tool. You cannot hand off the duty.</p>
+      <p>Competence, confidentiality, supervision, and candor to the court all stay with the lawyer whose name is on the filing. Keep that in front of you as we look at where AI goes wrong.</p>
+    </div>
+  </section>
+
+  <!-- 3 · THE DUTIES DO NOT CHANGE -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">Start here</div>
@@ -65,7 +91,7 @@
     </div>
   </section>
 
-  <!-- 3 · TECH COMPETENCE -->
+  <!-- 4 · TECH COMPETENCE -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">Competence, expanded</div>
@@ -90,7 +116,7 @@
     </div>
   </section>
 
-  <!-- 4 · HALLUCINATIONS -->
+  <!-- 5 · HALLUCINATIONS -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">Failure one</div>
@@ -129,7 +155,7 @@
     </div>
   </section>
 
-  <!-- 5 · ANATOMY OF A FABRICATION -->
+  <!-- 6 · ANATOMY OF A FABRICATION -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">Look closely</div>
@@ -156,7 +182,7 @@
     </div>
   </section>
 
-  <!-- 6 · CONFIDENTIALITY -->
+  <!-- 7 · CONFIDENTIALITY -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">Failure two</div>
@@ -194,7 +220,7 @@
     </div>
   </section>
 
-  <!-- 7 · SEE THE CASES -->
+  <!-- 8 · SEE THE CASES -->
   <section class="slide">
     <div class="slide-body">
       <img class="slide-ico" src="../assets/news-icon.png" alt="">
@@ -220,7 +246,7 @@
     </div>
   </section>
 
-  <!-- 8 · WE WILL / WE WILL NOT -->
+  <!-- 9 · WE WILL / WE WILL NOT -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">Make it concrete</div>
@@ -260,7 +286,7 @@
     </div>
   </section>
 
-  <!-- 9 · ACTIVITY · ETHICS RANDOMIZER -->
+  <!-- 10 · ACTIVITY · ETHICS RANDOMIZER -->
   <section class="slide">
     <div class="slide-body">
       <img class="slide-ico" src="../assets/ethics-icon.svg" alt="">
@@ -286,7 +312,7 @@
     </div>
   </section>
 
-  <!-- 10 · JUDGMENT -->
+  <!-- 11 · JUDGMENT -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">The bottom line</div>
@@ -310,7 +336,7 @@
     </div>
   </section>
 
-  <!-- 11 · ACTIVITY -->
+  <!-- 12 · ACTIVITY -->
   <section class="slide">
     <div class="slide-body">
       <div class="slide-kicker">Activity · core · about 6 minutes</div>
@@ -338,7 +364,7 @@
     </div>
   </section>
 
-  <!-- 12 · RECAP -->
+  <!-- 13 · RECAP -->
   <section class="slide">
     <div class="slide-body">
       <img class="recap-emblem" src="../assets/segment1-recap.webp" alt="Emblem: scales of justice, gavel, courthouse, and a shield over a network, representing ethical AI in defense practice">
