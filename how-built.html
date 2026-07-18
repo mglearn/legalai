@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How this site came to be | AI for the Defense | TCDLA</title>
+<meta name="description" content="A transparent note on how this site was built with AI assistance: an honest estimate of the time it took, the time a human build would have taken, and where human judgment stayed essential.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/pages.css">
+<style>
+  .lead-p{font-size:1.12rem;line-height:1.7;color:var(--text);margin:0 0 1.4rem;}
+  .sec-h{font-family:'Playfair Display',serif;font-size:1.45rem;color:var(--navy);margin:2.2rem 0 0.3rem;line-height:1.2;}
+  .sec-sub{color:var(--slate);font-size:0.98rem;margin:0 0 1rem;}
+  .figtable,.wstable{width:100%;border-collapse:collapse;margin:0.4rem 0 0.6rem;}
+  .figtable th,.figtable td,.wstable th,.wstable td{text-align:left;padding:0.8rem 0.9rem;border-bottom:1px solid var(--mgray);vertical-align:top;line-height:1.5;font-size:0.95rem;color:var(--text);}
+  .figtable th,.wstable th{font-size:0.71rem;font-weight:800;letter-spacing:0.07em;text-transform:uppercase;color:var(--gold-dk);background:var(--lgray);}
+  .figtable td:first-child{font-weight:700;color:var(--navy);width:26%;}
+  .figtable .est{font-family:'Playfair Display',serif;font-weight:800;font-size:1.05rem;color:var(--navy-md);white-space:nowrap;}
+  .wstable td:first-child{width:66%;}
+  .wstable td:last-child{color:var(--navy-md);font-weight:600;text-align:right;white-space:nowrap;}
+  .takeaway{background:var(--navy);border-radius:12px;padding:1.5rem 1.7rem;margin:1.6rem 0 0.4rem;color:#EAF1FB;}
+  .takeaway h3{font-family:'Playfair Display',serif;font-size:1.25rem;color:#fff;margin:0 0 0.5rem;}
+  .takeaway p{font-size:0.98rem;line-height:1.65;margin:0 0 0.7rem;color:var(--gold-lt);}
+  .takeaway p:last-child{margin-bottom:0;}
+  .takeaway strong{color:#fff;}
+  .disclaim{background:var(--lgray);border:1px solid var(--mgray);border-radius:10px;padding:0.85rem 1.1rem;font-size:0.86rem;color:var(--slate);line-height:1.55;margin:1.5rem 0 0;}
+  @media(max-width:620px){.figtable .est{white-space:normal;}.wstable td:last-child{white-space:normal;}}
+</style>
+</head>
+<body>
+<div class="back-bar">
+  <a href="index.html"><span>←</span> AI for the Defense <span class="sep">/</span> <span data-i18n="pg.resources">Resources</span></a>
+  <div class="bb-right"><span class="bb-lang" data-i18n-picker></span></div>
+</div>
+
+<header class="page">
+  <div class="header-inner">
+    <span class="eyebrow">Texas Criminal Defense Lawyers Association · July 2026</span>
+    <h1 data-i18n="built.h1">How this site came to be</h1>
+    <div class="header-sub" data-i18n="built.sub">A candid note on building this site with AI assistance</div>
+    <div class="header-meta">Facilitator <a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a>, TCEA · <a href="https://mglearn.github.io/legalai">mglearn.github.io/legalai</a></div>
+  </div>
+</header>
+
+<main>
+  <p class="lead-p" data-i18n="built.intro">In keeping with a session about using AI responsibly, here is an honest account of how the site itself was made. It was built over about two days in July 2026 by Miguel Guhlin working with Claude, an AI assistant. A person directed every decision: what to build, which quotes to use, and what is appropriate for a criminal defense audience. The figures below are rough estimates, offered in the same spirit of candor the session asks of any AI-assisted work.</p>
+
+  <h2 class="sec-h" data-i18n="built.figH">Three figures</h2>
+  <p class="sec-sub" data-i18n="built.figSub">Estimated, not measured &mdash; the ranges matter more than the numbers.</p>
+  <table class="figtable">
+    <thead><tr><th>Whose time</th><th>Estimate</th><th>What it covers</th></tr></thead>
+    <tbody>
+      <tr>
+        <td>AI assistant, active working time</td>
+        <td class="est">~4&ndash;7 hours</td>
+        <td>Aggregate generation and tool work: writing the code and content, web research, image processing, rendering pages to check them, and deploying &mdash; spread thin across two days.</td>
+      </tr>
+      <tr>
+        <td>Facilitator&rsquo;s time</td>
+        <td class="est">~5&ndash;9 hours</td>
+        <td>Writing the requests, reviewing deployed pages and screenshots, making the judgment calls (which quote, which layout, what fits a TCDLA audience), and catching issues.</td>
+      </tr>
+      <tr>
+        <td>Equivalent human build, from scratch</td>
+        <td class="est">~250&ndash;400 hours</td>
+        <td>Roughly six to ten weeks for one skilled generalist, or about three to four weeks for a small team working in parallel.</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h2 class="sec-h" data-i18n="built.whyH">Why the human estimate is that large</h2>
+  <p class="sec-sub" data-i18n="built.whySub">The same work, broken down by workstream for one skilled person.</p>
+  <table class="wstable">
+    <tbody>
+      <tr><td>Design system, brand, and two CSS frameworks (pages and decks)</td><td>3&ndash;5 days</td></tr>
+      <tr><td>Deck framework: presenter view with cross-window sync, keyboard navigation, print/PDF export, exit icon</td><td>4&ndash;6 days</td></tr>
+      <tr><td>Four slide decks: layout, copy, speaker notes, images</td><td>5&ndash;7 days</td></tr>
+      <tr><td>Eight activity pages, including the interactive fluency self-assessment with scoring, a color chart, and PDF export, the ethics randomizer, and a fifty-scenario bank</td><td>7&ndash;10 days</td></tr>
+      <tr><td>Hub, About, Presentations, Walkthrough, Quotes, and three handouts</td><td>4&ndash;5 days</td></tr>
+      <tr><td>Translating all interface text into seven languages (Spanish, Vietnamese, Arabic, Hindi, Urdu, Chinese), including right-to-left support</td><td>5&ndash;10 days</td></tr>
+      <tr><td>Content writing: defense-appropriate copy, ethics scenarios, and the prompt library</td><td>4&ndash;6 days</td></tr>
+      <tr><td>Image production: generation, cropping infographics, and optimizing thirty-plus assets</td><td>2&ndash;3 days</td></tr>
+      <tr><td>Quote research, verbatim verification, and sourcing (sixteen quotes)</td><td>1&ndash;2 days</td></tr>
+      <tr><td>Testing, revisions, and deployment</td><td>2&ndash;3 days</td></tr>
+    </tbody>
+  </table>
+  <p class="sec-sub" data-i18n="built.whyTotal">That lands around forty to fifty-five working days for one person doing all of it &mdash; longer once you add coordination, or compressed with a team.</p>
+
+  <div class="takeaway">
+    <h3 data-i18n="built.takeH">The takeaway</h3>
+    <p data-i18n="built.takeP1">Roughly <strong>250 to 400 hours of conventional human effort</strong>, delivered against about <strong>five to nine hours</strong> of a person&rsquo;s time over two days &mdash; a rough thirty to fifty times leverage on human attention.</p>
+    <p data-i18n="built.takeP2">The honest caveats matter. The person still supplied all of the judgment: which quotes, which framing, what is appropriate for a defense audience. The translations are machine quality, where a human project would pay for professional review. And much of the time saved is grunt work &mdash; translating seven times over, optimizing images, renumbering slides, checking links &mdash; that compresses especially well, while the parts that need a real lawyer&rsquo;s eye still rest with a human.</p>
+  </div>
+
+  <div class="disclaim" data-i18n="built.disclaim">These figures are estimates for illustration. The point is transparency about how AI-assisted work actually comes together, not precision to the hour.</div>
+</main>
+
+<footer class="page">
+  <div class="fin">
+    <div class="brand">Texas Criminal Defense Lawyers Association</div>
+    <p><a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · TCEA · <a href="https://mglearn.github.io/legalai">mglearn.github.io/legalai</a></p>
+    <p class="cc">AI for the Defense · How this site came to be</p>
+  </div>
+</footer>
+
+<script src="assets/i18n.js"></script>
+<script src="assets/pages-i18n.js"></script>
+</body>
+</html>
