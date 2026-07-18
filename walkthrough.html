@@ -23,6 +23,14 @@
   .wt .pill{display:inline-block;font-size:0.68rem;font-weight:800;letter-spacing:0.05em;text-transform:uppercase;
     color:var(--gold-dk);background:#EAF0F7;border-radius:20px;padding:0.15rem 0.6rem;}
   @media(max-width:600px){.wt .meta{white-space:normal;}.wt td{padding:0.5rem 0.4rem;}}
+  .quote{position:relative;background:var(--navy);border-radius:12px;margin:1.8rem 0 0;padding:1.9rem 2.2rem 1.8rem;overflow:hidden;}
+  .quote::before{content:'';position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--gold);}
+  .q-mark{font-family:'Playfair Display',serif;font-size:3.2rem;line-height:0.5;color:var(--gold-lt);opacity:0.45;}
+  .q-text{font-family:'Playfair Display',serif;font-size:1.55rem;line-height:1.4;color:#fff;font-weight:800;margin:0.2rem 0 1.1rem;border:none;padding:0;font-style:normal;}
+  .q-attr{color:var(--gold-lt);font-size:0.92rem;font-weight:700;line-height:1.4;}
+  .q-attr span{display:block;color:#AEBECF;font-weight:400;font-size:0.82rem;margin-top:0.2rem;}
+  .q-attr a{color:var(--gold-lt);text-decoration:underline;}
+  @media(max-width:600px){.q-text{font-size:1.3rem;}}
 </style>
 </head>
 <body>
@@ -73,10 +81,14 @@
     <tr><td class="num">18</td><td class="it"><a href="BoodleBox%20Bot%20LegalAI/LegalAI-BoodleBox-Bot.zip">Download the bot files</a></td><td class="meta"><span class="pill">Zip</span></td></tr>
   </table>
 
-  <div class="cards c2" style="margin-top:1.4rem;">
-    <a class="tile" href="presentations.html"><div class="tag">Slides</div><h3 data-i18n="pres.h1">Presentations</h3><p data-i18n="pres.sub">Four self-contained decks, each with speaker notes.</p></a>
-    <a class="tile gold" href="index.html"><div class="tag">Home</div><h3>All session resources</h3><p>Activities, handouts, the prompt library, and the ready-made bots.</p></a>
-  </div>
+  <figure class="quote">
+    <div class="q-mark" aria-hidden="true">&ldquo;</div>
+    <blockquote class="q-text">Any use of AI requires caution and humility.</blockquote>
+    <figcaption class="q-attr">
+      Chief Justice John G. Roberts Jr.
+      <span>2023 Year-End Report on the Federal Judiciary · <a href="https://www.supremecourt.gov/publicinfo/year-end/2023year-endreport.pdf" target="_blank" rel="noopener">read the report</a></span>
+    </figcaption>
+  </figure>
 </main>
 
 <footer class="page">
