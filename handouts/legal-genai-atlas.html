@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Legal GenAI Market Atlas | AI for the Defense | TCDLA</title>
+<meta name="description" content="An evidence-weighted guide to currently available legal generative-AI tools, verified July 21, 2026.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/pages.css">
+<style>
+  /* ── In-page jump nav (sits under the back-bar) ─────────────── */
+  .atlas-nav{position:sticky;top:34px;z-index:150;background:var(--lgray);border-bottom:1px solid var(--mgray);}
+  .atlas-nav .inner{max-width:1000px;margin:0 auto;display:flex;gap:1.1rem;align-items:center;overflow:auto;padding:0.55rem 2rem;}
+  .atlas-nav a{white-space:nowrap;font-weight:700;text-decoration:none;font-size:0.78rem;color:var(--slate);}
+  .atlas-nav a:hover{color:var(--navy);}
+  .atlas-nav .brand{margin-right:auto;color:var(--navy);font-family:'Playfair Display',serif;font-weight:800;letter-spacing:0.03em;}
+
+  .atlas-section{margin-top:2.4rem;}
+  .lede{color:var(--slate);max-width:820px;font-size:1.02rem;margin-bottom:0.9rem;}
+  .fine{font-size:0.78rem;color:var(--slate);line-height:1.55;}
+
+  /* ── Summary metrics ───────────────────────────────────────── */
+  .summary{display:grid;grid-template-columns:repeat(4,1fr);gap:0.9rem;margin:1.4rem 0 0.4rem;}
+  .metric{background:#fff;border:1px solid var(--mgray);border-top:4px solid var(--navy);border-radius:8px;
+        padding:1.05rem 1.2rem;box-shadow:0 2px 12px rgba(10,52,118,0.07);}
+  .metric b{display:block;font-family:'Playfair Display',serif;font-weight:800;font-size:2.1rem;line-height:1;color:var(--navy);}
+  .metric span{color:var(--slate);font-size:0.8rem;}
+
+  /* ── Panels (echo the site .panel card) ────────────────────── */
+  .apanel{background:#fff;border:1px solid var(--mgray);border-left:6px solid var(--gold);border-radius:8px;
+        padding:1.3rem 1.5rem;box-shadow:0 2px 12px rgba(10,52,118,0.07);}
+  .apanel h3{font-size:1.1rem;color:var(--navy);margin-bottom:0.6rem;}
+  .apanel h3+h3{margin-top:1.1rem;}
+  .apanel ol{margin:0 0 0 1.1rem;} .apanel ol li{margin-bottom:0.4rem;font-size:0.92rem;}
+  .apanel p{font-size:0.92rem;margin-bottom:0.5rem;}
+  .charts{display:grid;grid-template-columns:1.2fr 0.8fr;gap:1rem;margin-bottom:0.4rem;}
+
+  .barrow{display:grid;grid-template-columns:150px 1fr 32px;gap:0.6rem;align-items:center;margin:0.5rem 0;font-size:0.82rem;color:var(--slate);}
+  .bar{height:11px;background:var(--mgray);border-radius:20px;overflow:hidden;}
+  .bar i{display:block;height:100%;background:var(--navy-md);border-radius:inherit;}
+  .barrow b{font-family:'Playfair Display',serif;color:var(--navy);text-align:right;}
+  .legend{display:flex;gap:0.9rem;flex-wrap:wrap;color:var(--slate);font-size:0.75rem;margin-bottom:0.5rem;}
+  .legend i{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:5px;}
+
+  .callout{border:1px solid #B9CCEC;border-left:5px solid var(--gold-dk);background:#EFF4FC;border-radius:8px;
+        padding:0.85rem 1.1rem;margin-top:0.8rem;font-size:0.9rem;color:var(--navy);}
+  .callout b{font-weight:700;}
+
+  /* ── Directory controls ────────────────────────────────────── */
+  .controls{display:grid;grid-template-columns:2fr 1fr 1fr 1fr auto;gap:0.7rem;margin:1.2rem 0 0.2rem;}
+  .controls label{display:flex;flex-direction:column;gap:0.2rem;}
+  .controls input,.controls select,.controls button{min-height:42px;border:1px solid var(--mgray);background:#fff;
+        border-radius:6px;padding:0.5rem 0.7rem;color:var(--text);font-family:'Source Sans 3',sans-serif;font-size:0.9rem;}
+  .controls button{cursor:pointer;font-weight:700;background:var(--gold);color:var(--navy-dk);border:none;align-self:end;transition:background .15s,color .15s;}
+  .controls button:hover{background:var(--gold-dk);color:#fff;}
+  .resultsline{display:flex;justify-content:space-between;gap:0.6rem;color:var(--slate);font-size:0.8rem;margin:0.7rem 0.2rem;}
+
+  /* ── Tool cards ────────────────────────────────────────────── */
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0.9rem;}
+  .tool{background:#fff;border:1px solid var(--mgray);border-top:4px solid var(--navy);border-radius:8px;
+        padding:1.05rem 1.15rem;box-shadow:0 2px 12px rgba(10,52,118,0.07);display:flex;flex-direction:column;min-width:0;}
+  .toolhead{display:flex;justify-content:space-between;gap:0.7rem;align-items:flex-start;}
+  .tool h3{margin:0;font-size:1.08rem;color:var(--navy);line-height:1.2;}
+  .tool h3 a{text-decoration:none;color:var(--navy);}
+  .tool h3 a:hover{text-decoration:underline;}
+  .score{flex:none;text-align:center;background:var(--navy);color:var(--gold);border-radius:8px;padding:0.4rem 0.55rem;
+        font-family:'Playfair Display',serif;font-weight:800;font-size:1.1rem;line-height:1;}
+  .score small{display:block;font-size:0.5rem;color:var(--gold-lt);margin-top:3px;text-transform:uppercase;
+        font-family:'Source Sans 3',sans-serif;font-weight:700;letter-spacing:0.05em;}
+  .tags{display:flex;gap:0.35rem;flex-wrap:wrap;margin:0.6rem 0;}
+  .tag{border-radius:999px;background:var(--lgray);border:1px solid var(--mgray);padding:0.15rem 0.55rem;font-size:0.66rem;font-weight:700;color:var(--slate);}
+  .price{font-weight:800;color:var(--navy);margin:0.25rem 0;font-size:0.9rem;}
+  .tool p{margin:0.3rem 0;font-size:0.89rem;color:var(--text);line-height:1.5;}
+  .proscons{border-top:1px solid var(--mgray);margin-top:0.7rem;padding-top:0.7rem;font-size:0.85rem;}
+  .proscons p{margin:0.2rem 0;}
+  .proscons b{color:var(--green);}
+  .proscons .limit b{color:var(--navy-md);}
+  .sources{margin-top:auto;padding-top:0.8rem;font-size:0.78rem;}
+  .sources a{margin-right:0.7rem;font-weight:700;}
+  .confidence{font-size:0.72rem;color:var(--slate);margin-top:0.45rem;}
+  .confidence strong{color:var(--navy);}
+  .empty{display:none;text-align:center;padding:2.6rem;background:#fff;border:1px dashed var(--mgray);border-radius:8px;color:var(--slate);}
+
+  /* ── Matrix + methodology ──────────────────────────────────── */
+  .tablewrap{overflow:auto;}
+  tbody th{padding:0.6rem 0.8rem;border-bottom:1px solid var(--mgray);vertical-align:top;text-align:left;
+        font-family:'Playfair Display',serif;font-weight:700;color:var(--navy);background:var(--lgray);font-size:0.86rem;}
+  .method{display:grid;grid-template-columns:1fr 1fr;gap:1rem;}
+
+  @media (max-width:900px){
+    .summary{grid-template-columns:repeat(2,1fr);}
+    .charts,.method{grid-template-columns:1fr;}
+    .grid{grid-template-columns:1fr 1fr;}
+    .controls{grid-template-columns:1fr 1fr;} .controls label:first-child{grid-column:1/-1;}
+  }
+  @media (max-width:640px){
+    .summary,.grid,.controls{grid-template-columns:1fr;}
+    .barrow{grid-template-columns:112px 1fr 28px;}
+    th,td{min-width:130px;}
+  }
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="back-bar"><a href="../index.html"><span>←</span> AI for the Defense <span class="sep">/</span> <span data-i18n="pg.resources">Resources</span></a><div class="bb-right"><span class="bb-lang" data-i18n-picker></span></div></div>
+
+<header class="page">
+  <div class="header-inner">
+    <img class="hdr-ico" src="../assets/news-icon.png" alt="">
+    <span class="eyebrow">Take it with you · Market atlas</span>
+    <h1>Legal GenAI Market Atlas</h1>
+    <div class="header-sub">An evidence-weighted guide to legal generative-AI tools, and where human verification still matters</div>
+    <div class="header-meta">Fact-checked through July 21, 2026 · Informational only, and not legal, procurement, security, or investment advice</div>
+  </div>
+</header>
+
+<nav class="atlas-nav" aria-label="Page sections">
+  <div class="inner">
+    <a class="brand" href="#main">Legal AI · 2026</a>
+    <a href="#landscape">Landscape</a>
+    <a href="#directory">Tool directory</a>
+    <a href="#matrix">Phase matrix</a>
+    <a href="#methodology">Method</a>
+    <a href="#sources">Caveats</a>
+  </div>
+</nav>
+
+<main id="main" tabindex="-1">
+  <p class="lead-p">A current, evidence-weighted guide to credible legal generative-AI products: where they fit, what they cost, what users report, and where human verification still matters.</p>
+
+  <section class="summary" aria-label="Market summary">
+    <div class="metric"><b id="toolCount">40</b><span>credible products profiled</span></div>
+    <div class="metric"><b>9</b><span>legal-work phases mapped</span></div>
+    <div class="metric"><b id="publicPrice">—</b><span>publish a usable price</span></div>
+    <div class="metric"><b id="highConf">—</b><span>higher-confidence scores</span></div>
+  </section>
+
+  <section id="landscape" class="atlas-section">
+    <h2 class="section-label">Market landscape</h2>
+    <p class="lede">The market separates into database-grounded research, broad enterprise copilots, transactional tools embedded in Word or CLM, litigation and discovery systems, practice-management assistants, intake automation, and regulatory intelligence. “Best” is therefore a workflow-fit question, not a single leaderboard.</p>
+    <div class="charts">
+      <div class="apanel"><h3>Products by primary phase</h3><div id="phaseChart"></div></div>
+      <div class="apanel">
+        <h3>How to read the scores</h3>
+        <div class="legend"><span><i style="background:#102A54"></i>4.5+ strong</span><span><i style="background:#2F5F8F"></i>4.0–4.4 solid</span><span><i style="background:#4F6072"></i>&lt;4.0 mixed</span></div>
+        <p class="fine">Scores normalize public 5-star ratings when available. Where product-level reviews are sparse, a conservative editorial estimate triangulates independent directories, practitioner reports, benchmark evidence, product maturity, and recurring limitations. Confidence exposes the difference.</p>
+        <div class="callout"><b>Do not buy from the score alone.</b><br><span class="fine">Pilot on representative, privilege-safe matters. Measure citation validity, substantive error rate, redline acceptance, time saved, integration friction, and lawyer override rate.</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="directory" class="atlas-section">
+    <h2 class="section-label">Tool directory</h2>
+    <p class="lede">Search by name or capability, then filter by phase, buyer, price transparency, and evidence confidence. A tool may span several phases; its primary phase drives the landscape chart.</p>
+    <div class="controls">
+      <label><span class="fine">Search</span><input id="q" type="search" placeholder="e.g., redlining, PI, citations…" aria-label="Search tools"></label>
+      <label><span class="fine">Phase</span><select id="phase" aria-label="Filter by phase"><option value="">All phases</option></select></label>
+      <label><span class="fine">Buyer</span><select id="buyer" aria-label="Filter by buyer"><option value="">All buyers</option><option>Solo / small firm</option><option>Law firm</option><option>In-house</option><option>Enterprise</option></select></label>
+      <label><span class="fine">Evidence</span><select id="conf" aria-label="Filter by confidence"><option value="">Any confidence</option><option>High</option><option>Medium</option><option>Low</option></select></label>
+      <button id="reset" type="button">Reset</button>
+    </div>
+    <div class="resultsline"><span id="shown"></span><span>Scores are estimates, not warranties</span></div>
+    <div id="grid" class="grid"></div>
+    <div id="empty" class="empty">No tools match these filters.</div>
+  </section>
+
+  <section id="matrix" class="atlas-section">
+    <h2 class="section-label">Phase-fit matrix</h2>
+    <p class="lede">A shortlist by job-to-be-done. “Leading fit” reflects breadth, maturity, evidence, and workflow alignment, not universal superiority.</p>
+    <div class="tablewrap"><table><thead><tr><th>Legal-work phase</th><th>Leading fits</th><th>Best evaluation task</th><th>Typical failure mode</th></tr></thead><tbody id="matrixBody"></tbody></table></div>
+  </section>
+
+  <section id="methodology" class="atlas-section">
+    <h2 class="section-label">Scoring methodology</h2>
+    <div class="method">
+      <div class="apanel">
+        <h3>Estimated average review score / 5</h3>
+        <ol>
+          <li>Collect current public product ratings from G2, Capterra, GetApp, Software Advice, or Trustpilot where discoverable.</li>
+          <li>Weight platforms by review count (square-root weighting limits domination by a single directory) and recency.</li>
+          <li>Cross-check qualitative themes against reputable legal-tech coverage, practitioner discussions, and independent empirical studies.</li>
+          <li>When no reliable product-level rating exists, assign a clearly marked editorial estimate, capped at <b>medium confidence</b>.</li>
+        </ol>
+        <p class="fine">Displayed to one decimal because cross-platform populations and product editions differ. It is an estimated sentiment indicator, not a scientific efficacy metric.</p>
+      </div>
+      <div class="apanel">
+        <h3>Confidence rubric</h3>
+        <p><b>High:</b> substantial verified-review volume and/or multiple independent sources with stable product identity.</p>
+        <p><b>Medium:</b> some product-level reviews or strong triangulation, but modest sample, edition ambiguity, or enterprise-only opacity.</p>
+        <p><b>Low:</b> sparse independent reviews; the score leans on editorial assessment and should be treated as a hypothesis.</p>
+        <h3>Efficacy lens</h3>
+        <p class="fine">Assessment weighs grounding and citations, task specificity, workflow integration, review sentiment, demonstrated time savings, transparency, and known failure modes. Vendor claims are labeled as such and never treated as independent proof.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="sources" class="atlas-section">
+    <h2 class="section-label">Caveats and responsible use</h2>
+    <div class="warn"><strong>Legal AI is assistive, not autonomous legal judgment.</strong> Prices change, negotiated enterprise contracts vary, ratings can describe a broader platform rather than its newest AI module, and vendors may rename or bundle products. Verify controlling law, quotations, citations, defined terms, calculations, confidentiality settings, data residency, retention, privilege, and professional-responsibility duties before relying on output.</div>
+    <p class="fine">Scope: credible, currently marketed tools with meaningful generative-AI capability for legal work. Excludes generic chatbots except where a legal-specific product or workflow exists; excludes discontinued products and thin “wrapper” apps with insufficient evidence. “Contact sales” means no reliable public list price was found on the official site as of the verification date. All prices are USD unless noted, usually before tax and subject to contract terms.</p>
+    <p class="fine" style="margin-top:0.7rem;">Core cross-market sources: <a href="https://www.g2.com/categories/ai-legal-assistant" target="_blank" rel="noopener">G2 AI Legal Assistant category</a> · <a href="https://arxiv.org/abs/2405.20362" target="_blank" rel="noopener">Stanford/Yale legal-research reliability study</a> · <a href="https://www.legaltechmag.com/best-legal-ai-tools" target="_blank" rel="noopener">LegalTechMag 2026 market guide</a>. Each card links to its official product source and, where available, an independent review source.</p>
+  </section>
+</main>
+
+<footer class="page">
+  <div class="fin">
+    <div class="brand">Texas Criminal Defense Lawyers Association</div>
+    <p><a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · <a href="https://mglearn.github.io/legalai">mglearn.github.io/legalai</a></p>
+    <p class="cc">AI for the Defense · Legal GenAI Market Atlas · Research snapshot July 21, 2026 · Informational only, not legal, procurement, security, or investment advice</p>
+  </div>
+</footer>
+
+<script>
+const P={R:'Research',D:'Drafting',C:'Contract review / redlining',L:'Litigation / discovery',U:'Due diligence',M:'Case management / workflow',I:'Intake / client service',O:'Compliance',G:'General legal assistant'};
+const tools=[
+['CoCounsel / Westlaw','https://legal.thomsonreuters.com/en/products/cocounsel-legal','R',['R','D','L','G'],'Law firm|Enterprise','Contact sales / often bundled','Database-grounded research, drafting, document analysis and litigation workflows.','Deep Westlaw/Practical Law grounding; cited answers; broad task coverage.','Premium ecosystem; output still requires source checking; public pricing opaque.',4.3,'Medium','https://www.g2.com/products/cocounsel/reviews'],
+['Lexis+ AI / Protégé','https://www.lexisnexis.com/en-us/products/lexis-plus-ai.page','R',['R','D','L','G'],'Law firm|Enterprise','Contact sales','Conversational research, drafting, summarization and firm-content work grounded in Lexis.','Strong legal corpus and linked authority; personalized workflow direction.','Subscription complexity; occasional retrieval/citation errors remain possible.',4.2,'Medium','https://www.g2.com/products/lexis/reviews'],
+['vLex Vincent AI','https://vlex.com/products/vincent-ai','R',['R','D','U','G'],'Law firm|Enterprise','Contact sales','Cross-jurisdiction research, document analysis, timelines and drafting.','Exceptional international coverage; source-linked answers.','Coverage depth varies by jurisdiction; now tied to broader Clio ecosystem.',4.5,'Medium','https://www.g2.com/products/vlex/reviews'],
+['Harvey','https://www.harvey.ai/','G',['R','D','C','U','L','G'],'Law firm|In-house|Enterprise','Contact sales','Enterprise copilot for research, drafting, analysis and high-volume legal workflows.','Flexible, polished workflows; strong large-firm adoption and integrations.','High/opaque cost; efficacy depends on connected content and implementation.',4.4,'Medium','https://www.g2.com/products/harvey/reviews'],
+['Legora','https://legora.com/','G',['R','D','C','U','G'],'Law firm|Enterprise','Contact sales','Collaborative AI workspace for legal research, drafting and document review.','Team collaboration and Word-centric workflow; rapid product development.','Limited public price and independent review depth.',4.4,'Low','https://www.g2.com/products/legora/reviews'],
+['Spellbook','https://www.spellbook.legal/','C',['D','C','G'],'Solo / small firm|Law firm|In-house','Contact sales; 7-day trial','Word-native contract drafting, review, playbooks, benchmarks and document libraries.','Very low workflow friction for transactional lawyers; fast redlines.','Core add-in is Word-centric; PDFs require conversion or companion product.',4.6,'Medium','https://www.g2.com/products/spellbook/reviews'],
+['LegalOn','https://www.legalontech.com/','C',['C','D','M','U','G'],'Solo / small firm|In-house|Enterprise','Contact sales; free trial','Attorney-built and custom playbook review, redlining, repository and matter agents.','Strong out-of-box playbooks; direct edit preview; broad contracting suite.','Quote-based pricing; best value depends on playbook and jurisdiction fit.',4.5,'Medium','https://www.g2.com/products/legalon/reviews'],
+['Luminance','https://www.luminance.com/','C',['C','U','O'],'In-house|Law firm|Enterprise','Contact sales','Contract negotiation, repository analysis and high-volume due diligence.','Strong clause anomaly detection and portfolio-scale analysis.','Enterprise deployment and tuning; limited public pricing.',4.6,'High','https://www.g2.com/products/luminance/reviews'],
+['Robin AI','https://www.robinai.com/','C',['C','D','M'],'In-house|Enterprise','Contact sales','AI contract review paired with optional legal-service support and CLM.','Playbook-led negotiation and human-in-loop service option.','Opaque pricing; narrower public review footprint than mature CLM vendors.',4.4,'Medium','https://www.g2.com/products/robin-ai/reviews'],
+['Ironclad AI','https://ironcladapp.com/product/ai','M',['C','M','U','G'],'In-house|Enterprise','Contact sales','Enterprise CLM with AI review, drafting, repository search and workflow agents.','Mature workflow, integrations and contract system of record.','Implementation complexity; broader CLM ratings may not isolate AI quality.',4.5,'High','https://www.g2.com/products/ironclad/reviews'],
+['LinkSquares','https://linksquares.com/','M',['C','M','U'],'In-house|Enterprise','Contact sales','CLM, contract intelligence, drafting and AI-powered repository search.','Strong post-signature visibility and practical in-house workflows.','Best for established contract volumes; implementation effort.',4.6,'High','https://www.g2.com/products/linksquares/reviews'],
+['Juro','https://juro.com/','M',['D','C','M'],'In-house','Contact sales; demo','Browser-native contract lifecycle, AI review and business self-service.','Accessible interface and collaborative contracting; strong integrations.','Less suited to complex litigation/research; pricing is quote-led.',4.7,'High','https://www.g2.com/products/juro/reviews'],
+['ContractPodAi Leah','https://contractpodai.com/leah/','G',['C','M','O','G'],'In-house|Enterprise','Contact sales','Legal AI platform spanning contracts, matters, compliance and enterprise knowledge.','Broad in-house scope and agentic workflow design.','Platform breadth raises implementation/governance burden.',4.5,'Medium','https://www.g2.com/products/contractpodai/reviews'],
+['Kira (Litera)','https://www.litera.com/products/kira','U',['U','C'],'Law firm|Enterprise','Contact sales','Machine-learning and generative extraction for diligence and contract analysis.','Mature high-volume diligence; custom clause models.','Setup/training and enterprise cost; less conversational than broad copilots.',4.6,'High','https://www.g2.com/products/kira-systems/reviews'],
+['Litera Foundation + AI','https://www.litera.com/','M',['D','M','G'],'Law firm|Enterprise','Contact sales','Firm knowledge, drafting, document lifecycle and AI-enabled workflow.','Deep Microsoft/legal desktop integration and enterprise footprint.','Product family is complex; AI experience varies by module.',4.3,'Medium','https://www.g2.com/products/litera/reviews'],
+['Everlaw AI','https://www.everlaw.com/ai/','L',['L','U'],'Law firm|In-house|Enterprise','From ~$250/mo reported; quote required','Cloud discovery with cited generative Q&A, review assistance and case narrative tools.','Excellent usability sentiment; answers trace to source documents.','Data-volume economics; advanced workflows still demand e-discovery expertise.',4.9,'High','https://www.getapp.com/legal-law-software/a/everlaw/'],
+['Relativity aiR','https://www.relativity.com/data-solutions/air/','L',['L','U'],'Law firm|Enterprise','Contact sales / usage-based','Generative review, privilege, case strategy and discovery inside RelativityOne.','Scale, ecosystem and sophisticated review controls.','Complexity and variable per-document/usage cost; specialist administration.',4.6,'High','https://www.g2.com/products/relativity/reviews'],
+['DISCO Cecilia','https://www.csdisco.com/cecilia','L',['L','U'],'Law firm|Enterprise','Contact sales','Cited Q&A, timelines, summaries and document review over discovery collections.','Purpose-built litigation grounding; fast chronology and fact synthesis.','Tied to DISCO data/workflow; public AI-specific ratings limited.',4.4,'Medium','https://www.g2.com/products/disco-ediscovery/reviews'],
+['Reveal AI','https://www.revealdata.com/','L',['L','U'],'Law firm|Enterprise','Contact sales','AI-driven e-discovery, investigations, review and generative analysis.','Broad analytics and review stack; good complex-matter fit.','Steeper learning curve; pricing and module boundaries opaque.',4.4,'Medium','https://www.g2.com/products/reveal-data/reviews'],
+['Logikcull','https://www.logikcull.com/','L',['L'],'Solo / small firm|Law firm|In-house','$395/mo+ published tiers','Self-service discovery with automation and AI-assisted document workflows.','Easy setup and transparent entry price; strong for smaller matters.','Less depth for the largest, most complex enterprise reviews.',4.7,'High','https://www.g2.com/products/logikcull/reviews'],
+['Eve','https://www.eve.legal/','L',['I','D','L','M'],'Law firm','Contact sales','Plaintiff-firm AI for intake, medical records, demands, drafting and case strategy.','Practice-specific workflows and playbooks; strong PI focus.','Narrower fit outside plaintiff litigation; public price unavailable.',4.7,'Medium','https://www.g2.com/products/eve-legal/reviews'],
+['EvenUp','https://www.evenuplaw.com/','L',['D','L','M'],'Law firm','Contact sales','Personal-injury demand packages, medical chronology and claim intelligence.','Deep PI specialization and repeatable demand workflow.','Not general-purpose; output quality depends on record completeness.',4.6,'High','https://www.g2.com/products/evenup/reviews'],
+['Supio','https://www.supio.com/','L',['L','D','M'],'Law firm','Contact sales','AI case intelligence for personal injury and mass tort records.','Medical-record synthesis and litigation-specific case preparation.','Specialist scope; limited public pricing and independent rating depth.',4.6,'Medium','https://www.g2.com/products/supio/reviews'],
+['Filevine AI','https://www.filevine.com/platform/ai/','M',['M','D','L'],'Law firm','Contact sales','Case management with AI drafting, summaries, timekeeping and document intelligence.','AI embedded where matter work happens; extensive legal workflows.','Platform learning curve; ratings often cover the full system, not AI alone.',4.5,'High','https://www.g2.com/products/filevine/reviews'],
+['Clio Duo','https://www.clio.com/features/duo/','M',['M','D','I','G'],'Solo / small firm|Law firm','Add-on; contact sales','Practice-management assistant for matters, documents, tasks, billing and client work.','Excellent context from Clio Manage; broad small-firm adoption.','Requires Clio ecosystem; not a primary authoritative research engine.',4.6,'High','https://www.clio.com/reviews/'],
+['MyCase IQ','https://www.mycase.com/features/ai/','M',['M','D','G'],'Solo / small firm|Law firm','Included/plan-dependent; see pricing','Matter summaries, document drafting and workflow assistance in MyCase.','Convenient for existing users; practical daily-work automation.','Limited outside platform; AI-specific evidence is still thin.',4.4,'Medium','https://www.capterra.com/p/121101/MyCase/reviews/'],
+['Lawmatics AI','https://www.lawmatics.com/','I',['I','M'],'Solo / small firm|Law firm','Contact sales','Legal CRM and intake automation with AI messaging, summaries and lead workflows.','Strong intake-to-retainer automation and marketing integration.','Not for substantive research; setup discipline determines value.',4.7,'High','https://www.g2.com/products/lawmatics/reviews'],
+['LawDroid','https://lawdroid.com/','I',['I','D','R','G'],'Solo / small firm|Law firm','$25/user/mo Copilot; $99/mo Builder','Legal assistant plus client-facing chatbot and document automation.','Unusually transparent, low entry price; fast intake deployment.','Research depth and assurance below premium database-grounded systems.',4.5,'Medium','https://www.capterra.com/p/202105/LawDroid/reviews/'],
+['Smith.ai','https://smith.ai/','I',['I','M'],'Solo / small firm|Law firm','AI reception from $95/mo; human intake higher','AI/human receptionist, lead qualification, scheduling and legal intake.','24/7 coverage, handoff and practice-management integrations.','Service/intake tool, not substantive legal analysis; usage costs can grow.',4.8,'High','https://www.g2.com/products/smith-ai/reviews'],
+['Docketwise AI','https://www.docketwise.com/','M',['I','D','M'],'Solo / small firm|Law firm','$69/user/mo+; AI by plan','Immigration case management, forms, intake and AI-assisted drafting/workflow.','Purpose-built immigration forms and client portal.','Jurisdiction/practice-specific; verify all generated filing content.',4.7,'High','https://www.capterra.com/p/176617/Docketwise/reviews/'],
+['Clearbrief','https://clearbrief.com/','D',['D','L'],'Solo / small firm|Law firm|Enterprise','Contact sales / trial','Word-native litigation writing, record-linked citations and fact checking.','Excellent source-to-sentence traceability and citation workflow.','Best with a well-organized record; not a full research database.',4.7,'Medium','https://www.g2.com/products/clearbrief/reviews'],
+['Paxton AI','https://www.paxton.ai/','G',['R','D','C','G'],'Solo / small firm|Law firm|In-house','$99/user/mo published','Legal research, drafting, document analysis and contract review.','Accessible price and broad solo/small-team utility.','Smaller corpus/product evidence than incumbent research platforms.',4.4,'Medium','https://www.g2.com/products/paxton-ai/reviews'],
+['Descrybe.ai','https://descrybe.ai/','R',['R'],'Solo / small firm|Law firm','Free / paid options may vary','Plain-language US case-law research and multilingual summaries.','Accessible and low-cost discovery of relevant authority.','Narrower coverage and workflow depth than paid incumbent databases.',4.3,'Low','https://descrybe.ai/'],
+['Blue J','https://www.bluej.com/','R',['R','O','D'],'Law firm|In-house|Enterprise','Contact sales','Generative tax research and analysis grounded in authoritative sources.','High-value specialization; cited tax answers and memo support.','Primarily tax; efficacy depends on jurisdiction/content coverage.',4.6,'Medium','https://www.g2.com/products/blue-j/reviews'],
+['Solve Intelligence','https://www.solveintelligence.com/','D',['D','R'],'Law firm|Enterprise','Contact sales','Patent drafting, prosecution analysis and office-action response workflows.','Deep patent specificity; strong document and claim workflow fit.','Not general legal AI; requires expert patent review.',4.6,'Medium','https://www.g2.com/products/solve-intelligence/reviews'],
+['Norm AI','https://www.norm.ai/','O',['O','G'],'In-house|Enterprise','Contact sales','Regulatory AI agents that turn rules and policies into executable compliance workflows.','Purpose-built controls and enterprise regulatory operations.','Emerging category; implementation and validation burden; sparse reviews.',4.4,'Low','https://www.norm.ai/'],
+['Regology / Reggi','https://www.regology.com/','O',['O','R'],'In-house|Enterprise','Reggi free; Pro $1,700/user/mo (3-year); enterprise quote','Cited regulatory Q&A, law library and change-management workflows.','Broad regulatory content and transparent professional price.','High professional-tier cost; coverage requirements must be scoped carefully.',4.5,'Medium','https://www.regology.com/pricing'],
+['ClauseBase','https://www.clausebase.com/','D',['D','C'],'Law firm|In-house','From €79/user/mo; tiers vary','Clause-based document automation with AI-assisted drafting and knowledge reuse.','Rigorous modular drafting and clause governance.','Authoring model requires setup and training; not broad legal research.',4.6,'Medium','https://www.capterra.com/p/210554/ClauseBase/reviews/'],
+['DraftWise','https://www.draftwise.com/','D',['D','C','G'],'Law firm|Enterprise','Contact sales','Transactional drafting and negotiation grounded in firm precedent.','Turns institutional deal history into practical drafting suggestions.','Best with clean precedent corpus; enterprise-only opacity.',4.6,'Medium','https://www.g2.com/products/draftwise/reviews'],
+['Definely','https://www.definely.com/','D',['D','C'],'Law firm|In-house|Enterprise','Contact sales','Word-native drafting, defined-term navigation, review and proofreading.','Excellent document navigation and transactional usability.','Centered on Word/document work; not a research or matter platform.',4.7,'High','https://www.g2.com/products/definely/reviews']
+].map(x=>({name:x[0],url:x[1],primary:P[x[2]],phases:x[3].map(k=>P[k]),buyers:x[4].split('|'),price:x[5],use:x[6],strength:x[7],limit:x[8],score:x[9],conf:x[10],review:x[11]}));
+const phaseNotes={
+'Intake / client service':['Smith.ai, Lawmatics, LawDroid, Eve','Run 20 real inquiry scenarios; measure qualification accuracy, handoff, booking and abandonment.','Overconfident qualification, missed urgency, poor escalation or consent capture.'],
+'Research':['CoCounsel, Lexis+ AI, vLex Vincent, Blue J','Use a closed set of recent, jurisdiction-specific questions with a lawyer-built answer key.','Plausible but unsupported propositions, stale law or wrong jurisdiction.'],
+'Drafting':['Clearbrief, Spellbook, DraftWise, Definely','Compare first drafts/redlines against an approved precedent and track accepted edits.','Invented facts, inconsistent defined terms, style drift or hidden legal assumptions.'],
+'Contract review / redlining':['LegalOn, Luminance, Spellbook, Robin AI','Blind-test 30 agreements against the team playbook; score recall, precision and redline acceptance.','Missed nonstandard risk, noisy flags, weak table/schedule handling.'],
+'Litigation / discovery':['Everlaw, Relativity aiR, DISCO Cecilia, Reveal','Use a known review set; test source traceability, chronology recall and privilege errors.','Confident synthesis that omits key documents or crosses privilege boundaries.'],
+'Due diligence':['Kira, Luminance, Harvey, vLex Vincent','Use a completed deal set and compare extraction against the final diligence matrix.','Extraction inconsistency across amendments, exhibits, OCR and unusual clauses.'],
+'Case management / workflow':['Clio Duo, Filevine AI, Ironclad, Juro','Measure task completion, matter-context accuracy, time saved and unauthorized actions.','Wrong-matter context, duplicate tasks, unreliable dates or silent workflow changes.'],
+'Compliance':['Regology, Norm AI, Blue J, ContractPodAi','Test against a controlled regulatory-change sample with citations and SME adjudication.','Incomplete coverage, misclassified obligation or untracked source change.'],
+'General legal assistant':['Harvey, Legora, CoCounsel, Lexis+ AI','Pilot 3-5 bounded workflows; measure usable-output rate, verification time and adoption.','Breadth without dependable grounding; weak permissions or knowledge hygiene.']};
+const phaseSel=document.querySelector('#phase');Object.values(P).forEach(v=>phaseSel.insertAdjacentHTML('beforeend',`<option>${v}</option>`));
+function esc(s){return String(s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function render(){const q=document.querySelector('#q').value.toLowerCase(),ph=phaseSel.value,b=document.querySelector('#buyer').value,c=document.querySelector('#conf').value;const f=tools.filter(t=>(!q||JSON.stringify(t).toLowerCase().includes(q))&&(!ph||t.phases.includes(ph))&&(!b||t.buyers.includes(b))&&(!c||t.conf===c));document.querySelector('#shown').textContent=`Showing ${f.length} of ${tools.length}`;document.querySelector('#empty').style.display=f.length?'none':'block';document.querySelector('#grid').innerHTML=f.map(t=>`<article class="tool"><div class="toolhead"><h3><a href="${t.url}" target="_blank" rel="noopener">${esc(t.name)} ↗</a></h3><div class="score">${t.score.toFixed(1)}<small>est. / 5</small></div></div><div class="tags">${t.phases.map(x=>`<span class="tag">${x}</span>`).join('')}</div><div class="price">${esc(t.price)}</div><p>${esc(t.use)}</p><div class="proscons"><p><b>Strength:</b> ${esc(t.strength)}</p><p class="limit"><b>Limit:</b> ${esc(t.limit)}</p></div><div class="sources"><a href="${t.url}" target="_blank" rel="noopener">Official</a><a href="${t.review}" target="_blank" rel="noopener">Review / evidence</a><div class="confidence"><strong>${t.conf} confidence</strong> · ${t.conf==='High'?'substantial review evidence':t.conf==='Medium'?'moderate triangulation':'sparse independent evidence'}</div></div></article>`).join('')}
+['q','phase','buyer','conf'].forEach(id=>document.querySelector('#'+id).addEventListener('input',render));document.querySelector('#reset').onclick=()=>{['q','phase','buyer','conf'].forEach(id=>document.querySelector('#'+id).value='');render()};
+const counts={};tools.forEach(t=>counts[t.primary]=(counts[t.primary]||0)+1);document.querySelector('#phaseChart').innerHTML=Object.entries(counts).sort((a,b)=>b[1]-a[1]).map(([k,v])=>`<div class="barrow"><span>${k}</span><span class="bar"><i style="width:${v/Math.max(...Object.values(counts))*100}%"></i></span><b>${v}</b></div>`).join('');
+document.querySelector('#matrixBody').innerHTML=Object.entries(phaseNotes).map(([k,v])=>`<tr><th>${k}</th><td>${v[0]}</td><td>${v[1]}</td><td>${v[2]}</td></tr>`).join('');document.querySelector('#toolCount').textContent=tools.length;document.querySelector('#publicPrice').textContent=Math.round(tools.filter(t=>!/^Contact|^Add-on|^Included/.test(t.price)).length/tools.length*100)+'%';document.querySelector('#highConf').textContent=tools.filter(t=>t.conf==='High').length;render();
+</script>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/pages-i18n.js"></script>
+</body>
+</html>
