@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Theme and Theory | AI for the Defense | TCDLA</title>
+<meta name="description" content="The trial-advocacy staple applied to one fictional story: a theory that explains every fact the other side will prove, a theme line a juror can carry into deliberations, disciplined labels, and a repetition plan.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/pages.css">
+<style>
+  .tablewrap{overflow-x:auto;margin-bottom:0.6rem;}
+
+  .beatbox{background:#fff;border:1px solid var(--mgray);border-left:6px solid var(--gold);border-radius:10px;
+        padding:1.1rem 1.3rem;margin-bottom:0.8rem;box-shadow:0 2px 12px rgba(10,52,118,0.07);}
+  .beatbox .beat{font-size:0.66rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:0.2rem;}
+  .beatbox h3{font-size:1.12rem;color:var(--navy);margin:0 0 0.4rem;}
+  .beatbox p{font-size:0.98rem;line-height:1.62;color:var(--text);margin-bottom:0.55rem;}
+  .beatbox p:last-child{margin-bottom:0;}
+  .beatbox .test{font-family:'Source Code Pro',monospace;font-size:0.78rem;color:var(--slate);
+        border-top:1px dashed var(--mgray);padding-top:0.5rem;margin-top:0.6rem;display:block;}
+
+  .pull{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;color:var(--navy);
+        font-size:1.16rem;line-height:1.45;background:#EEF2F7;border-left:5px solid var(--gold);border-radius:8px;
+        padding:0.9rem 1.1rem;margin:0.9rem 0 1rem;}
+
+  .cand{display:grid;grid-template-columns:2rem 1fr;gap:0.8rem;align-items:start;background:#fff;
+        border:1px solid var(--mgray);border-radius:8px;padding:0.85rem 1rem;margin-bottom:0.6rem;}
+  .cand.win{border:2px solid var(--gold-dk);background:#EEF2F7;}
+  .cand .n{width:2rem;height:2rem;border-radius:50%;background:var(--navy);color:var(--gold);
+        font-family:'Playfair Display',serif;font-weight:800;font-size:0.95rem;display:flex;align-items:center;justify-content:center;}
+  .cand.win .n{background:var(--gold-dk);color:#fff;}
+  .cand .line{font-family:'Playfair Display',serif;font-weight:700;font-size:1.1rem;color:var(--navy);line-height:1.35;}
+  .cand .why{font-size:0.9rem;color:var(--slate);line-height:1.5;margin-top:0.25rem;}
+  .cand .verdict{font-size:0.66rem;font-weight:800;letter-spacing:0.1em;text-transform:uppercase;color:var(--gold-dk);}
+
+  .rubric td:first-child{font-weight:700;color:var(--navy);width:24%;}
+  .rubric td:last-child{width:24%;font-family:'Source Code Pro',monospace;font-size:0.78rem;color:var(--slate);}
+  .rubric tr.fmt-check td:first-child::after{content:' ▸';color:var(--gold-dk);}
+
+  .labels td:first-child{width:22%;font-weight:700;color:var(--navy);}
+  .labels td:nth-child(2){width:22%;color:var(--slate);text-decoration:line-through;}
+  .labels td:nth-child(3){width:26%;font-weight:600;color:var(--gold-dk);}
+
+  @media (max-width:760px){.cand{grid-template-columns:1fr;}.cand .n{margin-bottom:0.2rem;}}
+  @media print{.back-bar,footer.page{display:none;}body{background:#fff;}.beatbox,.cand,table{break-inside:avoid;box-shadow:none;}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="back-bar"><a href="storytelling.html"><span>←</span> Storytelling <span class="sep">/</span> <span data-i18n="pg.resources">Resources</span></a><div class="bb-right"><span class="bb-lang" data-i18n-picker></span></div></div>
+
+<header class="page">
+  <div class="header-inner">
+    <img class="hdr-ico" src="../assets/storytelling-icon.svg" alt="">
+    <span class="eyebrow">Storytelling · Format three</span>
+    <h1>Theme and Theory</h1>
+    <div class="header-sub">One sentence a juror carries out the door, sitting on top of a theory that explains every fact the other side will prove</div>
+    <div class="header-meta">Texas Criminal Defense Lawyers Association · Facilitator <a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · Every person and case below is fictional</div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="warn"><strong>Fictional, and not legal advice.</strong> The lawyer, the clients, the county, and the case name <em>State v. Whitaker</em> are invented for this session. <em>State v. Whitaker</em> does not exist and should never be cited. Nothing here is legal advice, and no fact pattern below should be used as authority.</div>
+
+  <p class="lead-p">Your <strong>theory</strong> is the explanation. It is the account of what happened that fits the evidence, including the evidence you wish did not exist. A theory has to be able to absorb the other side's best proof and still stand up, because the other side is going to put that proof in front of the room whether your story is ready for it or not. Your <strong>theme</strong> is the handle on that explanation. It is one short sentence, in ordinary words, that a listener can repeat to somebody else an hour later without notes.</p>
+
+  <p class="lead-p">The order matters. Build the theory first, then find the theme inside it. A theme written before the theory is just a slogan: it sounds good in your office, it survives exactly one hard fact, and then a juror in the back row who never liked it gets to say so out loud in a room you are not in. A theme that grows out of a tested theory does the opposite. It gives the jurors who already agree with you the words to argue on your behalf.</p>
+
+  <h2 class="section-label">The beats</h2>
+
+  <div class="beatbox">
+    <div class="beat">Beat one</div>
+    <h3>The theory</h3>
+    <p>Write the explanation that accounts for every fact in the case, not just the helpful ones. Start by listing what the State will actually prove, in their words, at their strongest. Then ask whether your account of events survives each item on that list without you having to call a witness a liar or ask a juror to ignore a document.</p>
+    <p>A theory that only explains your good facts is not a theory. It is a wish. The test is simple: hand your theory to somebody who has read the State's file and ask them to break it. If it only holds when you are in the room defending it, it will not hold in deliberation, where you are not.</p>
+    <span class="test">Test: can it absorb their single best fact and still be true?</span>
+  </div>
+
+  <div class="beatbox">
+    <div class="beat">Beat two</div>
+    <h3>The theme line</h3>
+    <p>One sentence. Under about ten words. No legal jargon, no terms of art, nothing a juror would have to have explained to them. If the line contains a word you learned in law school, it is not a theme yet.</p>
+    <p>The theme is not a summary of the theory. It is the door into it. The right line is the one a juror can say back verbatim, and would be willing to say out loud to eleven other people, which means it also has to be a sentence a reasonable person is not embarrassed to repeat. Write three candidates, never one, and let the room pick.</p>
+    <span class="test">Test: can a listener repeat it word for word an hour later?</span>
+  </div>
+
+  <div class="beatbox">
+    <div class="beat">Beat three</div>
+    <h3>Labels</h3>
+    <p>Decide, before you open your mouth, what you will call every person, object, and event in the case. Then use those words every single time, from voir dire through closing, without variation. Labels are how a theme gets carried by the evidence instead of by your voice.</p>
+    <p>A label is not a characterization you argue for. It is an accurate name that happens to be the one that matters. The other side is doing this too, usually in the opposite direction, and the room will absorb whichever set of names it hears more often. Inconsistency is the only real failure mode: three names for the same document tells the jury the document was not important enough for you to settle on one.</p>
+    <span class="test">Test: is there exactly one name per thing, used every time?</span>
+  </div>
+
+  <div class="beatbox">
+    <div class="beat">Beat four</div>
+    <h3>The repetition plan</h3>
+    <p>Write down, in advance, every place the theme will appear. Voir dire, where you find out whether the room can hear it at all. Opening, where it is stated plainly and then earned. Every cross, where at least one answer should land the theme without you saying it. Closing, where you say it first, prove it, and say it last.</p>
+    <p>Repetition is not saying it more. It is placing it. A theme said twenty times in one hour sounds like a sales pitch. The same theme placed once in each phase, and confirmed each time by a different witness or exhibit, sounds like something the case itself keeps producing.</p>
+    <span class="test">Test: does each placement come from evidence rather than from you?</span>
+  </div>
+
+  <h2 class="section-label">The story, framed</h2>
+  <p class="lead-p">The canonical story is <em>Forty-One Seconds</em>. Dana Reyes, a solo defender in a small Texas county with forty-one open files. Marcus Trejo, nineteen, eight weeks from finishing a nursing assistant program. A motion to suppress drafted at eleven at night by a chatbot, four Texas citations, three of them real. The fourth, <em>State v. Whitaker</em>, invented and filed. Then the change of method, the grounding in the record and the inspect step, and Ruben Salas, a welder with two kids, whose dispatch log did not match his offense report by forty-one seconds. Every fact below is identical to that version.</p>
+
+  <div class="panel">
+    <h2>The theory</h2>
+    <p>Two motions came out of the same office, from the same lawyer, in the same year, using the same tool, and they came out opposite. The variable was not the technology and it was not Dana's character. In the first case the machine was asked to remember, and nothing that came back was read against a source: a citation that looked exactly like the three real ones beside it went into a filing without anyone opening it. In the second case the machine was handed the record and required to point at it, and a human being then opened the dispatch log herself, found the line, read it three times, and confirmed it before she argued a word. The forty-one seconds in the Salas file was not found by intelligence. It was found by reading. Same lawyer, same tool, and the only thing that changed was whether anybody read.</p>
+    <p>Notice what the theory has to carry. Marcus Trejo actually possessed what he was charged with. Dana actually filed the fake citation, and she cannot say otherwise. The output that came back at eleven at night really was clean, confident, and correctly formatted, which is exactly why it worked. And in the Salas case, the machine really did produce something useful, so the theory cannot be that the tool is worthless. All four of those facts are the other side's, and the theory has to be true with all four of them in the room. It is: none of them changes the claim that the failure was a reading failure and the success was a reading success.</p>
+  </div>
+
+  <h3 style="color:var(--navy);font-size:1.05rem;margin:1.2rem 0 0.5rem;">Three candidate theme lines</h3>
+  <p class="lead-p">Do not bring one. Bring three, say them to people who do not work for you, change the subject for twenty minutes, and then ask what the story was about. The line that comes back unprompted is the theme.</p>
+
+  <div class="cand">
+    <span class="n">1</span>
+    <div>
+      <div class="line">Verification is a professional obligation, not a preference.</div>
+      <div class="verdict">Cut</div>
+      <div class="why">True, and dead on arrival. It is a rule, not a sentence anybody repeats. Eleven words, two of them abstractions, and nothing in it a listener can picture. Lines like this get nodded at and then forgotten in the parking lot.</div>
+    </div>
+  </div>
+
+  <div class="cand">
+    <span class="n">2</span>
+    <div>
+      <div class="line">Forty-one seconds, and forty-one files.</div>
+      <div class="verdict">Cut</div>
+      <div class="why">Memorable, and it is the most seductive of the three, which is why it is dangerous. The parallel is a coincidence of numbers. It implies a connection between the caseload and the discrepancy that the record does not support, so it fails the honesty test before it ever reaches a jury. Catchy is not the standard. Provable is.</div>
+    </div>
+  </div>
+
+  <div class="cand win">
+    <span class="n">3</span>
+    <div>
+      <div class="line">The machine remembered. Nobody read.</div>
+      <div class="verdict">Winner</div>
+      <div class="why">Five words, two sentences, no jargon, and it is the theory in miniature. It names the mechanism of the failure without naming a villain, so the room is not asked to hate anyone in order to agree. It is provable from the record in both halves of the story: in the Trejo file nobody read, and in the Salas file somebody did. And it inverts cleanly for the second half, which is what a theme has to do if it is going to carry a whole story rather than half of one.</div>
+    </div>
+  </div>
+
+  <p class="pull">The machine remembered. Nobody read.</p>
+
+  <h3 style="color:var(--navy);font-size:1.05rem;margin:1.5rem 0 0.5rem;">Labels</h3>
+  <p class="lead-p">These are the words, every time. The middle column is what you will say by accident if you have not decided in advance.</p>
+
+  <div class="tablewrap">
+    <table class="labels">
+      <thead><tr><th>The thing</th><th>Lazy name</th><th>The label</th><th>Why this one</th></tr></thead>
+      <tbody>
+        <tr><td>The Trejo filing</td><td>the motion</td><td>the unread motion</td><td>Puts the failure in the noun. It is accurate: nobody opened the fourth case before it was filed.</td></tr>
+        <tr><td>The Salas discrepancy</td><td>the timestamp</td><td>the clock that did not match</td><td>A timestamp is trivia. A clock that did not match is a problem a juror can hold without a tutorial.</td></tr>
+        <tr><td><em>State v. Whitaker</em></td><td>the hallucination</td><td>the case that was never there</td><td>Jargon-free and precise. It also avoids a word that sounds like it excuses somebody by blaming software.</td></tr>
+        <tr><td>The tool</td><td>AI</td><td>the machine</td><td>Plain, neutral, and slightly cold. It keeps the tool from becoming either a wizard or a defendant.</td></tr>
+        <tr><td>The grounding step</td><td>using AI properly</td><td>handing it the record</td><td>Describes an action anybody can picture, and one a witness can testify to having done.</td></tr>
+        <tr><td>The inspect step</td><td>double-checking</td><td>opening the document myself</td><td>Names a physical act. Dana opened the dispatch records, found the line, read it three times.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="color:var(--navy);font-size:1.05rem;margin:1.5rem 0 0.5rem;">The repetition plan</h3>
+  <p class="lead-p">Four placements. Each one is confirmed by something other than your voice.</p>
+
+  <div class="cards c2">
+    <div class="tile"><div class="tag">Placement one</div><h3>Voir dire</h3><p>Never state the theme here. Find out whether the room can hold it. Ask who has worked somewhere that a machine produced a number nobody checked, and what happened. You are listening for the panelist who says a confident answer is not a checked answer, because that panelist will say it again later, in a room you are not in.</p></div>
+    <div class="tile gold"><div class="tag">Placement two</div><h3>Opening</h3><p>Say it once, in the first thirty seconds, and once at the end. In between, do not argue it. Promise the two documents: the citation nobody opened, and the clock that did not match. Then sit down having told the room exactly what to watch for, so the evidence arrives as confirmation rather than as new information.</p></div>
+    <div class="tile"><div class="tag">Placement three</div><h3>Each cross</h3><p>One theme landing per witness, delivered by the witness. The records custodian explains that a dispatch timestamp is generated, not typed by hand, so the clock that did not match becomes a fact rather than an argument. Nobody has to hear the theme said aloud in this phase. They have to watch it happen.</p></div>
+    <div class="tile"><div class="tag">Placement four</div><h3>Closing</h3><p>Say it first, prove it in the middle with the labels intact, and say it last. Walk the two files side by side: same lawyer, same tool, opposite results. Then hand the room the job, which is to decide what the forty-one seconds means now that somebody has finally read it.</p></div>
+  </div>
+
+  <div class="note" style="margin-top:1.1rem;"><strong>One honest caution.</strong> A theme this clean is a liability if the theory underneath it is not tested. Before you commit, give your theory to a colleague who has read the other side's file and ask them to argue it hard, or ask a grounded model to argue the State's theory back at you using fictional or de-identified facts. If the theme survives the attack unchanged, keep it. If you find yourself softening the words to make the theme still work, the theme has started steering the case, and that is backwards.</div>
+
+  <h2 class="section-label">Did it work?</h2>
+  <p class="lead-p">The seven shared checks from the hub, plus four that only apply to this format. Score each 0 to 3. Anything scoring 0 or 1 is where the story will fail, and it will fail there in front of an audience rather than in your office.</p>
+
+  <div class="tablewrap">
+    <table class="rubric">
+      <thead><tr><th>Check</th><th>The question you are actually asking</th><th>How this version scores</th><th>Fails when</th></tr></thead>
+      <tbody>
+        <tr><td>Retellability</td><td>Can a listener repeat the spine in one sentence, an hour later, without notes?</td><td>Strong. Five words, and the spine is the sentence.</td><td>They summarize by listing</td></tr>
+        <tr><td>Record integrity</td><td>Does every beat trace to something you can actually admit into evidence?</td><td>Strong. Two documents carry the whole theory.</td><td>A beat needs a fact not in evidence</td></tr>
+        <tr><td>Emotional truth</td><td>Does it land in the body, without pushing so hard the room feels handled?</td><td>Weaker. This format is cool by design. Marcus in the hallway has to be told plainly or it disappears.</td><td>Listeners resist, or go numb</td></tr>
+        <tr><td>Theme clarity</td><td>Is there one line the room carries out the door?</td><td>Strong. One line, chosen against two rejected drafts.</td><td>Three competing lines, or none</td></tr>
+        <tr><td>Ethical integrity</td><td>Does it mislead by implication, overclaim, or invent?</td><td>Strong, and only because candidate two was cut for implying a link the record does not support.</td><td>It only works if nobody checks</td></tr>
+        <tr><td>Audience fit</td><td>Is it tuned to this listener: juror, judge, prosecutor, client, or panel?</td><td>Built for a jury and a CLE room. A judge will want the theory first and the theme barely at all.</td><td>One version told to everyone</td></tr>
+        <tr><td>Actionability</td><td>Does the listener know what you are asking them to do?</td><td>Adequate. The ask lives in closing and has to be stated, not implied.</td><td>They are moved but have no job</td></tr>
+        <tr class="fmt-check"><td>Theory under fire</td><td>Does the theory survive the other side's single best fact, stated in their words at full strength?</td><td>Yes. Dana filed the fake citation, and the theory needs that to be true rather than around it.</td><td>You need a fact to go away</td></tr>
+        <tr class="fmt-check"><td>Verbatim recall</td><td>Can a listener say the theme back word for word, not just approximately?</td><td>Yes. Two short sentences, no clause anybody has to reconstruct.</td><td>They paraphrase it differently each time</td></tr>
+        <tr class="fmt-check"><td>Label discipline</td><td>Is there exactly one name per person, object, and event, used the same way every time?</td><td>Six labels fixed in advance. The risk is drifting back to jargon under cross.</td><td>The same exhibit gets three names</td></tr>
+        <tr class="fmt-check"><td>Provable, not catchy</td><td>Can you point to the evidence for each half of the theme line?</td><td>Yes. The unread motion proves the second half, the dispatch log proves the first.</td><td>The best line is the one you cannot prove</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-label">Keep exploring</h2>
+  <div class="cards c2">
+    <a class="tile gold" href="storytelling.html"><div class="tag">Back to the hub</div><h3>Storytelling for the Defense</h3><p>The canonical version of <em>Forty-One Seconds</em>, the other four formats, the witness casting, and the shared seven-check rubric.</p></a>
+    <a class="tile" href="story-counter-narrative.html"><div class="tag">Format four</div><h3>The counter-narrative</h3><p>The defense-specific move. You do not owe anyone a story. Map the State's story, then walk the room through the places it does not hold.</p></a>
+  </div>
+</main>
+
+<footer class="page">
+  <div class="fin">
+    <div class="brand">Texas Criminal Defense Lawyers Association</div>
+    <p><a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · <a href="https://mglearn.github.io/legalai">mglearn.github.io/legalai</a></p>
+    <p class="cc">AI for the Defense · Storytelling for the Defense · Theme and Theory · Fictional teaching materials, not legal advice</p>
+  </div>
+</footer>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/pages-i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Counter-Narrative | AI for the Defense | TCDLA</title>
+<meta name="description" content="Format four of the storytelling handout: state the State's story in its strongest form, map the gaps in the record, rank them, and let the burden do the work. Built on the fictional Forty-One Seconds story.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/pages.css">
+<style>
+  .tablewrap{overflow:auto;margin-bottom:1.2rem;}
+
+  .beat-card{display:grid;grid-template-columns:2.2rem 1fr;gap:0.85rem;background:#fff;border:1px solid var(--mgray);
+        border-top:4px solid var(--navy);border-radius:10px;padding:1.05rem 1.2rem;margin-bottom:0.8rem;
+        box-shadow:0 2px 12px rgba(10,52,118,0.07);align-items:start;}
+  .beat-card .n{width:2.2rem;height:2.2rem;border-radius:50%;background:var(--navy);color:var(--gold);
+        font-family:'Playfair Display',serif;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;}
+  .beat-card h3{font-size:1.08rem;color:var(--navy);margin:0.1rem 0 0.3rem;}
+  .beat-card p{font-size:0.94rem;color:var(--text);line-height:1.55;margin-bottom:0.4rem;}
+  .beat-card .fail{font-size:0.86rem;color:var(--slate);line-height:1.5;margin:0;}
+  .beat-card .fail b{color:var(--gold-dk);text-transform:uppercase;letter-spacing:0.08em;font-size:0.66rem;}
+
+  .story{background:#fff;border:1px solid var(--mgray);border-left:6px solid var(--gold);border-radius:10px;
+        padding:1.5rem 1.7rem;box-shadow:0 2px 12px rgba(10,52,118,0.07);margin-bottom:1.2rem;}
+  .story h3{font-size:1.2rem;color:var(--navy);margin:1.2rem 0 0.4rem;}
+  .story h3:first-child{margin-top:0;}
+  .story p{font-size:1.02rem;line-height:1.68;color:var(--text);margin-bottom:0.75rem;}
+  .story .beat{font-size:0.66rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-dk);margin:1.1rem 0 0.3rem;}
+  .story .pull{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;color:var(--navy);
+        font-size:1.14rem;line-height:1.45;background:#EEF2F7;border-left:5px solid var(--gold);border-radius:8px;
+        padding:0.9rem 1.1rem;margin:0.9rem 0 1rem;}
+
+  .gapmap td:nth-child(4){font-family:'Source Code Pro',monospace;font-size:0.76rem;white-space:nowrap;}
+  .wt{display:inline-block;font-family:'Source Sans 3',sans-serif;font-size:0.66rem;font-weight:800;letter-spacing:0.09em;
+        text-transform:uppercase;padding:0.15rem 0.5rem;border-radius:3px;}
+  .wt.high{background:var(--navy);color:#fff;}
+  .wt.med{background:var(--gold-lt);color:var(--navy-dk);border:1px solid var(--gold);}
+  .wt.low{background:#fff;color:var(--slate);border:1px solid var(--mgray);}
+
+  .rubric td:first-child{font-weight:700;color:var(--navy);width:26%;}
+  .rubric td:last-child{width:22%;font-family:'Source Code Pro',monospace;font-size:0.78rem;color:var(--slate);}
+  .rubric tr.fmt-check td:first-child{color:var(--gold-dk);}
+
+  @media (max-width:760px){.beat-card{grid-template-columns:1fr;}.beat-card .n{margin-bottom:0.3rem;}}
+  @media print{.back-bar,footer.page{display:none;}body{background:#fff;}.story,.beat-card,.panel{break-inside:avoid;box-shadow:none;}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="back-bar"><a href="storytelling.html"><span>←</span> Storytelling <span class="sep">/</span> <span data-i18n="pg.resources">Resources</span></a><div class="bb-right"><span class="bb-lang" data-i18n-picker></span></div></div>
+
+<header class="page">
+  <div class="header-inner">
+    <img class="hdr-ico" src="../assets/storytelling-icon.svg" alt="">
+    <span class="eyebrow">Storytelling · Format four</span>
+    <h1>The Counter-Narrative</h1>
+    <div class="header-sub">Their story, stated fairly. Then the places it does not hold. Then the burden.</div>
+    <div class="header-meta">Texas Criminal Defense Lawyers Association · Facilitator <a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · Every person, county, and case below is fictional</div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="warn"><strong>Fictional, and not legal advice.</strong> Dana Reyes, Marcus Trejo, Ruben Salas, the county, the officers, and the case <em>State v. Whitaker</em> are invented for teaching. <em>State v. Whitaker</em> is a fabricated citation on purpose, and it is the point of the first half of the story. Nothing on this page is legal advice, and no fact pattern here should be used as authority.</div>
+
+  <p class="lead-p">This is the most defense-native of the five formats, because it is the only one that matches what the law actually asks of you. You do not carry a burden. You are not obligated to explain what happened, and in most cases you should not try, because the moment you offer a competing story you have quietly agreed to be graded on it. The counter-narrative does something else. You state the State's story in its strongest form, you walk the room through the places that story does not hold, and you let the burden finish the work.</p>
+
+  <p class="lead-p">The central discipline is the first move, and it is the one lawyers skip. You have to state the opponent's story so fairly that the prosecutor would nod along, before you touch a single weakness. If the room hears you shave the State's case down to something easy, everything after that reads as advocacy rather than analysis, and the gaps you spent months finding land as excuses. Fairness first is not generosity. It is what buys you the credibility to be believed later.</p>
+
+  <h2 class="section-label">The beats</h2>
+  <p class="lead-p">Four components, in order. Each one has a characteristic failure, and the failures are more common than the format.</p>
+
+  <div class="beat-card">
+    <span class="n">1</span>
+    <div>
+      <h3>Their story, steelmanned</h3>
+      <p>Tell the State's version out loud, in plain language, with its best facts included and none of its weak ones highlighted yet. Give it the coherence a prosecutor would give it. You are showing the room that you understand the case at least as well as the person prosecuting it, and that you are not afraid of it.</p>
+      <p class="fail"><b>Common failure:</b> caricaturing their story. You drop the fact that hurts you, you use a sneering word, you summarize their theory in a way no prosecutor would recognize. The room notices, usually before you do, and from that point forward you are the person who shades things.</p>
+    </div>
+  </div>
+
+  <div class="beat-card">
+    <span class="n">2</span>
+    <div>
+      <h3>The gap map</h3>
+      <p>For each thing the State needs, name what the record actually shows. A gap is the distance between the two. Write it out as a grid before you write it as an argument, because the grid forces you to admit which elements they have covered cleanly, and it shows you which gaps are load-bearing.</p>
+      <p class="fail"><b>Common failure:</b> listing gaps without ranking them. A flat list of eleven problems reads as eleven small complaints. The room averages them, decides most are technical, and discounts the one that mattered. Three ranked gaps beat eleven unranked ones every time.</p>
+    </div>
+  </div>
+
+  <div class="beat-card">
+    <span class="n">3</span>
+    <div>
+      <h3>The burden</h3>
+      <p>Connect the ranked gaps to the standard the decider is actually applying. At a suppression hearing that is the State's burden to justify a warrantless stop. At trial it is proof beyond a reasonable doubt on each element. Say which gap goes to which requirement, so the burden is doing structural work rather than sitting on top of the argument as decoration.</p>
+      <p class="fail"><b>Common failure:</b> arguing burden as a slogan. Repeating that the State has the burden, with feeling, is not an argument. If you cannot say which element the burden is unmet on and which piece of the record leaves it unmet, you are asking the room to take the standard on faith.</p>
+    </div>
+  </div>
+
+  <div class="beat-card">
+    <span class="n">4</span>
+    <div>
+      <h3>The doubt you are actually asking for</h3>
+      <p>Name the specific doubt, in one sentence, tied to a document. Not doubt in general. Doubt about this fact, arising from this page of this record, and what that doubt requires the decider to do. Then stop talking. The best counter-narratives end early, because the room finishes the thought and owns it.</p>
+      <p class="fail"><b>Common failure:</b> asking the room to speculate. Anything shaped like <em>maybe someone else did it</em> or <em>we do not know what really happened out there</em> invites the decider to fill the hole with a story, and the story they invent will usually be the State's. Ask for doubt about a proposition, not for imagination about an event.</p>
+    </div>
+  </div>
+
+  <h2 class="section-label">The story, taken apart</h2>
+  <p class="lead-p">The worked example below is the Ruben Salas half of <em>Forty-One Seconds</em>. It is the right half for this format because it has a suppression posture, where the State carries the burden explicitly, and because the defect in it is a gap in the record rather than a competing account of events.</p>
+
+  <div class="story">
+    <h3>The State's version, stated fairly</h3>
+    <p class="fine" style="color:var(--slate);font-size:0.82rem;margin-bottom:0.9rem;">A fictional account, written for this session.</p>
+
+    <div class="beat">First, their story, as they would tell it</div>
+    <p>An officer working a frontage road observed a vehicle and had a lawful reason to stop it. He stopped it, made contact with the driver, Ruben Salas, thirty-four, a welder with two kids, and the stop developed into the charge now before the court. The officer wrote an offense report describing what he saw and why he stopped the car. Dispatch generated its own records. The dash-cam ran. An inventory sheet was completed. The file runs to just over three hundred pages, and nothing in it suggests the officer acted in bad faith or that anyone tried to hide anything.</p>
+    <p>That is a normal traffic stop, documented the ordinary way, by an officer doing an ordinary shift. A prosecutor would tell it in about that many words, and a judge has heard that story a thousand times. Notice that it is not a weak story, and notice that nothing above has been shaved.</p>
+
+    <div class="beat">Then, where the record stops covering the story</div>
+    <p>Dana Reyes had by this point changed her method. She stopped asking the model to remember and started requiring it to read: she handed it the record and nothing else, asked it to build a timeline, and asked it to flag anything that did not line up. What came back was small and unglamorous. The stop time written in the offense report and the time stamped in the dispatch log were forty-one seconds apart, and the reason the officer gave for the stop appeared in the record only after the later of the two timestamps.</p>
+    <p>She did not file that. She opened the dispatch records herself, found the line, read it three times, and confirmed it. Then she built the argument, in her own words, from the document she had now read.</p>
+    <p class="pull">Nothing here says the officer lied. It says the record does not establish what the State needs it to establish, and the State is the party that has to establish it.</p>
+  </div>
+
+  <h2 class="section-label">The gap map</h2>
+  <p class="lead-p">Four columns. What they need, what the record shows, why the distance between the two matters, and how much weight the gap will actually carry. Rank before you argue.</p>
+
+  <div class="tablewrap">
+    <table class="gapmap">
+      <thead><tr><th>What the State needs</th><th>What the record shows</th><th>Why the gap matters</th><th>Ranked weight</th></tr></thead>
+      <tbody>
+        <tr>
+          <td>Reasonable suspicion existing <em>before</em> the stop</td>
+          <td>The stated reason for the stop appears in the record only after the later of two conflicting timestamps, which are forty-one seconds apart</td>
+          <td>This goes to the element itself, not to credibility or housekeeping. If the justification is documented only after the seizure, the record does not show the suspicion preceded the stop, and the State has not carried the burden it alone carries.</td>
+          <td><span class="wt high">High</span></td>
+        </tr>
+        <tr>
+          <td>One reliable time for when the seizure occurred</td>
+          <td>Two times exist. One is handwritten into the offense report. One is machine-generated in the dispatch log. They do not match.</td>
+          <td>The State has to pick one. Whichever it picks, the other document contradicts it, and the contradiction is inside the State's own file rather than something the defense brought in.</td>
+          <td><span class="wt high">High</span></td>
+        </tr>
+        <tr>
+          <td>Testimony that the sequence in the report reflects the sequence of events</td>
+          <td>The report is a narrative written after the fact. Nothing in the record independently corroborates the order in which the officer says things happened.</td>
+          <td>Without corroboration, the order of events rests entirely on recollection, and the only timestamped source in the file cuts against it.</td>
+          <td><span class="wt med">Medium</span></td>
+        </tr>
+        <tr>
+          <td>An explanation for how a dispatch timestamp is generated</td>
+          <td>The record does not explain it. Absent a custodian, forty-one seconds looks like trivia.</td>
+          <td>This is the gap you close yourself, not one you argue. Call the records custodian to establish that the timestamp is machine-generated and not typed by hand, and the discrepancy stops being a rounding error.</td>
+          <td><span class="wt med">Medium</span></td>
+        </tr>
+        <tr>
+          <td>A complete dash-cam record of the moments before contact</td>
+          <td>The file contains a dash-cam log. What it establishes about the pre-stop interval is not developed anywhere in the record.</td>
+          <td>Worth developing, but it is a supporting gap. Lead with it and you sound like you are hunting. Raise it after the timestamps and it corroborates.</td>
+          <td><span class="wt low">Low</span></td>
+        </tr>
+        <tr>
+          <td>Inventory documentation consistent with the rest of the file</td>
+          <td>The inventory sheet is present and unremarkable.</td>
+          <td>No gap. Say so out loud. Conceding the clean parts of their case is what makes the room believe you about the parts that are not clean.</td>
+          <td><span class="wt low">None</span></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-label">The burden, and the doubt being asked for</h2>
+
+  <div class="panel">
+    <h2>What the burden is doing here</h2>
+    <p style="margin-bottom:0.6rem;">This is a warrantless stop, so the State is the party that has to justify it. That is not a rhetorical advantage the defense is claiming. It is the allocation the posture already sets, and the counter-narrative simply declines to relieve the State of it. Every gap in the table above is aimed at one requirement: that the officer had reasonable suspicion <em>before</em> he seized the car. The high-weight gaps go to that requirement directly. The medium-weight gaps go to whether the record can be relied on to show it. The low-weight items are named so the court can see the defense is not calling everything a problem.</p>
+    <p>Said in one sentence to the court: the State has to show the reason for the stop existed before the stop, and the only machine-generated time in its own file puts that reason forty-one seconds on the wrong side of the seizure.</p>
+  </div>
+
+  <div class="panel">
+    <h2>The specific doubt requested</h2>
+    <p style="margin-bottom:0.6rem;">Not doubt about whether the officer is honest. Not doubt about what "really happened" on the frontage road. The doubt requested is narrow and documentary: <strong>on this record, the court cannot find that the justification preceded the seizure, because the State's own two timestamps disagree and the later one is the one that first contains the justification.</strong></p>
+    <p>That is the whole ask. There is no alternate version of the stop being offered, because the defense does not need one and does not have one. The court suppressed. Ruben drove himself home that afternoon.</p>
+  </div>
+
+  <div class="note"><strong>The ethical line, stated plainly.</strong> A counter-narrative attacks the sufficiency and the reliability of the evidence. It does not invent an alternate suspect, it does not imply facts that are not in the record, and it does not hint at a story you are unwilling to say out loud. Saying "the State cannot show the justification came first" is argument about the record. Saying "we do not know who was really out there that night" is an invitation to speculate, and it is the move that turns a legitimate reliability challenge into something you would not want read back to you. The same rule governs the AI use in this story: the model flagged the discrepancy, Dana opened the dispatch log and confirmed it herself, and the argument she filed was built from a document she had actually read. A gap you have not personally verified in the record is not a gap. It is a guess with a citation attached.</div>
+
+  <h2 class="section-label">Did it work?</h2>
+  <p class="lead-p">The seven shared checks from the hub, plus four that only apply to this format. Score each 0 to 3. Anything at 0 or 1 is where the argument will fail, and it will fail in front of the judge rather than at your desk.</p>
+
+  <div class="tablewrap">
+    <table class="rubric">
+      <thead><tr><th>Check</th><th>The question you are actually asking</th><th>Fails when</th></tr></thead>
+      <tbody>
+        <tr><td>Retellability</td><td>Can a listener repeat the spine in one sentence, an hour later, without notes?</td><td>They summarize by listing</td></tr>
+        <tr><td>Record integrity</td><td>Does every beat trace to something you can actually admit into evidence?</td><td>A beat needs a fact not in evidence</td></tr>
+        <tr><td>Emotional truth</td><td>Does it land in the body, without pushing so hard the room feels handled?</td><td>Listeners resist, or go numb</td></tr>
+        <tr><td>Theme clarity</td><td>Is there one line the room carries out the door?</td><td>Three competing lines, or none</td></tr>
+        <tr><td>Ethical integrity</td><td>Does it mislead by implication, overclaim, or invent?</td><td>It only works if nobody checks</td></tr>
+        <tr><td>Audience fit</td><td>Is it tuned to this listener: juror, judge, prosecutor, client, or panel?</td><td>One version told to everyone</td></tr>
+        <tr><td>Actionability</td><td>Does the listener know what you are asking them to do?</td><td>They are moved but have no job</td></tr>
+        <tr class="fmt-check"><td>Fair statement</td><td>Did you state their story so fairly that the prosecutor would accept your summary of it?</td><td>You shaved a fact, or used a loaded word</td></tr>
+        <tr class="fmt-check"><td>Anchored gaps</td><td>Is every gap tied to a page you have personally opened and read?</td><td>A gap rests on a model output or a memory</td></tr>
+        <tr class="fmt-check"><td>Ranked, not piled</td><td>Can you name your top two gaps, and say out loud which items are not problems?</td><td>Eleven complaints of equal size</td></tr>
+        <tr class="fmt-check"><td>No speculation required</td><td>Does the argument still work if the decider refuses to imagine anything?</td><td>It needs an unspoken alternate story</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-label">Keep exploring</h2>
+  <div class="cards c2">
+    <a class="tile gold" href="storytelling.html"><div class="tag">Back to the hub</div><h3>Storytelling for the Defense</h3><p>The full fictional story, all five formats, the witness casting roles, and the focus-group methods for testing a story before you tell it.</p></a>
+    <a class="tile" href="story-in-medias-res.html"><div class="tag">Format five</div><h3>In medias res</h3><p>Start at the worst moment, with the room already leaning in, then rewind and explain how anyone could arrive there. The natural pair to this page for closing argument.</p></a>
+  </div>
+</main>
+
+<footer class="page">
+  <div class="fin">
+    <div class="brand">Texas Criminal Defense Lawyers Association</div>
+    <p><a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · <a href="https://mglearn.github.io/legalai">mglearn.github.io/legalai</a></p>
+    <p class="cc">AI for the Defense · Storytelling for the Defense · The Counter-Narrative · Fictional teaching materials, not legal advice</p>
+  </div>
+</footer>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/pages-i18n.js"></script>
+</body>
+</html>

@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Storytelling for the Defense | AI for the Defense | TCDLA</title>
+<meta name="description" content="One fictional story about AI in a defense practice, told five ways, with a rubric for testing whether your story actually works, focus-group methods, and a way to cast your witnesses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&family=Source+Sans+3:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Source+Code+Pro:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/pages.css">
+<style>
+  .story{background:#fff;border:1px solid var(--mgray);border-left:6px solid var(--gold);border-radius:10px;
+        padding:1.5rem 1.7rem;box-shadow:0 2px 12px rgba(10,52,118,0.07);margin-bottom:1.2rem;}
+  .story h3{font-size:1.25rem;color:var(--navy);margin:1.2rem 0 0.4rem;}
+  .story h3:first-child{margin-top:0;}
+  .story p{font-size:1.02rem;line-height:1.68;color:var(--text);margin-bottom:0.75rem;}
+  .story .beat{font-size:0.66rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-dk);margin:1.1rem 0 0.3rem;}
+  .story .pull{font-family:'Playfair Display',serif;font-style:italic;font-weight:700;color:var(--navy);
+        font-size:1.16rem;line-height:1.45;background:#EEF2F7;border-left:5px solid var(--gold);border-radius:8px;
+        padding:0.9rem 1.1rem;margin:0.9rem 0 1rem;}
+
+  .fmt{display:grid;grid-template-columns:2.2rem 1fr;gap:0.85rem;background:#fff;border:1px solid var(--mgray);
+        border-top:4px solid var(--navy);border-radius:10px;padding:1.05rem 1.2rem;box-shadow:0 2px 12px rgba(10,52,118,0.07);
+        text-decoration:none;color:inherit;transition:transform .12s,box-shadow .12s;align-items:start;}
+  a.fmt:hover{transform:translateY(-2px);box-shadow:0 8px 22px rgba(10,52,118,0.14);}
+  .fmt .n{width:2.2rem;height:2.2rem;border-radius:50%;background:var(--navy);color:var(--gold);
+        font-family:'Playfair Display',serif;font-weight:800;font-size:1rem;display:flex;align-items:center;justify-content:center;}
+  .fmt h3{font-size:1.08rem;color:var(--navy);margin:0.1rem 0 0.25rem;}
+  .fmt p{font-size:0.9rem;color:var(--slate);line-height:1.5;margin:0;}
+  .fmt .beats{font-family:'Source Code Pro',monospace;font-size:0.74rem;color:var(--gold-dk);margin-top:0.4rem;display:block;}
+
+  .role{background:#fff;border:1px solid var(--mgray);border-left:5px solid var(--navy-md);border-radius:8px;
+        padding:0.9rem 1.1rem;margin-bottom:0.7rem;}
+  .role h4{font-size:1rem;color:var(--navy);margin-bottom:0.2rem;}
+  .role p{font-size:0.93rem;color:var(--text);line-height:1.55;margin-bottom:0.3rem;}
+  .role .cast{font-size:0.86rem;color:var(--slate);}
+  .role .cast b{color:var(--gold-dk);text-transform:uppercase;letter-spacing:0.08em;font-size:0.66rem;}
+
+  .tablewrap{overflow-x:auto;}
+  .rubric td:first-child{font-weight:700;color:var(--navy);width:26%;}
+  .rubric td:last-child{width:22%;font-family:'Source Code Pro',monospace;font-size:0.78rem;color:var(--slate);}
+
+  @media (max-width:760px){.fmt{grid-template-columns:1fr;}.fmt .n{margin-bottom:0.3rem;}}
+  @media print{.back-bar,footer.page{display:none;}body{background:#fff;}.story,.fmt,.role{break-inside:avoid;box-shadow:none;}}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to main content</a>
+<div class="back-bar"><a href="../index.html"><span>←</span> AI for the Defense <span class="sep">/</span> <span data-i18n="pg.resources">Resources</span></a><div class="bb-right"><span class="bb-lang" data-i18n-picker></span></div></div>
+
+<header class="page">
+  <div class="header-inner">
+    <img class="hdr-ico" src="../assets/storytelling-icon.svg" alt="">
+    <span class="eyebrow">Take it with you · Storytelling</span>
+    <h1>Storytelling for the Defense</h1>
+    <div class="header-sub">One story about AI in a defense practice, told five ways, with a way to test whether it actually works</div>
+    <div class="header-meta">Texas Criminal Defense Lawyers Association · Facilitator <a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · Every person and case below is fictional</div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+  <div class="warn"><strong>Fictional, and not legal advice.</strong> The story, the people, the county, and the case are invented for teaching. Any resemblance to a real matter is coincidental. Nothing here is legal advice, and no fact pattern should be used as authority.</div>
+
+  <p class="lead-p">Juries do not decide on a pile of facts. They decide on the story that best explains the facts they were given. The same is true of a judge at a suppression hearing, a prosecutor weighing a plea, and a client deciding whether to trust you. This page carries one story about generative AI in a defense practice, told five different ways, plus the parts most lawyers skip: how to test the story before you tell it, and how to cast the witnesses who will carry it.</p>
+
+  <h2 class="section-label">The story</h2>
+
+  <div class="story">
+    <h3>Forty-One Seconds</h3>
+    <p class="fine" style="color:var(--slate);font-size:0.82rem;margin-bottom:0.9rem;">A fictional account, written for this session.</p>
+
+    <div class="beat">Once, there was a lawyer with too many files</div>
+    <p>Dana Reyes practiced alone in a small Texas county, and in the spring she was carrying forty-one open files. She had become a defense lawyer because of an uncle nobody showed up for. Twenty years in, she still opened every file thinking about him.</p>
+    <p>One of those files belonged to Marcus Trejo, nineteen years old, charged with possession after a traffic stop. Marcus was raising his younger sister. He was eight weeks from finishing a nursing assistant program that a conviction would end. He called Dana every Friday to ask, politely, whether there was any news.</p>
+
+    <div class="beat">Then one day, she took a shortcut</div>
+    <p>Two weeks before the suppression hearing, at eleven at night, Dana opened a chatbot and typed six words: write me a motion to suppress. What came back was clean, confident, and formatted like something she would have billed six hours for. It cited four Texas cases. Three of them were real.</p>
+    <p>The fourth, <em>State v. Whitaker</em>, did not exist. It had a plausible name, a plausible year, and a plausible holding. It looked exactly like the three real ones sitting beside it. Dana was tired. It looked right. She filed it.</p>
+
+    <div class="beat">And because of that, a nineteen-year-old paid</div>
+    <p>At the hearing, the prosecutor stood up holding a legal pad and said she had been unable to locate one of the cases in the defense motion. The judge looked over his glasses and asked Dana to produce it. She could not. The room got very quiet, and then it moved on, and the motion was denied on its merits, but something else had been decided in that silence.</p>
+    <p>Marcus took a plea three weeks later. He lost his seat in the program. In the hallway afterward he looked at Dana, who could not look back, and said, <em>It's okay, Ms. Reyes.</em></p>
+    <p class="pull">He comforted her. That was the part she could not put down.</p>
+
+    <div class="beat">And because of that, she changed the method, not the tool</div>
+    <p>Dana did not quit using AI. She decided the problem was not the machine but the way she had used it: she had asked it to remember instead of asking it to read.</p>
+    <p>So she changed two things. First, she stopped letting it work from memory and started handing it the record: the statute, the offense report, the dispatch log, her own prior briefs. Second, she added one question at the end of every session: <em>For each claim you just made, quote the exact sentence in the material I gave you that supports it. If you cannot, mark it unsupported.</em></p>
+
+    <div class="beat">Until finally, the method found what exhaustion had hidden</div>
+    <p>In the fall, Ruben Salas came to her. Thirty-four, a welder, two kids, charged after a stop on a frontage road. His file ran to just over three hundred pages: the offense report, the dispatch records, the dash-cam log, the inventory sheet.</p>
+    <p>Dana fed the model the record and nothing else, and asked it to build a timeline and flag anything that did not line up. It came back with a small, unglamorous note: the stop time written in the offense report and the time stamped in the dispatch log were forty-one seconds apart, and the reason the officer gave for the stop appeared in the record only after the later of the two timestamps.</p>
+    <p>Dana did not file that. She opened the dispatch records herself, found the line, read it three times, and confirmed it. Then she built the argument, in her own words, from the document she had now read. The court suppressed. Ruben drove himself home that afternoon.</p>
+
+    <div class="beat">The theme</div>
+    <p class="pull">The tool did not save my client. The tool found the thread. I pulled it, and I checked it first.</p>
+    <p>Two motions, two clients, one lawyer, and the only variable that changed was whether the machine was allowed to remember or required to read.</p>
+  </div>
+
+  <h2 class="section-label">The same story, five ways</h2>
+  <p class="lead-p">The story above is the raw material. A story only does work once it is shaped for the room it is told in. Each format below carries the identical facts and lands differently, and each page includes the beats, a full retelling, and a check for whether it worked.</p>
+
+  <div class="cards" style="gap:0.8rem;">
+    <a class="fmt" href="story-movie-pitch.html">
+      <span class="n">1</span>
+      <div>
+        <h3>Pitch your case like a movie</h3>
+        <p>Open on the image that makes a stranger care, then break the world with the moment everything changed, then hand the room a job. Built for opening statement and for the CLE stage.</p>
+        <span class="beats">connecting hook › inciting incident › audience engagement</span>
+      </div>
+    </a>
+    <a class="fmt" href="story-moth-arc.html">
+      <span class="n">2</span>
+      <div>
+        <h3>The Moth Arc</h3>
+        <p>The oldest spine there is, and the hardest to hide behind. Stakes are personal, the change is visible, and the teller is inside the story rather than above it.</p>
+        <span class="beats">once upon a time › then one day › and because of that</span>
+      </div>
+    </a>
+    <a class="fmt" href="story-theme-and-theory.html">
+      <span class="n">3</span>
+      <div>
+        <h3>Theme and theory</h3>
+        <p>The trial-advocacy staple. One sentence a juror can carry into deliberations, sitting on top of a theory that explains every fact the State will prove.</p>
+        <span class="beats">theory › theme line › label › repetition</span>
+      </div>
+    </a>
+    <a class="fmt" href="story-counter-narrative.html">
+      <span class="n">4</span>
+      <div>
+        <h3>The counter-narrative</h3>
+        <p>The defense-specific move. You do not owe anyone a story. You map the State's story, then walk the room through the places it does not hold.</p>
+        <span class="beats">their story › the gaps › the burden › the doubt</span>
+      </div>
+    </a>
+    <a class="fmt" href="story-in-medias-res.html">
+      <span class="n">5</span>
+      <div>
+        <h3>In medias res</h3>
+        <p>Start at the worst moment, with the room already leaning in, then rewind and explain how anyone could arrive there. Strong for closing and for cross-examination framing.</p>
+        <span class="beats">cold open › rewind › catch up › land</span>
+      </div>
+    </a>
+  </div>
+
+  <h2 class="section-label">Cast your witnesses</h2>
+  <p class="lead-p">Every witness plays a narrative role whether you assign one or not. Casting deliberately tells you who to call, in what order, and what each one is actually for. The roles below are cast from the story above.</p>
+
+  <div class="role">
+    <h4>Protagonist</h4>
+    <p>The person whose choices drive the change, and whose change the audience feels. Not automatically your client. Ask who has something to lose and the capacity to decide.</p>
+    <p class="cast"><b>Cast here:</b> Dana. The story is about a professional who chose a shortcut and then chose a method. If you retell this to a jury about a client, the client takes this seat instead.</p>
+  </div>
+  <div class="role">
+    <h4>Antagonist</h4>
+    <p>The opposing force. It is often a mistake to cast a person here, and almost always a mistake to cast the prosecutor. Rooms resist villains they can see are being drawn for them.</p>
+    <p class="cast"><b>Cast here:</b> the unverified shortcut, and the caseload pressure that made it feel reasonable at eleven at night. An antagonist a juror recognizes from their own life is worth more than one they have to be sold.</p>
+  </div>
+  <div class="role">
+    <h4>Foils</h4>
+    <p>Characters who exist to sharpen the protagonist by contrast. A foil makes a trait visible that the audience would otherwise have to be told about.</p>
+    <p class="cast"><b>Cast here:</b> the prosecutor who checked the citation. Nothing about her is hostile. She simply did the thing Dana skipped, which is what makes the skip legible without a speech about it.</p>
+  </div>
+  <div class="role">
+    <h4>Catalysts</h4>
+    <p>The witness or exhibit that forces the turn. A catalyst does not argue. It asks a question or produces a document, and the story cannot go back to what it was.</p>
+    <p class="cast"><b>Cast here:</b> the judge's question, <em>Counsel, can you produce it?</em> In the Ruben half, the catalyst is the dispatch log, which says nothing and changes everything.</p>
+  </div>
+  <div class="role">
+    <h4>World-builders</h4>
+    <p>Witnesses who establish how the system normally works, so that a deviation reads as a deviation instead of as a technicality. Call them before you need them.</p>
+    <p class="cast"><b>Cast here:</b> the records custodian who explains, plainly, how a dispatch timestamp is generated and why it is not typed by hand. Without that testimony, forty-one seconds is trivia. With it, forty-one seconds is a problem.</p>
+  </div>
+  <div class="role">
+    <h4>Complicators</h4>
+    <p>The witnesses and facts that make your story messier. The instinct is to hide them. The better move is to raise them first, because a story that survives its own bad facts is the only kind a skeptical room will trust.</p>
+    <p class="cast"><b>Cast here:</b> Marcus actually possessed what he was charged with, and Dana actually filed the bad motion. Neither fact is dodged. The story is stronger because it does not need them to be untrue.</p>
+  </div>
+
+  <h2 class="section-label">Test it before you tell it</h2>
+  <p class="lead-p">Lawyers rehearse delivery and almost never test the story itself. A focus group is not about finding people who like you. It is about finding out, cheaply and early, where your story breaks.</p>
+
+  <div class="cards c2">
+    <div class="tile"><div class="tag">Component one</div><h3>Story validation</h3><p>Tell it cold to six to ten lay listeners who know nothing about the case. Then stop and ask them to tell it back to you. What survives the retelling is your actual story. What they drop, you never really told. Ask who they blame and why, before you say anything else.</p></div>
+    <div class="tile gold"><div class="tag">Component two</div><h3>Theme assessment</h3><p>Bring three candidate theme lines, not one. Do not ask which they prefer, because people are polite. Change the subject for twenty minutes, then ask what the case was about. The line they hand back unprompted is the theme. The other two are drafts.</p></div>
+    <div class="tile"><div class="tag">Component three</div><h3>Theory testing</h3><p>Give competing case theories to separate groups so neither hears the other. Have a skeptic argue the State's side hard. You are watching for the theory that dies under pressure, not the one that sounds best in your office. A theory that needs you present to work will not survive deliberation.</p></div>
+    <div class="tile"><div class="tag">Component four</div><h3>Iterative refinement</h3><p>Change one variable per round. One theme line, one witness order, one opening image. If you change three things and the result improves, you have learned nothing you can use. Keep a short log of what you changed and what moved, so the last round is evidence and not memory.</p></div>
+  </div>
+
+  <div class="note" style="margin-top:1.1rem;"><strong>Where AI fits, and where it does not.</strong> A grounded model is a decent sparring partner before you spend money on people. Give it your outline and ask it to argue the State's theory, list the three weakest links, or role-play a skeptical juror who does not like defense lawyers. It is fast and it never gets tired of you. It is also not a jury, it does not represent your venire, and its agreement means nothing. Use fictional or de-identified facts only, and treat every result as a hypothesis you still have to test on humans.</div>
+
+  <h2 class="section-label">Did the story work?</h2>
+  <p class="lead-p">Use the same seven checks on every format. Score each 0 to 3. Anything scoring 0 or 1 is where the story will fail, and it will fail there in front of an audience rather than in your office.</p>
+
+  <div class="tablewrap">
+    <table class="rubric">
+      <thead><tr><th>Check</th><th>The question you are actually asking</th><th>Fails when</th></tr></thead>
+      <tbody>
+        <tr><td>Retellability</td><td>Can a listener repeat the spine in one sentence, an hour later, without notes?</td><td>They summarize by listing</td></tr>
+        <tr><td>Record integrity</td><td>Does every beat trace to something you can actually admit into evidence?</td><td>A beat needs a fact not in evidence</td></tr>
+        <tr><td>Emotional truth</td><td>Does it land in the body, without pushing so hard the room feels handled?</td><td>Listeners resist, or go numb</td></tr>
+        <tr><td>Theme clarity</td><td>Is there one line the room carries out the door?</td><td>Three competing lines, or none</td></tr>
+        <tr><td>Ethical integrity</td><td>Does it mislead by implication, overclaim, or invent?</td><td>It only works if nobody checks</td></tr>
+        <tr><td>Audience fit</td><td>Is it tuned to this listener: juror, judge, prosecutor, client, or panel?</td><td>One version told to everyone</td></tr>
+        <tr><td>Actionability</td><td>Does the listener know what you are asking them to do?</td><td>They are moved but have no job</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h2 class="section-label">Keep exploring</h2>
+  <div class="cards c2">
+    <a class="tile gold" href="guardrail-checklist.html"><div class="tag">Handout</div><h3>Ethical Guardrail Checklist</h3><p>The eight-point check behind the second half of this story. Run it before anything leaves your desk.</p></a>
+    <a class="tile" href="ace-framework.html"><div class="tag">Companion</div><h3>ACE Framework Companion</h3><p>Turn the lesson in this story into something you restate, connect to your own practice, and use on a new problem.</p></a>
+  </div>
+</main>
+
+<footer class="page">
+  <div class="fin">
+    <div class="brand">Texas Criminal Defense Lawyers Association</div>
+    <p><a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a> · <a href="https://mglearn.github.io/legalai">mglearn.github.io/legalai</a></p>
+    <p class="cc">AI for the Defense · Storytelling for the Defense · Fictional teaching materials, not legal advice</p>
+  </div>
+</footer>
+<script src="../assets/i18n.js"></script>
+<script src="../assets/pages-i18n.js"></script>
+</body>
+</html>
