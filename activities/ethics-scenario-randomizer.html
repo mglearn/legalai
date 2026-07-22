@@ -52,6 +52,13 @@
   .again-btn{font-family:'Source Sans 3',sans-serif;font-weight:700;font-size:0.92rem;color:var(--navy);background:#fff;
         border:1.5px solid var(--navy);border-radius:10px;padding:0.6rem 1.4rem;cursor:pointer;transition:all .12s;}
   .again-btn:hover{background:var(--navy);color:var(--gold);}
+  #allBtn{margin-top:0.9rem;}
+
+  .allcards{margin:0.2rem 0 1.6rem;}
+  .allcards .card-top{margin-top:1.4rem;}
+  .allcards .card-top:first-child{margin-top:0.4rem;}
+  /* Scenario content is always English — keep it left-to-right even when the page is RTL. */
+  .allcards h2,.allcards .situation,.allcards .bigq,.allcards .gqlist{direction:ltr;text-align:left;}
 
   .steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:0.9rem;margin:0.4rem 0 1.4rem;}
   .dstep{background:var(--lgray);border:1px solid var(--mgray);border-radius:10px;padding:1rem 1.05rem;}
@@ -101,7 +108,10 @@
   <div class="draw-wrap">
     <button class="draw-btn" id="drawBtn" data-i18n-html="erz.drawbtn"><span class="dice">🎲</span>Draw a scenario</button>
     <div class="draw-hint" id="drawHint">Thirty cards across six professional duties.</div>
+    <button class="again-btn" id="allBtn">📋 <span id="allBtnLabel">See all cards</span></button>
   </div>
+
+  <div id="allCards" class="allcards" role="region" aria-live="polite" aria-label="All scenarios"></div>
 
   <div id="card" role="region" aria-live="polite" aria-label="Drawn scenario" tabindex="-1">
     <div class="card-top">
@@ -162,7 +172,7 @@
 <script>
 (function(){
   var CATS = window.ETHICS_CATS, ALL = window.ETHICS_SCENARIOS;
-  var active = 'ALL', lastN = null, currentScenario = null;
+  var active = 'ALL', lastN = null, currentScenario = null, allOpen = false;
 
   // Translation helper: falls back to English if the engine or key is absent.
   function T(key, fallback, vars){
@@ -185,6 +195,7 @@
       active = code; lastN = null;
       fw.querySelectorAll('.fbtn').forEach(function(x){ x.classList.toggle('active', x.getAttribute('data-c') === code); });
       updateHint();
+      if(allOpen) renderAll();
     });
     fw.appendChild(b);
   }
@@ -231,17 +242,52 @@
     c.scrollIntoView({behavior:'smooth', block:'start'});
   }
 
+  function scenarioBlock(s){
+    var sit = T('erz.card.sit', 'The situation');
+    var bq  = T('erz.card.bq', 'The big question');
+    var gq  = T('erz.card.gq', 'Guiding questions · work these together');
+    return '<div class="card-top"><span class="card-count">#' + s.n + '</span><span class="rule-chip">' + esc(s.rule) + '</span></div>' +
+      '<div class="ecard">' +
+        '<div class="sit-label">' + esc(sit) + '</div>' +
+        '<h2>' + esc(s.title) + '</h2>' +
+        '<p class="situation">' + esc(s.situation) + '</p>' +
+        '<div class="bq-label">' + esc(bq) + '</div>' +
+        '<div class="bigq"><p>' + esc(s.big) + '</p></div>' +
+        '<div class="gq-label">' + esc(gq) + '</div>' +
+        '<ul class="gqlist">' + s.guiding.map(function(q){ return '<li>' + esc(q) + '</li>'; }).join('') + '</ul>' +
+      '</div>';
+  }
+  function renderAll(){
+    document.getElementById('allCards').innerHTML = pool().map(scenarioBlock).join('');
+  }
+  function updateAllBtn(){
+    document.getElementById('allBtnLabel').textContent = allOpen
+      ? T('erz.hideall', 'Hide all cards')
+      : T('erz.seeall', 'See all cards');
+  }
+  function toggleAll(){
+    allOpen = !allOpen;
+    var box = document.getElementById('allCards');
+    if(allOpen){ renderAll(); box.scrollIntoView({behavior:'smooth', block:'start'}); }
+    else { box.innerHTML = ''; }
+    updateAllBtn();
+  }
+
   document.getElementById('drawBtn').addEventListener('click', draw);
   document.getElementById('againBtn').addEventListener('click', draw);
+  document.getElementById('allBtn').addEventListener('click', toggleAll);
 
   // Re-translate the JS-built chrome when the language changes.
   window.addEventListener('breakout-i18n:changed', function(){
     relabelChips();
     updateHint();
+    updateAllBtn();
     if(currentScenario) renderCount(currentScenario);
+    if(allOpen) renderAll();
   });
 
   updateHint();
+  updateAllBtn();
 })();
 </script>
 <script src="../assets/sitequote.js?v=2"></script>
