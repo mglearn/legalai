@@ -8,3 +8,6 @@ Thumbs.db
 # PPTX build tooling and QA artifacts
 build-pptx/node_modules/
 pptx/*.pdf
+
+# Claude Code: machine-specific settings stay local (launch.json is shared)
+.claude/settings.local.json
