@@ -11,6 +11,12 @@
 <link rel="stylesheet" href="assets/pages.css">
 <style>
   .num-badge{display:inline-flex;align-items:center;justify-content:center;width:1.5rem;height:1.5rem;background:var(--navy);color:#fff;border-radius:50%;font-family:'Playfair Display',serif;font-weight:700;font-size:0.8rem;margin-right:0.4rem;}
+  .big3{list-style:none;margin:0.3rem 0 2rem;padding:0;}
+  .big3 li{display:grid;grid-template-columns:1.9rem 1fr;gap:0.75rem;align-items:start;
+        font-size:20px;line-height:1.5;color:var(--text);margin-bottom:0.85rem;}
+  .big3 li .num-badge{margin-right:0;margin-top:0.28rem;width:1.9rem;height:1.9rem;font-size:0.95rem;}
+  .big3 strong{color:var(--navy);}
+  @media (max-width:600px){.big3 li{font-size:1.05rem;}}
 </style>
 </head>
 <body>
@@ -64,6 +70,13 @@
 
 <main id="main" tabindex="-1">
   <h1 class="sr-only">AI for the Defense: Ethical Use, Accuracy, and Attorney Responsibility. TCDLA session resources.</h1>
+  <h2 class="section-label" data-i18n="big3.h">If you keep three things</h2>
+  <ul class="big3">
+    <li><span class="num-badge">1</span><span data-i18n-html="big3.a"><strong>The duties have not changed.</strong> Competence, confidentiality, supervision, and candor already govern every AI-assisted filing. Responsibility cannot be delegated to software.</span></li>
+    <li><span class="num-badge">2</span><span data-i18n-html="big3.b"><strong>Ground it. Do not trust its memory.</strong> Hand the model the statute, the record, and your own materials, and make it answer from what you provided.</span></li>
+    <li><span class="num-badge">3</span><span data-i18n-html="big3.c"><strong>Open the source yourself.</strong> Verify every citation before you rely on it. A confident answer is not a verified one.</span></li>
+  </ul>
+
   <h2 class="section-label" id="activities" data-i18n="sec.act">Do the activities</h2>
   <div class="cards c2">
     <a class="tile" href="activities/fluency-self-assessment.html"><img class="tile-ico" src="assets/fluency-icon.png" alt=""><div class="tag" data-i18n="card.fl.tag">Activity · 2 min</div><h3 data-i18n="card.fl.h">AI Fluency Self-Assessment</h3><p data-i18n="card.fl.p">A five-question self-check that places your practice on a four-level ladder.</p></a>
