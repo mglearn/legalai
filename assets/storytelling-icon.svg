@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-label="Storytelling for the defense">
+  <defs>
+    <linearGradient id="st-bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#173766"/>
+      <stop offset="1" stop-color="#0B1D33"/>
+    </linearGradient>
+    <linearGradient id="st-silver" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#EEF3F8"/>
+      <stop offset="1" stop-color="#AEBDCE"/>
+    </linearGradient>
+  </defs>
+  <rect x="4" y="4" width="120" height="120" rx="26" fill="url(#st-bg)"/>
+  <rect x="4.75" y="4.75" width="118.5" height="118.5" rx="25.25" fill="none" stroke="#6F8FAF" stroke-opacity="0.55" stroke-width="1.5"/>
+
+  <!-- narrative arc: setup, rise, climax, resolution -->
+  <path d="M26 92 C 44 92, 52 74, 64 52 C 74 34, 84 30, 102 42"
+        fill="none" stroke="url(#st-silver)" stroke-width="4.5" stroke-linecap="round"/>
+
+  <!-- plot points along the arc -->
+  <circle cx="26" cy="92" r="6" fill="#6F8FAF"/>
+  <circle cx="64" cy="52" r="6.5" fill="#C8D2DC"/>
+  <circle cx="102" cy="42" r="6" fill="#6F8FAF"/>
+
+  <!-- opening quotation mark -->
+  <g fill="url(#st-silver)" opacity="0.95">
+    <path d="M34 44 c0-7 5-12 12-12 v6 c-4 0-6 2-6 6 h6 v12 H34 z"/>
+    <path d="M52 44 c0-7 5-12 12-12 v6 c-4 0-6 2-6 6 h6 v12 H52 z"/>
+  </g>
+
+  <!-- baseline -->
+  <line x1="24" y1="104" x2="104" y2="104" stroke="#6F8FAF" stroke-opacity="0.5" stroke-width="3" stroke-linecap="round"/>
+</svg>
