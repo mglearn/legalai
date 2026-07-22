@@ -53,6 +53,11 @@
   .cold-open .co-line{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:27px;
     line-height:1.35;color:var(--gold-lt);}
   .cold-open .co-note{font-family:var(--font-body);font-size:15px;font-weight:300;color:#9FB4CE;margin-top:26px;}
+  .cold-open .co-link{display:inline-flex;align-items:center;gap:8px;margin-top:16px;font-family:var(--font-body);
+    font-size:16px;font-weight:600;color:#F4F8FE;text-decoration:none;
+    border-bottom:2px solid var(--gold-lt);padding-bottom:3px;transition:color .12s,border-color .12s;}
+  .cold-open .co-link:hover{color:var(--gold-lt);border-color:#F4F8FE;}
+  .cold-open .co-link .arrow{color:var(--gold-lt);font-size:1.05em;line-height:1;}
   .cold-open .co-img{width:100%;height:auto;border-radius:12px;box-shadow:0 16px 44px rgba(0,0,0,.5);
     border:1px solid rgba(200,210,220,.28);}
   .deck.reflow .cold-open .co-grid{grid-template-columns:1fr;gap:18px;height:auto;}
@@ -162,6 +167,7 @@
           <h2 class="co-title">The Cite That Wasn't<span>41 Seconds</span></h2>
           <p class="co-line">Perfect motion. Fake citation. The judge found it first. Today, we learn to check everything.</p>
           <div class="co-note">Fictional, and the reason we are all in this room.</div>
+          <a class="co-link" href="../handouts/storytelling.html" target="_blank" rel="noopener">Read the full story, told five ways <span class="arrow">&#8599;</span></a>
         </div>
         <img class="co-img" src="../assets/forty-one-seconds.webp" alt="Two halves of one story: a tired lawyer at a desk stacked with 41 open files beside a motion citing State v. Whitaker stamped Does Not Exist, and the same lawyer later reading a dispatch timeline that shows a 41 second gap, next to a motion to suppress stamped Granted.">
       </div>
