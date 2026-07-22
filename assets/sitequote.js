@@ -6,13 +6,13 @@
 (function () {
   var Q = [
     { // 0
-      t: "Technology doesn’t replace the judgment of an experienced criminal defense lawyer — it sharpens it.",
+      t: "Technology doesn’t replace the judgment of an experienced criminal defense lawyer. It sharpens it.",
       a: "Benson Varghese",
       r: "Criminal defense attorney · Varghese Summersett, Fort Worth, Texas",
       u: "https://www.digitaljournal.com/pr/news/winston-news-wire/algorithm-accused-technology-reshaping-criminal-1804507851.html",
       s: "Digital Journal"
     },
-    { // 1  (walkthrough top — listed on collection page)
+    { // 1  (walkthrough top, listed on collection page)
       t: "The future belongs to a seamless and sustainable co-existence between lawyers and GenAI: the inimitable human intelligence, cognition and reasoning, combined with the speed of AI, can hammer out an unprecedented human-machine synergy for a more efficient legal system.",
       a: "Michael P. Heiskell",
       r: "Criminal defense attorney · then NACDL President, Fort Worth, Texas",
@@ -55,7 +55,7 @@
       s: "NACDL, 2026"
     },
     { // 7
-      t: "The ultimate decisions — what argument to raise, what strategic path to pursue, what risks to take — belong solely to us.",
+      t: "The ultimate decisions, what argument to raise, what strategic path to pursue, what risks to take, belong solely to us.",
       a: "Andrew S. Birrell",
       r: "Criminal defense attorney · NACDL President",
       u: "https://www.nacdl.org/Article/JanFeb2026-FromthePresidentNavigatingtheEthicalEdg",
@@ -110,7 +110,7 @@
       u: "https://nysba.org/will-ai-render-lawyers-obsolete/",
       s: "NYSBA"
     },
-    { // 15  (walkthrough foot — listed on collection page)
+    { // 15  (walkthrough foot, listed on collection page)
       t: "Any use of AI requires caution and humility.",
       a: "Chief Justice John G. Roberts Jr.",
       r: "Supreme Court of the United States",

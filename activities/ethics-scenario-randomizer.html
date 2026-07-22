@@ -37,7 +37,7 @@
   .ecard{background:#fff;border:1px solid var(--mgray);border-top:5px solid var(--navy);border-radius:12px;
         padding:1.5rem 1.7rem;box-shadow:0 2px 12px rgba(10,52,118,0.07);margin-bottom:1.1rem;}
   .ecard h2{font-family:'Playfair Display',serif;font-weight:800;color:var(--navy);font-size:1.6rem;line-height:1.15;margin:0.1rem 0 0.9rem;}
-  /* Scenario content is always English — keep it left-to-right even when the page is RTL. */
+  /* Scenario content is always English. Keep it left-to-right even when the page is RTL. */
   #cardRule,#cardTitle,#cardSituation,#cardBig,#cardGuiding{direction:ltr;text-align:left;}
   .sit-label,.bq-label,.gq-label{font-size:0.66rem;font-weight:800;letter-spacing:0.14em;text-transform:uppercase;color:var(--gold-dk);margin-bottom:0.35rem;}
   .ecard .situation{font-size:1.06rem;color:var(--text);line-height:1.62;margin-bottom:1.25rem;}
@@ -57,7 +57,7 @@
   .allcards{margin:0.2rem 0 1.6rem;}
   .allcards .card-top{margin-top:1.4rem;}
   .allcards .card-top:first-child{margin-top:0.4rem;}
-  /* Scenario content is always English — keep it left-to-right even when the page is RTL. */
+  /* Scenario content is always English. Keep it left-to-right even when the page is RTL. */
   .allcards h2,.allcards .situation,.allcards .bigq,.allcards .gqlist{direction:ltr;text-align:left;}
 
   .steps4{display:grid;grid-template-columns:repeat(4,1fr);gap:0.9rem;margin:0.4rem 0 1.4rem;}
@@ -99,7 +99,7 @@
 </div>
 
 <main id="main" tabindex="-1">
-  <div class="warn" data-i18n-html="erz.warn"><strong>For discussion, not advice.</strong> Every scenario is fictional and simplified to spark conversation. The rule references reflect the Texas framework and may change — verify the current text. Nothing here is legal advice, and the goal is not a single right answer. It is a shared standard of practice you can carry back to your office.</div>
+  <div class="warn" data-i18n-html="erz.warn"><strong>For discussion, not advice.</strong> Every scenario is fictional and simplified to spark conversation. The rule references reflect the Texas framework and may change. Verify the current text. Nothing here is legal advice, and the goal is not a single right answer. It is a shared standard of practice you can carry back to your office.</div>
 
   <h2 class="section-label" data-i18n="erz.sl.draw">Draw a scenario</h2>
   <p class="note" style="margin-bottom:0.7rem;" data-i18n-html="erz.filternote">Filter to a duty if you want to focus your table, or leave it on <strong>All duties</strong> for the full deck. Then draw.</p>
@@ -135,7 +135,7 @@
   <h2 class="section-label" data-i18n="erz.sl.run">How to run the discussion</h2>
   <div class="steps4">
     <div class="dstep"><div class="dn">1</div><span class="t" data-i18n="erz.d1t">1 min</span><h4 data-i18n="erz.d1h">Draw &amp; read</h4><p data-i18n="erz.d1p">One person draws a card and reads the situation and the big question aloud to the table.</p></div>
-    <div class="dstep"><div class="dn">2</div><span class="t" data-i18n="erz.d2t">2 min · silent</span><h4 data-i18n="erz.d2h">Think first</h4><p data-i18n="erz.d2p">Everyone reads the guiding questions alone and jots a first answer to the big question — before anyone speaks. This protects the quiet voices.</p></div>
+    <div class="dstep"><div class="dn">2</div><span class="t" data-i18n="erz.d2t">2 min · silent</span><h4 data-i18n="erz.d2h">Think first</h4><p data-i18n="erz.d2p">Everyone reads the guiding questions alone and jots a first answer to the big question, before anyone speaks. This protects the quiet voices.</p></div>
     <div class="dstep"><div class="dn">3</div><span class="t" data-i18n="erz.d3t">8–10 min</span><h4 data-i18n="erz.d3h">Discuss</h4><p data-i18n="erz.d3p">Go around once so every voice is in. Then work the guiding questions. Name the Texas rule in play and push on where good defense lawyers would disagree.</p></div>
     <div class="dstep"><div class="dn">4</div><span class="t" data-i18n="erz.d4t">2 min</span><h4 data-i18n="erz.d4h">Land it</h4><p data-i18n="erz.d4p">Pick a note-taker. Agree on what your table will report out, using the prompts below.</p></div>
   </div>
@@ -144,9 +144,9 @@
   <div class="panel">
     <p data-i18n="erz.bring.intro">Before you share out, explore these three things. Be brief so other tables can share, too.</p>
     <ul style="margin:0.7rem 0 0.2rem;padding-left:1.2rem;line-height:1.7;">
-      <li data-i18n-html="erz.bring.li1"><strong>The sharpest tension.</strong> What is the real conflict in this card — efficiency versus a duty, speed versus the client, access versus a risk?</li>
+      <li data-i18n-html="erz.bring.li1"><strong>The sharpest tension.</strong> What is the real conflict in this card: efficiency versus a duty, speed versus the client, access versus a risk?</li>
       <li data-i18n-html="erz.bring.li2"><strong>Where you disagreed.</strong> Name the point reasonable defense lawyers at your table split on, and why. Disagreement is the useful part.</li>
-      <li data-i18n-html="erz.bring.li3"><strong>One practice rule.</strong> Finish this sentence: <em>“We will…”</em> or <em>“We will not…”</em> — a single guardrail you would actually adopt in your practice.</li>
+      <li data-i18n-html="erz.bring.li3"><strong>One practice rule.</strong> Finish this sentence: <em>“We will…”</em> or <em>“We will not…”</em>, a single guardrail you would actually adopt in your practice.</li>
     </ul>
   </div>
 
@@ -208,7 +208,7 @@
     var p = pool();
     var label = active === 'ALL' ? T('erz.hint.all', 'six professional duties') : (catLabel(active) + ' · ' + CATS[active].rule);
     var word = p.length === 1 ? T('erz.hint.card', 'card') : T('erz.hint.cards', 'cards');
-    document.getElementById('drawHint').textContent = p.length + ' ' + word + ' — ' + label + '.';
+    document.getElementById('drawHint').textContent = p.length + ' ' + word + ': ' + label + '.';
   }
   function esc(s){ return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); }
 
