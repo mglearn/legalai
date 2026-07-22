@@ -27,80 +27,80 @@
 <header class="page">
   <div class="header-inner">
     <img class="hdr-ico" src="../assets/glossary-icon.svg" alt="">
-    <span class="eyebrow">Take it with you · Reference</span>
-    <h1>Legal AI Glossary</h1>
-    <div class="header-sub">The terms that actually matter in a defense practice, in plain language</div>
-    <div class="header-meta">Texas Criminal Defense Lawyers Association · Facilitator <a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a></div>
+    <span class="eyebrow" data-i18n="gl.eyebrow">Take it with you · Reference</span>
+    <h1 data-i18n="gl.h1">Legal AI Glossary</h1>
+    <div class="header-sub" data-i18n="gl.sub">The terms that actually matter in a defense practice, in plain language</div>
+    <div class="header-meta" data-i18n-html="gl.meta">Texas Criminal Defense Lawyers Association · Facilitator <a href="mailto:mguhlin@tcea.org">Miguel Guhlin</a></div>
   </div>
 </header>
 
 <main id="main" tabindex="-1">
-  <p class="lead-p">There are hundreds of AI terms. Most of them you will never need. These are the ones that come up in this work, either because they explain why the tools fail or because they name something a rule already requires of you. Gold-edged entries are the ones worth knowing cold.</p>
+  <p class="lead-p" data-i18n-html="gl.lead">There are hundreds of AI terms. Most of them you will never need. These are the ones that come up in this work, either because they explain why the tools fail or because they name something a rule already requires of you. Gold-edged entries are the ones worth knowing cold.</p>
 
-  <h2 class="section-label">How these tools work</h2>
+  <h2 class="section-label" data-i18n="gl.s1">How these tools work</h2>
 
-  <div class="gterm"><h3>Generative AI</h3><p>Software that produces new content, such as text, images, or code, in response to what you type.</p></div>
+  <div class="gterm"><h3 data-i18n="gl.t1.h">Generative AI</h3><p data-i18n-html="gl.t1.p">Software that produces new content, such as text, images, or code, in response to what you type.</p></div>
 
-  <div class="gterm"><h3>Large language model (LLM)</h3><p>The engine behind tools like Claude, ChatGPT, and Gemini. It was trained on an enormous amount of text to predict what words should come next.</p></div>
+  <div class="gterm"><h3 data-i18n="gl.t2.h">Large language model (LLM)</h3><p data-i18n-html="gl.t2.p">The engine behind tools like Claude, ChatGPT, and Gemini. It was trained on an enormous amount of text to predict what words should come next.</p></div>
 
-  <div class="gterm key"><h3>Stochastic parrot</h3><p>A blunt description of what the model is doing: assembling word sequences that are statistically likely, without understanding them.</p><span class="why"><b>Why it matters:</b> this is the whole reason a fake case can look exactly like a real one. The model is not looking anything up. It is producing text that resembles a citation.</span></div>
+  <div class="gterm key"><h3 data-i18n="gl.t3.h">Stochastic parrot</h3><p data-i18n-html="gl.t3.p">A blunt description of what the model is doing: assembling word sequences that are statistically likely, without understanding them.</p><span class="why" data-i18n-html="gl.t3.w"><b>Why it matters:</b> this is the whole reason a fake case can look exactly like a real one. The model is not looking anything up. It is producing text that resembles a citation.</span></div>
 
-  <div class="gterm"><h3>Training data</h3><p>The text a model learned from. It has a cutoff date, and it does not include your files unless someone put them there.</p><span class="why"><b>Why it matters:</b> recent amendments and new opinions may simply be absent.</span></div>
+  <div class="gterm"><h3 data-i18n="gl.t4.h">Training data</h3><p data-i18n-html="gl.t4.p">The text a model learned from. It has a cutoff date, and it does not include your files unless someone put them there.</p><span class="why" data-i18n-html="gl.t4.w"><b>Why it matters:</b> recent amendments and new opinions may simply be absent.</span></div>
 
-  <div class="gterm"><h3>Context window</h3><p>How much text the model can hold in view at once, counting your prompt, your attachments, and its own answer.</p><span class="why"><b>Why it matters:</b> in a long document review, material can fall out of view, and the model will not tell you that it did.</span></div>
+  <div class="gterm"><h3 data-i18n="gl.t5.h">Context window</h3><p data-i18n-html="gl.t5.p">How much text the model can hold in view at once, counting your prompt, your attachments, and its own answer.</p><span class="why" data-i18n-html="gl.t5.w"><b>Why it matters:</b> in a long document review, material can fall out of view, and the model will not tell you that it did.</span></div>
 
-  <h2 class="section-label">Where it goes wrong</h2>
+  <h2 class="section-label" data-i18n="gl.s2">Where it goes wrong</h2>
 
-  <div class="gterm key"><h3>Hallucination</h3><p>When the model states something false with complete confidence.</p><span class="why"><b>Why it matters:</b> confidence is not a signal of accuracy. The tone is identical whether the answer is right or invented.</span></div>
+  <div class="gterm key"><h3 data-i18n="gl.t6.h">Hallucination</h3><p data-i18n-html="gl.t6.p">When the model states something false with complete confidence.</p><span class="why" data-i18n-html="gl.t6.w"><b>Why it matters:</b> confidence is not a signal of accuracy. The tone is identical whether the answer is right or invented.</span></div>
 
-  <div class="gterm key"><h3>Fabricated citation</h3><p>The specific hallucination that gets lawyers sanctioned: a case, statute, or quotation that does not exist, in correct citation format.</p><span class="why"><b>Why it matters:</b> every reported sanction case turns on the same missing step. Nobody opened the source.</span></div>
+  <div class="gterm key"><h3 data-i18n="gl.t7.h">Fabricated citation</h3><p data-i18n-html="gl.t7.p">The specific hallucination that gets lawyers sanctioned: a case, statute, or quotation that does not exist, in correct citation format.</p><span class="why" data-i18n-html="gl.t7.w"><b>Why it matters:</b> every reported sanction case turns on the same missing step. Nobody opened the source.</span></div>
 
-  <div class="gterm"><h3>Bias</h3><p>Systematic skew in output that traces back to the data the model learned from.</p><span class="why"><b>Why it matters:</b> it can show up quietly in how a client, a neighborhood, or a charge gets characterized.</span></div>
+  <div class="gterm"><h3 data-i18n="gl.t8.h">Bias</h3><p data-i18n-html="gl.t8.p">Systematic skew in output that traces back to the data the model learned from.</p><span class="why" data-i18n-html="gl.t8.w"><b>Why it matters:</b> it can show up quietly in how a client, a neighborhood, or a charge gets characterized.</span></div>
 
-  <div class="gterm"><h3>Prompt injection</h3><p>Instructions hidden inside a document or web page that the model reads and follows as if you had typed them.</p><span class="why"><b>Why it matters:</b> if you feed the tool material you did not write, treat its output as unverified.</span></div>
+  <div class="gterm"><h3 data-i18n="gl.t9.h">Prompt injection</h3><p data-i18n-html="gl.t9.p">Instructions hidden inside a document or web page that the model reads and follows as if you had typed them.</p><span class="why" data-i18n-html="gl.t9.w"><b>Why it matters:</b> if you feed the tool material you did not write, treat its output as unverified.</span></div>
 
-  <h2 class="section-label">How you reduce the risk</h2>
+  <h2 class="section-label" data-i18n="gl.s3">How you reduce the risk</h2>
 
-  <div class="gterm"><h3>Prompt engineering</h3><p>Writing the request carefully so the output is focused and checkable. Less mystique than the name suggests.</p></div>
+  <div class="gterm"><h3 data-i18n="gl.t10.h">Prompt engineering</h3><p data-i18n-html="gl.t10.p">Writing the request carefully so the output is focused and checkable. Less mystique than the name suggests.</p></div>
 
-  <div class="gterm key"><h3>Structured prompt</h3><p>A prompt carrying four parts: <strong>role</strong> (who the model should act as), <strong>context</strong> (the facts and jurisdiction), <strong>task</strong> (exactly what to produce), and <strong>format and limits</strong> (the shape of the answer and what it may not do).</p><span class="why"><b>Why it matters:</b> the less you specify, the more the model invents to fill the gap.</span></div>
+  <div class="gterm key"><h3 data-i18n="gl.t11.h">Structured prompt</h3><p data-i18n-html="gl.t11.p">A prompt carrying four parts: <strong>role</strong> (who the model should act as), <strong>context</strong> (the facts and jurisdiction), <strong>task</strong> (exactly what to produce), and <strong>format and limits</strong> (the shape of the answer and what it may not do).</p><span class="why" data-i18n-html="gl.t11.w"><b>Why it matters:</b> the less you specify, the more the model invents to fill the gap.</span></div>
 
-  <div class="gterm"><h3>Zero-shot and few-shot prompting</h3><p>Zero-shot is asking with no examples. Few-shot is including one or two samples of the output you want.</p><span class="why"><b>Why it matters:</b> examples steer format and tone harder than instructions do.</span></div>
+  <div class="gterm"><h3 data-i18n="gl.t12.h">Zero-shot and few-shot prompting</h3><p data-i18n-html="gl.t12.p">Zero-shot is asking with no examples. Few-shot is including one or two samples of the output you want.</p><span class="why" data-i18n-html="gl.t12.w"><b>Why it matters:</b> examples steer format and tone harder than instructions do.</span></div>
 
-  <div class="gterm"><h3>Persona, or role</h3><p>Telling the model who to be, such as a Texas criminal defense attorney preparing a suppression hearing.</p></div>
+  <div class="gterm"><h3 data-i18n="gl.t13.h">Persona, or role</h3><p data-i18n-html="gl.t13.p">Telling the model who to be, such as a Texas criminal defense attorney preparing a suppression hearing.</p></div>
 
-  <div class="gterm"><h3>Chain of thought</h3><p>Asking the model to work through its reasoning step by step instead of jumping to an answer.</p><span class="why"><b>Why it matters:</b> it improves multi-step reasoning and, more usefully, shows you where the logic breaks.</span></div>
+  <div class="gterm"><h3 data-i18n="gl.t14.h">Chain of thought</h3><p data-i18n-html="gl.t14.p">Asking the model to work through its reasoning step by step instead of jumping to an answer.</p><span class="why" data-i18n-html="gl.t14.w"><b>Why it matters:</b> it improves multi-step reasoning and, more usefully, shows you where the logic breaks.</span></div>
 
-  <div class="gterm key"><h3>Grounding</h3><p>Requiring the model to answer from documents you provide rather than from memory. In this session, the D in TCDLAi.</p><span class="why"><b>Why it matters:</b> it is the difference between a guess and a citation you can check line by line.</span></div>
+  <div class="gterm key"><h3 data-i18n="gl.t15.h">Grounding</h3><p data-i18n-html="gl.t15.p">Requiring the model to answer from documents you provide rather than from memory. In this session, the D in TCDLAi.</p><span class="why" data-i18n-html="gl.t15.w"><b>Why it matters:</b> it is the difference between a guess and a citation you can check line by line.</span></div>
 
-  <div class="gterm key"><h3>Retrieval-augmented generation (RAG)</h3><p>The technical name for grounding. The tool retrieves passages from a set of documents and answers from those passages.</p><span class="why"><b>Why it matters:</b> it cuts hallucination sharply. It does not eliminate it, and it will still bridge a gap the sources do not cover.</span></div>
+  <div class="gterm key"><h3 data-i18n="gl.t16.h">Retrieval-augmented generation (RAG)</h3><p data-i18n-html="gl.t16.p">The technical name for grounding. The tool retrieves passages from a set of documents and answers from those passages.</p><span class="why" data-i18n-html="gl.t16.w"><b>Why it matters:</b> it cuts hallucination sharply. It does not eliminate it, and it will still bridge a gap the sources do not cover.</span></div>
 
-  <div class="gterm key"><h3>Verification, or the inspect step</h3><p>Opening the actual source and confirming that the quote, holding, and pinpoint are really there. The lowercase i in TCDLAi.</p><span class="why"><b>Why it matters:</b> asking the model to check itself is a fast first pass, not a substitute for reading the opinion.</span></div>
+  <div class="gterm key"><h3 data-i18n="gl.t17.h">Verification, or the inspect step</h3><p data-i18n-html="gl.t17.p">Opening the actual source and confirming that the quote, holding, and pinpoint are really there. The lowercase i in TCDLAi.</p><span class="why" data-i18n-html="gl.t17.w"><b>Why it matters:</b> asking the model to check itself is a fast first pass, not a substitute for reading the opinion.</span></div>
 
-  <div class="gterm"><h3>Guardrail</h3><p>A limit you impose on the tool or on yourself, such as cite only sources I provide, or flag anything you are unsure of.</p></div>
+  <div class="gterm"><h3 data-i18n="gl.t18.h">Guardrail</h3><p data-i18n-html="gl.t18.p">A limit you impose on the tool or on yourself, such as cite only sources I provide, or flag anything you are unsure of.</p></div>
 
-  <div class="gterm"><h3>Human in the loop</h3><p>A person reviews and approves the output before it is used. In practice, that person is you, and the review is not optional.</p></div>
+  <div class="gterm"><h3 data-i18n="gl.t19.h">Human in the loop</h3><p data-i18n-html="gl.t19.p">A person reviews and approves the output before it is used. In practice, that person is you, and the review is not optional.</p></div>
 
-  <h2 class="section-label">Your data and your duties</h2>
+  <h2 class="section-label" data-i18n="gl.s4">Your data and your duties</h2>
 
-  <div class="gterm key"><h3>Consumer tool versus enterprise tool</h3><p>A free or personal account generally offers weaker contractual protection than an enterprise agreement with terms on retention, training, and confidentiality.</p><span class="why"><b>Why it matters:</b> this distinction, not the model itself, usually decides whether client facts may go in.</span></div>
+  <div class="gterm key"><h3 data-i18n="gl.t20.h">Consumer tool versus enterprise tool</h3><p data-i18n-html="gl.t20.p">A free or personal account generally offers weaker contractual protection than an enterprise agreement with terms on retention, training, and confidentiality.</p><span class="why" data-i18n-html="gl.t20.w"><b>Why it matters:</b> this distinction, not the model itself, usually decides whether client facts may go in.</span></div>
 
-  <div class="gterm key"><h3>Training on your inputs</h3><p>Whether the provider uses what you type to improve its models. Some tools do this by default and allow you to turn it off.</p><span class="why"><b>Why it matters:</b> read this setting before the first client-adjacent prompt, not after.</span></div>
+  <div class="gterm key"><h3 data-i18n="gl.t21.h">Training on your inputs</h3><p data-i18n-html="gl.t21.p">Whether the provider uses what you type to improve its models. Some tools do this by default and allow you to turn it off.</p><span class="why" data-i18n-html="gl.t21.w"><b>Why it matters:</b> read this setting before the first client-adjacent prompt, not after.</span></div>
 
-  <div class="gterm"><h3>Retention and memory</h3><p>Retention is how long the provider keeps what you typed. Memory is a feature that carries details between conversations.</p><span class="why"><b>Why it matters:</b> a convenience feature can quietly become a store of client information.</span></div>
+  <div class="gterm"><h3 data-i18n="gl.t22.h">Retention and memory</h3><p data-i18n-html="gl.t22.p">Retention is how long the provider keeps what you typed. Memory is a feature that carries details between conversations.</p><span class="why" data-i18n-html="gl.t22.w"><b>Why it matters:</b> a convenience feature can quietly become a store of client information.</span></div>
 
-  <div class="gterm key"><h3>De-identification</h3><p>Stripping the details that identify a matter, such as names, dates, locations, and cause numbers, while keeping the legal shape of the problem.</p><span class="why"><b>Why it matters:</b> it is what makes a consumer tool usable at all for real work.</span></div>
+  <div class="gterm key"><h3 data-i18n="gl.t23.h">De-identification</h3><p data-i18n-html="gl.t23.p">Stripping the details that identify a matter, such as names, dates, locations, and cause numbers, while keeping the legal shape of the problem.</p><span class="why" data-i18n-html="gl.t23.w"><b>Why it matters:</b> it is what makes a consumer tool usable at all for real work.</span></div>
 
-  <div class="gterm"><h3>Custom instructions</h3><p>Standing directions that apply to every conversation, such as always cite only what I paste, and flag anything unsupported.</p></div>
+  <div class="gterm"><h3 data-i18n="gl.t24.h">Custom instructions</h3><p data-i18n-html="gl.t24.p">Standing directions that apply to every conversation, such as always cite only what I paste, and flag anything unsupported.</p></div>
 
-  <div class="gterm"><h3>TCDLAi</h3><p>The framework used in this session: <strong>T</strong>arget the issue, <strong>C</strong>ompile the facts, <strong>D</strong>efine the law from your sources, <strong>L</strong>ist strategies, <strong>A</strong>nalyze them, and <strong>i</strong>nspect the result. The lowercase i is deliberate. That step stays with you.</p></div>
+  <div class="gterm"><h3 data-i18n="gl.t25.h">TCDLAi</h3><p data-i18n-html="gl.t25.p">The framework used in this session: <strong>T</strong>arget the issue, <strong>C</strong>ompile the facts, <strong>D</strong>efine the law from your sources, <strong>L</strong>ist strategies, <strong>A</strong>nalyze them, and <strong>i</strong>nspect the result. The lowercase i is deliberate. That step stays with you.</p></div>
 
-  <div class="note"><strong>One sentence to keep.</strong> Almost every term above is a different way of describing the same two moves: make the tool work from sources you trust, then check what it hands back.</div>
+  <div class="note" data-i18n-html="gl.note"><strong>One sentence to keep.</strong> Almost every term above is a different way of describing the same two moves: make the tool work from sources you trust, then check what it hands back.</div>
 
-  <h2 class="section-label">Keep exploring</h2>
+  <h2 class="section-label" data-i18n="gl.sl.explore">Keep exploring</h2>
   <div class="cards c2">
-    <a class="tile gold" href="tcdlai-guide.html"><div class="tag">Handout</div><h3>TCDLAi Prompt Design Guide</h3><p>The six moves, with example defense prompts for each letter.</p></a>
-    <a class="tile" href="guardrail-checklist.html"><div class="tag">Handout</div><h3>Ethical Guardrail Checklist</h3><p>The eight-point check you run before relying on any output.</p></a>
+    <a class="tile gold" href="tcdlai-guide.html"><div class="tag" data-i18n="gl.x1.tag">Handout</div><h3 data-i18n="gl.x1.h">TCDLAi Prompt Design Guide</h3><p data-i18n="gl.x1.p">The six moves, with example defense prompts for each letter.</p></a>
+    <a class="tile" href="guardrail-checklist.html"><div class="tag" data-i18n="gl.x2.tag">Handout</div><h3 data-i18n="gl.x2.h">Ethical Guardrail Checklist</h3><p data-i18n="gl.x2.p">The eight-point check you run before relying on any output.</p></a>
   </div>
 </main>
 
