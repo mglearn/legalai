@@ -6,7 +6,7 @@
 (function () {
   var Q = [
     { // 0
-      t: "Technology doesn’t replace the judgment of an experienced criminal defense lawyer. It sharpens it.",
+      t: "Technology doesn’t replace the judgment of an experienced criminal defense lawyer — it sharpens it.",
       a: "Benson Varghese",
       r: "Criminal defense attorney · Varghese Summersett, Fort Worth, Texas",
       u: "https://www.digitaljournal.com/pr/news/winston-news-wire/algorithm-accused-technology-reshaping-criminal-1804507851.html",
@@ -55,7 +55,7 @@
       s: "NACDL, 2026"
     },
     { // 7
-      t: "The ultimate decisions, what argument to raise, what strategic path to pursue, what risks to take, belong solely to us.",
+      t: "The ultimate decisions — what argument to raise, what strategic path to pursue, what risks to take — belong solely to us.",
       a: "Andrew S. Birrell",
       r: "Criminal defense attorney · NACDL President",
       u: "https://www.nacdl.org/Article/JanFeb2026-FromthePresidentNavigatingtheEthicalEdg",
