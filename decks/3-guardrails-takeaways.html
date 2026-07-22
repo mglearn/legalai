@@ -13,6 +13,13 @@
   .checklist li { font-size:19px; padding-left:32px; position:relative; color:var(--text); line-height:1.35; }
   .checklist li::before { content:'☐'; position:absolute; left:0; top:-1px; color:var(--gold-dk); font-size:21px; }
   .checklist li strong { color:var(--navy); }
+  /* Divider illustration: round, with the text column narrowed so nothing overlaps */
+  .divider .slide-body{max-width:560px;}
+  .divider-photo{position:absolute;top:50%;right:76px;transform:translateY(-50%);
+    width:430px;height:430px;border-radius:50%;object-fit:cover;
+    border:3px solid rgba(200,210,220,0.30);box-shadow:0 18px 48px rgba(0,0,0,0.42);z-index:1;}
+  .deck.reflow .divider .slide-body{max-width:none;}
+  .deck.reflow .divider-photo{position:static;transform:none;width:220px;height:220px;margin:0 auto 14px;display:block;}
   /* Framing quote slide */
   .frame-quote{background:linear-gradient(135deg,#0B1D33 0%,#102A54 58%,#173766 100%);}
   .frame-quote .slide-body{display:flex;flex-direction:column;justify-content:center;max-width:1050px;}
@@ -27,6 +34,7 @@
 
   <!-- 1 · DIVIDER -->
   <section class="slide divider current">
+    <img class="divider-photo" src="../assets/guardrails-shield.webp" alt="A brushed metal shield bearing a check mark, flanked by a clipboard checklist, a clock, and a client file marked with a privacy badge.">
     <div class="slide-body">
       <div class="seg-num">3</div>
       <div class="divider-eyebrow">Segment Three · about 15 minutes</div>
