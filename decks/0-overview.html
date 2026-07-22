@@ -45,11 +45,20 @@
   .obj-grid{display:grid;grid-template-columns:450px 1fr;gap:52px;align-items:center;height:100%;}
   .obj-photo{width:450px;height:450px;border-radius:50%;box-shadow:0 14px 38px rgba(10,29,51,0.26);}
   /* Cold-open story slide */
-  .cold-open .co-title{font-family:var(--font-display);font-weight:600;font-size:66px;line-height:1.02;
-    letter-spacing:-0.02em;color:#F4F8FE;margin:10px 0 28px;}
-  .cold-open .co-line{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:38px;
-    line-height:1.34;color:var(--gold-lt);max-width:24ch;}
-  .cold-open .co-note{font-family:var(--font-body);font-size:15px;font-weight:300;color:#9FB4CE;margin-top:32px;}
+  .slide.cold-open .slide-body{max-width:1210px;}
+  .cold-open .co-grid{display:grid;grid-template-columns:1fr 580px;gap:44px;align-items:center;height:100%;}
+  .cold-open .co-title{font-family:var(--font-display);font-weight:600;font-size:46px;line-height:1.04;
+    letter-spacing:-0.02em;color:#F4F8FE;margin:8px 0 20px;}
+  .cold-open .co-title span{display:block;color:var(--gold-lt);font-size:34px;font-style:italic;margin-top:4px;}
+  .cold-open .co-line{font-family:var(--font-display);font-style:italic;font-weight:500;font-size:27px;
+    line-height:1.35;color:var(--gold-lt);}
+  .cold-open .co-note{font-family:var(--font-body);font-size:15px;font-weight:300;color:#9FB4CE;margin-top:26px;}
+  .cold-open .co-img{width:100%;height:auto;border-radius:12px;box-shadow:0 16px 44px rgba(0,0,0,.5);
+    border:1px solid rgba(200,210,220,.28);}
+  .deck.reflow .cold-open .co-grid{grid-template-columns:1fr;gap:18px;height:auto;}
+  .deck.reflow .cold-open .co-title{font-size:2rem;}
+  .deck.reflow .cold-open .co-title span{font-size:1.5rem;}
+  .deck.reflow .cold-open .co-line{font-size:1.15rem;}
   /* Framing quote slide */
   .frame-quote{background:linear-gradient(135deg,#0B1D33 0%,#102A54 58%,#173766 100%);}
   .frame-quote .slide-body{display:flex;flex-direction:column;justify-content:center;max-width:1050px;}
@@ -147,10 +156,15 @@
   <!-- COLD OPEN · the story -->
   <section class="slide frame-quote cold-open">
     <div class="slide-body">
-      <div class="cover-eyebrow">Cold open</div>
-      <h2 class="co-title">The Cite That Wasn't</h2>
-      <p class="co-line">Perfect motion. Fake citation. The judge found it first. Today, we learn to check everything.</p>
-      <div class="co-note">Fictional, and the reason we are all in this room.</div>
+      <div class="co-grid">
+        <div>
+          <div class="cover-eyebrow">Cold open</div>
+          <h2 class="co-title">The Cite That Wasn't<span>41 Seconds</span></h2>
+          <p class="co-line">Perfect motion. Fake citation. The judge found it first. Today, we learn to check everything.</p>
+          <div class="co-note">Fictional, and the reason we are all in this room.</div>
+        </div>
+        <img class="co-img" src="../assets/forty-one-seconds.webp" alt="Two halves of one story: a tired lawyer at a desk stacked with 41 open files beside a motion citing State v. Whitaker stamped Does Not Exist, and the same lawyer later reading a dispatch timeline that shows a 41 second gap, next to a motion to suppress stamped Granted.">
+      </div>
     </div>
     <div class="slide-footer">
       <span class="brand"><span class="star">✦</span> TCDLAi</span>
