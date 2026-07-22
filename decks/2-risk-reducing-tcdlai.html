@@ -14,9 +14,12 @@
   .letter .lt { position:absolute; top:12px; right:14px; font-family:var(--font-display),serif; font-weight:900; font-size:30px; color:var(--gold); line-height:1; }
   .letter h4 { font-family:var(--font-display),serif; color:var(--navy); font-size:18px; margin-bottom:5px; padding-right:34px; }
   .letter p { font-size:16px; color:var(--slate); line-height:1.4; }
-  .figure { margin:14px auto 0; text-align:center; }
-  .figure img { max-height:430px; max-width:96%; border:1px solid var(--mgray); border-radius:10px; box-shadow:0 8px 24px rgba(10,52,118,0.12); }
-  .figure figcaption { font-size:15px; color:var(--slate); margin-top:8px; font-style:italic; }
+  .figure { margin:4px auto 0; text-align:center; flex:1; display:flex; flex-direction:column; justify-content:center; min-height:0; }
+  .figure img { max-height:510px; max-width:100%; width:auto; height:auto; border:1px solid var(--mgray); border-radius:10px; box-shadow:0 8px 24px rgba(10,52,118,0.12); }
+  .figure figcaption { font-size:15px; color:var(--slate); margin-top:10px; font-style:italic; flex:none; }
+  /* Give the framework diagram slide more room: trim header padding so the image can grow */
+  .figslide .slide-body { padding-top:34px; padding-bottom:22px; }
+  .figslide .slide-kicker { margin-bottom:8px; }
   .tier3 { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px; }
   .tcard { border:1.5px solid; border-radius:8px; overflow:hidden; display:flex; flex-direction:column; }
   .tcard .th { padding:8px 12px; color:#fff; font-weight:700; font-size:13px; letter-spacing:0.08em; text-transform:uppercase; }
@@ -229,7 +232,7 @@
   </section>
 
   <!-- 5 · TCDLAi OVERVIEW IMAGE -->
-  <section class="slide">
+  <section class="slide figslide">
     <div class="slide-body">
       <div class="slide-kicker">A framework for this room</div>
       <h2 class="slide-title">The TCDLAi Prompt Design Guide</h2>
