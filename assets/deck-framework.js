@@ -1,5 +1,5 @@
 /* ============================================================
-   TCDLAi Slide Framework  —  navigation, presenter view, sync
+   TCDLAi Slide Framework: navigation, presenter view, sync
    No dependencies. Include once per deck, after the slides.
    Two-monitor use: press V (or the 🖥 button) to open the
    presenter window on your laptop; drag the main window to the

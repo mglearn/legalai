@@ -1,5 +1,5 @@
 /*
- * Legal Ethics Scenario Randomizer — discussion cards for the TCDLA audience.
+ * Legal Ethics Scenario Randomizer, discussion cards for the TCDLA audience.
  * Adapted for criminal defense practice from "Tabletop Situations for Gen AI Ethics"
  * (Miguel Guhlin, CC BY-SA), itself inspired by the OECD "Ethics of AI Classroom
  * Discussion Flashcards" (2025). Reframed around the Texas Disciplinary Rules of
@@ -19,7 +19,7 @@ window.ETHICS_SCENARIOS = [
   /* ---------- COMPETENCE & TECH FLUENCY · Rule 1.01 ---------- */
   {
     n:1, cat:"COMP", rule:"Rule 1.01 · Competence", title:"The Tool You Don't Understand",
-    situation:"A solo practitioner starts using a new AI legal-research tool a colleague swears by. It saves her hours a week. She cannot explain how it decides which cases to surface, whether it invents citations, or what it does with the queries she types in — but the answers look right.",
+    situation:"A solo practitioner starts using a new AI legal-research tool a colleague swears by. It saves her hours a week. She cannot explain how it decides which cases to surface, whether it invents citations, or what it does with the queries she types in, but the answers look right.",
     big:"Does competent representation require understanding how your AI tool works before you rely on it in a client's matter?",
     guiding:[
       "What is the minimum a lawyer must understand about a tool's failure modes to use it responsibly?",
@@ -63,7 +63,7 @@ window.ETHICS_SCENARIOS = [
   },
   {
     n:5, cat:"COMP", rule:"Rule 1.01 · Competence", title:"The Moving Goalpost",
-    situation:"What felt like responsible AI use a year ago — pasting a redacted report into a free chatbot, trusting a clean-looking summary — now feels careless as your understanding has deepened. Some of your past work relied on those habits.",
+    situation:"What felt like responsible AI use a year ago (pasting a redacted report into a free chatbot, trusting a clean-looking summary) now feels careless as your understanding has deepened. Some of your past work relied on those habits.",
     big:"How do you build a practice that updates as the ethics of AI use mature, without paralyzing yourself over yesterday's choices?",
     guiding:[
       "Do you hold yourself to today's understanding or the understanding you had at the time?",
@@ -76,13 +76,13 @@ window.ETHICS_SCENARIOS = [
   /* ---------- CONFIDENTIALITY & CLIENT DATA · Rule 1.05 ---------- */
   {
     n:6, cat:"CONF", rule:"Rule 1.05 · Confidentiality", title:"The Paste",
-    situation:"Rushing before a hearing, an attorney copies an entire offense report — client's full name, date of birth, and address included — into a free consumer chatbot and asks for a one-paragraph summary. It comes back instantly and it is excellent.",
+    situation:"Rushing before a hearing, an attorney copies an entire offense report (client's full name, date of birth, and address included) into a free consumer chatbot and asks for a one-paragraph summary. It comes back instantly and it is excellent.",
     big:"Has confidentiality already been compromised the moment those facts left the lawyer's control?",
     guiding:[
       "What is the difference between a free consumer tool and an enterprise tool with no-training terms?",
       "Which details in that report are enough to identify the client and the matter?",
       "Does “it was only a summary” change the analysis under Rule 1.05?",
-      "If this already happened, what is the honest next step — and the fix going forward?"
+      "If this already happened, what is the honest next step, and the fix going forward?"
     ]
   },
   {
@@ -101,7 +101,7 @@ window.ETHICS_SCENARIOS = [
     situation:"To move faster through discovery, an attorney feeds a cooperating witness's recorded statement into an AI tool for summarizing. The witness never consented to having their words processed by an outside system.",
     big:"Does your confidentiality duty reach third parties whose information passes through your AI tools?",
     guiding:[
-      "Whose data is protected here — only the client's, or everyone's in the file?",
+      "Whose data is protected here: only the client's, or everyone's in the file?",
       "Where does your responsibility for third-party information begin and end?",
       "How does feeding this to a vendor interact with work-product protection?",
       "What “we will not…” rule would you adopt for third-party material?"
@@ -136,7 +136,7 @@ window.ETHICS_SCENARIOS = [
     situation:"Treating AI as a nonlawyer assistant, an attorney has it draft a motion, gives it a quick read for tone and typos, and files it. It reads clean and professional.",
     big:"Is a quick proofread meaningful supervision, or supervision in name only?",
     guiding:[
-      "What does real review of an AI draft actually require — line by line, cite by cite?",
+      "What does real review of an AI draft actually require: line by line, cite by cite?",
       "Where is the line between using AI for efficiency and abdicating your judgment?",
       "What exactly are you certifying about this document when you sign and file it?",
       "Would you accept this level of review from a first-year associate's draft?"
@@ -144,7 +144,7 @@ window.ETHICS_SCENARIOS = [
   },
   {
     n:12, cat:"SUP", rule:"Rules 5.01–5.03 · Supervision", title:"The Power User",
-    situation:"One enthusiastic paralegal has started using AI for everything — drafting client emails, researching Texas law, summarizing medical records — including tasks no one approved. Two other staff use no AI at all.",
+    situation:"One enthusiastic paralegal has started using AI for everything (drafting client emails, researching Texas law, summarizing medical records) including tasks no one approved. Two other staff use no AI at all.",
     big:"What supervision does a lawyer owe over how staff use AI in a client's matter?",
     guiding:[
       "Should the office limit AI to a list of approved uses, and who writes that list?",
@@ -155,12 +155,12 @@ window.ETHICS_SCENARIOS = [
   },
   {
     n:13, cat:"SUP", rule:"Rules 5.01–5.03 · Supervision", title:"The Override",
-    situation:"An attorney's instinct says the AI's recommended plea analysis is missing crucial mitigating context about the client's history. She cannot fully articulate why — the tool's reasoning looks thorough and the recommendation is confident.",
+    situation:"An attorney's instinct says the AI's recommended plea analysis is missing crucial mitigating context about the client's history. She cannot fully articulate why. The tool's reasoning looks thorough and the recommendation is confident.",
     big:"When should human judgment override the AI, and how do you honor the discomfort you can't yet explain?",
     guiding:[
       "Should a lawyer be required to document why she overrode an AI recommendation?",
       "Is that unease bias to be corrected, or expertise that hasn't found words yet?",
-      "What happens to your judgment if overriding the tool starts to feel routine — or unthinkable?",
+      "What happens to your judgment if overriding the tool starts to feel routine, or unthinkable?",
       "Who owns the final call, and can that ever be delegated?"
     ]
   },
@@ -188,7 +188,7 @@ window.ETHICS_SCENARIOS = [
   },
   {
     n:16, cat:"SUP", rule:"Rules 5.01–5.03 · Supervision", title:"The Investigator's Tool",
-    situation:"Your investigator — not your employee, retained for this case — uses his own AI tool to scrape and summarize a witness's social media, feeding in case facts you provided. You never vetted his tool.",
+    situation:"Your investigator (not your employee, retained for this case) uses his own AI tool to scrape and summarize a witness's social media, feeding in case facts you provided. You never vetted his tool.",
     big:"Do your confidentiality and supervision duties follow the work you delegate to outside professionals using AI?",
     guiding:[
       "How much control do you have, or need, over a vendor's choice of tools?",
@@ -205,7 +205,7 @@ window.ETHICS_SCENARIOS = [
     big:"What did the duty of candor require of the lawyer before that brief was ever filed?",
     guiding:[
       "Why is every AI citation a lead to verify rather than an authority to cite?",
-      "What does real verification look like — and how long does it actually take?",
+      "What does real verification look like, and how long does it actually take?",
       "What must the lawyer now say to the court and to the client?",
       "How do courts around the country treat this exact failure?"
     ]
@@ -213,7 +213,7 @@ window.ETHICS_SCENARIOS = [
   {
     n:18, cat:"CAND", rule:"Rule 3.03 · Candor", title:"The Phantom Detail",
     situation:"An AI summary of a 200-page medical record includes a diagnosis that does not appear anywhere in the actual file. A reviewer happens to catch it before it lands in a sentencing memorandum.",
-    big:"How do you keep AI-invented facts out of the record — and what is your obligation when one gets through?",
+    big:"How do you keep AI-invented facts out of the record, and what is your obligation when one gets through?",
     guiding:[
       "Does every AI summary of a record require line-by-line verification to be trusted?",
       "How do you train yourself and your staff to spot a plausible hallucination?",
@@ -223,7 +223,7 @@ window.ETHICS_SCENARIOS = [
   },
   {
     n:19, cat:"CAND", rule:"Rule 3.03 · Candor", title:"The Miss You Find Later",
-    situation:"Weeks after a client pleads, the lawyer realizes an AI summary he relied on skipped an exculpatory line buried in discovery — a line he never read himself because the summary looked complete.",
+    situation:"Weeks after a client pleads, the lawyer realizes an AI summary he relied on skipped an exculpatory line buried in discovery, a line he never read himself because the summary looked complete.",
     big:"What do you owe the client and the court when you discover an AI-driven miss after the decision is made?",
     guiding:[
       "What is your duty to correct the record and to advise the client now?",
@@ -234,7 +234,7 @@ window.ETHICS_SCENARIOS = [
   },
   {
     n:20, cat:"CAND", rule:"Rule 3.03 · Candor", title:"The Confident, Outdated Answer",
-    situation:"AI drafts a beautifully reasoned argument on a point of Texas criminal procedure. It reads as authoritative — but it rests on a rule the Court of Criminal Appeals modified in a recent opinion the model never saw.",
+    situation:"AI drafts a beautifully reasoned argument on a point of Texas criminal procedure. It reads as authoritative, but it rests on a rule the Court of Criminal Appeals modified in a recent opinion the model never saw.",
     big:"How do you guard against analysis that is fluent, confident, and wrong?",
     guiding:[
       "Why is the tool's confidence the most dangerous part of the output?",
@@ -245,7 +245,7 @@ window.ETHICS_SCENARIOS = [
   },
   {
     n:21, cat:"CAND", rule:"Rule 3.03 · Candor", title:"The Detector's Accusation",
-    situation:"Opposing counsel challenges your client's written statement as “AI-generated,” relying on a detection tool that advertises 95% accuracy — which means a 5% false-positive rate that could be flagging a real person's authentic writing.",
+    situation:"Opposing counsel challenges your client's written statement as “AI-generated,” relying on a detection tool that advertises 95% accuracy, which means a 5% false-positive rate that could be flagging a real person's authentic writing.",
     big:"How should the system treat AI-detection claims that are confidently made but demonstrably wrong a meaningful share of the time?",
     guiding:[
       "Who bears the burden when a detector, not a witness, makes the accusation?",
@@ -264,7 +264,7 @@ window.ETHICS_SCENARIOS = [
       "Is disclosure of AI use required, advisable, or situational under the communication duty?",
       "How much technical detail does a client actually need to make an informed choice?",
       "Can a client decline AI-assisted work, and how would you honor that?",
-      "What framing is both honest and steadying — without overselling the tool?"
+      "What framing is both honest and steadying, without overselling the tool?"
     ]
   },
   {
@@ -291,7 +291,7 @@ window.ETHICS_SCENARIOS = [
   },
   {
     n:25, cat:"COMM", rule:"Rule 1.04 · Communication", title:"The Automated Letter",
-    situation:"A busy office uses AI to draft all of its client-facing letters — case updates, “we can't take your matter” declines, sentencing outcomes — from an approved template. A staff member proofreads each before it goes out.",
+    situation:"A busy office uses AI to draft all of its client-facing letters (case updates, “we can't take your matter” declines, sentencing outcomes) from an approved template. A staff member proofreads each before it goes out.",
     big:"What is lost when client communication is automated, and is a proofread enough to preserve it?",
     guiding:[
       "Which client messages must be personally written, not merely reviewed?",
@@ -307,7 +307,7 @@ window.ETHICS_SCENARIOS = [
     guiding:[
       "How do you manage the client's expectations about what the tool produced?",
       "Whose name and license are on the line if it gets filed?",
-      "Is your role here to teach, to refuse, to rewrite — or some of each?",
+      "Is your role here to teach, to refuse, to rewrite, or some of each?",
       "How do you respect the client's initiative without adopting its errors?"
     ]
   },
@@ -315,7 +315,7 @@ window.ETHICS_SCENARIOS = [
   /* ---------- FAIRNESS, BIAS & ACCESS · Rule 1.01 ---------- */
   {
     n:27, cat:"FAIR", rule:"Rule 1.01 · Competence", title:"The Risk-Score Shortcut",
-    situation:"An AI tool built to suggest sentencing-mitigation themes quietly leans on patterns tied to a client's zip code and prior police contacts — patterns that reflect decades of over-policing. The output is “accurate” to the historical data.",
+    situation:"An AI tool built to suggest sentencing-mitigation themes quietly leans on patterns tied to a client's zip code and prior police contacts, patterns that reflect decades of over-policing. The output is “accurate” to the historical data.",
     big:"When AI surfaces patterns that reflect systemic bias, do you use them, ignore them, or actively work against them?",
     guiding:[
       "How do you separate a correlation the data shows from a cause worth arguing?",
@@ -326,7 +326,7 @@ window.ETHICS_SCENARIOS = [
   },
   {
     n:28, cat:"FAIR", rule:"Rule 1.01 · Competence", title:"The Access Argument",
-    situation:"A public defender points out that AI — for all the harms baked into how it was built — may be the only way an overloaded office can give every client real research and a fighting brief. The alternative is that under-resourced clients get less.",
+    situation:"A public defender points out that AI, for all the harms baked into how it was built, may be the only way an overloaded office can give every client real research and a fighting brief. The alternative is that under-resourced clients get less.",
     big:"Can a tool built on ethically compromised foundations still be the right choice for under-resourced defense?",
     guiding:[
       "Does honest acknowledgment of the harms feel more responsible, or just more paralyzing?",
@@ -337,7 +337,7 @@ window.ETHICS_SCENARIOS = [
   },
   {
     n:29, cat:"FAIR", rule:"Rule 1.01 · Competence", title:"The Translation Trap",
-    situation:"An attorney uses AI to communicate with a limited-English-proficient client and to render a plea offer in the client's language. The output is fluent and confident — but subtly wrong on the single most important term of the offer.",
+    situation:"An attorney uses AI to communicate with a limited-English-proficient client and to render a plea offer in the client's language. The output is fluent and confident, but subtly wrong on the single most important term of the offer.",
     big:"What duty of care applies when AI mediates communication with a vulnerable client on a life-altering decision?",
     guiding:[
       "Where is the verification step when you cannot read the language yourself?",
