@@ -77,6 +77,14 @@
 </header>
 
 <main id="main" tabindex="-1">
+  <figure class="sitequote" style="margin:0 0 1.6rem;">
+    <blockquote>&ldquo;Treat AI like an infinitely patient new coworker who forgets everything you tell them each new conversation&hellip;<br><br>&hellip;one that comes highly recommended but whose actual abilities are not that clear.&rdquo;</blockquote>
+    <figcaption>
+      <strong>Ethan Mollick</strong>
+      <span>Professor · The Wharton School, University of Pennsylvania · <a href="https://www.oneusefulthing.org/p/getting-started-with-ai-good-enough" target="_blank" rel="noopener">One Useful Thing, November 2024</a></span>
+    </figcaption>
+  </figure>
+
   <p class="lead-p">Most lawyers meet generative AI the same way: they open a chatbot and start typing. That is a fine way to get a feel for the tool, but it is a poor way to build a practice around it. There are two more deliberate approaches, and knowing which one you are using keeps you honest about what the tool is actually doing for you. One begins with a <strong>problem</strong> worth solving. The other begins with a <strong>task</strong> the tool does well. Both can work. Neither one changes a single duty you already carry.</p>
 
   <div class="credit">This is a criminal-defense adaptation of Paul Roetzer's (SmarterX.ai) two-approaches framework, drawn from an earlier education-focused piece, <a href="https://mguhlin.org/two-approaches-to-gen-ai-use/" target="_blank" rel="noopener">Two Approaches to Gen AI Use</a>. The framework is his; the examples, the guardrails, and the fit to defense work are ours.</p>
@@ -134,7 +142,7 @@
   <h2 class="sec-h">A workflow for either approach</h2>
   <p class="sec-sub">Whichever door you came in, the same three moves carry the work from a rough idea to something you can reuse.</p>
   <div class="steps3">
-    <div class="step3"><div class="n">1</div><h3>Start with a spark</h3><p>Name the question or the information problem: a suppression issue, a pattern buried in discovery, a plea you need to explain plainly. Then gather the source materials you trust &mdash; the statute, a fictional or de-identified fact pattern, your own templates.</p></div>
+    <div class="step3"><div class="n">1</div><h3>Start with a spark</h3><p>Name the question or the information problem: a suppression issue, a pattern buried in discovery, a plea you need to explain plainly. Then gather the source materials you trust: the statute, a fictional or de-identified fact pattern, your own templates.</p></div>
     <div class="step3"><div class="n">2</div><h3>Iterate to results</h3><p>Work in dialogue with the tool. Refine the output through feedback and follow-up prompts until it holds up. This back-and-forth is where the value lives, and where your judgment stays in charge.</p></div>
     <div class="step3"><div class="n">3</div><h3>Capture for future use</h3><p>Turn a good result into something reusable. Ask the tool to write custom instructions from the conversation that worked, then build a reusable assistant so the next matter starts ahead. Keep it to process and public authority, never privileged facts.</p></div>
   </div>
@@ -147,8 +155,8 @@
   <p class="sec-sub">Retrieval-augmented generation, or RAG, is the single biggest reliability upgrade for either approach.</p>
   <p class="lead-p" style="font-size:1.02rem;">Instead of leaning on the model&rsquo;s general training, a RAG tool answers from documents you choose and trust. Environments like Projects, NotebookLM, Custom GPTs, Google Gems, and Bots give the model contextual grounding: it retrieves from your own files rather than its training data alone, which produces more reliable, predictable output aligned to how you actually practice.</p>
   <ul class="rag-list">
-    <li><strong>Why it matters for the defense.</strong> Grounding is what turns a plausible-sounding tool into a checkable one. Pair the model with the authority and templates you trust, plus custom instructions that capture the process that worked, and it generates output that matches your expectations &mdash; and is far less likely to fabricate.</li>
-    <li><strong>Where to keep your files.</strong> The chart below sorts the options: a chat window with attached files for quick, temporary drafting; Projects for persistent, reusable work; Custom GPTs, Gems, and Bots for standard tasks and SOPs; group chats for live collaboration. The two marked RAG &mdash; Projects and Custom GPTs/Bots &mdash; keep and reuse your materials.</li>
+    <li><strong>Why it matters for the defense.</strong> Grounding is what turns a plausible-sounding tool into a checkable one. Pair the model with the authority and templates you trust, plus custom instructions that capture the process that worked, and it generates output that matches your expectations, and is far less likely to fabricate.</li>
+    <li><strong>Where to keep your files.</strong> The chart below sorts the options: a chat window with attached files for quick, temporary drafting; Projects for persistent, reusable work; Custom GPTs, Gems, and Bots for standard tasks and SOPs; group chats for live collaboration. The two marked RAG (Projects and Custom GPTs/Bots) keep and reuse your materials.</li>
     <li><strong>The line that does not move.</strong> RAG grounds the model in your files, but confidentiality still governs. Use fictional or de-identified facts in consumer tools, and never upload privileged client material to a tool whose data handling you have not vetted.</li>
   </ul>
   <figure class="wf-figure">
