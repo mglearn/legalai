@@ -58,9 +58,9 @@
 
   <h2 class="section-label">Choose a fact pattern</h2>
   <div class="pick">
-    <div class="pickcard active" data-c="dwi" onclick="show('dwi',this)"><div class="n">1</div><h3>The refused breath test</h3><small>Driving while intoxicated stop</small></div>
-    <div class="pickcard" data-c="poss" onclick="show('poss',this)"><div class="n">2</div><h3>The console search</h3><small>Drug possession and search</small></div>
-    <div class="pickcard" data-c="asslt" onclick="show('asslt',this)"><div class="n">3</div><h3>The bar parking lot</h3><small>Disputed assault</small></div>
+    <div tabindex="0" role="button" class="pickcard active" data-c="dwi" onclick="show('dwi',this)"><div class="n">1</div><h3>The refused breath test</h3><small>Driving while intoxicated stop</small></div>
+    <div tabindex="0" role="button" class="pickcard" data-c="poss" onclick="show('poss',this)"><div class="n">2</div><h3>The console search</h3><small>Drug possession and search</small></div>
+    <div tabindex="0" role="button" class="pickcard" data-c="asslt" onclick="show('asslt',this)"><div class="n">3</div><h3>The bar parking lot</h3><small>Disputed assault</small></div>
   </div>
 
   <div id="display"></div>
@@ -175,5 +175,14 @@ document.addEventListener('DOMContentLoaded',()=>show('dwi',document.querySelect
 <script src="../assets/i18n.js"></script>
 <script src="../assets/pages-i18n.js"></script>
 <script src="../assets/sitequote.js?v=2"></script>
+
+<!-- a11y-keyboard-shim -->
+<script>
+document.addEventListener("keydown",function(e){
+  if(e.key!=="Enter"&&e.key!==" ")return;
+  var el=e.target.closest&&e.target.closest("[onclick][tabindex]");
+  if(el){e.preventDefault();el.click();}
+});
+</script>
 </body>
 </html>
