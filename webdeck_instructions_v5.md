@@ -1,7 +1,7 @@
 # Web Deck Instructions — v5
 
 *Specification for the self-contained "TCDLAi" HTML slide-deck system.*
-*Project: `mglearn.github.io/legalai` — "AI for the Defense," TCDLA. Last revised 2026-07-17.*
+*Project: `mglearn.github.io/legalai` — "AI for the Defense," TCDLA. Last revised 2026-10-09.*
 
 This is the single source of truth for the deck system. It replaces the former `WEBDECK-GUIDE.md` (now removed); the `webdeck` skill defers to this file. It folds in everything added since the first build: the **exit-to-hub icon**, the **image and photo layout patterns**, the **accessibility layer** (reflow mode, visible focus, a slide-change live region — §7), the **headless-Chrome verification workflow**, and the **two-account deploy flow**.
 
@@ -16,7 +16,7 @@ Everything is powered by two shared files, plus one HTML file per deck:
 | File | Role |
 |---|---|
 | `assets/deck-framework.css` | Design system, slide layout, navigation chrome, presenter-view styles, print rules. ~380 lines. |
-| `assets/deck-framework.js` | Slide navigation, notes panel, presenter window, cross-window sync, exit icon, print. ~290 lines. IIFE, no dependencies. |
+| `assets/deck-framework.js` | Slide navigation, notes panel, presenter window, cross-window sync, exit icon, print. ~310 lines. IIFE, no dependencies. |
 | `decks/<n>-<name>.html` | One deck. Links the two shared files + fonts; contains only its slides and any deck-local `<style>`. |
 
 To reuse in a new project: copy those two `assets/` files and one deck as a template, then swap the slides.
@@ -232,6 +232,7 @@ The framework targets WCAG 2.1 Level A/AA. The shared `deck-framework.css` / `de
 
 - **On the current screen** — press **S** (or **N**) to slide up a notes panel.
 - **On a second monitor** — press **V** (or 🖥) to open a **presenter window**: current slide, next slide, notes in large type, an elapsed **timer** (click to pause; Reset button), and a clock. Put the main window on the projector, press **F** for fullscreen. The two windows stay in sync (advancing either moves both) via `BroadcastChannel` + a `localStorage` fallback — same-origin, so it works on the hosted site.
+- **Resizing the notes** — the presenter window's Speaker notes panel carries **A− / A+** buttons (right of the "Speaker notes" label) to shrink or enlarge the notes text for easier reading mid-talk; the **+** and **−** keys do the same. The chosen size is clamped to a sensible range and **persists** across sessions via `localStorage` (key `webdeck-notes-scale`). Default is 20 px (scale 1.0).
 
 **Writing the notes — teleprompter text, not stage directions:**
 - First person, conversational, the way you'd actually say it aloud.
@@ -239,7 +240,9 @@ The framework targets WCAG 2.1 Level A/AA. The shared `deck-framework.css` / `de
 - Cover what to say, what to watch for in the room, and the transition to the next slide.
 - No em dashes. No meta-remarks ("say this," "I want to name that…"). No assumptions about how the audience feels.
 
-**Keyboard:** → / Space / PgDn next · ← / PgUp prev · Home / End first / last · **S** notes · **V** presenter · **F** fullscreen · **P** print/PDF · **?** help. Clicking the **left third** of a slide goes back, the rest advances (links, buttons, and `.no-advance` are ignored). Keep the shortcut list off public-facing pages — it already lives on the in-deck **?** overlay.
+**Keyboard (main deck):** → / Space / PgDn next · ← / PgUp prev · Home / End first / last · **S** notes · **V** presenter · **F** fullscreen · **P** print/PDF · **?** help. Clicking the **left third** of a slide goes back, the rest advances (links, buttons, and `.no-advance` are ignored).
+
+**Keyboard (presenter window):** → / Space / PgDn next · ← / PgUp prev · Home / End first / last · **T** reset timer · **+** / **−** enlarge / shrink the notes text. Keep the shortcut list off public-facing pages — it already lives on the in-deck **?** overlay.
 
 ---
 
