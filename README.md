@@ -61,4 +61,4 @@ Session prompts and materials are shared for the TCDLA community. Nothing here i
 
 ---
 
-Facilitator: **Miguel Guhlin**, TCEA · [mguhlin.org](https://mguhlin.org)
+Facilitator: **Miguel Guhlin**, TCEA · [mguhlin@tcea.org](mailto:mguhlin@tcea.org) · [blog.tcea.org](https://blog.tcea.org)
